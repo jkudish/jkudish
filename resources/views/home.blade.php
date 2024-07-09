@@ -1,21 +1,29 @@
 <x-layout>
-    <div class="max-w-2xl mx-auto space-y-12 mt-24">
+    <div class="max-w-2xl mx-auto mt-24">
         <picture>
             <source srcset="{{ url('img/joey.webp') }}" type="image/webp">
             <source srcset="{{ url('img/joey.png') }}" type="image/png">
             <img
                 src="data:image/png;base64,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"
-                class="mx-auto h-24 w-24 rounded-full"
+                class="mx-auto h-48 w-48 rounded-full"
                 loading="lazy"
-                width="612"
-                height="612"
                 alt="Joey Kudish">
         </picture>
 
-        <h1 class="text-4xl font-title tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">Hey, I'm Joey 👋</h1>
-        <h2 class="text-2xl font-sans tracking-tight text-zinc-800 sm:text-3xl dark:text-zinc-100">I'm a ✈️ Digital Nomad, World Explorer 🌏, Software Engineer 👨🏻‍💻 and Entrepreneur 💼.</h2>
+        <div class="mt-12 space-y-8 px-8 sm:max-w-[90%] md:max-w-none mx-auto">
+            <h1 class="text-4xl font-title tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100 text-center sm:text-left">Hey, I'm Joey 👋</h1>
 
-        <div class="mt-6 flex gap-6">
+            <h2 class="text-2xl font-sans tracking-tight leading-8 sm:leading-10 text-zinc-800 sm:text-3xl dark:text-zinc-100">I'm a ✈️ Digital Nomad, World Explorer 🌏, Software Engineer 👨🏻‍💻 and Entrepreneur 💼</h2>
+
+            <h2 class="text-2xl font-sans tracking-tight leading-8 sm:leading-10 text-zinc-800 sm:text-3xl dark:text-zinc-100">
+                I work at <a href="https://metorik.com?utm_source=jkudish"><img loading="lazy" src="https://cdn.metorik.com/img/logo-icon-text-white-small.png" class="h-8 sm:h-10 inline -mt-1" alt="Metorik"></a>, <br /> the co-pilot for <img loading="lazy" src="https://metorik.com/img/woocommerce@2x.png" alt="WooCommerce" class="h-8 sm:h-10 p-1 mt-1 inline"> and <img loading="lazy" src="https://metorik.com/img/shopify@2x.png" class="-mt-1 h-8 sm:h-10 inline" alt="Shopify">
+            </h2>
+
+            <h3 class="text-lg font-sans tracking-tight text-zinc-700 sm:text-xl dark:text-zinc-200">📥 You can e-mail (but please don't spam me) at <a href="mailto:joey@jkudish.com" class="underline">joey@jkudish.com</a></h3>
+
+            <h3 class="text-lg font-sans tracking-tight text-zinc-700 sm:text-xl dark:text-zinc-200">⬇️ You can find me here</h3>
+
+            <div class="mt-6 flex gap-6">
             <a class="group -m-1 p-1"
                aria-label="Follow on Twitter / X"
                href="https://twitter.com/jkudish"
@@ -60,6 +68,7 @@
                         d="M18.335 18.339H15.67v-4.177c0-.996-.02-2.278-1.39-2.278-1.389 0-1.601 1.084-1.601 2.205v4.25h-2.666V9.75h2.56v1.17h.035c.358-.674 1.228-1.387 2.528-1.387 2.7 0 3.2 1.778 3.2 4.091v4.715zM7.003 8.575a1.546 1.546 0 01-1.548-1.549 1.548 1.548 0 111.547 1.549zm1.336 9.764H5.666V9.75H8.34v8.589zM19.67 3H4.329C3.593 3 3 3.58 3 4.297v15.406C3 20.42 3.594 21 4.328 21h15.338C20.4 21 21 20.42 21 19.703V4.297C21 3.58 20.4 3 19.666 3h.003z"></path>
                 </svg>
             </a>
+        </div>
         </div>
     </div>
 </x-layout>
