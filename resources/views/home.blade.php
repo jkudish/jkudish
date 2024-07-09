@@ -1,4 +1,8 @@
 <x-layout>
+    <link rel="preload" href="https://cdn.metorik.com/img/logo-icon-text-white-small.png" as="image" />
+    <link rel="preload" href="https://metorik.com/img/woocommerce@2x.png" as="image" />
+    <link rel="preload" href="https://metorik.com/img/shopify@2x.png" as="image" />
+
     <div class="max-w-2xl mx-auto mt-24">
         <picture>
             <source srcset="{{ url('img/joey.webp') }}" type="image/webp">
@@ -18,6 +22,8 @@
             <h2 class="text-2xl font-sans tracking-tight leading-8 sm:leading-10 text-zinc-800 sm:text-3xl dark:text-zinc-100">
                 I work at <a href="https://metorik.com?utm_source=jkudish"><img loading="lazy" src="https://cdn.metorik.com/img/logo-icon-text-white-small.png" class="h-8 sm:h-10 inline -mt-1" alt="Metorik"></a>, <br /> the co-pilot for <img loading="lazy" src="https://metorik.com/img/woocommerce@2x.png" alt="WooCommerce" class="h-8 sm:h-10 p-1 mt-1 inline"> and <img loading="lazy" src="https://metorik.com/img/shopify@2x.png" class="-mt-1 h-8 sm:h-10 inline" alt="Shopify">
             </h2>
+
+            <h3 class="text-lg font-sans tracking-tight text-zinc-700 sm:text-xl dark:text-zinc-200">📥 You can e-mail (but please don't spam me) at <a href="mailto:joey@jkudish.com" class="underline">joey@jkudish.com</a></h3>
 
             <h3 class="text-lg font-sans tracking-tight text-zinc-700 sm:text-xl dark:text-zinc-200">📥 You can e-mail (but please don't spam me) at <a href="mailto:joey@jkudish.com" class="underline">joey@jkudish.com</a></h3>
 
