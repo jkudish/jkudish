@@ -1,7 +1,7 @@
 <footer class="mt-auto">
     <div class="mx-auto max-w-6xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
         <div class="md:order-2 space-y-2">
-            <h3 class="text-md font-sans tracking-tight text-zinc-700 sm:text-lg dark:text-zinc-200">⬇️ You can also
+            <h3 class="text-md  text-center md:text-left font-sans tracking-tight text-zinc-700 sm:text-lg dark:text-zinc-200">⬇️ You can also
                 find me
                 here</h3>
 
