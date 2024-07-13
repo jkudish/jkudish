@@ -122,7 +122,7 @@
                     alt="Joey Kudish">
             </picture>
             <h1 class="mt-4 shrink mx-auto max-w-xl text-xl font-title tracking-tight leading-6 sm:leading-8 text-zinc-800 sm:text-2xl dark:text-zinc-100">
-                Hey, I'm Joey 👋 I'm a Software Engineer <br/> Over the years I've given a handful of presentations
+                Hey, I'm Joey 👋 <br/> Over the years I've given a handful of presentations
                 at
                 various conferences. Below you can find slides and videos from some of them.
             </h1>
