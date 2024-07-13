@@ -4,7 +4,7 @@
             'conference' => 'WordCamp Canada 2024',
             'location' => 'Ottawa, Canada',
             'title' => 'Mastering Web Performance',
-            'slides' => url('wccanada2024-performance.pdf'),
+            'slides' => url('slides/wccanada2024-performance.pdf'),
         ],
         [
             'conference' => 'Confoo 2017',
