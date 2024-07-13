@@ -15,6 +15,10 @@
 
     @vite('resources/css/app.css')
 
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script src="https://cdn.usefathom.com/script.js" data-site="OLWGPIDF" defer></script>
+    <!-- / Fathom -->
+
     <script>
         let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         theme = localStorage.theme || theme;
