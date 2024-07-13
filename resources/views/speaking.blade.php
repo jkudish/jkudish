@@ -4,7 +4,7 @@
             'conference' => 'WordCamp Canada 2024',
             'location' => 'Ottawa, Canada',
             'title' => 'Mastering Web Performance',
-            'teaser' => 'https://canada.wordcamp.org/2024/session/web-performance-metrics-demystified-a-practical-guide/',
+            'slides' => url('wccanada2024-performance.pdf'),
         ],
         [
             'conference' => 'Confoo 2017',
