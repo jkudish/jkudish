@@ -28,13 +28,9 @@
                 <br/>
                 the co-pilot for
                 <img loading="lazy"
-                     src="{{ url('img/woocommerce.svg') }}"
+                     src="{{ url('img/woo.svg') }}"
                      alt="WooCommerce"
-                     class="h-12 sm:h-16 -mx-2 -mt-1 inline dark:hidden">
-                <img loading="lazy"
-                     src="{{ url('img/woocommerce-dark.svg') }}"
-                     alt="WooCommerce"
-                     class="h-12 sm:h-16 -mx-2 -mt-1 hidden dark:inline">
+                     class="h-5 sm:h-6 mx-1 -mt-1 inline">
                 and <img loading="lazy"
                          src="{{ url('img/shopify.svg') }}"
                          class="ml-1 -mt-2 h-8 sm:h-10 inline dark:hidden"
