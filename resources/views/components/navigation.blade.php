@@ -29,6 +29,10 @@
                             </li>
                             <li>
                                 <a class="w-full relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
+                                   href="https://glass.photo/jkudish">Photography</a>
+                            </li>
+                            <li>
+                                <a class="w-full relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
                                    href="mailto:joey@jkudish.com">📥 E-mail me</a>
                             </li>
                         </ul>

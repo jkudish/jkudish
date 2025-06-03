@@ -15,7 +15,7 @@
                 Hey, I'm Joey 👋</h1>
 
             <h2 class="text-2xl font-sans tracking-tight leading-8 sm:leading-10 text-zinc-800 sm:text-3xl dark:text-zinc-100">
-                I'm a ✈️ Digital Nomad, World Explorer 🌏, Software Engineer 👨🏻‍💻 and Entrepreneur 💼</h2>
+                I'm a ✈️ Digital Nomad, World Explorer 🌏, Photographer 📸 , Software Engineer 👨🏻‍💻 and Entrepreneur 💼</h2>
 
             <h2 class="text-2xl font-sans tracking-tight leading-8 sm:leading-10 text-zinc-800 sm:text-3xl dark:text-zinc-100">
                 I work at <a href="https://metorik.com?utm_source=jkudish"><img loading="lazy"
