@@ -18,27 +18,7 @@
                 I'm a ✈️ Digital Nomad, World Explorer 🌏, Photographer 📸 , Software Engineer 👨🏻‍💻 and Entrepreneur 💼</h2>
 
             <h2 class="text-2xl font-sans tracking-tight leading-8 sm:leading-10 text-zinc-800 sm:text-3xl dark:text-zinc-100">
-                I work at <a href="https://metorik.com?utm_source=jkudish"><img loading="lazy"
-                                                                                src="{{ url('img/metorik.svg') }}"
-                                                                                class="h-8 sm:h-10 inline -mt-1 dark:hidden"
-                                                                                alt="Metorik"><img loading="lazy"
-                                                                                                   src="{{ url('img/metorik-dark.svg') }}"
-                                                                                                   class="h-8 sm:h-10 hidden -mt-1 dark:inline"
-                                                                                                   alt="Metorik"></a>,
-                <br/>
-                the co-pilot for
-                <img loading="lazy"
-                     src="{{ url('img/woo.svg') }}"
-                     alt="WooCommerce"
-                     class="h-5 sm:h-6 mx-1 -mt-1 inline">
-                and <img loading="lazy"
-                         src="{{ url('img/shopify.svg') }}"
-                         class="ml-1 -mt-2 h-8 sm:h-10 inline dark:hidden"
-                         alt="Shopify">
-                <img loading="lazy"
-                     src="{{ url('img/shopify-dark.svg') }}"
-                     class="ml-1 -mt-2 h-8 sm:h-10 hidden dark:inline"
-                     alt="Shopify">
+                <strong>I help businesses turn ideas into scalable software and automate operations with AI.</strong> Let’s build something impactful — <a class="transition hover:text-teal-500 dark:hover:text-teal-400" href="mailto:joey@jkudish.com">👉🏼 get in touch</a>
             </h2>
 
         </div>
