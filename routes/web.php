@@ -11,6 +11,10 @@ Route::domain('slides.jkudish.com')->group(function () {
 Route::middleware('cache.headers:public;max_age=2628000;etag')->group(function () {
     Route::view('/', 'home')->name('home');
     Route::view('/speaking', 'speaking')->name('speaking');
+    Route::view('/services', 'services')->name('services');
+    Route::view('/projects', 'projects')->name('projects');
+    Route::view('/newsletter', 'newsletter')->name('newsletter');
+    Route::view('/contact', 'contact')->name('contact');
 });
 
 Route::redirect('/presents', '/speaking');

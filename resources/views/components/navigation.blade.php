@@ -25,15 +25,23 @@
                                    href="{{ route('home') }}">About</a></li>
                             <li>
                                 <a class="w-full relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
+                                   href="{{ route('services') }}">Services</a>
+                            </li>
+                            <li>
+                                <a class="w-full relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
+                                   href="{{ route('projects') }}">Projects</a>
+                            </li>
+                            <li>
+                                <a class="w-full relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
                                    href="{{ route('speaking') }}">Speaking</a>
                             </li>
                             <li>
                                 <a class="w-full relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
-                                   href="https://glass.photo/jkudish">Photography</a>
+                                   href="{{ route('newsletter') }}">Newsletter</a>
                             </li>
                             <li>
                                 <a class="w-full relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
-                                   href="mailto:joey@jkudish.com">📥 E-mail me</a>
+                                   href="{{ route('contact') }}">Contact</a>
                             </li>
                         </ul>
                     </nav>
