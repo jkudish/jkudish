@@ -14,7 +14,7 @@ $expertise = [
 ];
 @endphp
 
-<div class="mx-auto max-w-2xl lg:max-w-5xl">
+<div>
     <div class="space-y-16">
         <div>
             <h2 class="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-3xl">
@@ -38,7 +38,7 @@ $expertise = [
             
             <div class="mt-8 grid gap-6 sm:grid-cols-2">
                 @foreach($expertise as $skill)
-                <div class="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+                <div class="rounded-2xl border border-zinc-200/50 bg-white/60 backdrop-blur-sm p-6 dark:border-zinc-700/50 dark:bg-zinc-800/60 shadow-lg hover:shadow-xl transition-shadow">
                     <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">
                         {{ $skill['name'] }}
                     </h3>
@@ -49,7 +49,7 @@ $expertise = [
                 @endforeach
             </div>
             
-            <div class="mt-8 rounded-2xl bg-zinc-50 p-6 dark:bg-zinc-800/50">
+            <div class="mt-8 rounded-2xl bg-gradient-to-br from-teal-50 to-zinc-50 p-6 dark:from-teal-950/20 dark:to-zinc-800/50 border border-teal-200/30 dark:border-teal-700/30">
                 <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">
                     Recent Achievement
                 </h3>

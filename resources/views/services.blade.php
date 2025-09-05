@@ -1,5 +1,5 @@
 <x-layout title="Services - Joey Kudish">
-    <div class="mx-auto max-w-2xl lg:max-w-5xl">
+    <x-ui.section background="white" spacing="large">
         <header class="max-w-2xl">
             <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
                 Services
@@ -52,7 +52,7 @@
             @endphp
             
             @foreach($services as $service)
-            <div class="rounded-2xl border border-zinc-100 p-8 dark:border-zinc-700/40">
+            <div class="rounded-2xl border border-zinc-100 bg-white dark:bg-zinc-900 p-8 dark:border-zinc-700/40 shadow-sm hover:shadow-lg transition-shadow" id="{{ Str::slug($service['name']) }}">
                 <h2 class="text-2xl font-bold text-zinc-800 dark:text-zinc-100">
                     {{ $service['name'] }}
                 </h2>
@@ -102,5 +102,5 @@
                 </x-ui.button>
             </div>
         </div>
-    </div>
+    </x-ui.section>
 </x-layout>

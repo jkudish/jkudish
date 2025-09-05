@@ -24,7 +24,7 @@ $projects = [
 ];
 @endphp
 
-<div class="mx-auto max-w-2xl lg:max-w-5xl">
+<div>
     <h2 class="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-3xl">
         🚀 What I'm Building Right Now
     </h2>

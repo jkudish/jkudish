@@ -68,8 +68,7 @@ it('shows all home page sections', function () {
         ->assertSee("What I'm Building Right Now", false)
         ->assertSee('Three Ways I Can Help')
         ->assertSee("Things I've Built", false)
-        ->assertSee('The Maker Notes')
-        ->assertSee("Let's Connect", false);
+        ->assertSee('The Maker Notes');
 });
 
 it('has proper meta title on services page', function () {

@@ -52,14 +52,16 @@
 
 </head>
 <body class="dark:bg-zinc-800 flex flex-col min-h-screen">
+{{-- Skip Navigation Link for Accessibility --}}
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-teal-600 text-white px-4 py-2 rounded-md z-50 focus:outline-none focus:ring-2 focus:ring-teal-500">
+    Skip to main content
+</a>
 
 <x-navigation/>
 
-<div class="max-w-2xl mx-auto">
-
+<main id="main-content" class="flex-grow">
     {{ $slot }}
-
-</div>
+</main>
 <x-footer/>
 </body>
 </html>
