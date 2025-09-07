@@ -52,7 +52,7 @@ $projects = [
             </p>
             
             <p class="mt-4 text-xs font-medium text-zinc-500 dark:text-zinc-500">
-                Status: <span class="text-emerald-600 dark:text-emerald-400">{{ $project['status'] }}</span>
+                Status: <span class="text-emerald-700 dark:text-emerald-300">{{ $project['status'] }}</span>
             </p>
         </div>
         @endforeach

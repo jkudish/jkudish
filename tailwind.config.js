@@ -55,8 +55,8 @@ export default {
                     '100%': { backgroundPosition: '0% 50%' }
                 },
                 'glow-pulse': {
-                    '0%, 100%': { boxShadow: '0 0 20px rgba(16, 185, 129, 0.5)' },
-                    '50%': { boxShadow: '0 0 30px rgba(16, 185, 129, 0.8), 0 0 60px rgba(16, 185, 129, 0.4)' }
+                    '0%, 100%': { boxShadow: '0 0 20px rgba(4, 120, 87, 0.5)' },
+                    '50%': { boxShadow: '0 0 30px rgba(4, 120, 87, 0.8), 0 0 60px rgba(4, 120, 87, 0.4)' }
                 },
                 'typing': {
                     'from': { width: '0' },
@@ -77,16 +77,16 @@ export default {
             },
             colors: {
                 'gradient': {
-                    'cyan': '#10b981',
-                    'blue': '#22c55e',
+                    'cyan': '#047857',
+                    'blue': '#065f46',
                     'purple': '#8b5cf6',
                     'pink': '#ec4899',
                 }
             },
             backgroundImage: {
-                'gradient-primary': 'linear-gradient(135deg, #10b981 0%, #22c55e 100%)',
+                'gradient-primary': 'linear-gradient(135deg, #047857 0%, #065f46 100%)',
                 'gradient-accent': 'linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)',
-                'gradient-rainbow': 'linear-gradient(45deg, #10b981, #22c55e, #8b5cf6, #ec4899)',
+                'gradient-rainbow': 'linear-gradient(45deg, #047857, #065f46, #8b5cf6, #ec4899)',
                 'mesh-gradient': 'radial-gradient(at 40% 20%, hsla(189, 100%, 56%, 0.15) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(355, 100%, 93%, 0.15) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(270, 100%, 77%, 0.15) 0px, transparent 50%)',
                 'dots-pattern': 'radial-gradient(circle at 1px 1px, rgb(209 213 219 / 0.3) 1px, transparent 1px)',
                 'grid-pattern': 'linear-gradient(rgba(0,0,0,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.03) 1px, transparent 1px)',

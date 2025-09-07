@@ -46,7 +46,7 @@ $expertise = [
                             icon="{{ $area['icon'] }}" 
                             size="w-8 h-8" 
                             animation="none" 
-                            color="#10b981"
+                            color="#047857"
                             class="flex-shrink-0 mt-1"
                         />
                         <div class="space-y-3 flex-1">
@@ -73,7 +73,7 @@ $expertise = [
         </div>
         
         {{-- Current Focus --}}
-        <div class="mt-8 p-6 rounded-2xl bg-gradient-to-br from-emerald-50 via-white to-green-50 dark:from-emerald-950/20 dark:via-zinc-900 dark:to-green-950/20 border border-emerald-200/30 dark:border-emerald-700/30">
+        <div class="mt-8 p-6 rounded-2xl bg-gradient-to-br from-emerald-50 via-white to-emerald-100 dark:from-emerald-950/20 dark:via-zinc-900 dark:to-emerald-950/30 border border-emerald-200/30 dark:border-emerald-800/30">
             <div class="flex items-start gap-3">
                 <span class="text-2xl">🚀</span>
                 <div>
