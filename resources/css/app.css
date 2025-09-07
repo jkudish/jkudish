@@ -22,13 +22,13 @@
 
 body {
     font-family: 'muliregular', ui-sans-serif, system-ui, sans-serif;
-    background-image: url('/img/grid.svg');
+    background-image: url('https://jkudish.com/img/grid.svg');
     background-repeat: repeat;
     background-size: 300px 300px;
 }
 
 .dark body {
-    background-image: url('/img/grid-dark.svg');
+    background-image: url('https://jkudish.com/img/grid-dark.svg');
 }
 
 /* Fix for grid item borders */
