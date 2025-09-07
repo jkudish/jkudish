@@ -3,19 +3,19 @@ $expertise = [
     [
         'icon' => 'code',
         'name' => 'Full-Stack Development',
-        'skills' => ['Laravel', 'Vue.js', 'React', 'Tauri', 'Electron', 'Swift', 'MySQL', 'PostgreSQL'],
+        'skills' => ['Laravel', 'Vue.js', 'React', 'Desktop and Mobile', 'Database Design'],
         'description' => 'Building scalable web applications from database to deployment'
     ],
     [
         'icon' => 'sparkles',
         'name' => 'AI & Automation',
-        'skills' => ['GPT-4', 'Claude', 'n8n', 'Zapier', 'OpenAI API', 'Anthropic API'],
+        'skills' => ['OpenAI', 'Anthropic', 'n8n', 'Zapier', 'OpenRouter'],
         'description' => 'Implementing intelligent automation that saves hours weekly'
     ],
     [
         'icon' => 'rocket',
         'name' => 'Product Development',
-        'skills' => ['MVP Strategy', 'User Research', 'A/B Testing', 'Analytics', 'Monetization'],
+        'skills' => ['MVP Strategy', 'User Research', 'Analytics', 'Monetization & Growth'],
         'description' => 'Taking ideas from concept to profitable production'
     ],
     [
@@ -36,16 +36,16 @@ $expertise = [
             </x-ui.typography>
             <div class="flex-1 h-px bg-gradient-to-r from-zinc-200 to-transparent dark:from-zinc-700"></div>
         </div>
-        
+
         <div class="grid gap-6 md:grid-cols-2">
             @foreach($expertise as $area)
             <x-ui.gradient-border variant="primary" hover="true" padding="p-[1px]">
                 <div class="p-6 h-full">
                     <div class="flex items-start gap-4">
-                        <x-ui.animated-icon 
-                            icon="{{ $area['icon'] }}" 
-                            size="w-8 h-8" 
-                            animation="none" 
+                        <x-ui.animated-icon
+                            icon="{{ $area['icon'] }}"
+                            size="w-8 h-8"
+                            animation="none"
                             color="#047857"
                             class="flex-shrink-0 mt-1"
                         />
@@ -53,11 +53,11 @@ $expertise = [
                             <x-ui.typography variant="h4">
                                 {{ $area['name'] }}
                             </x-ui.typography>
-                            
+
                             <p class="text-sm text-zinc-600 dark:text-zinc-400">
                                 {{ $area['description'] }}
                             </p>
-                            
+
                             <div class="flex flex-wrap gap-2">
                                 @foreach($area['skills'] as $skill)
                                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
@@ -70,22 +70,6 @@ $expertise = [
                 </div>
             </x-ui.gradient-border>
             @endforeach
-        </div>
-        
-        {{-- Current Focus --}}
-        <div class="mt-8 p-6 rounded-2xl bg-gradient-to-br from-emerald-50 via-white to-emerald-100 dark:from-emerald-950/20 dark:via-zinc-900 dark:to-emerald-950/30 border border-emerald-200/30 dark:border-emerald-800/30">
-            <div class="flex items-start gap-3">
-                <span class="text-2xl">🚀</span>
-                <div>
-                    <x-ui.typography variant="h4">
-                        Currently Building
-                    </x-ui.typography>
-                    <p class="mt-2 text-zinc-600 dark:text-zinc-400">
-                        <strong>PHAiTO</strong> - AI-powered photo editor that processes entire Lightroom catalogs in minutes. 
-                        Plus launching multiple SaaS products focused on developer productivity and AI automation.
-                    </p>
-                </div>
-            </div>
         </div>
     </div>
 </div>

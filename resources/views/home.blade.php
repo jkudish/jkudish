@@ -9,7 +9,7 @@
 
                 {{-- About Section --}}
                 <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 border-t border-zinc-200/50 dark:border-zinc-700/50">
-                    <x-home.about />
+                    <x-home.expertise />
                 </div>
 
                 {{-- Services Preview --}}
