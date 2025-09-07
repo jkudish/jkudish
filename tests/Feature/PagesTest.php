@@ -5,8 +5,8 @@ use function Pest\Laravel\get;
 it('can access the home page', function () {
     get('/')
         ->assertOk()
-        ->assertSee("Senior Software Engineer", false)
-        ->assertSee("Who Ships Results")
+        ->assertSee("Hey, I'm Joey", false)
+        ->assertSee("I Build Software That Works")
         ->assertSee("Let's Talk About Your Project", false);
 });
 
@@ -62,7 +62,6 @@ it('has working navigation links', function () {
 it('shows all home page sections', function () {
     get('/')
         ->assertOk()
-        ->assertSee('Professional Journey')
         ->assertSee('Technical Expertise')
         ->assertSee("What I'm Building Right Now", false)
         ->assertSee('How I Can Help Your Business')

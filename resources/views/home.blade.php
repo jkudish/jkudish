@@ -7,11 +7,6 @@
                     <x-home.hero />
                 </div>
 
-                {{-- Client Logos --}}
-                <div class="px-6 sm:px-8 lg:px-10 py-8 lg:py-12 border-t border-zinc-200/50 dark:border-zinc-700/50">
-                    <x-home.client-logos />
-                </div>
-
                 {{-- About Section --}}
                 <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 border-t border-zinc-200/50 dark:border-zinc-700/50">
                     <x-home.about />

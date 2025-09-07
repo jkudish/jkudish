@@ -1,7 +1,7 @@
 <div class="relative">
     {{-- Subtle gradient overlay --}}
     <div class="absolute inset-0 -z-10 opacity-30">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-cyan-100 to-transparent rounded-full blur-3xl"></div>
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-emerald-100 to-transparent rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tr from-purple-100 to-transparent rounded-full blur-3xl"></div>
     </div>
     
@@ -9,14 +9,13 @@
         {{-- Left column - Text content --}}
         <div class="order-2 lg:order-1">
             <x-ui.typography variant="h1">
-                Senior Software Engineer
-                <span class="block text-gradient-primary mt-2">Who Ships Results</span>
+                Hey, I'm Joey 👋
+                <span class="block text-gradient-primary mt-2">I Build Software That Works</span>
             </x-ui.typography>
             
             <p class="mt-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                I help businesses transform their technology challenges into competitive advantages. 
-                With 15+ years of experience at companies like Automattic and as CTO at Image Salon, 
-                I deliver solutions that scale.
+                I help businesses transform their technology challenges into competitive advantages through 
+                custom software development and intelligent automation solutions that deliver real results.
             </p>
             
             <div class="mt-8 flex flex-wrap gap-6 text-sm text-zinc-600 dark:text-zinc-400">
@@ -53,9 +52,9 @@
             <div class="relative">
                 <picture class="relative">
                     <source srcset="{{ url('img/joey.webp') }}" type="image/webp">
-                    <source srcset="{{ url('img/joey.png') }}" type="image/png">
+                    <source srcset="{{ url('img/joey.jpeg') }}" type="image/jpeg">
                     <img
-                        src="{{ url('img/joey.png') }}"
+                        src="{{ url('img/joey.jpeg') }}"
                         class="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-white dark:border-zinc-800 shadow-2xl"
                         loading="eager"
                         fetchpriority="high"
