@@ -25,11 +25,14 @@ $projects = [
 @endphp
 
 <div>
-    <h2 class="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-3xl">
-        🚀 What I'm Building Right Now
-    </h2>
+    <div class="flex items-center gap-4 mb-8">
+        <x-ui.typography variant="h2">
+            What I'm Building Right Now
+        </x-ui.typography>
+        <div class="flex-1 h-px bg-gradient-to-r from-zinc-200 to-transparent dark:from-zinc-700"></div>
+    </div>
     
-    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         @foreach($projects as $project)
         <div class="group relative rounded-2xl border border-zinc-100 p-6 hover:border-zinc-200 dark:border-zinc-700/40 dark:hover:border-zinc-600 transition-colors">
             @if(isset($project['logo']))
@@ -40,18 +43,18 @@ $projects = [
                 <div class="text-2xl mb-4">{{ $project['icon'] }}</div>
             @endif
             
-            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">
+            <x-ui.typography variant="h4">
                 {{ $project['name'] }}
-            </h3>
+            </x-ui.typography>
             
-            <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+            <p class="mt-2 text-sm font-sans text-zinc-600 dark:text-zinc-400">
                 {{ $project['tagline'] }}
                 @if($project['description'])
                     <br>{{ $project['description'] }}
                 @endif
             </p>
             
-            <p class="mt-4 text-xs font-medium text-zinc-500 dark:text-zinc-500">
+            <p class="mt-4 text-xs font-sans font-medium text-zinc-500 dark:text-zinc-500">
                 Status: <span class="text-emerald-700 dark:text-emerald-300">{{ $project['status'] }}</span>
             </p>
         </div>

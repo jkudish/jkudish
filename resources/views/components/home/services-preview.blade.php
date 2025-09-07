@@ -29,7 +29,7 @@ $services = [
         <x-ui.typography variant="h2">
             How I Can Help Your Business
         </x-ui.typography>
-        <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
+        <p class="mt-4 text-lg font-sans text-zinc-600 dark:text-zinc-400">
             Choose the service that best fits your needs
         </p>
     </div>
@@ -49,13 +49,13 @@ $services = [
                     {{ $service['name'] }}
                 </x-ui.typography>
                 
-                <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                <p class="mt-2 text-sm font-sans text-zinc-600 dark:text-zinc-400">
                     {{ $service['description'] }}
                 </p>
                 
                 <ul class="mt-4 space-y-2">
                     @foreach($service['features'] as $feature)
-                    <li class="flex items-center text-sm text-zinc-600 dark:text-zinc-400">
+                    <li class="flex items-center text-sm font-sans text-zinc-600 dark:text-zinc-400">
                         <svg class="w-4 h-4 mr-2 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                         </svg>
@@ -65,7 +65,7 @@ $services = [
                 </ul>
                 
                 <div class="mt-6 pt-6 border-t border-zinc-200 dark:border-zinc-700">
-                    <p class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                    <p class="text-sm font-sans font-semibold text-zinc-900 dark:text-zinc-100">
                         {{ $service['pricing'] }}
                     </p>
                 </div>

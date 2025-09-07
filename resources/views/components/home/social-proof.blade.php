@@ -44,7 +44,7 @@ $testimonials = [
         <x-ui.typography variant="h2">
             Proven Track Record
         </x-ui.typography>
-        <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
+        <p class="mt-4 text-lg font-sans text-zinc-600 dark:text-zinc-400">
             Building successful software for over a decade
         </p>
     </div>
@@ -56,10 +56,10 @@ $testimonials = [
             <div class="text-3xl font-bold text-emerald-600 dark:text-emerald-700">
                 {{ $metric['value'] }}
             </div>
-            <div class="mt-2 text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+            <div class="mt-2 text-sm font-sans font-semibold text-zinc-900 dark:text-zinc-100">
                 {{ $metric['label'] }}
             </div>
-            <div class="mt-1 text-xs text-zinc-600 dark:text-zinc-400">
+            <div class="mt-1 text-xs font-sans text-zinc-600 dark:text-zinc-400">
                 {{ $metric['description'] }}
             </div>
         </div>
@@ -74,7 +74,7 @@ $testimonials = [
                 <svg class="w-8 h-8 text-emerald-600 dark:text-emerald-700 opacity-20" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
-                <blockquote class="mt-4 text-zinc-600 dark:text-zinc-400">
+                <blockquote class="mt-4 font-sans text-zinc-600 dark:text-zinc-400">
                     "{{ $testimonial['quote'] }}"
                 </blockquote>
                 <div class="mt-4 flex items-center gap-3">
@@ -84,10 +84,10 @@ $testimonials = [
                          class="w-12 h-12 rounded-full object-cover border-2 border-white dark:border-zinc-800 shadow-sm">
                     @endif
                     <div class="flex-1">
-                        <div class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                        <div class="text-sm font-sans font-semibold text-zinc-900 dark:text-zinc-100">
                             {{ $testimonial['author'] }}
                         </div>
-                        <div class="text-xs text-zinc-600 dark:text-zinc-400">
+                        <div class="text-xs font-sans text-zinc-600 dark:text-zinc-400">
                             {{ $testimonial['company'] }}
                         </div>
                     </div>

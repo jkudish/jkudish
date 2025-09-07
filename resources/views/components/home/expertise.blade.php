@@ -54,13 +54,13 @@ $expertise = [
                                 {{ $area['name'] }}
                             </x-ui.typography>
 
-                            <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                            <p class="text-sm font-sans text-zinc-600 dark:text-zinc-400">
                                 {{ $area['description'] }}
                             </p>
 
                             <div class="flex flex-wrap gap-2">
                                 @foreach($area['skills'] as $skill)
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-sans font-medium bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
                                     {{ $skill }}
                                 </span>
                                 @endforeach
