@@ -101,7 +101,7 @@ $testimonials = [
     <div class="mt-16">
         <div class="text-center mb-8">
             <x-ui.typography variant="small" color="muted" weight="semibold" class="uppercase tracking-wider">
-                Trusted by companies including:
+                Successful projects delivered for:
             </x-ui.typography>
         </div>
         
@@ -138,7 +138,7 @@ $testimonials = [
         
         <div class="mt-8 text-center">
             <x-ui.typography variant="small" color="muted">
-                Plus dozens of startups, agencies, and innovative companies
+                Plus dozens of startups, agencies, and innovative companies across e-commerce and SaaS industries
             </x-ui.typography>
         </div>
     </div>
