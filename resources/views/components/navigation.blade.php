@@ -46,7 +46,13 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="flex justify-end md:flex-1">
+                <div class="flex justify-end md:flex-1 gap-4">
+                    <div class="pointer-events-auto hidden md:block">
+                        <a href="mailto:joey@jkudish.com?subject=Consultation%20Request" 
+                           class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-2 text-sm font-semibold text-white shadow-lg hover:shadow-xl hover:shadow-blue-500/25 hover:-translate-y-0.5 transition-all duration-300">
+                            Schedule a Call
+                        </a>
+                    </div>
                     <div class="pointer-events-auto">
                         <button type="button" aria-label="Switch to dark theme"
                                 class="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"

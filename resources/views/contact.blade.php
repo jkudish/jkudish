@@ -29,8 +29,7 @@
                                     name="first_name"
                                     id="first_name"
                                     class="mt-1 w-full rounded-md border border-zinc-900/10 px-3 py-2 shadow-sm placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-                                    disabled
-                                />
+                                    />
                             </div>
                             
                             <div>
@@ -42,8 +41,7 @@
                                     name="last_name"
                                     id="last_name"
                                     class="mt-1 w-full rounded-md border border-zinc-900/10 px-3 py-2 shadow-sm placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-                                    disabled
-                                />
+                                    />
                             </div>
                         </div>
                         
@@ -56,7 +54,6 @@
                                 name="email"
                                 id="email"
                                 class="mt-1 w-full rounded-md border border-zinc-900/10 px-3 py-2 shadow-sm placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-                                disabled
                             />
                         </div>
                         
@@ -68,7 +65,6 @@
                                 name="subject"
                                 id="subject"
                                 class="mt-1 w-full rounded-md border border-zinc-900/10 px-3 py-2 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-                                disabled
                             >
                                 <option>Project Inquiry</option>
                                 <option>Consultation Request</option>
@@ -88,19 +84,15 @@
                                 rows="6"
                                 class="mt-1 w-full rounded-md border border-zinc-900/10 px-3 py-2 shadow-sm placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
                                 placeholder="Tell me about your project..."
-                                disabled
                             ></textarea>
                         </div>
                         
                         <div>
-                            <x-ui.button variant="primary" type="submit">
-                                Send Message →
-                            </x-ui.button>
+                            <x-ui.gradient-button variant="primary" type="submit" icon="true">
+                                Send Message
+                            </x-ui.gradient-button>
                         </div>
                         
-                        <p class="text-xs text-zinc-500 dark:text-zinc-400">
-                            * Contact form coming soon. For now, please email me directly at joey@jkudish.com
-                        </p>
                     </form>
                 </div>
             </div>

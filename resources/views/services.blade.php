@@ -97,9 +97,9 @@
                 Let's discuss your project and find the right solution for your needs.
             </p>
             <div class="mt-6">
-                <x-ui.button variant="primary" href="mailto:joey@jkudish.com">
-                    Schedule a Consultation →
-                </x-ui.button>
+                <x-ui.gradient-button variant="primary" href="mailto:joey@jkudish.com" icon="true">
+                    Schedule a Consultation
+                </x-ui.gradient-button>
             </div>
         </div>
     </x-ui.section>

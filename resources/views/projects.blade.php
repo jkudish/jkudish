@@ -139,9 +139,9 @@
                 Want to work together on your next project?
             </p>
             <div class="mt-4">
-                <x-ui.button variant="primary" href="{{ route('services') }}">
-                    View My Services →
-                </x-ui.button>
+                <x-ui.gradient-button variant="primary" href="{{ route('services') }}" icon="true">
+                    View My Services
+                </x-ui.gradient-button>
             </div>
         </div>
     </div>

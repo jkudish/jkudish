@@ -42,8 +42,8 @@ $services = [
     </div>
     
     <div class="mt-8 text-center">
-        <x-ui.button variant="primary" href="{{ route('services') }}">
-            View All Services →
-        </x-ui.button>
+        <x-ui.gradient-button variant="primary" href="{{ route('services') }}" icon="true">
+            View All Services
+        </x-ui.gradient-button>
     </div>
 </div>

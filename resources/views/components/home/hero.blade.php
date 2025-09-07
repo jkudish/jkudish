@@ -21,13 +21,10 @@
             I've built software at Automattic, led tech at Image Salon, and shipped products used by millions. Now I help businesses build better software and automate with AI.
         </p>
         
-        <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:gap-6 justify-center lg:justify-start">
-            <x-ui.button variant="primary" href="{{ route('services') }}">
-                Work With Me →
-            </x-ui.button>
-            <x-ui.button variant="secondary" href="{{ route('newsletter') }}">
-                Read The Maker Notes →
-            </x-ui.button>
+        <div class="mt-8 flex justify-center lg:justify-start">
+            <x-ui.gradient-button variant="primary" href="{{ route('services') }}" icon="true">
+                Schedule a Consultation
+            </x-ui.gradient-button>
         </div>
     </div>
 </div>

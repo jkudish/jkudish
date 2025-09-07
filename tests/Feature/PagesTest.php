@@ -7,8 +7,7 @@ it('can access the home page', function () {
         ->assertOk()
         ->assertSee("Hey, I'm Joey", false)
         ->assertSee("I Build Software That Works")
-        ->assertSee("Work With Me")
-        ->assertSee("Read The Maker Notes");
+        ->assertSee("Schedule a Consultation");
 });
 
 it('can access the services page', function () {

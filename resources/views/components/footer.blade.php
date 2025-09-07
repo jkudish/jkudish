@@ -18,7 +18,7 @@
                             placeholder="Enter your email"
                             aria-label="Email address"
                             class="min-w-0 flex-auto rounded-md border border-zinc-700 bg-zinc-800 px-4 py-3 text-white placeholder:text-zinc-500 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 sm:text-sm"
-                            disabled
+                            required
                         />
                         <button
                             type="submit"
@@ -29,7 +29,7 @@
                     </form>
                     
                     <p class="mt-4 text-xs text-zinc-500">
-                        No spam, unsubscribe anytime. Coming January 2025.
+                        No spam, unsubscribe anytime.
                     </p>
                 </div>
             </div>
@@ -241,6 +241,9 @@
                 <div class="mt-8 text-center">
                     <p class="text-sm text-zinc-400">
                         © {{ date('Y') }} Joey Kudish. All rights reserved.
+                    </p>
+                    <p class="mt-2 text-sm text-zinc-400">
+                        <a href="mailto:joey@jkudish.com" class="text-teal-500 hover:text-teal-400 transition-colors">joey@jkudish.com</a>
                     </p>
                 </div>
             </div>

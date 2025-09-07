@@ -101,7 +101,6 @@
                                     id="email"
                                     placeholder="Your email address"
                                     class="w-full rounded-md border border-zinc-900/10 px-3 py-2 shadow-sm placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-                                    disabled
                                 />
                             </div>
                             
@@ -113,17 +112,16 @@
                                     id="name"
                                     placeholder="First name (optional)"
                                     class="w-full rounded-md border border-zinc-900/10 px-3 py-2 shadow-sm placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-                                    disabled
                                 />
                             </div>
                             
-                            <x-ui.button variant="primary" type="submit" class="w-full">
+                            <x-ui.gradient-button variant="primary" type="submit" class="w-full">
                                 Subscribe → It's Free
-                            </x-ui.button>
+                            </x-ui.gradient-button>
                         </form>
                         
                         <p class="mt-4 text-xs text-zinc-500 dark:text-zinc-400">
-                            Coming soon! Enter your email to be notified when we launch. No spam, unsubscribe anytime.
+                            No spam, unsubscribe anytime.
                         </p>
                     </div>
                     
