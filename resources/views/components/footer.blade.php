@@ -10,7 +10,7 @@
                     <p class="mt-4 text-lg text-zinc-300">
                         Weekly insights from building indie projects, AI automation workflows, and 15+ years of development experience.
                     </p>
-                    
+
                     <form class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center" action="{{ route('newsletter') }}" method="GET">
                         <input
                             type="email"
@@ -24,7 +24,7 @@
                             Subscribe → It's Free
                         </x-ui.gradient-button>
                     </form>
-                    
+
                     <p class="mt-4 text-xs text-zinc-500">
                         No spam, unsubscribe anytime.
                     </p>
@@ -32,7 +32,7 @@
             </div>
         </x-ui.container>
     </div>
-    
+
     {{-- Footer Links --}}
     <x-ui.container size="default" padding="true">
         <div class="py-12 lg:py-16">
@@ -65,7 +65,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
                 {{-- Column 2: Services --}}
                 <div>
                     <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-400">
@@ -94,7 +94,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
                 {{-- Column 3: Connect --}}
                 <div>
                     <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-400">
@@ -118,7 +118,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
                 {{-- Column 4: Resources --}}
                 <div>
                     <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-400">
@@ -148,7 +148,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             {{-- Social Links --}}
             <div class="mt-12 border-t border-zinc-800 pt-8 dark:border-zinc-900">
                 <div class="flex justify-center space-x-6">
@@ -216,8 +216,8 @@
                             <path d="M13.147 17.423a0.984 0.984 0 1 1 -1.968 0 0.984 0.984 0 0 1 1.968 0"/>
                         </svg>
                     </a>
-                    <a class="group -m-1 p-1" 
-                       aria-label="Follow on LinkedIn" 
+                    <a class="group -m-1 p-1"
+                       aria-label="Follow on LinkedIn"
                        href="https://www.linkedin.com/in/jkudish/"
                        target="_blank"
                        rel="noopener noreferrer">
@@ -228,7 +228,7 @@
                         </svg>
                     </a>
                 </div>
-                
+
                 {{-- Bottom Copyright --}}
                 <div class="mt-8 text-center">
                     <p class="text-sm text-zinc-400">
