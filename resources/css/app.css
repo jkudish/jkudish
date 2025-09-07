@@ -7,28 +7,28 @@
     @font-face {
         font-family: 'Telegraf UltraBold';
         font-style: normal;
-        font-weight: normal;
-        src: local('Telegraf UltraBold'), url('https://jkudish.com/fonts/Telegraf UltraBold 800.woff') format('woff');
+        font-weight: 800;
+        src: local('Telegraf UltraBold'), url('/fonts/Telegraf UltraBold 800.woff') format('woff');
     }
 
     @font-face {
         font-family: 'muliregular';
-        src: url('https://jkudish.com/fonts/muli-regular-webfont.woff2') format('woff2'),
-        url('https://jkudish.com/fonts/muli-regular-webfont.woff') format('woff');
-        font-weight: normal;
+        src: url('/fonts/muli-regular-webfont.woff2') format('woff2'),
+             url('/fonts/muli-regular-webfont.woff') format('woff');
+        font-weight: 400;
         font-style: normal;
-
     }
 }
 
 body {
-    background-image: url('https://jkudish.com/img/grid.svg');
+    font-family: 'muliregular', ui-sans-serif, system-ui, sans-serif;
+    background-image: url('/img/grid.svg');
     background-repeat: repeat;
     background-size: 300px 300px;
 }
 
 .dark body {
-    background-image: url('https://jkudish.com/img/grid-dark.svg');
+    background-image: url('/img/grid-dark.svg');
 }
 
 /* Fix for grid item borders */

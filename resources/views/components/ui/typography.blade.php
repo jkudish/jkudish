@@ -10,35 +10,35 @@
     $variants = [
         'h1' => [
             'tag' => 'h1',
-            'class' => 'text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight'
+            'class' => 'text-4xl sm:text-5xl lg:text-6xl font-title font-bold tracking-tight'
         ],
         'h2' => [
             'tag' => 'h2',
-            'class' => 'text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight'
+            'class' => 'text-2xl sm:text-3xl lg:text-4xl font-title font-bold tracking-tight'
         ],
         'h3' => [
             'tag' => 'h3',
-            'class' => 'text-xl sm:text-2xl font-semibold'
+            'class' => 'text-xl sm:text-2xl font-title font-semibold'
         ],
         'h4' => [
             'tag' => 'h4',
-            'class' => 'text-lg sm:text-xl font-semibold'
+            'class' => 'text-lg sm:text-xl font-title font-semibold'
         ],
         'lead' => [
             'tag' => 'p',
-            'class' => 'text-lg sm:text-xl leading-relaxed'
+            'class' => 'text-lg sm:text-xl font-sans leading-relaxed'
         ],
         'body' => [
             'tag' => 'p',
-            'class' => 'text-base'
+            'class' => 'text-base font-sans'
         ],
         'small' => [
             'tag' => 'p',
-            'class' => 'text-sm'
+            'class' => 'text-sm font-sans'
         ],
         'caption' => [
             'tag' => 'p',
-            'class' => 'text-xs'
+            'class' => 'text-xs font-sans'
         ],
     ];
     
