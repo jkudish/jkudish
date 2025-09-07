@@ -1,9 +1,9 @@
 <x-layout title="The Maker Notes - Joey Kudish">
-    <div class="mx-auto max-w-2xl lg:max-w-5xl">
+    <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <header class="max-w-2xl">
-            <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+            <x-ui.typography variant="h1">
                 📬 The Maker Notes
-            </h1>
+            </x-ui.typography>
             <p class="mt-6 text-lg text-zinc-600 dark:text-zinc-400">
                 Weekly insights from building indie projects, automating with AI, and running a software business. No fluff, just practical lessons from someone doing the work.
             </p>
@@ -12,9 +12,9 @@
         <div class="mt-16 grid gap-16 lg:grid-cols-3 lg:gap-8">
             <div class="lg:col-span-2">
                 <div class="rounded-2xl bg-zinc-50 p-8 dark:bg-zinc-800/50">
-                    <h2 class="text-xl font-semibold text-zinc-800 dark:text-zinc-100">
+                    <x-ui.typography variant="h3">
                         What You'll Get
-                    </h2>
+                    </x-ui.typography>
                     
                     <div class="mt-6 space-y-4">
                         @php
@@ -40,9 +40,9 @@
                         
                         @foreach($benefits as $benefit)
                         <div>
-                            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">
+                            <x-ui.typography variant="h4">
                                 {{ $benefit['title'] }}
-                            </h3>
+                            </x-ui.typography>
                             <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
                                 {{ $benefit['description'] }}
                             </p>
@@ -52,9 +52,9 @@
                 </div>
                 
                 <div class="mt-8">
-                    <h2 class="text-xl font-semibold text-zinc-800 dark:text-zinc-100">
+                    <x-ui.typography variant="h3">
                         Recent Topics
-                    </h2>
+                    </x-ui.typography>
                     
                     <ul class="mt-6 space-y-3">
                         @php
@@ -83,9 +83,9 @@
             <div>
                 <div class="sticky top-8">
                     <div class="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-                        <h2 class="text-lg font-semibold text-zinc-800 dark:text-zinc-100">
+                        <x-ui.typography variant="h4">
                             Subscribe Now
-                        </h2>
+                        </x-ui.typography>
                         
                         <p class="mt-3 text-sm text-zinc-600 dark:text-zinc-400">
                             Join other makers, developers, and entrepreneurs getting weekly insights.

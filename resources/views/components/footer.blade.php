@@ -20,12 +20,9 @@
                             class="min-w-0 flex-auto rounded-md border border-zinc-700 bg-zinc-800 px-4 py-3 text-white placeholder:text-zinc-500 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 sm:text-sm"
                             required
                         />
-                        <button
-                            type="submit"
-                            class="inline-flex items-center justify-center rounded-md bg-teal-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/50 transition-colors"
-                        >
+                        <x-ui.gradient-button variant="primary" type="submit">
                             Subscribe → It's Free
-                        </button>
+                        </x-ui.gradient-button>
                     </form>
                     
                     <p class="mt-4 text-xs text-zinc-500">

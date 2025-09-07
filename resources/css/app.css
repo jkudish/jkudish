@@ -30,3 +30,14 @@ body {
 .dark body {
     background-image: url('https://jkudish.com/img/grid-dark.svg');
 }
+
+/* Fix for grid item borders */
+.logo-grid > div {
+    border-right: 1px solid rgb(228 228 231 / 0.5);
+    border-bottom: 1px solid rgb(228 228 231 / 0.5);
+}
+
+.dark .logo-grid > div {
+    border-right-color: rgb(63 63 70 / 0.5);
+    border-bottom-color: rgb(63 63 70 / 0.5);
+}

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 
 // redirect slides subdomain to speaking
 Route::domain('slides.jkudish.com')->group(function () {
@@ -14,8 +15,10 @@ Route::middleware('cache.headers:public;max_age=2628000;etag')->group(function (
     Route::view('/services', 'services')->name('services');
     Route::view('/projects', 'projects')->name('projects');
     Route::view('/newsletter', 'newsletter')->name('newsletter');
-    Route::view('/contact', 'contact')->name('contact');
+    Route::get('/contact', [ContactController::class, 'show'])->name('contact');
 });
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 Route::redirect('/presents', '/speaking');
 Route::redirect('/slides', '/speaking');

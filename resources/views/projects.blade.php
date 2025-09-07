@@ -1,18 +1,18 @@
 <x-layout title="Projects - Joey Kudish">
-    <div class="mx-auto max-w-2xl lg:max-w-5xl">
+    <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <header class="max-w-2xl">
-            <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+            <x-ui.typography variant="h1">
                 Projects
-            </h1>
+            </x-ui.typography>
             <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
                 A collection of indie projects I'm building and products I've shipped. Each one solves a real problem I've encountered.
             </p>
         </header>
         
         <div class="mt-16">
-            <h2 class="text-xl font-semibold text-zinc-800 dark:text-zinc-100">
+            <x-ui.typography variant="h3">
                 🚀 Currently Building
-            </h2>
+            </x-ui.typography>
             
             <div class="mt-8 grid gap-6 sm:grid-cols-2">
                 @php
@@ -53,9 +53,9 @@
                     <div class="flex items-start gap-4">
                         <span class="text-3xl">{{ $project['icon'] }}</span>
                         <div class="flex-1">
-                            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">
+                            <x-ui.typography variant="h4">
                                 {{ $project['name'] }}
-                            </h3>
+                            </x-ui.typography>
                             <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
                                 {{ $project['description'] }}
                             </p>
@@ -79,9 +79,9 @@
         </div>
         
         <div class="mt-16">
-            <h2 class="text-xl font-semibold text-zinc-800 dark:text-zinc-100">
+            <x-ui.typography variant="h3">
                 ✅ Past Work
-            </h2>
+            </x-ui.typography>
             
             <div class="mt-8 space-y-8">
                 @php
@@ -118,9 +118,9 @@
                 
                 @foreach($pastWork as $category)
                 <div>
-                    <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">
+                    <x-ui.typography variant="h4">
                         {{ $category['category'] }}
-                    </h3>
+                    </x-ui.typography>
                     <ul class="mt-4 space-y-2">
                         @foreach($category['items'] as $item)
                         <li class="flex gap-2 text-sm text-zinc-600 dark:text-zinc-400">

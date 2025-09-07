@@ -26,14 +26,43 @@
     
     $backgroundClass = $backgrounds[$background] ?? '';
     $spacingClass = $spacings[$spacing] ?? $spacings['normal'];
+    
+    // Container sizes to match content width
+    $containerSizes = [
+        'narrow' => 'max-w-3xl',
+        'default' => 'max-w-7xl',
+        'wide' => 'max-w-7xl',
+        'full' => 'max-w-full',
+    ];
+    
+    $containerClass = $containerSizes[$containerSize] ?? $containerSizes['default'];
 @endphp
 
-<section {{ $attributes->merge(['class' => "relative {$backgroundClass} {$spacingClass}"]) }}>
-    @if($container)
-        <x-ui.container :size="$containerSize">
+@if($background !== 'none')
+    {{-- Wrapper to center the background container --}}
+    <div class="flex justify-center my-4 lg:my-6">
+        {{-- Background container that matches content width --}}
+        <section class="w-full {{ $containerClass }} mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="{{ $backgroundClass }} {{ $spacingClass }} rounded-lg">
+                @if($container)
+                    <div class="px-6 sm:px-8 lg:px-10">
+                        {{ $slot }}
+                    </div>
+                @else
+                    {{ $slot }}
+                @endif
+            </div>
+        </section>
+    </div>
+@else
+    {{-- No background - just use container --}}
+    <section {{ $attributes->merge(['class' => "relative {$spacingClass}"]) }}>
+        @if($container)
+            <x-ui.container :size="$containerSize">
+                {{ $slot }}
+            </x-ui.container>
+        @else
             {{ $slot }}
-        </x-ui.container>
-    @else
-        {{ $slot }}
-    @endif
-</section>
+        @endif
+    </section>
+@endif

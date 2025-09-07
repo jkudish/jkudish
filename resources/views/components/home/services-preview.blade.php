@@ -1,49 +1,82 @@
 @php
 $services = [
     [
-        'name' => '"Fix My Code Mess" Sprint',
-        'description' => 'Your codebase needs love. Your team needs direction. Let\'s clean it up.',
-        'pricing' => 'Starting at $3k/week',
+        'icon' => 'code',
+        'name' => 'Code Cleanup & Refactoring',
+        'description' => 'Transform your legacy codebase into maintainable, scalable software. Fix bugs, improve performance, and modernize your tech stack.',
+        'pricing' => 'Starting at $3,000/week',
+        'features' => ['Code audit', 'Performance optimization', 'Documentation'],
     ],
     [
-        'name' => '"Build My MVP" Package',
-        'description' => 'You have an idea. I\'ll help you ship it in 30 days.',
-        'pricing' => 'Fixed-price sprints',
+        'icon' => 'rocket',
+        'name' => 'MVP Development',
+        'description' => 'Ship your product idea in 30 days. Full-stack development from concept to deployment with modern frameworks.',
+        'pricing' => 'Fixed-price from $15,000',
+        'features' => ['30-day delivery', 'Full-stack development', 'Launch support'],
     ],
     [
-        'name' => '"Automate Everything" Transformation',
-        'description' => 'Manual processes killing your productivity? Let\'s automate with AI + n8n.',
-        'pricing' => 'Custom pricing based on scope',
+        'icon' => 'sparkles',
+        'name' => 'AI Automation',
+        'description' => 'Automate repetitive tasks and workflows with custom AI solutions. Save time and reduce errors with intelligent automation.',
+        'pricing' => 'Custom pricing',
+        'features' => ['Process automation', 'AI integration', 'Workflow optimization'],
     ],
 ];
 @endphp
 
 <div>
-    <h2 class="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-3xl">
-        💼 Three Ways I Can Help
-    </h2>
+    <div class="text-center">
+        <x-ui.typography variant="h2">
+            How I Can Help Your Business
+        </x-ui.typography>
+        <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
+            Choose the service that best fits your needs
+        </p>
+    </div>
     
-    <div class="mt-8 grid gap-6 lg:grid-cols-3">
-        @foreach($services as $service)
-        <div class="rounded-2xl border border-zinc-100 p-6 hover:shadow-lg transition-shadow dark:border-zinc-700/40 dark:hover:border-zinc-600">
-            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">
-                {{ $service['name'] }}
-            </h3>
-            
-            <p class="mt-3 text-sm text-zinc-600 dark:text-zinc-400">
-                {{ $service['description'] }}
-            </p>
-            
-            <p class="mt-4 text-sm font-medium text-teal-600 dark:text-teal-400">
-                {{ $service['pricing'] }}
-            </p>
-        </div>
+    <div class="mt-12 grid gap-8 lg:grid-cols-3">
+        @foreach($services as $index => $service)
+        <x-ui.gradient-border variant="{{ $index === 1 ? 'primary' : 'primary' }}" hover="true">
+            <div class="p-6">
+                <div class="flex items-center justify-between">
+                    <x-ui.animated-icon icon="{{ $service['icon'] }}" size="w-8 h-8" animation="none" color="#06b6d4" />
+                    @if($index === 1)
+                        <x-ui.status-badge status="new" pulse="true">Popular</x-ui.status-badge>
+                    @endif
+                </div>
+                
+                <x-ui.typography variant="h4" class="mt-4">
+                    {{ $service['name'] }}
+                </x-ui.typography>
+                
+                <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                    {{ $service['description'] }}
+                </p>
+                
+                <ul class="mt-4 space-y-2">
+                    @foreach($service['features'] as $feature)
+                    <li class="flex items-center text-sm text-zinc-600 dark:text-zinc-400">
+                        <svg class="w-4 h-4 mr-2 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        {{ $feature }}
+                    </li>
+                    @endforeach
+                </ul>
+                
+                <div class="mt-6 pt-6 border-t border-zinc-200 dark:border-zinc-700">
+                    <p class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                        {{ $service['pricing'] }}
+                    </p>
+                </div>
+            </div>
+        </x-ui.gradient-border>
         @endforeach
     </div>
     
-    <div class="mt-8 text-center">
+    <div class="mt-12 text-center">
         <x-ui.gradient-button variant="primary" href="{{ route('services') }}" icon="true">
-            View All Services
+            View Full Service Details
         </x-ui.gradient-button>
     </div>
 </div>

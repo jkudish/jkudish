@@ -1,26 +1,37 @@
 <x-layout>
-    {{-- Hero Section with gradient mesh background --}}
-    <x-ui.section background="gradient-mesh" spacing="large">
-        <x-home.hero />
-    </x-ui.section>
-    
-    {{-- About Section with frost background --}}
-    <x-ui.section background="frost" spacing="normal">
-        <x-home.about />
-    </x-ui.section>
-    
-    {{-- Current Projects with pattern background --}}
-    <x-ui.section background="pattern" spacing="normal">
-        <x-home.current-projects />
-    </x-ui.section>
-    
-    {{-- Services Preview with white background --}}
-    <x-ui.section background="white" spacing="normal">
-        <x-home.services-preview />
-    </x-ui.section>
-    
-    {{-- Social Proof with gradient background --}}
-    <x-ui.section background="gradient" spacing="normal">
-        <x-home.social-proof />
-    </x-ui.section>
+    <div class="flex justify-center my-8 lg:my-12">
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-lg overflow-hidden">
+                {{-- Hero Section --}}
+                <div class="px-6 sm:px-8 lg:px-10 py-16 lg:py-24 xl:py-32">
+                    <x-home.hero />
+                </div>
+
+                {{-- Client Logos --}}
+                <div class="px-6 sm:px-8 lg:px-10 py-8 lg:py-12 border-t border-zinc-200/50 dark:border-zinc-700/50">
+                    <x-home.client-logos />
+                </div>
+
+                {{-- About Section --}}
+                <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 border-t border-zinc-200/50 dark:border-zinc-700/50">
+                    <x-home.about />
+                </div>
+
+                {{-- Services Preview --}}
+                <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 border-t border-zinc-200/50 dark:border-zinc-700/50">
+                    <x-home.services-preview />
+                </div>
+
+                {{-- Current Projects --}}
+                <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 border-t border-zinc-200/50 dark:border-zinc-700/50">
+                    <x-home.current-projects />
+                </div>
+
+                {{-- Social Proof --}}
+                <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 border-t border-zinc-200/50 dark:border-zinc-700/50">
+                    <x-home.social-proof />
+                </div>
+            </div>
+        </div>
+    </div>
 </x-layout>

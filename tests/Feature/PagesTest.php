@@ -5,18 +5,18 @@ use function Pest\Laravel\get;
 it('can access the home page', function () {
     get('/')
         ->assertOk()
-        ->assertSee("Hey, I'm Joey", false)
-        ->assertSee("I Build Software That Works")
-        ->assertSee("Schedule a Consultation");
+        ->assertSee("Senior Software Engineer", false)
+        ->assertSee("Who Ships Results")
+        ->assertSee("Let's Talk About Your Project", false);
 });
 
 it('can access the services page', function () {
     get('/services')
         ->assertOk()
-        ->assertSee('Services')
-        ->assertSee('"Fix My Code Mess" Sprint')
-        ->assertSee('"Build My MVP" Package')
-        ->assertSee('"Automate Everything" Transformation');
+        ->assertSee('How I Can Help Your Business')
+        ->assertSee('Code Cleanup')
+        ->assertSee('MVP Development')
+        ->assertSee('AI Automation');
 });
 
 it('can access the projects page', function () {
@@ -62,11 +62,11 @@ it('has working navigation links', function () {
 it('shows all home page sections', function () {
     get('/')
         ->assertOk()
-        ->assertSee('Quick Background')
-        ->assertSee('My Expertise')
+        ->assertSee('Professional Journey')
+        ->assertSee('Technical Expertise')
         ->assertSee("What I'm Building Right Now", false)
-        ->assertSee('Three Ways I Can Help')
-        ->assertSee("Things I've Built", false)
+        ->assertSee('How I Can Help Your Business')
+        ->assertSee('Proven Track Record')
         ->assertSee('The Maker Notes');
 });
 
