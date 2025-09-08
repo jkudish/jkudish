@@ -1,23 +1,23 @@
-<footer class="bg-gray-500 bg-clip-padding backdrop-filter  backdrop-blur bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100">
+<footer class="relative mt-24 bg-white/5 dark:bg-zinc-900/30 backdrop-blur-xl backdrop-saturate-150 border-t border-white/10 dark:border-zinc-800/50">
     {{-- Newsletter Section --}}
-    <div class="border-b border-zinc-800/50 dark:border-zinc-900/50">
+    <div class="border-b border-white/10 dark:border-zinc-800/50">
         <x-ui.container size="default" padding="true">
             <div class="py-12 lg:py-16">
                 <div class="mx-auto max-w-2xl text-center">
                     <div class="flex items-center justify-center gap-3 mb-4">
                         <div class="relative">
-                            <div class="absolute inset-0 bg-gradient-to-br from-teal-400 to-emerald-500 rounded-lg blur-lg opacity-30"></div>
-                            <div class="relative bg-zinc-800 p-2.5 rounded-lg">
+                            <div class="absolute inset-0 bg-gradient-to-br from-teal-400 to-emerald-500 rounded-lg blur-lg opacity-[0.015]"></div>
+                            <div class="relative bg-white/10 dark:bg-zinc-800/50 backdrop-blur-sm p-2.5 rounded-lg border border-white/20 dark:border-zinc-700/50">
                                 <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
                             </div>
                         </div>
-                        <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                        <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-3xl">
                             The Maker Notes
                         </h2>
                     </div>
-                    <p class="mt-4 text-lg text-zinc-300">
+                    <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
                         My weekly brain dump: indie projects, AI automation, business experiments, and whatever rabbit holes I went down. For builders who ship.
                     </p>
 
@@ -27,7 +27,7 @@
                             name="email"
                             placeholder="Enter your email"
                             aria-label="Email address"
-                            class="min-w-0 flex-auto rounded-md border border-zinc-700 bg-zinc-800 px-4 py-3 text-white placeholder:text-zinc-500 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 sm:text-sm"
+                            class="min-w-0 flex-auto rounded-md border border-white/20 dark:border-zinc-700/50 bg-white/10 dark:bg-zinc-800/50 backdrop-blur-sm px-4 py-3 text-zinc-900 dark:text-white placeholder:text-zinc-500 dark:placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 sm:text-sm"
                             required
                         />
                         <x-ui.gradient-button variant="primary" type="submit">
@@ -35,7 +35,7 @@
                         </x-ui.gradient-button>
                     </form>
 
-                    <p class="mt-4 text-xs text-zinc-500">
+                    <p class="mt-4 text-xs text-zinc-600 dark:text-zinc-500">
                         No spam. Unsubscribe whenever.
                     </p>
                 </div>
@@ -47,25 +47,25 @@
     <x-ui.container size="default" padding="true">
         <div class="py-12 lg:py-16">
             <div class="flex flex-wrap justify-center gap-x-12 gap-y-3">
-                <a href="{{ route('services') }}" class="text-zinc-300 hover:text-white transition-colors">
+                <a href="{{ route('services') }}" class="text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
                     Services
                 </a>
-                <a href="{{ route('home') }}" class="text-zinc-300 hover:text-white transition-colors">
+                <a href="{{ route('home') }}" class="text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
                     About
                 </a>
-                <a href="{{ route('contact') }}" class="text-zinc-300 hover:text-white transition-colors">
+                <a href="{{ route('contact') }}" class="text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
                     Contact
                 </a>
-                <a href="https://glass.photo/jkudish" target="_blank" rel="noopener noreferrer" class="text-zinc-300 hover:text-white transition-colors">
+                <a href="https://glass.photo/jkudish" target="_blank" rel="noopener noreferrer" class="text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
                     Photography
                 </a>
-                <a href="{{ route('speaking') }}" class="text-zinc-300 hover:text-white transition-colors">
+                <a href="{{ route('speaking') }}" class="text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
                     Speaking
                 </a>
             </div>
 
             {{-- Social Links --}}
-            <div class="mt-12 border-t border-zinc-800 pt-8 dark:border-zinc-900">
+            <div class="mt-12 border-t border-white/10 dark:border-zinc-800/50 pt-8">
                 <div class="flex justify-center space-x-6">
                     <a class="group -m-1 p-1"
                        aria-label="Follow on Blue Sky"
@@ -146,7 +146,7 @@
 
                 {{-- Bottom Copyright --}}
                 <div class="mt-8 text-center">
-                    <p class="text-sm text-zinc-400">
+                    <p class="text-sm text-zinc-600 dark:text-zinc-400">
                         © {{ date('Y') }} Joey Kudish. All rights reserved.
                     </p>
                 </div>
