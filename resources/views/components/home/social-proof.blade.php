@@ -128,22 +128,22 @@ $testimonials = [
         
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 border-l border-t border-zinc-200/50 dark:border-zinc-700/50 rounded-lg overflow-hidden">
             @foreach($companies as $company)
-            <div class="relative bg-white/50 dark:bg-zinc-900/30 hover:bg-zinc-50/70 dark:hover:bg-zinc-800/50 transition-colors border-r border-b border-zinc-200/50 dark:border-zinc-700/50">
+            <div class="relative bg-white/50 dark:bg-zinc-900/30 border-r border-b border-zinc-200/50 dark:border-zinc-700/50">
                 <div class="flex items-center justify-center p-6 h-[120px]">
                     @if($company['class'] === 'standard')
-                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 dark:brightness-0 dark:invert dark:opacity-70 dark:hover:opacity-100 transition-all duration-300" />
+                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-10 w-auto object-contain grayscale opacity-60 dark:brightness-0 dark:invert dark:opacity-70" />
                     @elseif($company['class'] === 'invert-light')
-                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-10 w-auto object-contain invert grayscale opacity-60 hover:grayscale-0 hover:opacity-100 dark:invert-0 dark:brightness-200 dark:grayscale dark:opacity-70 dark:hover:opacity-100 transition-all duration-300" />
+                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-10 w-auto object-contain invert grayscale opacity-60 dark:invert-0 dark:brightness-200 dark:grayscale dark:opacity-70" />
                     @elseif($company['class'] === 'always-invert')
-                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-10 w-auto object-contain invert grayscale opacity-60 hover:grayscale-0 hover:opacity-100 dark:opacity-70 dark:hover:opacity-100 transition-all duration-300" />
+                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-10 w-auto object-contain invert grayscale opacity-60 dark:invert dark:grayscale dark:opacity-70" />
                     @elseif($company['class'] === 'image-salon')
-                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-14 w-auto object-contain grayscale brightness-50 opacity-100 hover:grayscale-0 hover:brightness-100 dark:brightness-0 dark:invert dark:opacity-70 dark:hover:opacity-100 transition-all duration-300" />
+                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-14 w-auto object-contain grayscale brightness-50 opacity-100 dark:brightness-0 dark:invert dark:opacity-70" />
                     @elseif($company['class'] === 'metorik')
-                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-10 w-auto object-contain grayscale brightness-75 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 dark:invert dark:grayscale dark:opacity-70 dark:hover:opacity-100 transition-all duration-300" />
+                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-10 w-auto object-contain grayscale brightness-75 opacity-70 dark:invert dark:grayscale dark:opacity-70" />
                     @elseif($company['class'] === 'colorful')
-                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-10 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 dark:grayscale dark:brightness-150 dark:opacity-90 dark:hover:grayscale-0 dark:hover:opacity-100 transition-all duration-300" />
+                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-10 w-auto object-contain grayscale opacity-70 dark:grayscale dark:brightness-150 dark:opacity-90" />
                     @elseif($company['class'] === 'turquoise-goat')
-                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-16 w-auto object-contain invert grayscale opacity-60 hover:grayscale-0 hover:opacity-90 dark:invert-0 dark:brightness-200 dark:grayscale dark:opacity-70 dark:hover:opacity-100 transition-all duration-300" />
+                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-16 w-auto object-contain invert grayscale opacity-60 dark:invert-0 dark:brightness-200 dark:grayscale dark:opacity-70" />
                     @endif
                 </div>
             </div>

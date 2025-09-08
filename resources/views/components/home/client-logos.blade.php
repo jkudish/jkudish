@@ -78,7 +78,7 @@ $companies = array_slice($allCompanies, 0, 8);
     {{-- Logo Grid --}}
     <div class="logo-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 border-l border-t border-zinc-200/50 dark:border-zinc-700/50 rounded-lg overflow-hidden">
         @foreach($companies as $company)
-        <div class="relative bg-white/50 dark:bg-zinc-900/30 hover:bg-zinc-50/70 dark:hover:bg-zinc-800/50 transition-colors border-r border-b border-zinc-200/50 dark:border-zinc-700/50">
+        <div class="relative bg-white/50 dark:bg-zinc-900/30 border-r border-b border-zinc-200/50 dark:border-zinc-700/50">
             <div class="flex items-center justify-center p-6 lg:p-8 h-[120px] lg:h-[140px]">
                 @if($company['class'] === 'standard')
                     {{-- Standard logos that work well with default filters --}}
@@ -87,9 +87,8 @@ $companies = array_slice($allCompanies, 0, 8);
                         alt="{{ $company['name'] }}"
                         loading="lazy"
                         class="max-h-10 lg:max-h-12 w-auto object-contain block mx-auto
-                               grayscale opacity-60 hover:grayscale-0 hover:opacity-100
-                               dark:brightness-0 dark:invert dark:opacity-70 dark:hover:opacity-100
-                               transition-all duration-300"
+                               grayscale opacity-60
+                               dark:brightness-0 dark:invert dark:opacity-70"
                     />
                 @elseif($company['class'] === 'invert-light')
                     {{-- Automattic - dark logo that needs special treatment --}}
@@ -98,9 +97,8 @@ $companies = array_slice($allCompanies, 0, 8);
                         alt="{{ $company['name'] }}"
                         loading="lazy"
                         class="max-h-10 lg:max-h-12 w-auto object-contain block mx-auto
-                               invert grayscale opacity-60 hover:grayscale-0 hover:opacity-100
-                               dark:invert-0 dark:brightness-200 dark:grayscale dark:opacity-70 dark:hover:opacity-100
-                               transition-all duration-300"
+                               invert grayscale opacity-60
+                               dark:invert-0 dark:brightness-200 dark:grayscale dark:opacity-70"
                     />
                 @elseif($company['class'] === 'always-invert')
                     {{-- Sotheby's - very dark logo, always needs inversion --}}
@@ -109,9 +107,8 @@ $companies = array_slice($allCompanies, 0, 8);
                         alt="{{ $company['name'] }}"
                         loading="lazy"
                         class="max-h-10 lg:max-h-12 w-auto object-contain block mx-auto
-                               invert grayscale opacity-60 hover:grayscale-0 hover:opacity-100
-                               dark:opacity-70 dark:hover:opacity-100
-                               transition-all duration-300"
+                               invert grayscale opacity-60
+                               dark:invert dark:grayscale dark:opacity-70"
                     />
                 @elseif($company['class'] === 'image-salon')
                     {{-- Image Salon - gold logo, needs special handling --}}
@@ -120,9 +117,8 @@ $companies = array_slice($allCompanies, 0, 8);
                         alt="{{ $company['name'] }}"
                         loading="lazy"
                         class="max-h-14 lg:max-h-16 w-auto object-contain block mx-auto
-                               grayscale brightness-50 opacity-100 hover:grayscale-0 hover:brightness-100
-                               dark:brightness-0 dark:invert dark:opacity-70 dark:hover:opacity-100
-                               transition-all duration-300"
+                               grayscale brightness-50 opacity-100
+                               dark:brightness-0 dark:invert dark:opacity-70"
                     />
                 @elseif($company['class'] === 'metorik')
                     {{-- Metorik - colorful logo with black text, needs careful filtering --}}
@@ -131,9 +127,8 @@ $companies = array_slice($allCompanies, 0, 8);
                         alt="{{ $company['name'] }}"
                         loading="lazy"
                         class="max-h-10 lg:max-h-12 w-auto object-contain block mx-auto
-                               grayscale brightness-75 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100
-                               dark:invert dark:grayscale dark:opacity-70 dark:hover:opacity-100
-                               transition-all duration-300"
+                               grayscale brightness-75 opacity-70
+                               dark:invert dark:grayscale dark:opacity-70"
                     />
                 @elseif($company['class'] === 'colorful')
                     {{-- Colorful logos like DVLOP and TELUS Health --}}
@@ -142,9 +137,8 @@ $companies = array_slice($allCompanies, 0, 8);
                         alt="{{ $company['name'] }}"
                         loading="lazy"
                         class="max-h-10 lg:max-h-12 w-auto object-contain block mx-auto
-                               grayscale opacity-70 hover:grayscale-0 hover:opacity-100
-                               dark:grayscale dark:brightness-150 dark:opacity-90 dark:hover:grayscale-0 dark:hover:opacity-100
-                               transition-all duration-300"
+                               grayscale opacity-70
+                               dark:grayscale dark:brightness-150 dark:opacity-90"
                     />
                 @elseif($company['class'] === 'turquoise-goat')
                     {{-- Turquoise Goat - very light logo needs strong treatment and larger size --}}
@@ -153,9 +147,8 @@ $companies = array_slice($allCompanies, 0, 8);
                         alt="{{ $company['name'] }}"
                         loading="lazy"
                         class="max-h-16 lg:max-h-20 w-auto object-contain block mx-auto
-                               invert grayscale opacity-60 hover:grayscale-0 hover:opacity-90
-                               dark:invert-0 dark:brightness-200 dark:grayscale dark:opacity-70 dark:hover:opacity-100
-                               transition-all duration-300"
+                               invert grayscale opacity-60
+                               dark:invert-0 dark:brightness-200 dark:grayscale dark:opacity-70"
                     />
                 @endif
             </div>
