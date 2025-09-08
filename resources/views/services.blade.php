@@ -9,114 +9,115 @@
             </p>
         </header>
     </x-ui.section>
-    
+
     <x-ui.section background="white" spacing="normal">
         <div class="space-y-20">
             @php
             $services = [
                 [
-                    'id' => 'code-cleanup',
+                    'id' => 'code-audit-strategy',
                     'icon' => 'code',
-                    'name' => 'Code Cleanup & Refactoring',
-                    'tagline' => 'Transform your legacy codebase into maintainable, scalable software',
-                    'description' => 'Your codebase has become a tangled mess. Technical debt is slowing everything down. Your team is struggling with bugs and slow development. I\'ll dive in, clean it up, establish best practices, and get your team back on track.',
+                    'name' => 'Code Audit & Strategy',
+                    'tagline' => 'Get an Experienced Engineer\'s Perspective',
+                    'description' => 'Transform uncertainty into a clear technical roadmap. Your code needs a second opinion. Whether you built with AI tools, have a legacy Laravel app, or need to automate manual processes, I\'ll review everything and deliver actionable insights. Get confidence to move forward with a prioritized plan from someone who\'s shipped code to millions of users and built software that\'s been running in production for over a decade.',
                     'ideal_for' => [
-                        'Teams struggling with legacy code',
-                        'Products experiencing performance issues',
-                        'Companies preparing for scale',
-                        'Organizations needing code modernization',
+                        'Founders who built with ChatGPT, v0, Lovable, Replit, Bolt, etc.',
+                        'Teams with performance or security concerns',
+                        'Businesses drowning in manual processes',
+                        'Websites needing modernization',
+                        'Development teams wanting AI workflow optimization',
                     ],
                     'deliverables' => [
-                        'Comprehensive code audit report',
-                        'Refactored, clean codebase',
-                        'Performance optimizations (typically 50-75% improvement)',
-                        'Updated documentation and best practices guide',
-                        'Knowledge transfer sessions with your team',
+                        'Comprehensive code/process audit report',
+                        'Security and performance analysis',
+                        'Prioritized roadmap with effort estimates',
+                        'Cost-benefit analysis for improvements',
+                        '30-minute strategy call to discuss findings',
                     ],
                     'process' => [
-                        'Code audit and analysis',
-                        'Priority roadmap creation',
-                        'Incremental refactoring sprints',
-                        'Testing and validation',
-                        'Team training and handoff',
+                        'Initial consultation and access setup',
+                        'Deep dive analysis',
+                        'Report preparation and recommendations',
+                        'Strategy call and Q&A session',
+                        'Optional follow-up implementation support',
                     ],
-                    'pricing' => 'Starting at $3,000/week',
-                    'duration' => '2-8 weeks typical',
-                    'cta' => 'Fix My Code',
+                    'pricing' => 'Starting at $2,500',
+                    'duration' => '7-14 business days',
+                    'cta' => 'Book Your Audit',
                 ],
                 [
-                    'id' => 'mvp-development',
+                    'id' => 'build-product',
                     'icon' => 'rocket',
-                    'name' => 'MVP Development',
-                    'tagline' => 'Ship your product idea in 30 days',
-                    'description' => 'You have a validated idea and need to get to market fast. I\'ll help you build and ship a working MVP using Laravel, modern JavaScript, and proven architectural patterns. Get real user feedback quickly.',
+                    'name' => 'Build Your Product',
+                    'tagline' => 'Ship Something Real',
+                    'description' => 'From idea to revenue in weeks, not months. Stop overthinking, start shipping. I\'ll build your MVP, transform your AI prototype into production software, or create the technical foundation for your business. Using Laravel, JavaScript, and proven patterns, I build software that scales. No agencies, no junior devs, no excuses; just production ready code from an experienced engineer.',
                     'ideal_for' => [
-                        'Startups needing their first product',
-                        'Enterprises testing new ideas',
-                        'Founders validating concepts',
-                        'Companies entering new markets',
+                        'Businesses requiring custom software solutions',
+                        'Founders ready to launch their first product',
+                        'Vibe coders needing help getting their code production-ready',
+                        'Companies testing new product ideas',
                     ],
                     'deliverables' => [
-                        'Fully functional MVP application',
-                        'Responsive web interface',
-                        'Database design and implementation',
-                        'Core feature set implementation',
-                        'Deployment and launch support',
+                        'Fully functional, production-ready application',
+                        'Tech stack built for growth (Laravel/React/Vue)',
+                        'Database design and API architecture',
+                        'Deployment and infrastructure setup',
+                        '30 days of post-launch support (convertible to monthly retainer)',
                     ],
                     'process' => [
-                        'Requirements workshop',
+                        'Requirements workshop and scoping',
                         'Technical architecture design',
-                        'Sprint planning and prioritization',
-                        'Rapid development cycles',
-                        'Launch preparation and deployment',
+                        '2-4 week development sprints',
+                        'Regular progress updates and demos',
+                        'Launch preparation and handover',
                     ],
-                    'pricing' => 'Fixed-price from $15,000',
-                    'duration' => '30-day sprints',
-                    'cta' => 'Build My MVP',
+                    'pricing' => 'Starting at $15,000',
+                    'duration' => '4-12 weeks',
+                    'cta' => 'Start Building',
                 ],
                 [
-                    'id' => 'automation',
+                    'id' => 'ongoing-partnership',
                     'icon' => 'sparkles',
-                    'name' => 'AI Automation',
-                    'tagline' => 'Eliminate repetitive work with intelligent automation',
-                    'description' => 'Stop wasting hours on repetitive tasks. Using AI (GPT-4, Claude) and workflow automation (n8n, Zapier), I\'ll build custom solutions that save your team time and create new revenue opportunities.',
+                    'name' => 'Ongoing Partnership',
+                    'tagline' => 'Fractional CTO-Level Guidance',
+                    'description' => 'Technical leadership without the equity or salary. Get the CTO experience your business needs at a fraction of the cost. From weekly code reviews to strategic technical decisions, I\'ll be your on-demand engineer. Perfect for growing startups, businesses running on automation, or any company that needs consistent technical guidance. Scale up or down as your needs change.',
                     'ideal_for' => [
-                        'Teams drowning in manual processes',
-                        'Companies needing customer service automation',
-                        'Organizations seeking operational efficiency',
-                        'Businesses wanting AI-powered features',
+                        'Startups needing technical guidance',
+                        'Businesses with AI/automation workflows',
+                        'Companies without full-time technical leadership',
+                        'Teams wanting to level up their development',
                     ],
                     'deliverables' => [
-                        'Process analysis and optimization report',
-                        'Custom automation workflows',
-                        'AI model integration and training',
-                        'Documentation and SOPs',
-                        'Team training and support',
+                        'Weekly strategy calls and code reviews',
+                        'Architecture and technology decisions',
+                        'Team mentoring and AI tool training',
+                        'Automation monitoring and optimization',
+                        'Priority support and emergency assistance',
                     ],
                     'process' => [
-                        'Process discovery workshop',
-                        'Automation opportunity analysis',
-                        'Workflow design and development',
-                        'Testing and refinement',
-                        'Training and handover',
+                        'Initial assessment and goal setting',
+                        'Weekly/bi-weekly scheduled sessions',
+                        'Async support via Slack/email',
+                        'Monthly progress reviews',
+                        'Quarterly strategy planning',
                     ],
-                    'pricing' => 'Custom pricing from $5,000',
-                    'duration' => '1-4 weeks typical',
-                    'cta' => 'Automate My Workflow',
+                    'pricing' => '$3,000-$10,000/month',
+                    'duration' => 'Month-to-month',
+                    'cta' => 'Let\'s Partner',
                 ],
             ];
             @endphp
-            
+
             @foreach($services as $index => $service)
             <div id="{{ $service['id'] }}" class="scroll-mt-20">
                 <div class="grid gap-12 lg:grid-cols-5">
                     <div class="lg:col-span-3">
                         <div class="flex items-start gap-4">
-                            <x-ui.animated-icon 
-                                icon="{{ $service['icon'] }}" 
-                                size="w-10 h-10" 
-                                animation="none" 
-                                color="#06b6d4" 
+                            <x-ui.animated-icon
+                                icon="{{ $service['icon'] }}"
+                                size="w-10 h-10"
+                                animation="none"
+                                color="#06b6d4"
                             />
                             <div>
                                 <x-ui.typography variant="h2">
@@ -127,11 +128,11 @@
                                 </p>
                             </div>
                         </div>
-                        
+
                         <p class="mt-6 text-zinc-600 dark:text-zinc-400 leading-relaxed">
                             {{ $service['description'] }}
                         </p>
-                        
+
                         <div class="mt-8">
                             <x-ui.typography variant="small" weight="semibold" class="uppercase tracking-wider" color="muted">
                                 Ideal For
@@ -148,7 +149,7 @@
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="lg:col-span-2">
                         <x-ui.gradient-border variant="primary" hover="false">
                             <div class="p-6 space-y-6">
@@ -165,7 +166,7 @@
                                         @endforeach
                                     </ul>
                                 </div>
-                                
+
                                 <div>
                                     <x-ui.typography variant="small" weight="semibold" class="uppercase tracking-wider" color="muted">
                                         Process
@@ -179,7 +180,7 @@
                                         @endforeach
                                     </ol>
                                 </div>
-                                
+
                                 <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
                                     <div class="flex justify-between items-center mb-4">
                                         <div>
@@ -191,10 +192,10 @@
                                             <div class="font-semibold text-zinc-900 dark:text-zinc-100">{{ $service['duration'] }}</div>
                                         </div>
                                     </div>
-                                    
-                                    <x-ui.gradient-button 
-                                        variant="primary" 
-                                        href="{{ route('contact') }}" 
+
+                                    <x-ui.gradient-button
+                                        variant="primary"
+                                        href="{{ route('contact') }}"
                                         icon="true"
                                         class="w-full justify-center"
                                     >
@@ -205,7 +206,7 @@
                         </x-ui.gradient-border>
                     </div>
                 </div>
-                
+
                 @if(!$loop->last)
                 <div class="mt-20 border-b border-zinc-200 dark:border-zinc-800"></div>
                 @endif
@@ -213,7 +214,7 @@
             @endforeach
         </div>
     </x-ui.section>
-    
+
     <x-ui.section background="gradient" spacing="normal">
         <div class="max-w-3xl mx-auto text-center">
             <x-ui.typography variant="h2">
@@ -222,7 +223,7 @@
             <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
                 Let's have a conversation about your challenges and goals. I'll help you identify the best path forward.
             </p>
-            
+
             <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                 <x-ui.gradient-button variant="primary" href="{{ route('contact') }}" icon="true">
                     Schedule a Free Consultation
@@ -231,13 +232,13 @@
                     Email Me Directly
                 </x-ui.gradient-button>
             </div>
-            
+
             <p class="mt-6 text-sm text-zinc-500 dark:text-zinc-400">
                 Response within 24 hours • No obligation • NDA available
             </p>
         </div>
     </x-ui.section>
-    
+
     <x-ui.section background="white" spacing="normal">
         <div class="grid gap-8 lg:grid-cols-3">
             <div class="text-center">
@@ -251,7 +252,7 @@
                     Initial consultation within 24-48 hours
                 </p>
             </div>
-            
+
             <div class="text-center">
                 <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-teal-100 dark:bg-teal-900/30 mb-4">
                     <svg class="w-6 h-6 text-teal-600 dark:text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -263,7 +264,7 @@
                     15+ years of proven expertise
                 </p>
             </div>
-            
+
             <div class="text-center">
                 <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-teal-100 dark:bg-teal-900/30 mb-4">
                     <svg class="w-6 h-6 text-teal-600 dark:text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -277,7 +278,7 @@
             </div>
         </div>
     </x-ui.section>
-    
+
     {{-- Payment Terms --}}
     <x-ui.section background="gray" spacing="normal">
         <div class="max-w-3xl mx-auto text-center">
@@ -287,7 +288,7 @@
             <x-ui.typography variant="lead" color="muted" class="mt-4">
                 Simple, transparent pricing with flexible payment options
             </x-ui.typography>
-            
+
             <div class="mt-12 grid gap-8 md:grid-cols-3">
                 <div class="text-center">
                     <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-cyan-100 to-blue-100 dark:from-cyan-900/30 dark:to-blue-900/30 mb-4">
@@ -298,7 +299,7 @@
                         Bank transfer, credit card, or your company's preferred payment method
                     </x-ui.typography>
                 </div>
-                
+
                 <div class="text-center">
                     <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-cyan-100 to-blue-100 dark:from-cyan-900/30 dark:to-blue-900/30 mb-4">
                         <span class="text-2xl">📊</span>
@@ -308,7 +309,7 @@
                         50% upfront, 50% on completion. Larger projects can use milestone payments
                     </x-ui.typography>
                 </div>
-                
+
                 <div class="text-center">
                     <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-cyan-100 to-blue-100 dark:from-cyan-900/30 dark:to-blue-900/30 mb-4">
                         <span class="text-2xl">🤝</span>
@@ -319,7 +320,7 @@
                     </x-ui.typography>
                 </div>
             </div>
-            
+
             <div class="mt-12 p-6 rounded-2xl bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
                 <x-ui.typography variant="body" weight="semibold">
                     Money-Back Guarantee
@@ -330,7 +331,7 @@
             </div>
         </div>
     </x-ui.section>
-    
+
     {{-- FAQ Section --}}
     <x-ui.section background="white" spacing="normal">
         <x-services.faq />

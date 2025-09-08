@@ -2,24 +2,24 @@
 $services = [
     [
         'icon' => 'code',
-        'name' => 'Code Cleanup & Refactoring',
-        'description' => 'Transform your legacy codebase into maintainable, scalable software. Fix bugs, improve performance, and modernize your tech stack.',
-        'pricing' => 'Starting at $3,000/week',
-        'features' => ['Code audit', 'Performance optimization', 'Documentation'],
+        'name' => 'Code Audit & Strategy',
+        'description' => 'Get an experienced engineer\'s perspective on your code. Transform uncertainty into a clear technical roadmap with actionable insights.',
+        'pricing' => 'Starting at $1,500',
+        'features' => ['Comprehensive audit report', 'Security & performance analysis', 'Prioritized roadmap'],
     ],
     [
         'icon' => 'rocket',
-        'name' => 'MVP Development',
-        'description' => 'Ship your product idea in 30 days. Full-stack development from concept to deployment with modern frameworks.',
-        'pricing' => 'Fixed-price from $15,000',
-        'features' => ['30-day delivery', 'Full-stack development', 'Launch support'],
+        'name' => 'Build Your Product',
+        'description' => 'Ship something real. From idea to revenue in weeks, not months. Clean code from an experienced engineer.',
+        'pricing' => 'Starting at $15,000',
+        'features' => ['Production-ready application', 'Scalable tech stack', '30 days post-launch support'],
     ],
     [
         'icon' => 'sparkles',
-        'name' => 'AI Automation',
-        'description' => 'Automate repetitive tasks and workflows with custom AI solutions. Save time and reduce errors with intelligent automation.',
-        'pricing' => 'Custom pricing',
-        'features' => ['Process automation', 'AI integration', 'Workflow optimization'],
+        'name' => 'Ongoing Partnership',
+        'description' => 'Your technical co-founder without the equity. Get CTO-level guidance on an ongoing basis.',
+        'pricing' => '$3,000 - $10,000/month',
+        'features' => ['Weekly strategy calls', 'Code reviews & mentoring', 'Priority support'],
     ],
 ];
 @endphp
@@ -33,26 +33,23 @@ $services = [
             Choose the service that best fits your needs
         </p>
     </div>
-    
+
     <div class="mt-12 grid gap-8 lg:grid-cols-3">
         @foreach($services as $index => $service)
         <x-ui.gradient-border variant="{{ $index === 1 ? 'primary' : 'primary' }}" hover="true">
             <div class="p-6">
                 <div class="flex items-center justify-between">
                     <x-ui.animated-icon icon="{{ $service['icon'] }}" size="w-8 h-8" animation="none" color="#06b6d4" />
-                    @if($index === 1)
-                        <x-ui.status-badge status="new" pulse="true">Popular</x-ui.status-badge>
-                    @endif
                 </div>
-                
+
                 <x-ui.typography variant="h4" class="mt-4">
                     {{ $service['name'] }}
                 </x-ui.typography>
-                
+
                 <p class="mt-2 text-sm font-sans text-zinc-600 dark:text-zinc-400">
                     {{ $service['description'] }}
                 </p>
-                
+
                 <ul class="mt-4 space-y-2">
                     @foreach($service['features'] as $feature)
                     <li class="flex items-center text-sm font-sans text-zinc-600 dark:text-zinc-400">
@@ -63,7 +60,7 @@ $services = [
                     </li>
                     @endforeach
                 </ul>
-                
+
                 <div class="mt-6 pt-6 border-t border-zinc-200 dark:border-zinc-700">
                     <p class="text-sm font-sans font-semibold text-zinc-900 dark:text-zinc-100">
                         {{ $service['pricing'] }}
@@ -73,7 +70,7 @@ $services = [
         </x-ui.gradient-border>
         @endforeach
     </div>
-    
+
     <div class="mt-12 text-center">
         <x-ui.gradient-button variant="primary" href="{{ route('services') }}" icon="true">
             View Full Service Details
