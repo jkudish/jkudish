@@ -1,38 +1,46 @@
 @php
-$faqs = [
-    [
-        'question' => 'How do I know which service is right for me?',
-        'answer' => 'Book a free consultation and we\'ll discuss your specific challenges and goals. I\'ll recommend the best approach based on your needs, timeline, and budget. No obligation and no hard sell - just honest advice.'
-    ],
-    [
-        'question' => 'What\'s your typical project timeline?',
-        'answer' => 'Code cleanup projects typically take 2-8 weeks. MVP development is delivered in 30-day sprints. AI automation can be implemented in 1-4 weeks. We\'ll establish clear milestones and regular check-ins to keep everything on track.'
-    ],
-    [
-        'question' => 'Do you offer ongoing support after project completion?',
-        'answer' => 'Yes! I offer maintenance packages and retainer options for ongoing support. Many clients start with a project and then move to a monthly retainer for continuous improvements and support.'
-    ],
-    [
-        'question' => 'What technologies do you work with?',
-        'answer' => 'My core stack includes Laravel, PHP, JavaScript (Vue.js, React), MySQL/PostgreSQL, and various AI tools (GPT-4, Claude, n8n). I also have extensive experience with WordPress, WooCommerce, and can adapt to your existing tech stack.'
-    ],
-    [
-        'question' => 'How do payments work?',
-        'answer' => 'For most projects, I require 50% upfront and 50% on completion. Larger projects can be broken into milestone payments. I accept bank transfers, credit cards, and can work with your procurement process if needed.'
-    ],
-    [
-        'question' => 'What if I\'m not satisfied with the work?',
-        'answer' => 'I offer a satisfaction guarantee with revision rounds included in every project. We\'ll establish clear success criteria upfront, and I won\'t consider the project complete until you\'re happy with the results.'
-    ],
-    [
-        'question' => 'Can you work with my existing team?',
-        'answer' => 'Absolutely! I regularly collaborate with in-house teams, providing extra capacity, specialized expertise, or technical leadership. I\'m experienced in async communication and can adapt to your team\'s workflow.'
-    ],
-    [
-        'question' => 'Do you sign NDAs?',
-        'answer' => 'Yes, I\'m happy to sign NDAs and have worked on many confidential projects. Your business information, code, and ideas are always treated with complete confidentiality, NDA or not.'
-    ],
-];
+    $faqs = [
+        [
+            'question' => 'How do I know which service is right for me?',
+            'answer' => 'Book a free 15-minute call. We\'ll figure out what you need and whether we\'re a good fit. If not, I\'ll point you in the right direction.'
+        ],
+        [
+            'question' => 'What\'s your typical timeline?',
+            'answer' => 'Audits: 7-14 days. MVP builds: 4-12 weeks. Automation setups: 1-4 weeks. Monthly partnerships start immediately if you\'re ready. I\'ll give you a realistic timeline upfront; no surprises.'
+        ],
+        [
+            'question' => 'I built my app with ChatGPT/Cursor/v0/Bolt/Rocket/Lovable/Replit, etc. Can you make it production-ready?',
+            'answer' => 'Yes, this is one of my specialties. I\'ll audit your AI-generated code, fix the security issues, add proper error handling, take care of performance, setup a deployment workflow, and get it ready for real users. Most vibe-coded apps need 2-6 weeks to become production-ready.'
+        ],
+        [
+            'question' => 'Do you offer ongoing support?',
+            'answer' => 'All projects include 30 days of support. After that, you can convert to a monthly partnership or pay as needed. Most clients stay on retainer as it\'s cheaper than hiring internally.'
+        ],
+        [
+            'question' => 'What tech stack do you use?',
+            'answer' => 'Laravel, PHP, Livewire, JavaScript (Alpine/Vue/React), MySQL/PostgreSQL is my preferred and most productive stack but I\'m flexible based on my clients\' needs. For automation I tend to reach for n8n and OpenRouter. I\'ve also contributed to WordPress core and WooCommerce and am very comfortable working in that ecosystem. I\'ll work with your existing stack too.'
+        ],
+        [
+            'question' => 'How does payment work?',
+            'answer' => '50% upfront, 50% on completion for projects. Monthly partnerships bill at the start of each month. I accept wire transfers, ACH, and credit cards. No surprises, no hidden fees.'
+        ],
+        [
+            'question' => 'Can you work with my existing team?',
+            'answer' => 'Yes. I work with in-house teams all the time. I can lead, collaborate, or just fill gaps. Async communication is my default mode and is perfect for distributed teams.'
+        ],
+        [
+            'question' => 'Do you sign NDAs?',
+            'answer' => 'Yes. Your code and business details are confidential regardless, but happy to sign your NDA for peace of mind.'
+        ],
+        [
+            'question' => 'What if I\'m not satisfied?',
+            'answer' => 'I want you to be thrilled with the results. If you\'re unhappy with the work delivered, please communicate and I\'ll work with you to make it right.'
+        ],
+        [
+            'question' => 'Who shouldn\'t hire me?',
+            'answer' => 'Companies that need 40 hours of butts-in-seats time. Teams that love meetings. Projects with unclear goals. If you want someone to blindly follow specs without thinking, I\'m not your guy.'
+        ]
+    ];
 @endphp
 
 <div>
@@ -45,7 +53,7 @@ $faqs = [
                 Get answers to common questions about working together
             </x-ui.typography>
         </div>
-        
+
         <div class="space-y-4">
             @foreach($faqs as $index => $faq)
             <details class="group rounded-2xl border border-zinc-200 dark:border-zinc-700 overflow-hidden">
@@ -67,18 +75,23 @@ $faqs = [
             </details>
             @endforeach
         </div>
-        
-        <div class="mt-12 text-center p-8 rounded-2xl bg-gradient-to-br from-teal-50 to-blue-50 dark:from-teal-950/20 dark:to-blue-950/20">
-            <x-ui.typography variant="h4">
-                Still have questions?
-            </x-ui.typography>
-            <x-ui.typography variant="body" color="muted" class="mt-2">
-                Let's have a conversation about your specific needs
-            </x-ui.typography>
-            <div class="mt-6">
-                <x-ui.gradient-button variant="primary" href="{{ route('contact') }}" icon="true">
-                    Schedule a Free Consultation
-                </x-ui.gradient-button>
+
+        <div class="mt-12 relative">
+            {{-- Subtle background glow --}}
+            <div class="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-cyan-500/5 rounded-2xl blur-2xl"></div>
+            {{-- Glass container --}}
+            <div class="relative text-center p-8 bg-white/10 dark:bg-zinc-800/10 backdrop-blur-xl rounded-2xl ring-1 ring-white/20 dark:ring-zinc-700/30 shadow-[0_8px_32px_0_rgba(31,38,135,0.08)]">
+                <x-ui.typography variant="h4">
+                    Still have questions?
+                </x-ui.typography>
+                <x-ui.typography variant="body" color="muted" class="mt-2">
+                    Let's have a conversation about your specific needs
+                </x-ui.typography>
+                <div class="mt-6">
+                    <x-ui.gradient-button variant="primary" href="{{ route('contact') }}" icon="true">
+                        Schedule a Free Consultation
+                    </x-ui.gradient-button>
+                </div>
             </div>
         </div>
     </div>

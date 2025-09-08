@@ -55,6 +55,18 @@
             </svg>
             @break
             
+        @case('lightning-bolt')
+            <svg class="{{ $size }}" fill="none" stroke="{{ $color }}" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            @break
+            
+        @case('document-report')
+            <svg class="{{ $size }}" fill="none" stroke="{{ $color }}" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v1a1 1 0 001 1h4a1 1 0 001-1v-1m3-2V8a2 2 0 00-2-2H8a2 2 0 00-2 2v7m3-2h6" />
+            </svg>
+            @break
+            
         @default
             {{ $slot }}
     @endswitch

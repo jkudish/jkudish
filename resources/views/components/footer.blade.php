@@ -1,14 +1,24 @@
-<footer class="bg-zinc-900 dark:bg-black mt-auto">
+<footer class="bg-gray-500 bg-clip-padding backdrop-filter  backdrop-blur bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100">
     {{-- Newsletter Section --}}
-    <div class="border-b border-zinc-800 dark:border-zinc-900">
+    <div class="border-b border-zinc-800/50 dark:border-zinc-900/50">
         <x-ui.container size="default" padding="true">
             <div class="py-12 lg:py-16">
                 <div class="mx-auto max-w-2xl text-center">
-                    <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-                        📬 The Maker Notes
-                    </h2>
+                    <div class="flex items-center justify-center gap-3 mb-4">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-br from-teal-400 to-emerald-500 rounded-lg blur-lg opacity-30"></div>
+                            <div class="relative bg-zinc-800 p-2.5 rounded-lg">
+                                <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                            The Maker Notes
+                        </h2>
+                    </div>
                     <p class="mt-4 text-lg text-zinc-300">
-                        Weekly insights from building indie projects, AI automation workflows, and 15+ years of development experience.
+                        My weekly brain dump: indie projects, AI automation, business experiments, and whatever rabbit holes I went down. For builders who ship.
                     </p>
 
                     <form class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center" action="{{ route('newsletter') }}" method="GET">
@@ -21,12 +31,12 @@
                             required
                         />
                         <x-ui.gradient-button variant="primary" type="submit">
-                            Subscribe → It's Free
+                            Get It Free →
                         </x-ui.gradient-button>
                     </form>
 
                     <p class="mt-4 text-xs text-zinc-500">
-                        No spam, unsubscribe anytime.
+                        No spam. Unsubscribe whenever.
                     </p>
                 </div>
             </div>
@@ -36,117 +46,22 @@
     {{-- Footer Links --}}
     <x-ui.container size="default" padding="true">
         <div class="py-12 lg:py-16">
-            <div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:gap-12">
-                {{-- Column 1: Quick Links --}}
-                <div>
-                    <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-400">
-                        Quick Links
-                    </h3>
-                    <ul class="mt-4 space-y-3" role="list">
-                        <li>
-                            <a href="{{ route('home') }}" class="text-zinc-300 hover:text-white transition-colors">
-                                About
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('services') }}" class="text-zinc-300 hover:text-white transition-colors">
-                                Services
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('projects') }}" class="text-zinc-300 hover:text-white transition-colors">
-                                Projects
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('speaking') }}" class="text-zinc-300 hover:text-white transition-colors">
-                                Speaking
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                {{-- Column 2: Services --}}
-                <div>
-                    <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-400">
-                        Services
-                    </h3>
-                    <ul class="mt-4 space-y-3" role="list">
-                        <li>
-                            <a href="{{ route('services') }}#code-cleanup" class="text-zinc-300 hover:text-white transition-colors">
-                                Code Cleanup
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('services') }}#mvp-development" class="text-zinc-300 hover:text-white transition-colors">
-                                MVP Development
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('services') }}#automation" class="text-zinc-300 hover:text-white transition-colors">
-                                AI Automation
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('contact') }}" class="text-zinc-300 hover:text-white transition-colors">
-                                Consultation
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                {{-- Column 3: Connect --}}
-                <div>
-                    <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-400">
-                        Connect
-                    </h3>
-                    <ul class="mt-4 space-y-3" role="list">
-                        <li>
-                            <a href="https://linkedin.com/in/jkudish" target="_blank" rel="noopener noreferrer" class="text-zinc-300 hover:text-white transition-colors">
-                                LinkedIn
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/jkudish" target="_blank" rel="noopener noreferrer" class="text-zinc-300 hover:text-white transition-colors">
-                                GitHub
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/jkudish" target="_blank" rel="noopener noreferrer" class="text-zinc-300 hover:text-white transition-colors">
-                                X (Twitter)
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                {{-- Column 4: Resources --}}
-                <div>
-                    <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-400">
-                        Resources
-                    </h3>
-                    <ul class="mt-4 space-y-3" role="list">
-                        <li>
-                            <a href="{{ route('newsletter') }}" class="text-zinc-300 hover:text-white transition-colors">
-                                Newsletter
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://glass.photo/jkudish" target="_blank" rel="noopener noreferrer" class="text-zinc-300 hover:text-white transition-colors">
-                                Photography
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('contact') }}" class="text-zinc-300 hover:text-white transition-colors">
-                                Contact
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://found.jkudish.com" target="_blank" rel="noopener noreferrer" class="text-zinc-300 hover:text-white transition-colors">
-                                Found
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="flex flex-wrap justify-center gap-x-12 gap-y-3">
+                <a href="{{ route('services') }}" class="text-zinc-300 hover:text-white transition-colors">
+                    Services
+                </a>
+                <a href="{{ route('home') }}" class="text-zinc-300 hover:text-white transition-colors">
+                    About
+                </a>
+                <a href="{{ route('contact') }}" class="text-zinc-300 hover:text-white transition-colors">
+                    Contact
+                </a>
+                <a href="https://glass.photo/jkudish" target="_blank" rel="noopener noreferrer" class="text-zinc-300 hover:text-white transition-colors">
+                    Photography
+                </a>
+                <a href="{{ route('speaking') }}" class="text-zinc-300 hover:text-white transition-colors">
+                    Speaking
+                </a>
             </div>
 
             {{-- Social Links --}}

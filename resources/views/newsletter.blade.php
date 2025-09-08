@@ -29,7 +29,7 @@
                             ],
                             [
                                 'title' => 'Technical Deep Dives',
-                                'description' => 'Laravel, WordPress, and modern web development insights from 15+ years of experience.',
+                                'description' => 'Laravel, WordPress, and modern web development insights from 18+ years of experience.',
                             ],
                             [
                                 'title' => 'Business Lessons',

@@ -1,7 +1,7 @@
 @php
 $metrics = [
     [
-        'value' => '15+',
+        'value' => '18+',
         'label' => 'Years Experience',
         'description' => 'Building software since 2009'
     ],
@@ -24,17 +24,17 @@ $metrics = [
 
 $testimonials = [
     [
-        'quote' => "Joey's hard-work ethic and determination is what's going to make him an extremely successful individual. I'm constantly amazed at his ability to get things done. I will definitely work with Joey again.",
+        'quote' => "Joey's hard-work ethic and determination is what makes him an extremely successful individual. I'm constantly amazed at his ability to get things done. I will definitely work with Joey again.",
         'author' => 'Greg Isenberg',
         'company' => 'CEO, Late Checkout',
-        'avatar' => url('img/testimonials/greg-isenberg.jpg'),
+        'avatar' => asset('img/testimonials/greg-isenberg.jpg'),
         'twitter' => 'https://x.com/gregisenberg'
     ],
     [
         'quote' => "Joey was one of the most consistently talented and reliable people I've ever worked with. Outstanding skills and fiercely committed to project success. I couldn't recommend anyone higher.",
         'author' => 'Justin Evans',
         'company' => 'Partner, Sunroom.is',
-        'avatar' => url('img/testimonials/justin-evans.jpg')
+        'avatar' => asset('img/testimonials/justin-evans.jpg')
     ],
 ];
 @endphp
@@ -104,7 +104,7 @@ $testimonials = [
                 Successful projects delivered for:
             </x-ui.typography>
         </div>
-        
+
         @php
         $allCompanies = [
             ['name' => 'WooCommerce', 'logo' => url('img/companies/woo.png'), 'class' => 'standard'],
@@ -120,12 +120,12 @@ $testimonials = [
             ['name' => 'TELUS Health', 'logo' => url('img/companies/telus-health.png'), 'class' => 'colorful'],
             ['name' => 'Turquoise Goat', 'logo' => url('img/companies/turquoise-goat.png'), 'class' => 'turquoise-goat'],
         ];
-        
+
         // Shuffle all companies and take 8
         shuffle($allCompanies);
         $companies = array_slice($allCompanies, 0, 8);
         @endphp
-        
+
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 border-l border-t border-zinc-200/50 dark:border-zinc-700/50 rounded-lg overflow-hidden">
             @foreach($companies as $company)
             <div class="relative bg-white/50 dark:bg-zinc-900/30 border-r border-b border-zinc-200/50 dark:border-zinc-700/50">
@@ -149,7 +149,7 @@ $testimonials = [
             </div>
             @endforeach
         </div>
-        
+
         <div class="mt-8 text-center">
             <x-ui.typography variant="small" color="muted">
                 Plus dozens of startups, agencies, and innovative companies across e-commerce and SaaS industries

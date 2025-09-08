@@ -6,17 +6,18 @@ it('can access the home page', function () {
     get('/')
         ->assertOk()
         ->assertSee("Hey, I'm Joey", false)
-        ->assertSee("I Build Software That Works")
+        ->assertSee('I Build Software That Works')
         ->assertSee("Let's Talk About Your Project", false);
 });
 
 it('can access the services page', function () {
     get('/services')
         ->assertOk()
-        ->assertSee('How I Can Help Your Business')
-        ->assertSee('Code Cleanup')
-        ->assertSee('MVP Development')
-        ->assertSee('AI Automation');
+        ->assertSee('I Build Software That Works')
+        ->assertSee('Automate Your Way to Profit')
+        ->assertSee('Code Audit & Strategy')
+        ->assertSee('Build Your Product')
+        ->assertSee('Ongoing Partnership');
 });
 
 it('can access the projects page', function () {
@@ -53,10 +54,10 @@ it('can access the speaking page', function () {
 it('has working navigation links', function () {
     get('/')
         ->assertOk()
-        ->assertSee('href="' . route('services') . '"', false)
-        ->assertSee('href="' . route('projects') . '"', false)
-        ->assertSee('href="' . route('newsletter') . '"', false)
-        ->assertSee('href="' . route('contact') . '"', false);
+        ->assertSee('href="'.route('services').'"', false)
+        ->assertSee('href="'.route('projects').'"', false)
+        ->assertSee('href="'.route('newsletter').'"', false)
+        ->assertSee('href="'.route('contact').'"', false);
 });
 
 it('shows all home page sections', function () {
