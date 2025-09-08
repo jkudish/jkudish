@@ -77,10 +77,8 @@
         </div>
 
         <div class="mt-12 relative">
-            {{-- Subtle background glow --}}
-            <div class="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-cyan-500/5 rounded-2xl blur-2xl"></div>
             {{-- Glass container --}}
-            <div class="relative text-center p-8 bg-white/10 dark:bg-zinc-800/10 backdrop-blur-xl rounded-2xl ring-1 ring-white/20 dark:ring-zinc-700/30 shadow-[0_8px_32px_0_rgba(31,38,135,0.08)]">
+            <div class="relative text-center p-8">
                 <x-ui.typography variant="h4">
                     Still have questions?
                 </x-ui.typography>
