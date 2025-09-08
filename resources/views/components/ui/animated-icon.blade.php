@@ -11,7 +11,6 @@
         'bounce' => 'animate-bounce',
         'spin' => 'animate-spin',
         'pulse' => 'animate-pulse',
-        'float' => 'animate-float',
         'none' => '',
         default => ''
     };
