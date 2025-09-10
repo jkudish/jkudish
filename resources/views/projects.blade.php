@@ -387,14 +387,15 @@
                                     'icon' => 'lucide-server',
                                     'description' => 'Scalable, secure, and maintainable server-side solutions',
                                     'technologies' => [
-                                        'Laravel' => 'primary',
-                                        'PHP 8+' => 'primary', 
-                                        'WordPress' => 'primary',
-                                        'MySQL' => 'secondary',
-                                        'PostgreSQL' => 'secondary',
-                                        'REST APIs' => 'secondary',
-                                        'Python' => 'tertiary',
-                                        'Ruby on Rails' => 'tertiary',
+                                        'Laravel',
+                                        'PHP 8+',
+                                        'WordPress',
+                                        'GraphQL',
+                                        'MySQL',
+                                        'PostgreSQL',
+                                        'REST APIs',
+                                        'Python',
+                                        'Ruby on Rails',
                                     ],
                                 ],
                                 [
@@ -402,14 +403,15 @@
                                     'icon' => 'lucide-layout',
                                     'description' => 'Pixel-perfect interfaces that users love',
                                     'technologies' => [
-                                        'Vue.js' => 'primary',
-                                        'React' => 'primary',
-                                        'Alpine.js' => 'secondary',
-                                        'TailwindCSS' => 'primary',
-                                        'TypeScript' => 'secondary',
-                                        'Livewire' => 'secondary',
-                                        'Electron' => 'tertiary',
-                                        'React Native' => 'tertiary',
+                                        'Vue.js',
+                                        'React',
+                                        'Alpine.js',
+                                        'TailwindCSS',
+                                        'TypeScript',
+                                        'Livewire',
+                                        'Tauri',
+                                        'Electron',
+                                        'React Native',
                                     ],
                                 ],
                                 [
@@ -417,14 +419,14 @@
                                     'icon' => 'lucide-cpu',
                                     'description' => 'Smart solutions that work while you sleep',
                                     'technologies' => [
-                                        'AI Integrations' => 'primary',
-                                        'n8n Workflows' => 'primary',
-                                        'API Automation' => 'primary',
-                                        'Claude/GPT APIs' => 'secondary',
-                                        'Zapier' => 'secondary',
-                                        'AWS Services' => 'secondary',
-                                        'CI/CD Pipelines' => 'tertiary',
-                                        'Docker' => 'tertiary',
+                                        'AI Integrations',
+                                        'n8n Workflows',
+                                        'API Automation',
+                                        'Claude/GPT APIs',
+                                        'Zapier',
+                                        'AWS Services',
+                                        'CI/CD Pipelines',
+                                        'Docker',
                                     ],
                                 ],
                             ];
@@ -447,16 +449,8 @@
                                 </div>
                                 
                                 <div class="flex flex-wrap gap-2">
-                                    @foreach($stack['technologies'] as $tech => $level)
-                                        @php
-                                        $classes = match($level) {
-                                            'primary' => 'bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 border-zinc-900 dark:border-white',
-                                            'secondary' => 'bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 border-zinc-200 dark:border-zinc-700',
-                                            'tertiary' => 'bg-white text-zinc-500 dark:bg-zinc-900 dark:text-zinc-500 border-zinc-200 dark:border-zinc-700/50',
-                                            default => 'bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300'
-                                        };
-                                        @endphp
-                                        <span class="px-3 py-1 text-xs font-medium rounded-full border {{ $classes }}">
+                                    @foreach($stack['technologies'] as $tech)
+                                        <span class="px-3 py-1 text-xs font-medium rounded-full border bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 border-zinc-200 dark:border-zinc-700">
                                             {{ $tech }}
                                         </span>
                                     @endforeach
@@ -466,8 +460,8 @@
                         </div>
 
                         <div class="mt-8 p-6 rounded-xl bg-gradient-to-r from-zinc-50 to-zinc-100/50 dark:from-zinc-800 dark:to-zinc-800/50 border border-zinc-200/50 dark:border-zinc-700/50">
-                            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-                                <div>
+                            <div class="flex flex-col sm:flex-row items-center gap-4">
+                                <div class="flex-1">
                                     <p class="text-sm font-semibold text-zinc-900 dark:text-white">
                                         Don't see your tech stack?
                                     </p>
@@ -475,7 +469,7 @@
                                         I'm a fast learner and love new challenges. Let's discuss your needs.
                                     </p>
                                 </div>
-                                <x-ui.gradient-button variant="secondary" href="{{ route('contact') }}" icon="true" class="whitespace-nowrap">
+                                <x-ui.gradient-button variant="primary" href="{{ route('contact') }}" icon="true" class="whitespace-nowrap">
                                     Let's Talk Tech
                                 </x-ui.gradient-button>
                             </div>
