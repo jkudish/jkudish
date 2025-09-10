@@ -15,7 +15,7 @@
     <link rel="preload" href="{{ url('img/joey.webp') }}" as="image" crossorigin/>
     <link rel="preload" href="{{ url('img/joey.png') }}" as="image" crossorigin/>
 
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Fathom - beautiful, simple website analytics -->
     <script src="https://cdn.usefathom.com/script.js" data-site="OLWGPIDF" defer></script>
