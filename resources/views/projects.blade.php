@@ -489,15 +489,17 @@
                             Ready to Build Something Great?
                         </x-ui.typography>
                         <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
-                            Let's discuss how I can help accelerate your project
+                            Let's turn your idea into reality — on time and under budget
                         </p>
                         <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                            <x-ui.gradient-button variant="primary" href="{{ route('services') }}" icon="true">
-                                Explore Services
-                            </x-ui.gradient-button>
-                            <x-ui.gradient-button variant="secondary" href="{{ route('contact') }}" icon="true">
+                            <x-ui.gradient-button variant="primary" href="{{ route('contact') }}" icon="true">
                                 Get in Touch
                             </x-ui.gradient-button>
+                            <a href="{{ route('services') }}" 
+                               class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-emerald-600 px-4 py-2 text-sm font-semibold text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all dark:border-emerald-700 dark:text-emerald-700 dark:hover:bg-emerald-700 dark:hover:text-white">
+                                View Services
+                                <x-icon name="lucide-arrow-right" class="w-4 h-4" />
+                            </a>
                         </div>
                     </div>
                 </div>
