@@ -149,21 +149,13 @@
                         <div aria-hidden="true"
                              class="relative z-10 mt-2 flex items-center text-sm font-medium text-teal-500">Download
                             Slides
-                            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"
-                                 class="ml-1 h-4 w-4 stroke-current transition-transform group-hover:translate-x-1">
-                                <path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-width="1.5" stroke-linecap="round"
-                                      stroke-linejoin="round"></path>
-                            </svg>
+                            <x-icon name="lucide-chevron-right" class="ml-1 h-4 w-4 stroke-current transition-transform group-hover:translate-x-1" />
                         </div>
                     @endif
                     @if(data_get($conference, 'teaser'))
                         <div aria-hidden="true"
                              class="relative z-10 mt-2 flex items-center text-sm font-medium text-indigo-500">View Upcoming Talk
-                            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"
-                                 class="ml-1 h-4 w-4 stroke-current transition-transform group-hover:translate-x-1">
-                                <path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-width="1.5" stroke-linecap="round"
-                                      stroke-linejoin="round"></path>
-                            </svg>
+                            <x-icon name="lucide-chevron-right" class="ml-1 h-4 w-4 stroke-current transition-transform group-hover:translate-x-1" />
                         </div>
                     @endif
                 </article>

@@ -6,7 +6,7 @@
 ])
 
 @php
-    $baseClasses = 'group relative inline-flex items-center gap-2 justify-center rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-300 overflow-hidden';
+    $baseClasses = 'group relative inline-flex items-center gap-2 justify-center rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-300 overflow-hidden cursor-pointer';
     
     $variantClasses = match($variant) {
         'primary' => 'bg-gradient-to-r from-emerald-700 to-emerald-800 text-white hover:shadow-xl hover:shadow-emerald-700/25 hover:-translate-y-0.5',
@@ -26,9 +26,7 @@
         <span class="relative z-10 flex items-center gap-2 {{ $variant === 'outline' ? 'group-hover:text-white' : '' }}">
             {{ $slot }}
             @if($icon)
-                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
+                <x-icon name="lucide-chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             @endif
         </span>
     </a>
@@ -40,9 +38,7 @@
         <span class="relative z-10 flex items-center gap-2 {{ $variant === 'outline' ? 'group-hover:text-white' : '' }}">
             {{ $slot }}
             @if($icon)
-                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
+                <x-icon name="lucide-chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             @endif
         </span>
     </button>

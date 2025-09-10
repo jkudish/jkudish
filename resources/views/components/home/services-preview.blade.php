@@ -1,7 +1,7 @@
 @php
 $services = [
     [
-        'icon' => 'lightning-bolt',
+        'icon' => 'lucide-zap',
         'name' => 'Automate Your Way to Profit',
         'description' => 'Turn repetitive tasks into revenue-generating systems. Most clients see ROI within 30 days.',
         'pricing' => 'Starting at $500',
@@ -12,7 +12,7 @@ $services = [
         'border_gradient' => 'from-yellow-400 to-amber-500',
     ],
     [
-        'icon' => 'document-report',
+        'icon' => 'lucide-file-text',
         'name' => 'Code Audit & Strategy',
         'description' => 'Get an experienced perspective on your code and process. Get a clear roadmap with actionable insights.',
         'pricing' => 'Starting at $2,500',
@@ -23,7 +23,7 @@ $services = [
         'border_gradient' => 'from-purple-400 to-pink-500',
     ],
     [
-        'icon' => 'code',
+        'icon' => 'lucide-code-2',
         'name' => 'Build Your Product',
         'description' => 'Ship something real. From idea to revenue in weeks, not months. Clean, production-ready code.',
         'pricing' => 'Starting at $15,000',
@@ -34,7 +34,7 @@ $services = [
         'border_gradient' => 'from-emerald-400 to-teal-500',
     ],
     [
-        'icon' => 'sparkles',
+        'icon' => 'lucide-sparkles',
         'name' => 'Ongoing Partnership',
         'description' => 'Get CTO-level guidance and on-demand engineering expertise to help your business grow sustainably.',
         'pricing' => '$3,000 - $10,000/month',
@@ -63,7 +63,7 @@ $services = [
             <div class="h-full w-full bg-white dark:bg-zinc-900 rounded-xl">
             <div class="p-6 h-full flex flex-col">
                 <div class="flex items-center justify-between">
-                    <x-ui.animated-icon icon="{{ $service['icon'] }}" size="w-8 h-8" animation="none" color="{{ $service['icon_color'] }}" />
+                    <x-icon name="{{ $service['icon'] }}" class="w-8 h-8" style="color: {{ $service['icon_color'] }}" />
                 </div>
 
                 <x-ui.typography variant="h4" class="mt-4">
@@ -77,19 +77,12 @@ $services = [
                 <ul class="mt-4 space-y-2">
                     @foreach($service['features'] as $feature)
                     <li class="flex items-center text-sm font-sans text-zinc-600 dark:text-zinc-400">
-                        <svg class="w-4 h-4 mr-2 {{ $service['text_color'] }}" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
+                        <x-icon name="lucide-check-circle" class="w-4 h-4 mr-2 {{ $service['text_color'] }}" />
                         {{ $feature }}
                     </li>
                     @endforeach
                 </ul>
 
-                <div class="mt-6 pt-6 border-t border-zinc-200 dark:border-zinc-700">
-                    <p class="text-sm font-sans font-semibold text-zinc-900 dark:text-zinc-100">
-                        {{ $service['pricing'] }}
-                    </p>
-                </div>
             </div>
             </div>
         </div>

@@ -3,22 +3,22 @@ $metrics = [
     [
         'value' => '18+',
         'label' => 'Years Experience',
-        'description' => 'Building software since 2009'
+        'description' => 'Building software since 2006'
     ],
     [
         'value' => '100+',
-        'label' => 'Projects Delivered',
-        'description' => 'From startups to enterprise'
+        'label' => 'Projects Shipped',
+        'description' => 'From WordPress plugins to enterprise SaaS'
     ],
     [
-        'value' => 'Millions',
-        'label' => 'Users Served',
-        'description' => 'Through products at Automattic'
+        'value' => '2011',
+        'label' => 'First WordPress Core Commit',
+        'description' => 'Contributing to open source for 13+ years'
     ],
     [
-        'value' => '75%',
-        'label' => 'Time Saved',
-        'description' => 'Average client efficiency gain'
+        'value' => '4-to-1',
+        'label' => 'Efficiency Multiplier',
+        'description' => 'My automation track record'
     ],
 ];
 

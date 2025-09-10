@@ -30,9 +30,7 @@
         @foreach($steps as $index => $step)
         <div class="text-left relative">
             <div class="flex items-center gap-3 mb-3">
-                <svg class="w-4 h-4 text-teal-600 dark:text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
+                <x-icon name="lucide-chevron-right" class="w-4 h-4 text-teal-600 dark:text-teal-400" />
 
                 <x-ui.typography variant="h3" class="text-teal-600 dark:text-teal-400">
                     {{ $step['title'] }}
