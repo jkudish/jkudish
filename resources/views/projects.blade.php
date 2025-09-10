@@ -208,15 +208,15 @@
                             
                             @foreach($featuredStories as $story)
                             <div class="group rounded-2xl border border-zinc-200/50 dark:border-zinc-700/40 p-8 bg-white dark:bg-zinc-900/50 shadow-sm hover:shadow-xl hover:border-zinc-300 dark:hover:border-zinc-600 transition-all duration-300">
-                                <div class="flex items-start justify-between mb-6">
-                                    <div class="flex items-start gap-4">
+                                <div class="flex items-start justify-between mb-8">
+                                    <div class="flex items-start gap-6">
                                         @if(isset($story['logo']))
-                                        <div class="w-16 h-16 flex items-center justify-center">
+                                        <div class="w-32 h-20 flex items-center justify-start flex-shrink-0">
                                             <picture>
                                                 <source srcset="{{ $story['logo_webp'] }}" type="image/webp">
                                                 <img src="{{ $story['logo'] }}" 
                                                      alt="{{ $story['company'] }}" 
-                                                     class="max-h-12 w-auto grayscale opacity-70 dark:brightness-0 dark:invert">
+                                                     class="max-h-20 max-w-32 w-auto h-auto grayscale opacity-80 dark:brightness-0 dark:invert">
                                             </picture>
                                         </div>
                                         @else
@@ -224,7 +224,7 @@
                                             <x-icon name="{{ $story['icon'] }}" class="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                                         </div>
                                         @endif
-                                        <div>
+                                        <div class="pt-2">
                                             <h3 class="text-xl font-bold text-zinc-900 dark:text-white">
                                                 {{ $story['company'] }}
                                             </h3>
@@ -233,7 +233,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="text-right">
+                                    <div class="text-right flex-shrink-0">
                                         <div class="text-2xl font-bold text-emerald-600 dark:text-emerald-700">
                                             {{ $story['impact'] }}
                                         </div>
