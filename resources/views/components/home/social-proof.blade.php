@@ -63,7 +63,7 @@ $testimonials = [
             Proven Track Record
         </x-ui.typography>
         <p class="mt-4 text-lg font-sans text-zinc-600 dark:text-zinc-400">
-            Building successful software for over a decade
+            Building successful software has been my focus for nearly two decades.
         </p>
     </div>
 
@@ -85,7 +85,7 @@ $testimonials = [
     </div>
 
     {{-- Client Testimonials Carousel --}}
-    <div class="mt-16 relative" 
+    <div class="mt-16 relative"
          x-data="{
              currentIndex: 0,
              testimonials: {{ json_encode($testimonials) }},
@@ -116,7 +116,7 @@ $testimonials = [
          role="region"
          aria-label="Customer testimonials"
          aria-roledescription="carousel">
-        
+
         {{-- Carousel Container --}}
         <div class="overflow-hidden mx-16">
             <div class="flex gap-8 transition-all duration-300 ease-in-out">
@@ -160,7 +160,7 @@ $testimonials = [
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
             </svg>
         </button>
-        
+
         <button @click="next()"
                 class="absolute right-0 top-1/2 -translate-y-1/2 bg-white dark:bg-zinc-800 rounded-full p-2 shadow-lg transition hover:bg-zinc-50 dark:hover:bg-zinc-700 hover:scale-110 cursor-pointer"
                 aria-label="Next testimonials">

@@ -21,7 +21,7 @@ $allCompanies = [
     ['name' => 'WooCommerce', 'webp' => url('img/companies/woo.webp'), 'png' => url('img/companies/woo.png'), 'size' => 'max-h-14', 'classes' => $logoStyles['standard']],
     ['name' => 'TechCrunch', 'webp' => url('img/companies/techcrunch.webp'), 'png' => url('img/companies/techcrunch.png'), 'size' => 'max-h-20', 'classes' => $logoStyles['standard']],
     ['name' => '10up', 'webp' => url('img/companies/10up.webp'), 'png' => url('img/companies/10up.png'), 'size' => 'max-h-10', 'classes' => $logoStyles['standard']],
-    ['name' => 'Metorik', 'webp' => url('img/companies/metorik.webp'), 'png' => url('img/companies/metorik.png'), 'size' => 'max-h-10', 'classes' => $logoStyles['standard']],
+    ['name' => 'Metorik', 'webp_light' => url('img/companies/metorik-light.webp'), 'png_light' => url('img/companies/metorik-light.png'), 'webp_dark' => url('img/companies/metorik-dark.webp'), 'png_dark' => url('img/companies/metorik-dark.png'), 'size' => 'max-h-10', 'has_variants' => true],
     ['name' => "Sotheby's", 'webp' => url('img/companies/sothebys.webp'), 'png' => url('img/companies/sothebys.png'), 'size' => 'max-h-16', 'classes' => $logoStyles['standard']],
     ['name' => 'TELUS Health', 'webp' => url('img/companies/telus-health.webp'), 'png' => url('img/companies/telus-health.png'), 'size' => 'max-h-16', 'classes' => $logoStyles['standard']],
     ['name' => 'Pantheon', 'webp' => url('img/companies/pantheon.webp'), 'png' => url('img/companies/pantheon.png'), 'size' => 'max-h-10', 'classes' => $logoStyles['standard']],
@@ -37,7 +37,7 @@ $allCompanies = [
     ['name' => 'DVLOP', 'webp' => url('img/companies/dvlop.webp'), 'png' => url('img/companies/dvlop.png'), 'size' => 'max-h-10', 'classes' => $logoStyles['standard']],
     ['name' => 'Teelaunch', 'webp' => url('img/companies/teelaunch.webp'), 'png' => url('img/companies/teelaunch.png'), 'size' => 'max-h-20', 'classes' => $logoStyles['standard']],
     ['name' => 'PHAiTO', 'webp' => url('img/companies/phaito.webp'), 'png' => url('img/companies/phaito.png'), 'size' => 'max-h-8', 'classes' => $logoStyles['standard']],
-    ['name' => 'Spark Consulting', 'webp' => url('img/companies/spark-consulting.webp'), 'png' => url('img/companies/spark-consulting.png'), 'size' => 'max-h-20', 'classes' => $logoStyles['standard']],
+    ['name' => 'Spark Consulting', 'webp_light' => url('img/companies/spark-consulting-light.webp'), 'png_light' => url('img/companies/spark-consulting-light.png'), 'webp_dark' => url('img/companies/spark-consulting-dark.webp'), 'png_dark' => url('img/companies/spark-consulting-dark.png'), 'size' => 'max-h-20', 'has_variants' => true],
     ['name' => 'SmarterQueue', 'webp' => url('img/companies/smarterqueue.webp'), 'png' => url('img/companies/smarterqueue.png'), 'size' => 'max-h-10', 'classes' => $logoStyles['standard']],
     ['name' => 'Turquoise Goat', 'webp' => url('img/companies/turquoise-goat.webp'), 'png' => url('img/companies/turquoise-goat.png'), 'size' => 'max-h-20', 'classes' => $logoStyles['invert']],
     ['name' => 'FSquared Marketing', 'webp' => url('img/companies/fsquared.webp'), 'png' => url('img/companies/fsquared.png'), 'size' => 'max-h-20', 'classes' => $logoStyles['standard']],
@@ -70,15 +70,38 @@ $bottomRowLogos = array_merge($bottomRowLogos, $bottomRowLogos, $bottomRowLogos)
              class="flex gap-16 overflow-hidden logo-carousel-mask">
             @foreach($topRowLogos as $index => $company)
             <div class="flex-shrink-0 flex items-center justify-center min-w-[160px] h-20">
-                <picture>
-                    <source srcset="{{ $company['webp'] }}" type="image/webp">
-                    <img 
-                        src="{{ $company['png'] }}" 
-                        alt="{{ $company['name'] }}"
-                        loading="lazy"
-                        class="{{ $company['size'] }} w-auto object-contain {{ $company['classes'] }}"
-                    />
-                </picture>
+                @if(isset($company['has_variants']) && $company['has_variants'])
+                    {{-- Light mode image --}}
+                    <picture class="block dark:hidden">
+                        <source srcset="{{ $company['webp_light'] }}" type="image/webp">
+                        <img 
+                            src="{{ $company['png_light'] }}" 
+                            alt="{{ $company['name'] }}"
+                            loading="lazy"
+                            class="{{ $company['size'] }} w-auto object-contain"
+                        />
+                    </picture>
+                    {{-- Dark mode image --}}
+                    <picture class="hidden dark:block">
+                        <source srcset="{{ $company['webp_dark'] }}" type="image/webp">
+                        <img 
+                            src="{{ $company['png_dark'] }}" 
+                            alt="{{ $company['name'] }}"
+                            loading="lazy"
+                            class="{{ $company['size'] }} w-auto object-contain"
+                        />
+                    </picture>
+                @else
+                    <picture>
+                        <source srcset="{{ $company['webp'] }}" type="image/webp">
+                        <img 
+                            src="{{ $company['png'] }}" 
+                            alt="{{ $company['name'] }}"
+                            loading="lazy"
+                            class="{{ $company['size'] }} w-auto object-contain {{ $company['classes'] }}"
+                        />
+                    </picture>
+                @endif
             </div>
             @endforeach
         </div>
@@ -88,15 +111,38 @@ $bottomRowLogos = array_merge($bottomRowLogos, $bottomRowLogos, $bottomRowLogos)
              class="flex gap-16 overflow-hidden logo-carousel-mask">
             @foreach($bottomRowLogos as $index => $company)
             <div class="flex-shrink-0 flex items-center justify-center min-w-[160px] h-20">
-                <picture>
-                    <source srcset="{{ $company['webp'] }}" type="image/webp">
-                    <img 
-                        src="{{ $company['png'] }}" 
-                        alt="{{ $company['name'] }}"
-                        loading="lazy"
-                        class="{{ $company['size'] }} w-auto object-contain {{ $company['classes'] }}"
-                    />
-                </picture>
+                @if(isset($company['has_variants']) && $company['has_variants'])
+                    {{-- Light mode image --}}
+                    <picture class="block dark:hidden">
+                        <source srcset="{{ $company['webp_light'] }}" type="image/webp">
+                        <img 
+                            src="{{ $company['png_light'] }}" 
+                            alt="{{ $company['name'] }}"
+                            loading="lazy"
+                            class="{{ $company['size'] }} w-auto object-contain"
+                        />
+                    </picture>
+                    {{-- Dark mode image --}}
+                    <picture class="hidden dark:block">
+                        <source srcset="{{ $company['webp_dark'] }}" type="image/webp">
+                        <img 
+                            src="{{ $company['png_dark'] }}" 
+                            alt="{{ $company['name'] }}"
+                            loading="lazy"
+                            class="{{ $company['size'] }} w-auto object-contain"
+                        />
+                    </picture>
+                @else
+                    <picture>
+                        <source srcset="{{ $company['webp'] }}" type="image/webp">
+                        <img 
+                            src="{{ $company['png'] }}" 
+                            alt="{{ $company['name'] }}"
+                            loading="lazy"
+                            class="{{ $company['size'] }} w-auto object-contain {{ $company['classes'] }}"
+                        />
+                    </picture>
+                @endif
             </div>
             @endforeach
         </div>
