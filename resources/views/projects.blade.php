@@ -325,13 +325,11 @@
                 {{-- Tech Stack Section --}}
                 <div class="px-6 sm:px-8 lg:px-10 py-16 lg:py-20 xl:py-24 bg-zinc-50/50 dark:bg-zinc-800/50 border-t border-zinc-200/30 dark:border-zinc-700/50">
                     <div>
-                        <div class="text-center mb-16">
+                        <div class="flex items-center gap-4 mb-16">
                             <x-ui.typography variant="h2">
                                 Tech Stack
                             </x-ui.typography>
-                            <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-500">
-                                What I work with daily. And what I can figure out quickly.
-                            </p>
+                            <div class="flex-1 h-px bg-gradient-to-r from-zinc-200 to-transparent dark:from-zinc-700"></div>
                         </div>
 
                         <div class="grid gap-8 md:grid-cols-3">
