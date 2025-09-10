@@ -498,7 +498,6 @@
                             <a href="{{ route('services') }}" 
                                class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-emerald-600 px-4 py-2 text-sm font-semibold text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all dark:border-emerald-700 dark:text-emerald-700 dark:hover:bg-emerald-700 dark:hover:text-white">
                                 View Services
-                                <x-icon name="lucide-arrow-right" class="w-4 h-4" />
                             </a>
                         </div>
                     </div>
