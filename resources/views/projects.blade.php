@@ -221,7 +221,7 @@
                                         </div>
                                     </div>
                                     <div class="text-right">
-                                        <div class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
+                                        <div class="text-2xl font-bold text-emerald-600 dark:text-emerald-700">
                                             {{ $story['impact'] }}
                                         </div>
                                     </div>
