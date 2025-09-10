@@ -27,7 +27,7 @@
         [
             'conference' => 'WordCamp 2016',
             'location' => 'Vernon, Canada',
-            'title' => 'What’s new with Woo(Commerce)',
+            'title' => 'What\'s new with Woo(Commerce)',
             'slides' => url('slides/new-with-woo.pdf'),
         ],
         [
@@ -99,7 +99,7 @@
             'location' => 'Portland, OR, USA',
             'title' => 'Round table discussion on WordPress development tools',
         ],
-          [
+        [
             'conference' => 'WordCamp 2011',
             'location' => 'Montreal, Canada',
             'title' => 'WordPress custom post types',
@@ -108,59 +108,170 @@
     ]
 @endphp
 
-<x-layout>
-
-    <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 mt-12">
-        <div class="flex flex-col md:flex-row">
-            <picture class="flex-none mr-6">
-                <source srcset="{{ url('img/joey.webp') }}" type="image/webp">
-                <source srcset="{{ url('img/joey.png') }}" type="image/png">
-                <img
-                    src="data:image/png;base64,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"
-                    class="mx-auto h-48 w-48 rounded-full"
-                    loading="lazy"
-                    alt="Joey Kudish">
-            </picture>
-            <h1 class="mt-4 shrink mx-auto max-w-xl text-xl font-title tracking-tight leading-6 sm:leading-8 text-zinc-800 sm:text-2xl dark:text-zinc-100">
-                Hey, I'm Joey 👋 <br/> Over the years I've given a handful of presentations
-                at
-                various conferences. Below you can find slides and videos from some of them.
-            </h1>
-        </div>
-
-        <div class="mt-12 space-y-8">
-            @foreach($conferences as $conference)
-                <article class="group relative flex flex-col items-start">
-                    <h3 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-                        <div
-                            class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
-                        @if(data_get($conference, 'slides', data_get($conference, 'teaser')))
-                            <a target="_blank" href="{{ data_get($conference, 'slides', data_get($conference, 'teaser')) }}">@endif<span
-                                    class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span><span
-                                    class="relative z-10">{{ data_get($conference, 'title') }}</span>@if(data_get($conference, 'slides', data_get($conference, 'teaser')))
-                            </a>
-                        @endif
-                    </h3>
-                    <p class="relative z-10 order-first mb-2 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5">
-                <span class="absolute inset-y-0 left-0 flex items-center" aria-hidden="true"><span
-                        class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span></span>{{ data_get($conference, 'conference') }} &mdash; {{ data_get($conference, 'location') }}
-                    </p>
-                    @if(data_get($conference, 'slides'))
-                        <div aria-hidden="true"
-                             class="relative z-10 mt-2 flex items-center text-sm font-medium text-teal-500">Download
-                            Slides
-                            <x-icon name="lucide-chevron-right" class="ml-1 h-4 w-4 stroke-current transition-transform group-hover:translate-x-1" />
+<x-layout title="Speaking - Joey Kudish">
+    <div class="flex justify-center my-8 lg:my-12">
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white/90 dark:bg-zinc-900/80 backdrop-blur-xl rounded-lg overflow-hidden shadow-lg">
+                
+                {{-- Hero Section matching homepage --}}
+                <div class="relative px-6 sm:px-8 lg:px-10 py-16 lg:py-24 xl:py-32 bg-gradient-to-br from-white to-zinc-50/50 dark:from-zinc-900 dark:to-zinc-800">
+                    <div class="absolute inset-0 bg-mesh-gradient opacity-30 dark:opacity-10"></div>
+                    <div class="relative z-10">
+                        {{-- Subtle gradient overlay --}}
+                        <div class="absolute inset-0 -z-10 opacity-30">
+                            <div class="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-emerald-100 to-transparent rounded-full blur-3xl"></div>
+                            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tr from-purple-100 to-transparent rounded-full blur-3xl"></div>
                         </div>
-                    @endif
-                    @if(data_get($conference, 'teaser'))
-                        <div aria-hidden="true"
-                             class="relative z-10 mt-2 flex items-center text-sm font-medium text-indigo-500">View Upcoming Talk
-                            <x-icon name="lucide-chevron-right" class="ml-1 h-4 w-4 stroke-current transition-transform group-hover:translate-x-1" />
-                        </div>
-                    @endif
-                </article>
-            @endforeach
-        </div>
 
+                        <div class="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
+                            {{-- Left column - Text content --}}
+                            <div class="order-2 lg:order-1">
+                                <x-ui.typography variant="h1">
+                                    Hey, I'm Joey 👋
+                                    <span class="block text-gradient-primary mt-2">Speaking & Presentations</span>
+                                </x-ui.typography>
+
+                                <p class="mt-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                                    Over the years I've given a handful of presentations at various conferences. 
+                                    Below you can find slides and videos from some of them.
+                                </p>
+
+                                <div class="mt-8 flex flex-wrap gap-6 text-sm text-zinc-600 dark:text-zinc-400">
+                                    <div class="flex items-center gap-2">
+                                        <x-icon name="lucide-presentation" class="w-4 h-4 text-teal-600" />
+                                        <span>{{ count($conferences) }} Presentations</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <x-icon name="lucide-globe" class="w-4 h-4 text-teal-600" />
+                                        <span>5 Countries</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <x-icon name="lucide-calendar" class="w-4 h-4 text-teal-600" />
+                                        <span>Since 2011</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- Right column - Image --}}
+                            <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+                                <div class="relative">
+                                    <picture class="relative">
+                                        <source srcset="{{ asset('img/joey.webp') }}" type="image/webp">
+                                        <source srcset="{{ asset('img/joey.jpeg') }}" type="image/jpeg">
+                                        <img
+                                            src="{{ asset('img/joey.jpeg') }}"
+                                            class="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-white dark:border-zinc-800 shadow-2xl"
+                                            loading="eager"
+                                            fetchpriority="high"
+                                            width="320"
+                                            height="320"
+                                            alt="Joey Kudish - Speaker">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Conference Presentations Section --}}
+                <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 bg-zinc-50/50 dark:bg-zinc-800/50 border-t border-zinc-200/30 dark:border-zinc-700/50">
+                    <div>
+                        <div class="flex items-center gap-4 mb-12">
+                            <x-ui.typography variant="h2">
+                                Conference Presentations
+                            </x-ui.typography>
+                            <div class="flex-1 h-px bg-gradient-to-r from-zinc-200 to-transparent dark:from-zinc-700"></div>
+                        </div>
+
+                        <div class="grid gap-6 md:grid-cols-2">
+                            @foreach($conferences as $conference)
+                                <div class="group relative rounded-xl border border-zinc-200/50 dark:border-zinc-700/40 p-6 bg-white dark:bg-zinc-900/50 hover:border-emerald-500/30 dark:hover:border-emerald-600/30 transition-all duration-200 hover:shadow-lg">
+                                    {{-- Conference Title --}}
+                                    <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-2">
+                                        {{ data_get($conference, 'title') }}
+                                    </h3>
+                                    
+                                    {{-- Conference Info --}}
+                                    <div class="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 mb-4">
+                                        <x-icon name="lucide-map-pin" class="w-4 h-4 text-zinc-400 dark:text-zinc-500" />
+                                        <span>{{ data_get($conference, 'conference') }}</span>
+                                        <span class="text-zinc-400 dark:text-zinc-500">•</span>
+                                        <span>{{ data_get($conference, 'location') }}</span>
+                                    </div>
+
+                                    {{-- Download Link --}}
+                                    @if(data_get($conference, 'slides'))
+                                        <a 
+                                            href="{{ data_get($conference, 'slides') }}" 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="inline-flex items-center gap-2 text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
+                                        >
+                                            <x-icon name="lucide-download" class="w-4 h-4" />
+                                            <span>Download Slides</span>
+                                            <x-icon name="lucide-external-link" class="w-3 h-3 opacity-60" />
+                                        </a>
+                                    @else
+                                        <span class="text-sm text-zinc-400 dark:text-zinc-500 italic">
+                                            Slides not available
+                                        </span>
+                                    @endif
+
+                                    {{-- Hover effect --}}
+                                    <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Speaking Topics Section --}}
+                <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 bg-white dark:bg-zinc-900 border-t border-zinc-200/30 dark:border-zinc-700/50">
+                    <div class="max-w-3xl mx-auto text-center">
+                        <x-ui.typography variant="h2">
+                            Topics I Speak About
+                        </x-ui.typography>
+                        <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+                            I enjoy sharing knowledge about software development, automation,<br class="hidden sm:inline">
+                            and building products that scale.
+                        </p>
+
+                        <div class="mt-10 grid gap-6 sm:grid-cols-3">
+                            <div class="p-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/50 dark:border-zinc-700/50">
+                                <x-icon name="lucide-code-2" class="w-8 h-8 text-emerald-600 dark:text-emerald-400 mx-auto mb-3" />
+                                <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 mb-2">Web Development</h3>
+                                <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                                    Laravel, WordPress, modern PHP, and building scalable applications
+                                </p>
+                            </div>
+                            <div class="p-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/50 dark:border-zinc-700/50">
+                                <x-icon name="lucide-zap" class="w-8 h-8 text-yellow-600 dark:text-yellow-400 mx-auto mb-3" />
+                                <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 mb-2">AI & Automation</h3>
+                                <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                                    Workflow automation, AI integration, coding with AI, and productivity tools
+                                </p>
+                            </div>
+                            <div class="p-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/50 dark:border-zinc-700/50">
+                                <x-icon name="lucide-git-branch" class="w-8 h-8 text-purple-600 dark:text-purple-400 mx-auto mb-3" />
+                                <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 mb-2">Best Practices</h3>
+                                <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                                    Code quality, development workflows, and team collaboration
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-12">
+                            <p class="text-zinc-600 dark:text-zinc-400 mb-6">
+                                Interested in having me speak at your event?
+                            </p>
+                            <x-ui.gradient-button variant="primary" href="{{ route('contact') }}" icon="true">
+                                Get in Touch
+                            </x-ui.gradient-button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 </x-layout>

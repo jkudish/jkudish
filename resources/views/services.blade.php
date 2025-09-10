@@ -1,7 +1,7 @@
 <x-layout title="Services - Joey Kudish">
     <div class="flex justify-center my-8 lg:my-12">
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-lg overflow-hidden">
+            <div class="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-lg overflow-hidden shadow-lg">
 
                 {{-- Hero Section --}}
                 <div class="px-6 sm:px-8 lg:px-10 py-16 lg:py-24 xl:py-32">
