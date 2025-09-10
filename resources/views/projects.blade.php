@@ -11,7 +11,7 @@
                                 Projects & Work
                             </x-ui.typography>
                             <p class="mt-6 text-lg text-zinc-600 dark:text-zinc-400">
-                                From indie experiments to enterprise solutions — building software that ships and scales.
+                                What I've built, broken, and shipped over 18 years.
                             </p>
                         </header>
                     </div>
@@ -160,44 +160,44 @@
                 </div>
 
                 {{-- Success Stories Section --}}
-                <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 bg-white dark:bg-zinc-900 border-t border-zinc-200/30 dark:border-zinc-700/50">
+                <div class="px-6 sm:px-8 lg:px-10 py-16 lg:py-20 xl:py-24 bg-white dark:bg-zinc-900 border-t border-zinc-200/30 dark:border-zinc-700/50">
                     <div>
-                        <div class="text-center mb-12">
+                        <div class="text-center mb-16">
                             <x-ui.typography variant="h2">
-                                Success Stories & Impact
+                                What I've Shipped That Actually Works
                             </x-ui.typography>
-                            <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
-                                Real results from real projects — here's how I've helped businesses grow
+                            <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-500">
+                                Not case studies. Real products, real impact, still running in production.
                             </p>
                         </div>
                         
                         {{-- Featured Success Stories --}}
-                        <div class="grid gap-8 lg:grid-cols-2 mb-12">
+                        <div class="grid gap-10 lg:grid-cols-2 mb-16">
                             @php
                             $featuredStories = [
                                 [
                                     'company' => 'Image Salon',
-                                    'tagline' => 'Global Photography Platform',
+                                    'tagline' => 'Photography Automation Platform',
                                     'icon' => 'lucide-camera',
-                                    'impact' => '75% Time Saved',
-                                    'story' => 'Transformed a manual photo editing business into an automated powerhouse. Built systems that now serve 6,000+ photographers worldwide, cutting processing time from hours to minutes.',
+                                    'impact' => '75% Faster',
+                                    'story' => 'Built their entire tech stack from scratch. 6,000+ photographers worldwide, 75% faster order processing. My code from 2016 still processing hundreds of orders daily.',
                                     'highlights' => [
-                                        'AI-powered editing that processes entire catalogs automatically',
-                                        'Multilingual dashboard supporting global customer base',
-                                        'Custom automation saving 30+ hours per week',
+                                        'PHAiTO - AI that edits entire photo catalogs in minutes',
+                                        'Multi-language dashboard serving photographers in 12 countries',
+                                        'Automation that eliminated 30+ hours of manual work weekly',
                                     ],
-                                    'tech' => ['Laravel', 'AI/ML', 'Vue.js', 'API Integrations'],
+                                    'tech' => ['Laravel', 'AI/ML', 'Vue.js', 'Automation'],
                                 ],
                                 [
-                                    'company' => 'WordPress Ecosystem',
-                                    'tagline' => 'Powering 40% of the Web',
-                                    'icon' => 'lucide-globe',
-                                    'impact' => 'Millions of Users',
-                                    'story' => 'Core contributor to WordPress.com, WooCommerce, and Jetpack. Built features that power millions of websites and e-commerce stores globally.',
+                                    'company' => 'WordPress & WooCommerce',
+                                    'tagline' => 'E-commerce at Scale',
+                                    'icon' => 'lucide-shopping-cart',
+                                    'impact' => 'Millions Served',
+                                    'story' => 'Built stores, payment gateways, shipping integrations. Contributed to WordPress core. Worked on Metorik serving thousands of merchants daily.',
                                     'highlights' => [
-                                        'WooCommerce Connect shipping integration',
-                                        'REST API enhancements for third-party developers',
-                                        'Performance improvements reducing load times by 40%',
+                                        'WooCommerce Connect - shipping for thousands of stores',
+                                        'Jetpack features used by millions of WordPress sites',
+                                        'Analytics platform processing millions in GMV monthly',
                                     ],
                                     'tech' => ['WordPress', 'React', 'PHP', 'REST APIs'],
                                 ],
@@ -205,7 +205,7 @@
                             @endphp
                             
                             @foreach($featuredStories as $story)
-                            <div class="group rounded-2xl border-2 border-zinc-200/50 dark:border-zinc-700/40 p-8 bg-gradient-to-br from-white to-zinc-50/50 dark:from-zinc-900 dark:to-zinc-800/50 hover:border-emerald-500/30 dark:hover:border-emerald-600/30 transition-all duration-300">
+                            <div class="group rounded-2xl border border-zinc-200/50 dark:border-zinc-700/40 p-8 bg-white dark:bg-zinc-900/50 shadow-sm hover:shadow-xl hover:border-zinc-300 dark:hover:border-zinc-600 transition-all duration-300">
                                 <div class="flex items-start justify-between mb-6">
                                     <div class="flex items-start gap-4">
                                         <div class="p-3 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 dark:from-emerald-500/20 dark:to-teal-500/20 border border-emerald-500/20">
@@ -227,14 +227,14 @@
                                     </div>
                                 </div>
                                 
-                                <p class="text-zinc-700 dark:text-zinc-300 mb-6">
+                                <p class="text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed">
                                     {{ $story['story'] }}
                                 </p>
                                 
                                 <div class="space-y-3 mb-6">
                                     @foreach($story['highlights'] as $highlight)
                                     <div class="flex gap-3">
-                                        <x-icon name="lucide-check" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                                        <x-icon name="lucide-check" class="w-5 h-5 text-zinc-400 flex-shrink-0 mt-0.5" />
                                         <span class="text-sm text-zinc-600 dark:text-zinc-400">{{ $highlight }}</span>
                                     </div>
                                     @endforeach
@@ -252,17 +252,17 @@
                         </div>
 
                         {{-- Client Types Section --}}
-                        <div class="relative">
-                            <div class="text-center mb-8">
+                        <div class="relative mt-16">
+                            <div class="text-center mb-10">
                                 <h3 class="text-lg font-semibold text-zinc-900 dark:text-white mb-2">
-                                    I've Helped Businesses Across Industries
+                                    Industries I've Worked In
                                 </h3>
-                                <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                                    From startups to enterprises, SaaS to e-commerce — your industry, my expertise
+                                <p class="text-sm text-zinc-500 dark:text-zinc-500">
+                                    Your industry probably isn't special. I've seen most of them.
                                 </p>
                             </div>
                             
-                            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                                 @php
                                 $clientTypes = [
                                     [
@@ -289,10 +289,10 @@
                                 @endphp
                                 
                                 @foreach($clientTypes as $client)
-                                <div class="group p-6 rounded-xl border border-zinc-200/50 dark:border-zinc-700/40 bg-white dark:bg-zinc-900/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
+                                <div class="group p-6 rounded-xl border border-zinc-200/50 dark:border-zinc-700/40 bg-zinc-50/50 dark:bg-zinc-800/30 hover:shadow-md transition-all duration-200">
                                     <div class="mb-4">
-                                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-500/10 to-teal-500/10 dark:from-emerald-500/20 dark:to-teal-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                            <x-icon name="{{ $client['icon'] }}" class="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+                                        <div class="w-12 h-12 rounded-lg bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 flex items-center justify-center">
+                                            <x-icon name="{{ $client['icon'] }}" class="w-6 h-6 text-zinc-600 dark:text-zinc-400" />
                                         </div>
                                     </div>
                                     <h4 class="font-semibold text-zinc-900 dark:text-white mb-2">
@@ -306,47 +306,18 @@
                             </div>
                         </div>
 
-                        {{-- Key Achievements Banner --}}
-                        <div class="mt-12 p-8 rounded-2xl bg-gradient-to-r from-emerald-500/5 via-teal-500/5 to-cyan-500/5 dark:from-emerald-500/10 dark:via-teal-500/10 dark:to-cyan-500/10 border border-emerald-500/20 dark:border-emerald-500/30">
-                            <div class="grid gap-6 md:grid-cols-3 text-center">
-                                <div>
-                                    <div class="text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">
-                                        30+ Clients
-                                    </div>
-                                    <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                                        Delivered custom solutions
-                                    </p>
-                                </div>
-                                <div>
-                                    <div class="text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">
-                                        6+ Years
-                                    </div>
-                                    <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                                        Running my own consultancy
-                                    </p>
-                                </div>
-                                <div>
-                                    <div class="text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">
-                                        ROI Focused
-                                    </div>
-                                    <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                                        Every project delivers value
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
-                {{-- Tech Stack & Expertise Section --}}
-                <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 bg-zinc-50/50 dark:bg-zinc-800/50 border-t border-zinc-200/30 dark:border-zinc-700/50">
+                {{-- Tech Stack Section --}}
+                <div class="px-6 sm:px-8 lg:px-10 py-16 lg:py-20 xl:py-24 bg-zinc-50/50 dark:bg-zinc-800/50 border-t border-zinc-200/30 dark:border-zinc-700/50">
                     <div>
-                        <div class="text-center mb-12">
+                        <div class="text-center mb-16">
                             <x-ui.typography variant="h2">
-                                Technologies I Master
+                                Tech Stack
                             </x-ui.typography>
-                            <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
-                                Modern stack, battle-tested solutions — I speak your tech language
+                            <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-500">
+                                What I work with daily. And what I can figure out quickly.
                             </p>
                         </div>
 
@@ -402,10 +373,10 @@
                             @endphp
 
                             @foreach($techStacks as $stack)
-                            <div class="rounded-2xl border border-zinc-200/50 dark:border-zinc-700/40 p-6 bg-white dark:bg-zinc-900/50">
+                            <div class="rounded-2xl border border-zinc-200/50 dark:border-zinc-700/40 p-6 bg-white dark:bg-zinc-900/50 shadow-sm">
                                 <div class="flex items-start gap-3 mb-4">
-                                    <div class="p-2.5 rounded-lg bg-gradient-to-br from-emerald-500/10 to-teal-500/10 dark:from-emerald-500/20 dark:to-teal-500/20">
-                                        <x-icon name="{{ $stack['icon'] }}" class="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                                    <div class="p-2.5 rounded-lg bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
+                                        <x-icon name="{{ $stack['icon'] }}" class="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
                                     </div>
                                     <div>
                                         <h3 class="font-semibold text-zinc-900 dark:text-white">
@@ -421,9 +392,9 @@
                                     @foreach($stack['technologies'] as $tech => $level)
                                         @php
                                         $classes = match($level) {
-                                            'primary' => 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 border-emerald-200 dark:border-emerald-700/30',
+                                            'primary' => 'bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 border-zinc-900 dark:border-white',
                                             'secondary' => 'bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 border-zinc-200 dark:border-zinc-700',
-                                            'tertiary' => 'bg-zinc-50 text-zinc-600 dark:bg-zinc-800/50 dark:text-zinc-400 border-zinc-200/50 dark:border-zinc-700/50',
+                                            'tertiary' => 'bg-white text-zinc-500 dark:bg-zinc-900 dark:text-zinc-500 border-zinc-200 dark:border-zinc-700/50',
                                             default => 'bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300'
                                         };
                                         @endphp
@@ -455,12 +426,12 @@
                 </div>
 
                 {{-- Social Proof Section --}}
-                <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 bg-white dark:bg-zinc-900 border-t border-zinc-200/30 dark:border-zinc-700/50">
+                <div class="px-6 sm:px-8 lg:px-10 py-16 lg:py-20 xl:py-24 bg-white dark:bg-zinc-900 border-t border-zinc-200/30 dark:border-zinc-700/50">
                     <x-home.social-proof />
                 </div>
 
                 {{-- CTA Section --}}
-                <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 bg-white dark:bg-zinc-900 border-t border-zinc-200/30 dark:border-zinc-700/50">
+                <div class="px-6 sm:px-8 lg:px-10 py-16 lg:py-20 xl:py-24 bg-zinc-50/50 dark:bg-zinc-800/50 border-t border-zinc-200/30 dark:border-zinc-700/50">
                     <div class="text-center">
                         <x-ui.typography variant="h2">
                             Ready to Build Something Great?
