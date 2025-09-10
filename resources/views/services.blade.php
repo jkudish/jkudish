@@ -27,14 +27,14 @@
                                 'ideal_for' => [
                                     'Businesses losing money to manual data entry',
                                     'Companies wanting AI-powered lead generation',
+                                    'Ecommerce stores drowning in order management',
                                     'Service businesses ready to scale without hiring',
-                                    'Teams drowning in repetitive admin work',
                                 ],
                                 'deliverables' => [
                                     'Custom workflows tailored to your business',
                                     'AI-powered customer service automation',
                                     'Automated lead capture and nurturing systems',
-                                    'Integration with your existing tools and systems',
+                                    'Integration with your existing tools (Shopify, WooCommerce, CRMs)',
                                     'Training and documentation for your team',
                                 ],
                                 'process' => [
@@ -62,8 +62,8 @@
                                 'ideal_for' => [
                                     'Founders who built with ChatGPT, v0, Lovable, Replit, Bolt, etc.',
                                     'Teams with performance or security concerns',
+                                    'WooCommerce or Shopify stores with performance issues',
                                     'Businesses drowning in manual processes',
-                                    'Websites needing modernization',
                                     'Development teams wanting AI workflow optimization',
                                 ],
                                 'deliverables' => [
@@ -94,12 +94,12 @@
                                 'text_color' => 'text-emerald-600 dark:text-emerald-400',
                                 'border_gradient' => 'from-emerald-400 to-teal-500',
                                 'button_variant' => 'primary',
-                                'description' => 'From idea to revenue in weeks, not months. Stop overthinking, start shipping. I\'ll build your MVP, transform your AI prototype into production software, or create the technical foundation for your business. Using Laravel, JavaScript, and proven patterns, I build software that scales. No agencies, no junior devs, no excuses; just production ready code from an experienced engineer.',
+                                'description' => 'From idea to revenue in weeks, not months. Stop overthinking, start shipping. I\'ll build your MVP, transform your AI prototype into production software, or create the technical foundation for your business. Using Laravel, modern JavaScript, and ecommerce platforms like WooCommerce and Shopify, I build software that scales. No agencies, no junior devs, no excuses; just production ready code from an experienced engineer.',
                                 'ideal_for' => [
                                     'Businesses requiring custom software solutions',
+                                    'Ecommerce businesses needing custom integrations',
                                     'Founders ready to launch their first product',
                                     'Vibe coders needing help getting their code production-ready',
-                                    'Companies testing new product ideas',
                                 ],
                                 'deliverables' => [
                                     'Fully functional, production-ready application',
@@ -129,7 +129,7 @@
                                 'text_color' => 'text-cyan-600 dark:text-cyan-400',
                                 'border_gradient' => 'from-cyan-400 to-blue-500',
                                 'button_variant' => 'primary',
-                                'description' => 'Technical leadership without the equity or salary. Get the CTO experience your business needs at a fraction of the cost. From weekly code reviews to strategic technical decisions, I\'ll be your on-demand engineer. Perfect for growing startups, businesses running on automation, or any company that needs consistent technical guidance. Scale up or down as your needs change.',
+                                'description' => 'Technical leadership without the equity or salary. Get the CTO experience your business needs at a fraction of the cost. From weekly code reviews to strategic technical decisions, I\'ll be your on-demand engineer. Perfect for growing startups, ecommerce stores, businesses running on automation, or any company that needs consistent technical guidance. Scale up or down as your needs change.',
                                 'ideal_for' => [
                                     'Startups needing technical guidance',
                                     'Businesses with AI/automation workflows',

@@ -24,7 +24,7 @@ it('can access the projects page', function () {
     get('/projects')
         ->assertOk()
         ->assertSee('Projects')
-        ->assertSee('Currently Building')
+        ->assertSee("What I'm Building Right Now", false)
         ->assertSee('Tether')
         ->assertSee('PHAiTO');
 });

@@ -11,7 +11,7 @@
         
         <div class="mt-16 grid gap-16 lg:grid-cols-3 lg:gap-8">
             <div class="lg:col-span-2">
-                <div class="rounded-2xl bg-zinc-50 p-8 dark:bg-zinc-800/50">
+                <div class="rounded-2xl bg-gradient-to-br from-teal-50/30 to-cyan-50/20 p-8 dark:bg-zinc-800/50 border border-teal-100/30 dark:border-zinc-700/50 shadow-sm">
                     <x-ui.typography variant="h3">
                         What You'll Get
                     </x-ui.typography>
@@ -100,7 +100,7 @@
                                     name="email"
                                     id="email"
                                     placeholder="Your email address"
-                                    class="w-full rounded-md border border-zinc-900/10 px-3 py-2 shadow-sm placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
+                                    class="w-full rounded-md border border-emerald-500/40 bg-white px-3 py-2 shadow-sm text-gray-900 placeholder:text-gray-500 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-emerald-600/40 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-emerald-400 dark:focus:ring-emerald-400/20 sm:text-sm transition-all duration-200"
                                 />
                             </div>
                             
@@ -111,7 +111,7 @@
                                     name="name"
                                     id="name"
                                     placeholder="First name (optional)"
-                                    class="w-full rounded-md border border-zinc-900/10 px-3 py-2 shadow-sm placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
+                                    class="w-full rounded-md border border-emerald-500/40 bg-white px-3 py-2 shadow-sm text-gray-900 placeholder:text-gray-500 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-emerald-600/40 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-emerald-400 dark:focus:ring-emerald-400/20 sm:text-sm transition-all duration-200"
                                 />
                             </div>
                             

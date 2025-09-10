@@ -56,7 +56,7 @@ $projects = [
                 target="_blank"
                 rel="noopener noreferrer"
             @endif
-            class="group relative flex flex-col rounded-2xl border border-zinc-100 p-6 hover:border-emerald-500/30 dark:border-zinc-700/40 dark:hover:border-emerald-600/30 transition-all duration-150 hover:scale-[1.02] hover:shadow-lg bg-white/50 dark:bg-zinc-900/50"
+            class="no-underline group relative flex flex-col rounded-2xl border border-zinc-200/50 p-6 hover:border-emerald-500/30 dark:border-zinc-700/40 dark:hover:border-emerald-600/30 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg bg-white dark:bg-zinc-900/50 shadow-sm"
         >
             {{-- Logo/Icon Display - Fixed height container --}}
             <div class="h-20 flex items-center mb-4">
@@ -108,7 +108,7 @@ $projects = [
             @endif
             
             {{-- Description - flex-grow to push status badge to bottom --}}
-            <p class="text-sm font-sans text-zinc-600 dark:text-zinc-400 flex-grow">
+            <p class="text-sm font-sans text-gray-600 dark:text-zinc-400 flex-grow">
                 {{ $project['description'] }}
             </p>
             
@@ -116,10 +116,10 @@ $projects = [
             <div class="mt-4">
                 @php
                     $statusClasses = match($project['status']) {
-                        'building' => 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300',
-                        'coming_soon' => 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300',
-                        'launched' => 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300',
-                        default => 'bg-zinc-100 text-zinc-800 dark:bg-zinc-800/30 dark:text-zinc-300'
+                        'building' => 'bg-yellow-100 text-yellow-800 dark:bg-amber-900/30 dark:text-amber-300 border border-yellow-200/50 dark:border-amber-700/30',
+                        'coming_soon' => 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200/50 dark:border-blue-700/30',
+                        'launched' => 'bg-green-100 text-green-800 dark:bg-emerald-900/30 dark:text-emerald-300 border border-green-200/50 dark:border-emerald-700/30',
+                        default => 'bg-zinc-100 text-zinc-800 dark:bg-zinc-800/30 dark:text-zinc-300 border border-zinc-200/50 dark:border-zinc-700/30'
                     };
                 @endphp
                 <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold {{ $statusClasses }}">

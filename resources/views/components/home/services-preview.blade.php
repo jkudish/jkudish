@@ -10,6 +10,8 @@ $services = [
         'icon_color' => '#eab308',
         'text_color' => 'text-yellow-600 dark:text-yellow-400',
         'border_gradient' => 'from-yellow-400 to-amber-500',
+        'bg_color' => 'bg-yellow-50/30',
+        'icon_bg' => 'bg-yellow-100/50',
     ],
     [
         'icon' => 'lucide-file-text',
@@ -21,6 +23,8 @@ $services = [
         'icon_color' => '#a855f7',
         'text_color' => 'text-purple-600 dark:text-purple-400',
         'border_gradient' => 'from-purple-400 to-pink-500',
+        'bg_color' => 'bg-purple-50/30',
+        'icon_bg' => 'bg-purple-100/50',
     ],
     [
         'icon' => 'lucide-code-2',
@@ -32,6 +36,8 @@ $services = [
         'icon_color' => '#10b981',
         'text_color' => 'text-emerald-600 dark:text-emerald-400',
         'border_gradient' => 'from-emerald-400 to-teal-500',
+        'bg_color' => 'bg-emerald-50/30',
+        'icon_bg' => 'bg-emerald-100/50',
     ],
     [
         'icon' => 'lucide-sparkles',
@@ -43,6 +49,8 @@ $services = [
         'icon_color' => '#06b6d4',
         'text_color' => 'text-cyan-600 dark:text-cyan-400',
         'border_gradient' => 'from-cyan-400 to-blue-500',
+        'bg_color' => 'bg-cyan-50/30',
+        'icon_bg' => 'bg-cyan-100/50',
     ],
 ];
 @endphp
@@ -52,38 +60,42 @@ $services = [
         <x-ui.typography variant="h2">
             How I Can Help Your Business
         </x-ui.typography>
-        <p class="mt-4 text-lg font-sans text-zinc-600 dark:text-zinc-400">
+        <p class="mt-4 text-lg font-sans text-gray-600 dark:text-zinc-400">
             Choose the service that best fits your needs
         </p>
     </div>
 
     <div class="mt-12 grid gap-8 md:grid-cols-2">
         @foreach($services as $index => $service)
-        <div class="p-[2px] rounded-xl bg-gradient-to-r {{ $service['border_gradient'] }} hover:shadow-xl hover:shadow-{{ $service['color'] }}-500/20 transition-all duration-300 group">
-            <div class="h-full w-full bg-white dark:bg-zinc-900 rounded-xl">
-            <div class="p-6 h-full flex flex-col">
-                <div class="flex items-center justify-between">
-                    <x-icon name="{{ $service['icon'] }}" class="w-8 h-8" style="color: {{ $service['icon_color'] }}" />
-                </div>
+        <div class="relative group transition-all duration-300 hover:-translate-y-1">
+            <div class="p-[2px] rounded-xl bg-gradient-to-r {{ $service['border_gradient'] }} shadow-sm group-hover:shadow-lg transition-shadow duration-300">
+                <div class="h-full w-full bg-white dark:bg-zinc-900 rounded-xl">
+                    <div class="p-6 h-full flex flex-col">
+                        <div class="flex items-center justify-between">
+                            <div class="w-12 h-12 rounded-full {{ $service['icon_bg'] }} dark:bg-zinc-800 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                                <x-icon name="{{ $service['icon'] }}" class="w-6 h-6" style="color: {{ $service['icon_color'] }}" />
+                            </div>
+                        </div>
 
                 <x-ui.typography variant="h4" class="mt-4">
                     {{ $service['name'] }}
                 </x-ui.typography>
 
-                <p class="mt-2 text-sm font-sans text-zinc-600 dark:text-zinc-400 flex-grow">
+                        <p class="mt-2 text-sm font-sans text-gray-600 dark:text-zinc-400 flex-grow">
                     {{ $service['description'] }}
                 </p>
 
                 <ul class="mt-4 space-y-2">
                     @foreach($service['features'] as $feature)
-                    <li class="flex items-center text-sm font-sans text-zinc-600 dark:text-zinc-400">
+                        <li class="flex items-center text-sm font-sans text-gray-600 dark:text-zinc-400">
                         <x-icon name="lucide-check-circle" class="w-4 h-4 mr-2 {{ $service['text_color'] }}" />
                         {{ $feature }}
                     </li>
                     @endforeach
                 </ul>
 
-            </div>
+                    </div>
+                </div>
             </div>
         </div>
         @endforeach

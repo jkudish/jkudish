@@ -1,6 +1,6 @@
-<footer class="relative mt-24 bg-white/5 dark:bg-zinc-900/30 backdrop-blur-xl backdrop-saturate-150 border-t border-white/10 dark:border-zinc-800/50">
+<footer class="relative mt-24 bg-gradient-to-b from-white to-zinc-50 dark:from-zinc-900 dark:to-zinc-950 backdrop-blur-xl backdrop-saturate-150 border-t border-zinc-200/30 dark:border-zinc-800/50">
     {{-- Newsletter Section --}}
-    <div class="border-b border-white/10 dark:border-zinc-800/50">
+    <div class="border-b border-zinc-100 dark:border-zinc-800/50">
         <x-ui.container size="default" padding="true">
             <div class="py-12 lg:py-16">
                 <div class="mx-auto max-w-2xl text-center">
@@ -25,7 +25,7 @@
                             name="email"
                             placeholder="Enter your email"
                             aria-label="Email address"
-                            class="min-w-0 flex-auto rounded-lg border border-zinc-600/30 dark:border-zinc-700/40 bg-zinc-900/30 dark:bg-zinc-800/50 backdrop-blur-sm px-4 py-3 text-zinc-100 dark:text-white placeholder:text-zinc-500 dark:placeholder:text-zinc-400 focus:border-emerald-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-600/20 sm:text-sm transition-all duration-200"
+                            class="min-w-0 flex-auto rounded-lg border border-emerald-500/40 bg-white dark:bg-zinc-800/50 backdrop-blur-sm px-4 py-3 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-zinc-400 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 sm:text-sm transition-all duration-200"
                             required
                         />
                         <x-ui.gradient-button variant="primary" type="submit" icon="true">
@@ -45,25 +45,31 @@
     <x-ui.container size="default" padding="true">
         <div class="py-12 lg:py-16">
             <div class="flex flex-wrap justify-center gap-x-12 gap-y-3">
-                <a href="{{ route('services') }}" class="text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
-                    Services
-                </a>
-                <a href="{{ route('home') }}" class="text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
+                <a href="{{ route('home') }}" class="link-underline text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
                     About
                 </a>
-                <a href="{{ route('contact') }}" class="text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
+                <a href="{{ route('services') }}" class="link-underline text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
+                    Services
+                </a>
+                <a href="{{ route('projects') }}" class="link-underline text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
+                    Projects
+                </a>
+                <a href="{{ route('speaking') }}" class="link-underline text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
+                    Speaking
+                </a>
+                <a href="{{ route('newsletter') }}" class="link-underline text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
+                    Newsletter
+                </a>
+                <a href="{{ route('contact') }}" class="link-underline text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
                     Contact
                 </a>
-                <a href="https://glass.photo/jkudish" target="_blank" rel="noopener noreferrer" class="text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
+                <a href="https://glass.photo/jkudish" target="_blank" rel="noopener noreferrer" class="link-underline text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
                     Photography
-                </a>
-                <a href="{{ route('speaking') }}" class="text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
-                    Speaking
                 </a>
             </div>
 
             {{-- Social Links --}}
-            <div class="mt-12 border-t border-white/10 dark:border-zinc-800/50 pt-8">
+            <div class="mt-12 border-t border-zinc-100 dark:border-zinc-800/50 pt-8">
                 <div class="flex justify-center gap-8">
                     <a class="group -m-1 p-1"
                        aria-label="Follow on Blue Sky"

@@ -28,6 +28,34 @@
     --color-gradient-blue: #065f46;
     --color-gradient-purple: #8b5cf6;
     --color-gradient-pink: #ec4899;
+    
+    /* Light Mode Text Colors - Refined */
+    --color-text-primary-light: #0A0E27;
+    --color-text-secondary-light: #6B7280;
+    --color-text-muted-light: #9CA3AF;
+    
+    /* Light Mode Backgrounds */
+    --color-bg-gradient-start: #FFFFFF;
+    --color-bg-gradient-end: #FAFBFC;
+    --color-bg-section-alt: #F7F8FA;
+    --color-bg-section-light: #FAFBFC;
+    
+    /* Light Mode Accent Backgrounds */
+    --color-bg-teal-light: #E6FFFA;
+    --color-bg-yellow-light: #FEF3C7;
+    --color-bg-green-light: #D1FAE5;
+    --color-bg-blue-light: #DBEAFE;
+    --color-bg-purple-light: #F3E8FF;
+    --color-bg-pink-light: #FCE7F3;
+    
+    /* Shadow System */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.10);
+    --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.12);
+    --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.10);
+    --shadow-active: inset 0 2px 4px rgba(0, 0, 0, 0.06);
 
     /* Custom transition timing functions */
     --ease-bounce-in: cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -79,6 +107,69 @@
 
 @utility scale-103 {
     transform: scale(1.03);
+}
+
+/* Light Mode Background Gradients */
+@utility bg-gradient-subtle {
+    background: linear-gradient(180deg, var(--color-bg-gradient-start) 0%, var(--color-bg-gradient-end) 100%);
+}
+
+@utility bg-gradient-subtle-reverse {
+    background: linear-gradient(180deg, var(--color-bg-gradient-end) 0%, var(--color-bg-gradient-start) 100%);
+}
+
+/* Section Background Utilities */
+@utility bg-section-primary {
+    background-color: var(--color-bg-gradient-start);
+}
+
+@utility bg-section-secondary {
+    background-color: var(--color-bg-section-light);
+}
+
+@utility bg-section-tertiary {
+    background-color: var(--color-bg-section-alt);
+}
+
+/* Card Shadow Utilities */
+@utility shadow-card {
+    box-shadow: var(--shadow-sm);
+}
+
+@utility shadow-card-hover {
+    box-shadow: var(--shadow-hover);
+}
+
+@utility shadow-card-active {
+    box-shadow: var(--shadow-active);
+}
+
+/* Text Color Utilities for Light Mode */
+@utility text-primary-light {
+    color: var(--color-text-primary-light);
+}
+
+@utility text-secondary-light {
+    color: var(--color-text-secondary-light);
+}
+
+@utility text-muted-light {
+    color: var(--color-text-muted-light);
+}
+
+/* Subtle Text Shadow */
+@utility text-shadow-subtle {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+/* Card Hover Transform */
+@utility hover-lift {
+    transition: transform 200ms var(--ease-smooth), box-shadow 200ms var(--ease-smooth);
+}
+
+@utility hover-lift-active {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
 }
 
 /* Animation keyframes from tailwind.config.js */
@@ -158,13 +249,66 @@
 
 body {
     font-family: 'muliregular', ui-sans-serif, system-ui, sans-serif;
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: url('https://jkudish.com/img/grid.svg');
     background-repeat: repeat;
     background-size: 300px 300px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .dark body {
+    background: #0a0a0a;
+}
+
+.dark body::before {
     background-image: url('https://jkudish.com/img/grid-dark.svg');
+    opacity: 1;
+}
+
+/* Typography Enhancements */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--color-text-primary-light);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: #ffffff;
+    text-shadow: none;
+}
+
+/* Link Animations - Only for specific inline links */
+a.link-underline {
+    position: relative;
+    transition: color 200ms ease;
+}
+
+a.link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #14B8A6;
+    transition: width 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+a.link-underline:hover::after {
+    width: 100%;
 }
 
 

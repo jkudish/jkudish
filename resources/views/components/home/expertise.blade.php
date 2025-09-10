@@ -15,7 +15,7 @@ $expertise = [
     [
         'icon' => 'lucide-beaker',
         'name' => 'Product Development',
-        'skills' => ['MVP Strategy', 'User Research', 'Analytics', 'Monetization & Growth'],
+        'skills' => ['MVP Strategy', 'Ecommerce', 'Analytics', 'Monetization & Growth'],
         'description' => 'Taking ideas from concept to profitable production'
     ],
     [
