@@ -1,4 +1,4 @@
-@props(['title' => 'Joey Kudish'])
+@props(['title' => 'Joey Kudish', 'hideNewsletter' => false])
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -62,6 +62,6 @@
 <main id="main-content" class="flex-grow">
     {{ $slot }}
 </main>
-<x-footer/>
+<x-footer :hideNewsletter="$hideNewsletter"/>
 </body>
 </html>

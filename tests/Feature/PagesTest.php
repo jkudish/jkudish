@@ -33,8 +33,8 @@ it('can access the newsletter page', function () {
     get('/newsletter')
         ->assertOk()
         ->assertSee('The Maker Notes')
-        ->assertSee('Weekly insights from building indie projects')
-        ->assertSee('Subscribe Now');
+        ->assertSee('Insights on coding with AI')
+        ->assertSee('Join The Maker Notes');
 });
 
 it('can access the contact page', function () {
@@ -92,4 +92,27 @@ it('has proper meta title on contact page', function () {
     get('/contact')
         ->assertOk()
         ->assertSee('<title>Contact - Joey Kudish</title>', false);
+});
+
+it('shows newsletter in footer on most pages', function () {
+    get('/')
+        ->assertOk()
+        ->assertSee('The Maker Notes')
+        ->assertSee('My weekly brain dump');
+    
+    get('/services')
+        ->assertOk()
+        ->assertSee('The Maker Notes')
+        ->assertSee('My weekly brain dump');
+    
+    get('/speaking')
+        ->assertOk()
+        ->assertSee('The Maker Notes')
+        ->assertSee('My weekly brain dump');
+});
+
+it('hides newsletter in footer on newsletter page', function () {
+    get('/newsletter')
+        ->assertOk()
+        ->assertDontSee('My weekly brain dump');
 });

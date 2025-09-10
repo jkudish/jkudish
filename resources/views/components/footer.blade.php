@@ -1,5 +1,8 @@
+@props(['hideNewsletter' => false])
+
 <footer class="relative mt-24 bg-gradient-to-b from-white to-zinc-50 dark:from-zinc-900 dark:to-zinc-950 backdrop-blur-xl backdrop-saturate-150 border-t border-zinc-200/30 dark:border-zinc-800/50">
     {{-- Newsletter Section --}}
+    @unless($hideNewsletter)
     <div class="border-b border-zinc-100 dark:border-zinc-800/50">
         <x-ui.container size="default" padding="true">
             <div class="py-12 lg:py-16">
@@ -40,6 +43,7 @@
             </div>
         </x-ui.container>
     </div>
+    @endunless
 
     {{-- Footer Links --}}
     <x-ui.container size="default" padding="true">
