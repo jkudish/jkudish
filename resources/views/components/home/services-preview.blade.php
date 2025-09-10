@@ -71,28 +71,25 @@ $services = [
             <div class="p-[2px] rounded-xl bg-gradient-to-r {{ $service['border_gradient'] }} shadow-sm group-hover:shadow-lg transition-shadow duration-300">
                 <div class="h-full w-full bg-white dark:bg-zinc-900 rounded-xl">
                     <div class="p-6 h-full flex flex-col">
-                        <div class="flex items-center justify-between">
-                            <div class="w-12 h-12 rounded-full {{ $service['icon_bg'] }} dark:bg-zinc-800 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                                <x-icon name="{{ $service['icon'] }}" class="w-6 h-6" style="color: {{ $service['icon_color'] }}" />
+                        <div class="flex items-start gap-4">
+                            <x-icon name="{{ $service['icon'] }}" class="w-6 h-6 mt-1 flex-shrink-0 transition-transform duration-300 group-hover:scale-110" style="color: {{ $service['icon_color'] }}" />
+                            <div class="flex-1">
+                                <x-ui.typography variant="h4" class="leading-tight">
+                                    {{ $service['name'] }}
+                                </x-ui.typography>
+                                <p class="mt-2 text-sm font-sans text-gray-600 dark:text-zinc-400">
+                                    {{ $service['description'] }}
+                                </p>
+                                <ul class="mt-4 space-y-2">
+                                    @foreach($service['features'] as $feature)
+                                        <li class="flex items-center text-sm font-sans text-gray-600 dark:text-zinc-400">
+                                            <x-icon name="lucide-check-circle" class="w-4 h-4 mr-2 {{ $service['text_color'] }}" />
+                                            {{ $feature }}
+                                        </li>
+                                    @endforeach
+                                </ul>
                             </div>
                         </div>
-
-                <x-ui.typography variant="h4" class="mt-4">
-                    {{ $service['name'] }}
-                </x-ui.typography>
-
-                        <p class="mt-2 text-sm font-sans text-gray-600 dark:text-zinc-400 flex-grow">
-                    {{ $service['description'] }}
-                </p>
-
-                <ul class="mt-4 space-y-2">
-                    @foreach($service['features'] as $feature)
-                        <li class="flex items-center text-sm font-sans text-gray-600 dark:text-zinc-400">
-                        <x-icon name="lucide-check-circle" class="w-4 h-4 mr-2 {{ $service['text_color'] }}" />
-                        {{ $feature }}
-                    </li>
-                    @endforeach
-                </ul>
 
                     </div>
                 </div>
