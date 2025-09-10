@@ -318,7 +318,7 @@
                                     Industries I've Worked In
                                 </h3>
                                 <p class="text-sm text-zinc-500 dark:text-zinc-500">
-                                    Your industry probably isn't special. I've seen most of them.
+                                    Every industry has unique challenges. I've tackled many of them.
                                 </p>
                             </div>
                             
