@@ -178,7 +178,8 @@
                                 [
                                     'company' => 'Image Salon',
                                     'tagline' => 'Photography Automation Platform',
-                                    'icon' => 'lucide-camera',
+                                    'logo' => asset('img/companies/image-salon.png'),
+                                    'logo_webp' => asset('img/companies/image-salon.webp'),
                                     'impact' => '75% Faster',
                                     'story' => 'Built their entire tech stack from scratch. 6,000+ photographers worldwide, 75% faster order processing. My code from 2016 still processing hundreds of orders daily.',
                                     'highlights' => [
@@ -191,7 +192,8 @@
                                 [
                                     'company' => 'WordPress & WooCommerce',
                                     'tagline' => 'E-commerce at Scale',
-                                    'icon' => 'lucide-shopping-cart',
+                                    'logo' => asset('img/companies/wordpress.png'),
+                                    'logo_webp' => asset('img/companies/wordpress.webp'),
                                     'impact' => 'Millions Served',
                                     'story' => 'Built stores, payment gateways, shipping integrations. Contributed to WordPress core. Worked on Metorik serving thousands of merchants daily.',
                                     'highlights' => [
@@ -208,9 +210,20 @@
                             <div class="group rounded-2xl border border-zinc-200/50 dark:border-zinc-700/40 p-8 bg-white dark:bg-zinc-900/50 shadow-sm hover:shadow-xl hover:border-zinc-300 dark:hover:border-zinc-600 transition-all duration-300">
                                 <div class="flex items-start justify-between mb-6">
                                     <div class="flex items-start gap-4">
+                                        @if(isset($story['logo']))
+                                        <div class="w-16 h-16 flex items-center justify-center">
+                                            <picture>
+                                                <source srcset="{{ $story['logo_webp'] }}" type="image/webp">
+                                                <img src="{{ $story['logo'] }}" 
+                                                     alt="{{ $story['company'] }}" 
+                                                     class="max-h-12 w-auto grayscale opacity-70 dark:brightness-0 dark:invert">
+                                            </picture>
+                                        </div>
+                                        @else
                                         <div class="p-3 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 dark:from-emerald-500/20 dark:to-teal-500/20 border border-emerald-500/20">
                                             <x-icon name="{{ $story['icon'] }}" class="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                                         </div>
+                                        @endif
                                         <div>
                                             <h3 class="text-xl font-bold text-zinc-900 dark:text-white">
                                                 {{ $story['company'] }}
