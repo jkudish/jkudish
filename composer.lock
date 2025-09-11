@@ -4,8 +4,85 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bcd038a01aca7cdd4afe80f589ebd887",
+    "content-hash": "8a755411e1fb5cc5689a9d9038bd26a1",
     "packages": [
+        {
+            "name": "bentonow/bento-laravel-sdk",
+            "version": "v1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bentonow/bento-laravel-sdk.git",
+                "reference": "3a07113ab2113010ee2787500a8f75d821edbd25"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bentonow/bento-laravel-sdk/zipball/3a07113ab2113010ee2787500a8f75d821edbd25",
+                "reference": "3a07113ab2113010ee2787500a8f75d821edbd25",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "saloonphp/saloon": "^v3.11.2"
+            },
+            "require-dev": {
+                "laravel/pint": "^v1.21.2",
+                "laravel/prompts": "^0.3.5",
+                "orchestra/testbench": "^v9.12.0",
+                "pestphp/pest": "^v3.7.4",
+                "pestphp/pest-plugin-arch": "^3.0",
+                "pestphp/pest-plugin-laravel": "^v3.1.0",
+                "spatie/ray": "^1.41.6"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Bento": "Bentonow\\BentoLaravel\\Facades\\Bento"
+                    },
+                    "providers": [
+                        "Bentonow\\BentoLaravel\\BentoLaravelServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bentonow\\BentoLaravel\\": "src/",
+                    "Bentonow\\BentoLaravel\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aaron Francis",
+                    "email": "hello@aaronfrancis.com",
+                    "homepage": "https://aaronfrancis.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Zachary Oakes",
+                    "email": "zachary.oakes@gmail.com",
+                    "homepage": "https://www.zacharyoakes.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel SDK for Bento",
+            "homepage": "https://github.com/bentonow/bento-laravel-sdk",
+            "keywords": [
+                "bento",
+                "bentonow",
+                "email",
+                "laravel-driver",
+                "transactional"
+            ],
+            "support": {
+                "issues": "https://github.com/bentonow/bento-laravel-sdk/issues",
+                "source": "https://github.com/bentonow/bento-laravel-sdk/tree/v1.3.1"
+            },
+            "time": "2025-06-18T05:48:52+00:00"
+        },
         {
             "name": "blade-ui-kit/blade-icons",
             "version": "1.8.0",
@@ -3412,6 +3489,87 @@
                 "source": "https://github.com/ramsey/uuid/tree/4.9.0"
             },
             "time": "2025-06-25T14:20:11+00:00"
+        },
+        {
+            "name": "saloonphp/saloon",
+            "version": "v3.14.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/saloonphp/saloon.git",
+                "reference": "b1868db2d7c2eea57592b78797f24e8cddfb86cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/saloonphp/saloon/zipball/b1868db2d7c2eea57592b78797f24e8cddfb86cc",
+                "reference": "b1868db2d7c2eea57592b78797f24e8cddfb86cc",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.6",
+                "guzzlehttp/promises": "^1.5 || ^2.0",
+                "guzzlehttp/psr7": "^2.0",
+                "php": "^8.1",
+                "psr/http-factory": "^1.0",
+                "psr/http-message": "^1.1 || ^2.0"
+            },
+            "conflict": {
+                "sammyjo20/saloon": "*"
+            },
+            "require-dev": {
+                "ext-simplexml": "*",
+                "friendsofphp/php-cs-fixer": "^3.5",
+                "illuminate/collections": "^9.39 || ^10.0",
+                "league/flysystem": "^3.0",
+                "pestphp/pest": "^2.36.0 || ^3.8.2",
+                "phpstan/phpstan": "^2.1.13",
+                "saloonphp/xml-wrangler": "^1.1",
+                "spatie/ray": "^1.33",
+                "symfony/dom-crawler": "^6.0 || ^7.0",
+                "symfony/var-dumper": "^6.3 || ^7.0"
+            },
+            "suggest": {
+                "illuminate/collections": "Required for the response collect() method.",
+                "saloonphp/xml-wrangler": "Required for the response xmlReader() method.",
+                "symfony/dom-crawler": "Required for the response dom() method.",
+                "symfony/var-dumper": "Required for default debugging drivers."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Saloon\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sam Carré",
+                    "email": "29132017+Sammyjo20@users.noreply.github.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Build beautiful API integrations and SDKs with Saloon",
+            "homepage": "https://github.com/saloonphp/saloon",
+            "keywords": [
+                "api",
+                "api-integrations",
+                "saloon",
+                "sammyjo20",
+                "sdk"
+            ],
+            "support": {
+                "issues": "https://github.com/saloonphp/saloon/issues",
+                "source": "https://github.com/saloonphp/saloon/tree/v3.14.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sammyjo20",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-06-21T11:18:37+00:00"
         },
         {
             "name": "symfony/clock",
