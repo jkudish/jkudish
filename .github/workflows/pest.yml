@@ -42,8 +42,21 @@ jobs:
         id: test
         run: |
           set +e
+          
+          # Debug: Show current directory
+          echo "Current directory: $(pwd)"
+          
+          # Ensure test output file is created
+          touch test-output.txt
+          
+          # Run tests and capture output
           php artisan test --no-coverage 2>&1 | tee test-output.txt
           TEST_EXIT_CODE=${PIPESTATUS[0]}
+          
+          # Debug: Verify file was created
+          echo "Test output file exists: $(ls -la test-output.txt 2>/dev/null || echo 'File not found')"
+          
+          # Ensure outputs are set
           echo "exit_code=$TEST_EXIT_CODE" >> $GITHUB_OUTPUT
           
           # Extract test results
@@ -53,6 +66,7 @@ jobs:
             echo "status=failed" >> $GITHUB_OUTPUT
           fi
           
+          # Always exit successfully to allow the next step to run
           exit 0
           
       - name: Post test results to PR
@@ -61,7 +75,16 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const testOutput = fs.readFileSync('test-output.txt', 'utf8');
+            const path = require('path');
+            
+            // Check if test output file exists
+            const testOutputPath = path.join(process.cwd(), 'test-output.txt');
+            if (!fs.existsSync(testOutputPath)) {
+              console.log('Test output file not found, skipping comment');
+              return;
+            }
+            
+            const testOutput = fs.readFileSync(testOutputPath, 'utf8');
             const exitCode = '${{ steps.test.outputs.exit_code }}';
             const status = '${{ steps.test.outputs.status }}';
             
