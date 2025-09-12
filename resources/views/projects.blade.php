@@ -73,7 +73,7 @@
                             <div class="flex-1 h-px bg-gradient-to-r from-zinc-200 to-transparent dark:from-zinc-700"></div>
                         </div>
 
-                        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                        <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                             @foreach($projects as $project)
                             <a
                                 href="{{ $project['url'] }}"
@@ -176,7 +176,7 @@
                         </div>
 
                         {{-- Featured Success Stories --}}
-                        <div class="grid gap-10 lg:grid-cols-2 mb-16">
+                        <div class="grid gap-10 grid-cols-1 lg:grid-cols-2 mb-16">
                             @php
                             $featuredStories = [
                                 [
@@ -251,7 +251,7 @@
 
                         {{-- How I Work Section --}}
                         <div class="relative mt-16 p-10 rounded-2xl bg-gradient-to-br from-zinc-50 to-white dark:from-zinc-800/50 dark:to-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/40">
-                            <div class="grid gap-8 lg:grid-cols-3">
+                            <div class="grid gap-8 grid-cols-1 lg:grid-cols-3">
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="p-2 rounded-lg bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">

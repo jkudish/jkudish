@@ -48,7 +48,7 @@ $projects = [
         <div class="flex-1 h-px bg-gradient-to-r from-zinc-200 to-transparent dark:from-zinc-700"></div>
     </div>
     
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         @foreach($projects as $project)
         <a 
             href="{{ $project['url'] }}"

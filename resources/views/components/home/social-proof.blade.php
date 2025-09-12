@@ -68,7 +68,7 @@ $testimonials = [
     </div>
 
     {{-- Metrics Grid --}}
-    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="mt-12 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         @foreach($metrics as $metric)
         <div class="text-center">
             <div class="text-3xl font-bold text-emerald-600 dark:text-emerald-700">
@@ -96,20 +96,27 @@ $testimonials = [
                      if (e.key === 'ArrowLeft') this.prev();
                      if (e.key === 'ArrowRight') this.next();
                  });
+                 window.addEventListener('resize', () => this.updateVisibleTestimonials());
              },
              updateVisibleTestimonials() {
+                 const isMobile = window.innerWidth < 768; // md breakpoint
+                 const count = isMobile ? 1 : 2;
                  const indices = [];
-                 for (let i = 0; i < 2; i++) {
+                 for (let i = 0; i < count; i++) {
                      indices.push((this.currentIndex + i) % this.testimonials.length);
                  }
                  this.visibleTestimonials = indices.map(i => this.testimonials[i]);
              },
              next() {
-                 this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;
+                 const isMobile = window.innerWidth < 768;
+                 const step = isMobile ? 1 : 2;
+                 this.currentIndex = (this.currentIndex + step) % this.testimonials.length;
                  this.updateVisibleTestimonials();
              },
              prev() {
-                 this.currentIndex = (this.currentIndex - 1 + this.testimonials.length) % this.testimonials.length;
+                 const isMobile = window.innerWidth < 768;
+                 const step = isMobile ? 1 : 2;
+                 this.currentIndex = (this.currentIndex - step + this.testimonials.length) % this.testimonials.length;
                  this.updateVisibleTestimonials();
              }
          }"
@@ -121,7 +128,7 @@ $testimonials = [
         <div class="overflow-hidden mx-16">
             <div class="flex gap-8 transition-all duration-300 ease-in-out">
                 <template x-for="testimonial in visibleTestimonials" :key="testimonial.author">
-                    <div class="flex-none w-full md:w-1/2" style="width: calc(50% - 1rem);">
+                    <div class="flex-none w-full md:w-1/2" :style="window.innerWidth >= 768 ? 'width: calc(50% - 1rem);' : 'width: 100%;'">
                         <x-ui.gradient-border variant="primary" hover="false" padding="p-[1px]" class="h-full">
                             <div class="p-6 h-full flex flex-col">
                                 <svg class="w-8 h-8 text-emerald-600 dark:text-emerald-700 opacity-20 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">

@@ -1,4 +1,4 @@
-<div class="mx-auto w-full my-6 max-w-7xl lg:px-8">
+<div class="mx-auto w-full my-6 max-w-7xl lg:px-8" x-data="{ mobileMenuOpen: false }">
     <div class="relative px-4 sm:px-8 lg:px-12">
         <div class="mx-auto max-w-3xl lg:max-w-7xl">
             <div class="relative flex gap-4">
@@ -6,14 +6,63 @@
                 <div class="flex justify-end md:justify-center">
                     <div class="pointer-events-auto md:hidden">
                         <button
+                            @click="mobileMenuOpen = !mobileMenuOpen"
+                            x-bind:aria-expanded="mobileMenuOpen"
                             class="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-sm shadow-zinc-200/50 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20 dark:shadow-none"
-                            type="button" aria-expanded="false" data-headlessui-state=""
-                            id="headlessui-popover-button-:Rbmiqja:">Menu
-                            <x-icon name="lucide-chevron-down" class="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
+                            type="button">Menu
+                            <x-icon name="lucide-chevron-down" class="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400 transition-transform" x-bind:class="mobileMenuOpen ? 'rotate-180' : ''" />
                         </button>
                     </div>
-                    <div hidden=""
-                         style="position:fixed;top:1px;left:1px;width:1px;height:0;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0;display:none"></div>
+                    
+                    <!-- Mobile Menu Panel -->
+                    <div x-show="mobileMenuOpen" 
+                         x-transition:enter="transition ease-out duration-200"
+                         x-transition:enter-start="opacity-0 scale-95"
+                         x-transition:enter-end="opacity-100 scale-100"
+                         x-transition:leave="transition ease-in duration-150"
+                         x-transition:leave-start="opacity-100 scale-100"
+                         x-transition:leave-end="opacity-0 scale-95"
+                         @click.away="mobileMenuOpen = false"
+                         class="absolute top-16 right-0 z-50 md:hidden"
+                         role="dialog">
+                        <div class="w-56 rounded-2xl bg-white/95 p-4 shadow-lg shadow-zinc-200/50 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/95 dark:ring-white/10 dark:shadow-none">
+                            <nav>
+                                <ul class="space-y-2">
+                                    <li>
+                                        <a @click="mobileMenuOpen = false" 
+                                           class="block rounded-lg px-4 py-3 text-sm font-medium text-zinc-800 transition hover:bg-teal-50 hover:text-teal-600 dark:text-zinc-200 dark:hover:bg-zinc-700/50 dark:hover:text-teal-400 no-underline"
+                                           href="{{ route('home') }}">About</a>
+                                    </li>
+                                    <li>
+                                        <a @click="mobileMenuOpen = false"
+                                           class="block rounded-lg px-4 py-3 text-sm font-medium text-zinc-800 transition hover:bg-teal-50 hover:text-teal-600 dark:text-zinc-200 dark:hover:bg-zinc-700/50 dark:hover:text-teal-400 no-underline"
+                                           href="{{ route('services') }}">Services</a>
+                                    </li>
+                                    <li>
+                                        <a @click="mobileMenuOpen = false"
+                                           class="block rounded-lg px-4 py-3 text-sm font-medium text-zinc-800 transition hover:bg-teal-50 hover:text-teal-600 dark:text-zinc-200 dark:hover:bg-zinc-700/50 dark:hover:text-teal-400 no-underline"
+                                           href="{{ route('projects') }}">Projects</a>
+                                    </li>
+                                    <li>
+                                        <a @click="mobileMenuOpen = false"
+                                           class="block rounded-lg px-4 py-3 text-sm font-medium text-zinc-800 transition hover:bg-teal-50 hover:text-teal-600 dark:text-zinc-200 dark:hover:bg-zinc-700/50 dark:hover:text-teal-400 no-underline"
+                                           href="{{ route('speaking') }}">Speaking</a>
+                                    </li>
+                                    <li>
+                                        <a @click="mobileMenuOpen = false"
+                                           class="block rounded-lg px-4 py-3 text-sm font-medium text-zinc-800 transition hover:bg-teal-50 hover:text-teal-600 dark:text-zinc-200 dark:hover:bg-zinc-700/50 dark:hover:text-teal-400 no-underline"
+                                           href="{{ route('newsletter') }}">Newsletter</a>
+                                    </li>
+                                    <li>
+                                        <a @click="mobileMenuOpen = false"
+                                           class="block rounded-lg px-4 py-3 text-sm font-medium text-zinc-800 transition hover:bg-teal-50 hover:text-teal-600 dark:text-zinc-200 dark:hover:bg-zinc-700/50 dark:hover:text-teal-400 no-underline"
+                                           href="{{ route('contact') }}">Contact</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
                     <nav class="pointer-events-auto hidden md:block">
                         <ul class="flex rounded-full bg-white/95 px-3 text-sm font-medium text-gray-700 shadow-sm shadow-zinc-200/50 ring-1 ring-zinc-200/50 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:shadow-none">
                             <li>

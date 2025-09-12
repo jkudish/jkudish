@@ -212,7 +212,7 @@
                             <div class="flex-1 h-px bg-gradient-to-r from-zinc-200 to-transparent dark:from-zinc-700"></div>
                         </div>
 
-                        <div class="grid gap-6 md:grid-cols-2">
+                        <div class="grid gap-6 grid-cols-1 md:grid-cols-2">
                             @foreach($conferences as $conference)
                                 <div class="group relative rounded-xl border border-zinc-200/50 dark:border-zinc-700/40 p-6 bg-white dark:bg-zinc-900/50 hover:border-emerald-500/30 dark:hover:border-emerald-600/30 transition-all duration-200 hover:shadow-lg">
                                     {{-- Conference Title --}}
@@ -265,7 +265,7 @@
                             and building products that scale.
                         </p>
 
-                        <div class="mt-10 grid gap-6 sm:grid-cols-3">
+                        <div class="mt-10 grid gap-6 grid-cols-1 sm:grid-cols-3">
                             <div class="p-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/50 dark:border-zinc-700/50">
                                 <x-icon name="lucide-code-2" class="w-8 h-8 text-emerald-600 dark:text-emerald-400 mx-auto mb-3" />
                                 <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 mb-2">Web Development</h3>

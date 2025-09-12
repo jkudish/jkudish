@@ -82,7 +82,7 @@
                                 Topics I'll Cover
                             </h2>
                             
-                            <div class="grid gap-6 sm:grid-cols-2">
+                            <div class="grid gap-6 grid-cols-1 sm:grid-cols-2">
                                 <div class="p-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/50 dark:border-zinc-700/50">
                                     <div class="flex items-start gap-4">
                                         <div class="flex-shrink-0 p-2 rounded-lg bg-purple-100 dark:bg-purple-900/30">
