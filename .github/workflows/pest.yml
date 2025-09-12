@@ -31,32 +31,17 @@ jobs:
             ${{ runner.os }}-composer-
             
       - name: Install dependencies
-        run: |
-          # Set composer to not use GitHub API for public repos
-          composer config --global github-protocols https
-          composer install --prefer-dist --no-progress --no-suggest --optimize-autoloader
+        run: composer install --prefer-dist --no-progress --no-suggest --optimize-autoloader
         
       - name: Prepare Laravel application
         run: |
           cp .env.example .env
           php artisan key:generate
           
-          # Configure git to avoid remote warnings
-          git config --global init.defaultBranch main
-          git config --global user.email "ci@github.com"
-          git config --global user.name "GitHub Actions"
-          
       - name: Run Pest tests
         id: test
         run: |
           set +e
-          
-          # Debug: Show current directory
-          echo "Current directory: $(pwd)"
-          
-          # Suppress git warnings that might occur during tests
-          export GIT_TERMINAL_PROMPT=0
-          export GIT_ASKPASS=/bin/echo
           
           # Ensure test output file is created
           touch test-output.txt
@@ -64,9 +49,6 @@ jobs:
           # Run tests and capture output
           php artisan test --no-coverage 2>&1 | tee test-output.txt
           TEST_EXIT_CODE=${PIPESTATUS[0]}
-          
-          # Debug: Verify file was created
-          echo "Test output file exists: $(ls -la test-output.txt 2>/dev/null || echo 'File not found')"
           
           # Ensure outputs are set
           echo "exit_code=$TEST_EXIT_CODE" >> $GITHUB_OUTPUT
