@@ -1,10 +1,12 @@
+@props(['title' => 'Joey Kudish'])
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Joey Kudish</title>
+    <title>{{ $title }}</title>
 
     <link rel="preload" href="{{ url('fonts/Telegraf UltraBold 800.woff') }}" as="font" crossorigin/>
     <link rel="preload" href="{{ url('fonts/muli-regular-webfont.woff2') }}" as="font" crossorigin/>
@@ -50,14 +52,16 @@
 
 </head>
 <body class="dark:bg-zinc-800 flex flex-col min-h-screen">
+{{-- Skip Navigation Link for Accessibility --}}
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-teal-600 text-white px-4 py-2 rounded-md z-50 focus:outline-none focus:ring-2 focus:ring-teal-500">
+    Skip to main content
+</a>
 
 <x-navigation/>
 
-<div class="max-w-2xl mx-auto">
-
+<main id="main-content" class="flex-grow">
     {{ $slot }}
-
-</div>
+</main>
 <x-footer/>
 </body>
 </html>

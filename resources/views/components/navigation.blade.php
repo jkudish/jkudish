@@ -25,20 +25,28 @@
                                    href="{{ route('home') }}">About</a></li>
                             <li>
                                 <a class="w-full relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
+                                   href="{{ route('services') }}">Services</a>
+                            </li>
+                            <li>
+                                <a class="w-full relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
+                                   href="{{ route('projects') }}">Projects</a>
+                            </li>
+                            <li>
+                                <a class="w-full relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
                                    href="{{ route('speaking') }}">Speaking</a>
                             </li>
                             <li>
                                 <a class="w-full relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
-                                   href="https://glass.photo/jkudish">Photography</a>
+                                   href="{{ route('newsletter') }}">Newsletter</a>
                             </li>
                             <li>
                                 <a class="w-full relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
-                                   href="mailto:joey@jkudish.com">📥 E-mail me</a>
+                                   href="{{ route('contact') }}">Contact</a>
                             </li>
                         </ul>
                     </nav>
                 </div>
-                <div class="flex justify-end md:flex-1">
+                <div class="flex justify-end md:flex-1 gap-4">
                     <div class="pointer-events-auto">
                         <button type="button" aria-label="Switch to dark theme"
                                 class="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"

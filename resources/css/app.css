@@ -1,27 +1,160 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+@theme {
+    /* Font families from tailwind.config.js */
+    --font-family-sans: "muliregular", ui-sans-serif, system-ui, sans-serif;
+    --font-family-title: "Telegraf UltraBold", ui-sans-serif, system-ui, sans-serif;
+    
+    /* Custom animations from tailwind.config.js - converted to utilities */
+    --animate-slide-up: slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    --animate-fade-in: fade-in 0.8s ease-out forwards;
+    --animate-scale-in: scale-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    --animate-float: float 3s ease-in-out infinite;
+    --animate-wave: wave 2.5s ease-in-out infinite;
+    --animate-gradient-shift: gradient-shift 3s ease infinite;
+    --animate-glow-pulse: glow-pulse 2s ease-in-out infinite;
+    --animate-typing: typing 3.5s steps(40, end);
+    --animate-blink: blink 1s infinite;
+    --animate-rotate-border: rotate-border 3s linear infinite;
+    --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
+    --animate-bounce-slow: bounce 3s infinite;
+    --animate-spin-slow: spin 3s linear infinite;
+
+    /* Custom colors from tailwind.config.js */
+    --color-gradient-cyan: #047857;
+    --color-gradient-blue: #065f46;
+    --color-gradient-purple: #8b5cf6;
+    --color-gradient-pink: #ec4899;
+
+    /* Custom transition timing functions */
+    --ease-bounce-in: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Custom scales */
+    --scale-102: 1.02;
+    --scale-103: 1.03;
+}
+
+/* Custom utilities for background images from tailwind.config.js */
+@utility bg-gradient-primary {
+    background-image: linear-gradient(135deg, #047857 0%, #065f46 100%);
+}
+
+@utility bg-gradient-accent {
+    background-image: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+}
+
+@utility bg-gradient-rainbow {
+    background-image: linear-gradient(45deg, #047857, #065f46, #8b5cf6, #ec4899);
+}
+
+@utility bg-mesh-gradient {
+    background-image: radial-gradient(at 40% 20%, hsla(189, 100%, 56%, 0.15) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(355, 100%, 93%, 0.15) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(270, 100%, 77%, 0.15) 0px, transparent 50%);
+}
+
+@utility bg-dots-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgb(209 213 219 / 0.3) 1px, transparent 1px);
+}
+
+@utility bg-grid-pattern {
+    background-image: linear-gradient(rgba(0,0,0,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.03) 1px, transparent 1px);
+}
+
+/* Custom utilities for transitions */
+@utility ease-bounce-in {
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@utility ease-smooth {
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom utilities for scales */
+@utility scale-102 {
+    transform: scale(1.02);
+}
+
+@utility scale-103 {
+    transform: scale(1.03);
+}
+
+/* Animation keyframes from tailwind.config.js */
+@keyframes slide-up {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scale-in {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(20deg); }
+    75% { transform: rotate(-20deg); }
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(4, 120, 87, 0.5); }
+    50% { box-shadow: 0 0 30px rgba(4, 120, 87, 0.8), 0 0 60px rgba(4, 120, 87, 0.4); }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+@keyframes rotate-border {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse-dot {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+}
 
 @layer base {
     @font-face {
         font-family: 'Telegraf UltraBold';
         font-style: normal;
-        font-weight: normal;
-        src: local('Telegraf UltraBold'), url('https://jkudish.com/fonts/Telegraf UltraBold 800.woff') format('woff');
+        font-weight: 800;
+        src: local('Telegraf UltraBold'), url('/fonts/Telegraf UltraBold 800.woff') format('woff');
     }
 
     @font-face {
         font-family: 'muliregular';
-        src: url('https://jkudish.com/fonts/muli-regular-webfont.woff2') format('woff2'),
-        url('https://jkudish.com/fonts/muli-regular-webfont.woff') format('woff');
-        font-weight: normal;
+        src: url('/fonts/muli-regular-webfont.woff2') format('woff2'),
+             url('/fonts/muli-regular-webfont.woff') format('woff');
+        font-weight: 400;
         font-style: normal;
-
     }
 }
 
 body {
+    font-family: 'muliregular', ui-sans-serif, system-ui, sans-serif;
     background-image: url('https://jkudish.com/img/grid.svg');
     background-repeat: repeat;
     background-size: 300px 300px;
@@ -29,4 +162,15 @@ body {
 
 .dark body {
     background-image: url('https://jkudish.com/img/grid-dark.svg');
+}
+
+/* Fix for grid item borders */
+.logo-grid > div {
+    border-right: 1px solid rgb(228 228 231 / 0.5);
+    border-bottom: 1px solid rgb(228 228 231 / 0.5);
+}
+
+.dark .logo-grid > div {
+    border-right-color: rgb(63 63 70 / 0.5);
+    border-bottom-color: rgb(63 63 70 / 0.5);
 }

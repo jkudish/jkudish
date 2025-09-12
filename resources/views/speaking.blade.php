@@ -110,7 +110,7 @@
 
 <x-layout>
 
-    <div class="mt-12 px-8">
+    <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 mt-12">
         <div class="flex flex-col md:flex-row">
             <picture class="flex-none mr-6">
                 <source srcset="{{ url('img/joey.webp') }}" type="image/webp">
