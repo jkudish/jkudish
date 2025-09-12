@@ -88,6 +88,7 @@
             })
     </script>
 
+    @stack('head')
 </head>
 <body class="dark:bg-zinc-800 flex flex-col min-h-screen">
 {{-- Skip Navigation Link for Accessibility --}}
@@ -101,5 +102,7 @@
     {{ $slot }}
 </main>
 <x-footer :hideNewsletter="$hideNewsletter"/>
+
+@stack('scripts')
 </body>
 </html>
