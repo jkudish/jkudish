@@ -1,4 +1,12 @@
-@props(['title' => 'Joey Kudish', 'hideNewsletter' => false])
+@props([
+    'title' => 'Joey Kudish',
+    'hideNewsletter' => false,
+    'description' => null,
+    'keywords' => null,
+    'image' => null,
+    'structuredData' => null,
+    'appendSiteName' => true,
+])
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -6,7 +14,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ $title }}</title>
+    <x-seo 
+        :title="$title"
+        :description="$description"
+        :keywords="$keywords"
+        :image="$image"
+        :structuredData="$structuredData"
+        :appendSiteName="$appendSiteName"
+    />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="{{ asset('img/favicon/favicon.svg') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon/favicon-16x16.png') }}">
+    
+    <!-- Legacy favicon -->
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon/apple-touch-icon.png') }}">
+    
+    <!-- Android Chrome Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('img/favicon/android-chrome-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('img/favicon/android-chrome-512x512.png') }}">
+    
+    <!-- Browser theme color -->
+    <meta name="theme-color" content="#000000">
 
     <link rel="preload" href="{{ url('fonts/Telegraf UltraBold 800.woff') }}" as="font" crossorigin/>
     <link rel="preload" href="{{ url('fonts/muli-regular-webfont.woff2') }}" as="font" crossorigin/>

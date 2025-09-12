@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SitemapController;
+use Illuminate\Support\Facades\Route;
 
 // redirect slides subdomain to speaking
 Route::domain('slides.jkudish.com')->group(function () {
@@ -26,3 +27,6 @@ Route::redirect('/presentations', '/speaking');
 Route::redirect('/presented', '/speaking');
 
 Route::redirect('/found', 'https://found.jkudish.com');
+
+// Sitemap
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');

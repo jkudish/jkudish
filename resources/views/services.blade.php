@@ -1,4 +1,36 @@
-<x-layout title="Services - Joey Kudish">
+@php
+$structuredData = [
+    '@context' => 'https://schema.org',
+    '@type' => 'Service',
+    'name' => 'Software Development & AI Automation Services',
+    'provider' => [
+        '@type' => 'Person',
+        'name' => 'Joey Kudish'
+    ],
+    'serviceType' => [
+        'Software Development',
+        'AI Automation',
+        'Laravel Development',
+        'Code Audit',
+        'Technical Consulting'
+    ],
+    'description' => 'Professional software development and AI automation services. Specializing in Laravel applications, custom integrations, and workflow automation.',
+    'areaServed' => 'Worldwide',
+    'availableChannel' => [
+        '@type' => 'ServiceChannel',
+        'serviceUrl' => url('/services'),
+        'servicePhone' => '',
+        'serviceEmail' => 'joey@jkudish.com'
+    ]
+];
+@endphp
+
+<x-layout 
+    title="Software Development & AI Automation Services"
+    description="Professional software development and AI automation services. Specializing in Laravel applications, custom integrations, and workflow automation."
+    keywords="software development services, AI automation, Laravel development, custom web applications, consulting, workflow automation, code audit, MVP development"
+    :structuredData="$structuredData"
+>
     <div class="flex justify-center my-8 lg:my-12">
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-lg overflow-hidden shadow-lg">

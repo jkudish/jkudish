@@ -1,4 +1,8 @@
-<x-layout title="Projects - Joey Kudish">
+<x-layout 
+    title="Portfolio & Projects"
+    description="Explore Joey Kudish's portfolio of software projects, including web applications, open-source contributions, and client work."
+    keywords="software portfolio, web development projects, Laravel applications, case studies, Tether, PHAiTO, client work, open source"
+>
     <div class="flex justify-center my-8 lg:my-12">
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white/90 dark:bg-zinc-900/80 backdrop-blur-xl rounded-lg overflow-hidden shadow-lg">

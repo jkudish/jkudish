@@ -105,10 +105,39 @@
             'title' => 'WordPress custom post types',
             'slides' => 'https://www.slideshare.net/slideshow/custom-post-types-in-depth-at-wordcamp-montreal/8556704',
         ],
-    ]
+    ];
+
+    // Create structured data for events
+    $events = array_map(function($conf) {
+        return [
+            '@type' => 'Event',
+            'name' => $conf['conference'] . ': ' . $conf['title'],
+            'location' => [
+                '@type' => 'Place',
+                'name' => $conf['location']
+            ],
+            'performer' => [
+                '@type' => 'Person',
+                'name' => 'Joey Kudish'
+            ],
+            'description' => $conf['title'],
+            'eventAttendanceMode' => 'https://schema.org/OfflineEventAttendanceMode'
+        ];
+    }, array_slice($conferences, 0, 5)); // Include first 5 events to avoid too much data
+
+    $structuredData = [
+        '@context' => 'https://schema.org',
+        '@type' => 'ItemList',
+        'itemListElement' => $events
+    ];
 @endphp
 
-<x-layout title="Speaking - Joey Kudish">
+<x-layout 
+    title="Speaking & Presentations"
+    description="Conference talks, presentations, and workshops by Joey Kudish on software development, Laravel, WordPress, and AI automation."
+    keywords="tech speaker, conference presentations, Laravel talks, WordPress presentations, software development talks, AI automation, WordCamp, PHP conferences"
+    :structuredData="$structuredData"
+>
     <div class="flex justify-center my-8 lg:my-12">
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white/90 dark:bg-zinc-900/80 backdrop-blur-xl rounded-lg overflow-hidden shadow-lg">

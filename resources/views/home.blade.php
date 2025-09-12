@@ -1,4 +1,33 @@
-<x-layout>
+@php
+$structuredData = [
+    '@context' => 'https://schema.org',
+    '@type' => 'Person',
+    'name' => 'Joey Kudish',
+    'jobTitle' => 'Software Developer & AI Automation Consultant',
+    'description' => 'Expert Laravel developer and AI automation consultant helping businesses build scalable web applications and automate workflows.',
+    'url' => url('/'),
+    'sameAs' => [
+        'https://github.com/jkudish',
+        'https://linkedin.com/in/jkudish',
+    ],
+    'knowsAbout' => [
+        'Laravel',
+        'PHP',
+        'AI Automation',
+        'Web Development',
+        'WordPress',
+        'Software Architecture'
+    ],
+];
+@endphp
+
+<x-layout 
+    title="Joey Kudish - Software Developer & AI Automation Consultant"
+    description="Expert Laravel developer and AI automation consultant helping businesses build scalable web applications and automate workflows."
+    keywords="Joey Kudish, software developer, Laravel expert, AI automation, web development, consultant, PHP developer, full-stack developer"
+    :appendSiteName="false"
+    :structuredData="$structuredData"
+>
     <div class="flex justify-center my-8 lg:my-12">
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white/90 dark:bg-zinc-900/80 backdrop-blur-xl rounded-lg overflow-hidden shadow-lg">

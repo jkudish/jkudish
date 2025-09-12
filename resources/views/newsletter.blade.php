@@ -1,4 +1,9 @@
-<x-layout title="The Maker Notes - Joey Kudish" :hideNewsletter="true">
+<x-layout 
+    title="The Maker Notes Newsletter"
+    description="Subscribe to The Maker Notes for insights on software development, AI automation, and building digital products."
+    keywords="tech newsletter, software development newsletter, The Maker Notes, AI automation insights, coding with AI, digital products"
+    :hideNewsletter="true"
+>
     <div class="flex justify-center my-8 lg:my-12">
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-lg overflow-hidden shadow-lg">

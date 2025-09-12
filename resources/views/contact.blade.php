@@ -1,4 +1,26 @@
-<x-layout title="Contact - Joey Kudish">
+@php
+$structuredData = [
+    '@context' => 'https://schema.org',
+    '@type' => 'Person',
+    'name' => 'Joey Kudish',
+    'email' => 'joey@jkudish.com',
+    'jobTitle' => 'Software Developer & AI Automation Consultant',
+    'url' => url('/contact'),
+    'contactPoint' => [
+        '@type' => 'ContactPoint',
+        'email' => 'joey@jkudish.com',
+        'contactType' => 'customer service',
+        'availableLanguage' => 'English'
+    ]
+];
+@endphp
+
+<x-layout 
+    title="Contact Joey Kudish"
+    description="Contact Joey Kudish for software development projects, AI automation consulting, or speaking engagements."
+    keywords="contact Joey Kudish, hire developer, consulting inquiries, speaking requests, software development contact"
+    :structuredData="$structuredData"
+>
     <div class="flex justify-center my-8 lg:my-12">
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white/90 dark:bg-zinc-900/80 backdrop-blur-xl rounded-lg overflow-hidden shadow-lg">
