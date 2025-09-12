@@ -19,70 +19,61 @@
         {{-- Background decoration --}}
         <div class="absolute inset-0 bg-mesh-gradient opacity-30"></div>
         
-        <div class="relative z-10 text-center max-w-3xl mx-auto">
-            {{-- 404 Display with gradient --}}
-            <div class="mb-8 animate-fade-in">
-                <h1 class="text-[8rem] sm:text-[10rem] md:text-[12rem] lg:text-[14rem] font-title font-bold leading-none text-gradient-primary">
-                    404
-                </h1>
-            </div>
-
-            {{-- Error Message --}}
-            <div class="mb-8 animate-slide-up" style="animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards;">
-                <x-ui.typography variant="h2" class="mb-4">
-                    Oops! This page got lost in the digital void
-                </x-ui.typography>
-                
-                <x-ui.typography variant="lead" class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                    The page you're looking for might have been moved, deleted, or perhaps it never existed in this timeline.
-                </x-ui.typography>
-            </div>
-
-            {{-- Navigation Buttons --}}
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8 animate-fade-in" style="animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards;">
-                <x-ui.gradient-button 
-                    href="/"
-                    variant="primary"
-                    class="px-8 py-3"
-                >
-                    Take Me Home
-                </x-ui.gradient-button>
-
-                <x-ui.gradient-button 
-                    href="/services"
-                    variant="secondary"
-                    class="px-8 py-3"
-                >
-                    View Services
-                </x-ui.gradient-button>
-
-                <x-ui.gradient-button 
-                    href="/speaking"
-                    variant="secondary"
-                    class="px-8 py-3"
-                >
-                    Speaking
-                </x-ui.gradient-button>
-            </div>
-
-            {{-- Helper Text --}}
-            <div class="animate-fade-in" style="animation-delay: 0.6s; opacity: 0; animation-fill-mode: forwards;">
-                <x-ui.typography variant="small" class="text-gray-500 dark:text-gray-500">
-                    Lost? Try starting from the <a href="/" class="text-teal-600 dark:text-teal-400 hover:underline">homepage</a> or check that the URL is correct.
-                </x-ui.typography>
-            </div>
-
-            {{-- Fun Monster Illustration --}}
-            <div class="mt-12 animate-float" style="animation-delay: 0.8s;">
-                <div class="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 mx-auto">
-                    <img 
-                        src="{{ asset('img/404-monster.svg') }}" 
-                        alt="Friendly 404 monster holding a sign, looking confused"
-                        class="w-full h-full opacity-90 dark:opacity-80"
-                        aria-label="A friendly purple and pink monster holding a 404 sign, with question marks floating above its head"
-                    />
+        <div class="relative z-10 max-w-4xl mx-auto">
+            {{-- Container with title and content --}}
+            <x-ui.container class="bg-white/95 dark:bg-zinc-900/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 md:p-12">
+                {{-- Page Title --}}
+                <div class="text-center mb-8 animate-fade-in">
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-title font-bold text-gray-900 dark:text-white mb-2">
+                        404: Whoops, this page doesn't exist
+                    </h1>
+                    <div class="w-24 h-1 bg-gradient-primary mx-auto rounded-full mt-4"></div>
                 </div>
-            </div>
+
+                {{-- Monster Illustration --}}
+                <div class="mb-8 animate-slide-up" style="animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards;">
+                    <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto">
+                        <img 
+                            src="{{ asset('img/404.png') }}" 
+                            alt="Sad monster realizing the page is missing"
+                            class="w-full h-full object-contain"
+                            aria-label="A cute teal monster with horns looking sad about the missing page"
+                        />
+                    </div>
+                </div>
+
+                {{-- Error Message --}}
+                <div class="text-center mb-8 animate-fade-in" style="animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards;">
+                    <x-ui.typography variant="lead" class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-6">
+                        The page you're looking for seems to have wandered off. Don't worry, even the best explorers get lost sometimes!
+                    </x-ui.typography>
+                    
+                    {{-- Back to Home Link --}}
+                    <x-ui.gradient-button 
+                        href="/"
+                        variant="primary"
+                        class="px-8 py-4 text-lg"
+                    >
+                        Back to Homepage
+                    </x-ui.gradient-button>
+                </div>
+
+                {{-- Additional Navigation Options --}}
+                <div class="border-t border-gray-200 dark:border-zinc-700 pt-6 mt-8 animate-fade-in" style="animation-delay: 0.6s; opacity: 0; animation-fill-mode: forwards;">
+                    <x-ui.typography variant="small" class="text-center text-gray-500 dark:text-gray-500 mb-4">
+                        Or explore other sections:
+                    </x-ui.typography>
+                    <div class="flex flex-wrap gap-3 justify-center">
+                        <a href="/services" class="text-teal-600 dark:text-teal-400 hover:underline">Services</a>
+                        <span class="text-gray-400 dark:text-gray-600">•</span>
+                        <a href="/projects" class="text-teal-600 dark:text-teal-400 hover:underline">Projects</a>
+                        <span class="text-gray-400 dark:text-gray-600">•</span>
+                        <a href="/speaking" class="text-teal-600 dark:text-teal-400 hover:underline">Speaking</a>
+                        <span class="text-gray-400 dark:text-gray-600">•</span>
+                        <a href="/contact" class="text-teal-600 dark:text-teal-400 hover:underline">Contact</a>
+                    </div>
+                </div>
+            </x-ui.container>
         </div>
     </div>
 

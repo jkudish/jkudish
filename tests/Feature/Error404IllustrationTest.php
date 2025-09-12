@@ -14,10 +14,10 @@ it('has proper alt text for accessibility', function () {
         ->assertSee('aria-label', false);
 });
 
-it('illustration has floating animation class', function () {
-    get('/404-floating-test')
+it('illustration has animation class', function () {
+    get('/404-animation-test')
         ->assertStatus(404)
-        ->assertSee('animate-float', false);
+        ->assertSee('animate-slide-up', false);
 });
 
 it('illustration is properly positioned', function () {

@@ -6,9 +6,9 @@ it('includes working navigation buttons', function () {
     $response = get('/404-nav-test');
     
     $response->assertStatus(404)
-        ->assertSee('Take Me Home', false)
+        ->assertSee('Back to Homepage', false)
         ->assertSee('href="/"', false)
-        ->assertSee('View Services', false)
+        ->assertSee('Services', false)
         ->assertSee('href="/services"', false)
         ->assertSee('Speaking', false)
         ->assertSee('href="/speaking"', false);
@@ -21,11 +21,11 @@ it('has primary gradient button styling', function () {
         ->assertSee('from-emerald-700', false);
 });
 
-it('has secondary button variants', function () {
-    get('/404-secondary-buttons')
+it('has secondary navigation links', function () {
+    get('/404-secondary-links')
         ->assertStatus(404)
-        ->assertSee('from-purple-500', false)
-        ->assertSee('to-pink-500', false);
+        ->assertSee('Projects', false)
+        ->assertSee('Contact', false);
 });
 
 it('buttons have hover effects', function () {
@@ -39,9 +39,8 @@ it('includes helpful guidance text with link', function () {
     $response = get('/404-guidance-test');
     
     $response->assertStatus(404)
-        ->assertSee('Lost?', false)
-        ->assertSee('homepage', false)
-        ->assertSee('check that the URL is correct', false)
+        ->assertSee('explore other sections', false)
+        ->assertSee('Homepage', false)
         ->assertSee('href="/"', false);
 });
 

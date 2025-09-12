@@ -28,16 +28,16 @@ it('includes navigation buttons to help users', function () {
     $response = get('/missing-page');
     
     $response->assertStatus(404)
-        ->assertSee('Take Me Home', false)
+        ->assertSee('Back to Homepage', false)
         ->assertSee('href="/"', false)
-        ->assertSee('View Services', false)
+        ->assertSee('Services', false)
         ->assertSee('Speaking', false);
 });
 
 it('includes helpful guidance text', function () {
     get('/another-404-page')
         ->assertStatus(404)
-        ->assertSee('check', false);
+        ->assertSee('explore', false);
 });
 
 it('maintains site navigation in header', function () {
