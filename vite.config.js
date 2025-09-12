@@ -8,4 +8,22 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    build: {
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    'alpine': ['alpinejs'],
+                }
+            }
+        },
+        minify: 'terser',
+        terserOptions: {
+            compress: {
+                drop_console: true,
+                drop_debugger: true,
+            },
+        },
+        cssMinify: true,
+        reportCompressedSize: true,
+    },
 });
