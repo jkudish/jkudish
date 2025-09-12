@@ -13,12 +13,12 @@ it('contains all main pages in sitemap', function () {
 
     $response->assertOk()
         ->assertSee('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"', false)
-        ->assertSee('jkudish.test</loc>', false)
-        ->assertSee('jkudish.test/speaking</loc>', false)
-        ->assertSee('jkudish.test/services</loc>', false)
-        ->assertSee('jkudish.test/projects</loc>', false)
-        ->assertSee('jkudish.test/newsletter</loc>', false)
-        ->assertSee('jkudish.test/contact</loc>', false);
+        ->assertSee('https://jkudish.com/</loc>', false)
+        ->assertSee('https://jkudish.com/speaking</loc>', false)
+        ->assertSee('https://jkudish.com/services</loc>', false)
+        ->assertSee('https://jkudish.com/projects</loc>', false)
+        ->assertSee('https://jkudish.com/newsletter</loc>', false)
+        ->assertSee('https://jkudish.com/contact</loc>', false);
 });
 
 it('includes priority tags for pages', function () {

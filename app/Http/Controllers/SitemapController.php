@@ -14,13 +14,16 @@ class SitemapController extends Controller
         // Get actual file modification times for more accurate dates
         $viewsPath = resource_path('views/');
         
+        // Use production domain for sitemap URLs
+        $baseUrl = 'https://jkudish.com';
+        
         // Home page - highest priority
         $homeModified = file_exists($viewsPath . 'home.blade.php') 
             ? \Carbon\Carbon::createFromTimestamp(filemtime($viewsPath . 'home.blade.php'))
             : now()->subDays(7);
             
         $sitemap->add(
-            Url::create('/')
+            Url::create($baseUrl . '/')
                 ->setLastModificationDate($homeModified)
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
                 ->setPriority(1.0)
@@ -32,7 +35,7 @@ class SitemapController extends Controller
             : now()->subDays(14);
             
         $sitemap->add(
-            Url::create('/services')
+            Url::create($baseUrl . '/services')
                 ->setLastModificationDate($servicesModified)
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.9)
@@ -44,7 +47,7 @@ class SitemapController extends Controller
             : now()->subDays(7);
             
         $sitemap->add(
-            Url::create('/projects')
+            Url::create($baseUrl . '/projects')
                 ->setLastModificationDate($projectsModified)
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
                 ->setPriority(0.8)
@@ -56,7 +59,7 @@ class SitemapController extends Controller
             : now()->subMonths(1);
             
         $sitemap->add(
-            Url::create('/speaking')
+            Url::create($baseUrl . '/speaking')
                 ->setLastModificationDate($speakingModified)
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.8)
@@ -68,7 +71,7 @@ class SitemapController extends Controller
             : now()->subMonths(6);
             
         $sitemap->add(
-            Url::create('/contact')
+            Url::create($baseUrl . '/contact')
                 ->setLastModificationDate($contactModified)
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY)
                 ->setPriority(0.7)
@@ -80,7 +83,7 @@ class SitemapController extends Controller
             : now()->subMonths(2);
             
         $sitemap->add(
-            Url::create('/newsletter')
+            Url::create($baseUrl . '/newsletter')
                 ->setLastModificationDate($newsletterModified)
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.6)
