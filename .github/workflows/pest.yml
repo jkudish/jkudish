@@ -31,12 +31,20 @@ jobs:
             ${{ runner.os }}-composer-
             
       - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest --optimize-autoloader
+        run: |
+          # Set composer to not use GitHub API for public repos
+          composer config --global github-protocols https
+          composer install --prefer-dist --no-progress --no-suggest --optimize-autoloader
         
       - name: Prepare Laravel application
         run: |
           cp .env.example .env
           php artisan key:generate
+          
+          # Configure git to avoid remote warnings
+          git config --global init.defaultBranch main
+          git config --global user.email "ci@github.com"
+          git config --global user.name "GitHub Actions"
           
       - name: Run Pest tests
         id: test
@@ -45,6 +53,10 @@ jobs:
           
           # Debug: Show current directory
           echo "Current directory: $(pwd)"
+          
+          # Suppress git warnings that might occur during tests
+          export GIT_TERMINAL_PROMPT=0
+          export GIT_ASKPASS=/bin/echo
           
           # Ensure test output file is created
           touch test-output.txt
