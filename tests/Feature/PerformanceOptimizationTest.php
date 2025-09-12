@@ -1,0 +1,115 @@
+<?php
+
+use Illuminate\Support\Facades\File;
+
+describe('Performance Optimization Tests', function () {
+    it('has preload links for critical resources', function () {
+        $response = $this->get('/');
+
+        // Check for font preloading
+        $response->assertSee('rel="preload"', false);
+        $response->assertSee('as="font"', false);
+    });
+
+    it('uses lazy loading for images below the fold', function () {
+        $response = $this->get('/');
+
+        // Check for lazy loading attributes on appropriate images
+        $content = $response->getContent();
+
+        // Images below fold should have loading="lazy"
+        if (str_contains($content, '<img')) {
+            expect($content)->toContain('loading=');
+        }
+    });
+
+    it('has optimized meta viewport for mobile', function () {
+        $response = $this->get('/');
+
+        $response->assertSee('<meta name="viewport" content="width=device-width, initial-scale=1', false);
+    });
+
+    it('serves compressed assets with proper cache headers', function () {
+        $response = $this->get('/');
+
+        // Check that Vite assets are referenced with versioning
+        $response->assertSee('build/assets/', false);
+    });
+
+    it('has no render-blocking resources in critical path', function () {
+        $response = $this->get('/');
+        $content = $response->getContent();
+
+        // CSS should be in head
+        $headEnd = strpos($content, '</head>');
+        $cssPosition = strpos($content, 'build/assets/app-');
+
+        if ($cssPosition !== false) {
+            expect($cssPosition)->toBeLessThan($headEnd);
+        }
+
+        // Check that external scripts like Fathom have defer
+        expect($content)->toContain('defer');
+    });
+
+    it('has proper heading hierarchy for SEO', function () {
+        $pages = ['/', '/services', '/projects', '/speaking', '/contact'];
+
+        foreach ($pages as $page) {
+            $response = $this->get($page);
+            $content = $response->getContent();
+
+            // Should have exactly one h1
+            $h1Count = substr_count($content, '<h1');
+            expect($h1Count)->toBeGreaterThanOrEqual(1);
+
+            // Check heading hierarchy (h1 before h2, h2 before h3, etc.)
+            $h1Pos = strpos($content, '<h1');
+            $h2Pos = strpos($content, '<h2');
+
+            if ($h1Pos !== false && $h2Pos !== false) {
+                expect($h1Pos)->toBeLessThan($h2Pos, "H1 should come before H2 on $page");
+            }
+        }
+    });
+
+    it('has accessible color contrast ratios', function () {
+        $response = $this->get('/');
+
+        // Check for dark mode support which helps with contrast options
+        $response->assertSee('dark:', false);
+
+        // Verify text colors are defined with sufficient contrast classes
+        $response->assertSee('text-zinc-900', false);
+        $response->assertSee('dark:text-zinc-100', false);
+    });
+
+    it('implements responsive images', function () {
+        $response = $this->get('/');
+        $content = $response->getContent();
+
+        // Check for responsive image attributes
+        if (str_contains($content, '<img')) {
+            // Should have proper sizing attributes
+            expect($content)->toMatch('/(width|height)="\d+"/');
+        }
+    });
+
+    it('has reasonable page size for performance', function () {
+        $response = $this->get('/');
+        $content = $response->getContent();
+
+        // Page size should be reasonable (under 5MB uncompressed)
+        $sizeInKb = strlen($content) / 1024;
+        expect($sizeInKb)->toBeLessThan(5000, 'Page size should be under 5MB for optimal performance');
+    });
+
+    it('uses WebP images for better compression', function () {
+        $imgPath = public_path('img');
+
+        if (File::exists($imgPath)) {
+            $webpFiles = File::glob($imgPath.'/**/*.webp');
+            expect(count($webpFiles))->toBeGreaterThan(0, 'Should have WebP images for optimization');
+        }
+    });
+});

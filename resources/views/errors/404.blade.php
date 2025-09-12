@@ -33,12 +33,18 @@
                 {{-- Monster Illustration --}}
                 <div class="mb-8 animate-slide-up" style="animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards;">
                     <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto">
-                        <img 
-                            src="{{ asset('img/404.png') }}" 
-                            alt="Sad monster realizing the page is missing"
-                            class="w-full h-full object-contain"
-                            aria-label="A cute teal monster with horns looking sad about the missing page"
-                        />
+                        <picture>
+                            <source srcset="{{ asset('img/404.webp') }}" type="image/webp">
+                            <img 
+                                src="{{ asset('img/404.png') }}" 
+                                alt="Sad monster realizing the page is missing"
+                                class="w-full h-full object-contain"
+                                loading="eager"
+                                width="1024"
+                                height="1536"
+                                aria-label="A cute teal monster with horns looking sad about the missing page"
+                            />
+                        </picture>
                     </div>
                 </div>
 
