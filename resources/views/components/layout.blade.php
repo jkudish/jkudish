@@ -14,7 +14,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <x-seo 
+    <x-seo
         :title="$title"
         :description="$description"
         :keywords="$keywords"
@@ -27,17 +27,17 @@
     <link rel="icon" type="image/svg+xml" href="{{ asset('img/favicon/favicon.svg') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon/favicon-16x16.png') }}">
-    
+
     <!-- Legacy favicon -->
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
-    
+
     <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon/apple-touch-icon.png') }}">
-    
+
     <!-- Android Chrome Icons -->
     <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('img/favicon/android-chrome-192x192.png') }}">
     <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('img/favicon/android-chrome-512x512.png') }}">
-    
+
     <!-- Browser theme color -->
     <meta name="theme-color" content="#000000">
 
@@ -49,6 +49,11 @@
     <link rel="preload" href="{{ url('img/joey.png') }}" as="image" crossorigin/>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
+    {{-- Ensure Alpine loads in development --}}
+    @if(app()->environment('local'))
+        <script type="module" src="{{ config('app.url') }}:5174/resources/js/app.js"></script>
+    @endif
 
     <!-- Fathom - beautiful, simple website analytics -->
     <script src="https://cdn.usefathom.com/script.js" data-site="OLWGPIDF" defer></script>

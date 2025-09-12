@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,7 @@ Route::middleware('cache.headers:public;max_age=2628000;etag')->group(function (
 });
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::post('/newsletter', [NewsletterController::class, 'store'])->name('newsletter.store');
 
 Route::redirect('/presents', '/speaking');
 Route::redirect('/slides', '/speaking');

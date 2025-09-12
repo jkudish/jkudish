@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\ContactRequest;
+use App\Jobs\ProcessContactFormSubmission;
+use Illuminate\Http\RedirectResponse;
 
 class ContactController extends Controller
 {
@@ -11,26 +12,30 @@ class ContactController extends Controller
     {
         return view('contact');
     }
-    
-    public function store(Request $request)
+
+    public function store(ContactRequest $request): RedirectResponse
     {
         // Check honeypot field for spam
         if ($request->filled('website')) {
             // Silently reject spam submissions
             return redirect()->route('contact');
         }
-        
-        $validated = $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'subject' => 'required|string|max:255',
-            'message' => 'required|string|min:10',
-        ]);
-        
-        // For now, we'll just flash a success message
-        // In production, you'd send an email here
-        
-        return redirect()->route('contact')->with('success', 'Thank you for your message! I\'ll get back to you within 24-48 hours.');
+
+        $validated = $request->validated();
+
+        // Store email in session for pageview tracking
+        session(['visitor_email' => $validated['email']]);
+
+        // Dispatch job to process form submission asynchronously
+        ProcessContactFormSubmission::dispatch($validated);
+
+        // Track different events based on newsletter opt-in
+        $eventName = $validated['newsletter_opt_in'] ?? false 
+            ? 'contact_form_with_newsletter' 
+            : 'contact_form';
+
+        return redirect()->route('contact')
+            ->with('success', 'Thank you for your message! I\'ll get back to you within 24-48 hours.')
+            ->with('track_event', $eventName);
     }
 }

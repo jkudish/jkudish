@@ -22,19 +22,79 @@
                         My weekly brain dump: indie projects, AI automation, business experiments, and whatever rabbit holes I went down. For builders who ship.
                     </p>
 
-                    <form class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center" action="{{ route('newsletter') }}" method="GET">
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Enter your email"
-                            aria-label="Email address"
-                            class="min-w-0 flex-auto rounded-lg border border-emerald-500/40 bg-white dark:bg-zinc-800/50 backdrop-blur-sm px-4 py-3 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-zinc-400 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 sm:text-sm transition-all duration-200"
-                            required
-                        />
-                        <x-ui.gradient-button variant="primary" type="submit" icon="true">
-                            Get It Free
-                        </x-ui.gradient-button>
-                    </form>
+                    <div x-data="{
+                        email: '',
+                        loading: false,
+                        message: '',
+                        messageType: '',
+                        async submitNewsletter() {
+                            if (!this.email) return;
+                            
+                            this.loading = true;
+                            this.message = '';
+                            
+                            try {
+                                const response = await fetch('{{ route('newsletter.store') }}', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                                        'Accept': 'application/json',
+                                    },
+                                    body: JSON.stringify({
+                                        email: this.email
+                                    })
+                                });
+                                
+                                const data = await response.json();
+                                
+                                if (response.ok) {
+                                    this.message = data.message || 'Welcome to The Maker Notes! You\'ll receive my next newsletter soon.';
+                                    this.messageType = 'success';
+                                    this.email = '';
+                                    
+                                    // Track Fathom event
+                                    if (window.fathom && data.track_event) {
+                                        window.fathom.trackEvent('newsletter_signup');
+                                    }
+                                } else {
+                                    this.message = data.message || 'Something went wrong. Please try again.';
+                                    this.messageType = 'error';
+                                }
+                            } catch (error) {
+                                this.message = 'Something went wrong. Please try again.';
+                                this.messageType = 'error';
+                            } finally {
+                                this.loading = false;
+                                setTimeout(() => {
+                                    this.message = '';
+                                }, 5000);
+                            }
+                        }
+                    }">
+                        <form @submit.prevent="submitNewsletter" class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+                            <input
+                                type="email"
+                                x-model="email"
+                                placeholder="Enter your email"
+                                aria-label="Email address"
+                                class="min-w-0 flex-auto rounded-lg border border-emerald-500/40 bg-white dark:bg-zinc-800/50 backdrop-blur-sm px-4 py-3 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-zinc-400 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 sm:text-sm transition-all duration-200"
+                                :disabled="loading"
+                                required
+                            />
+                            <x-ui.gradient-button variant="primary" type="submit" icon="true" x-bind:disabled="loading">
+                                <span x-show="!loading">Get It Free</span>
+                                <span x-show="loading">Subscribing...</span>
+                            </x-ui.gradient-button>
+                        </form>
+                        
+                        <div x-show="message" x-transition class="mt-4">
+                            <p :class="{
+                                'text-emerald-600 dark:text-emerald-400': messageType === 'success',
+                                'text-red-600 dark:text-red-400': messageType === 'error'
+                            }" class="text-sm font-medium" x-text="message"></p>
+                        </div>
+                    </div>
 
                     <p class="mt-4 text-xs text-zinc-600 dark:text-zinc-500">
                         No spam. Unsubscribe whenever.

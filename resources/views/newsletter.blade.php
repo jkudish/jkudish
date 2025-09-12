@@ -34,8 +34,20 @@
 
                         {{-- Newsletter Signup Form --}}
                         <div class="mt-12 max-w-lg mx-auto">
+                            @if(session('success'))
+                                <div class="mb-6 rounded-lg bg-teal-50 p-4 text-teal-800 dark:bg-teal-900/20 dark:text-teal-200">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+                            
+                            @if(session('error'))
+                                <div class="mb-6 rounded-lg bg-red-50 p-4 text-red-800 dark:bg-red-900/20 dark:text-red-200">
+                                    {{ session('error') }}
+                                </div>
+                            @endif
+                            
                             <div class="bg-gradient-to-br from-teal-50/50 to-emerald-50/50 dark:from-zinc-800/50 dark:to-zinc-800/30 rounded-2xl p-8 border border-teal-100/50 dark:border-zinc-700/50">
-                                <form class="space-y-4" action="#" method="POST">
+                                <form class="space-y-4" action="{{ route('newsletter.store') }}" method="POST">
                                     @csrf
                                     <div>
                                         <label for="email" class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
@@ -147,4 +159,15 @@
             </div>
         </div>
     </div>
+    
+    {{-- Track newsletter signup event --}}
+    @if(session('track_event') === 'newsletter_signup')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.fathom) {
+                window.fathom.trackEvent('newsletter_signup');
+            }
+        });
+    </script>
+    @endif
 </x-layout>

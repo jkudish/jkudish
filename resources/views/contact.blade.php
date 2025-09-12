@@ -126,10 +126,32 @@ $structuredData = [
                                 id="message"
                                 rows="6"
                                 required
-                                minlength="10"
                                 class="mt-1 w-full rounded-md border border-zinc-900/10 px-3 py-2 shadow-sm placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
                                 placeholder="Tell me about your project..."
                             ></textarea>
+                        </div>
+                        
+                        <div>
+                            <div class="flex items-start">
+                                <div class="flex h-5 items-center">
+                                    <input
+                                        type="checkbox"
+                                        name="newsletter_opt_in"
+                                        id="newsletter_opt_in"
+                                        value="1"
+                                        checked
+                                        class="h-4 w-4 rounded border-zinc-300 text-teal-600 focus:ring-teal-500 dark:border-zinc-600 dark:bg-zinc-800 dark:focus:ring-teal-400"
+                                    />
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="newsletter_opt_in" class="font-medium text-zinc-700 dark:text-zinc-300">
+                                        Receive the Maker Notes newsletter
+                                    </label>
+                                    <p class="text-zinc-500 dark:text-zinc-400">
+                                        Get insights on coding with AI and building digital products.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                         
                             <div class="pt-2">
@@ -253,4 +275,15 @@ $structuredData = [
             </div>
         </div>
     </div>
+    
+    {{-- Track contact form submission events --}}
+    @if(session('track_event'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.fathom) {
+                window.fathom.trackEvent('{{ session('track_event') }}');
+            }
+        });
+    </script>
+    @endif
 </x-layout>
