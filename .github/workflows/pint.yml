@@ -1,0 +1,59 @@
+name: Laravel Pint
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  pint:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref }}
+          
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, xml, ctype, iconv, bcmath, pdo_sqlite
+          coverage: none
+          
+      - name: Cache Composer dependencies
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+            
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest --optimize-autoloader
+        
+      - name: Run Laravel Pint
+        id: pint
+        run: |
+          ./vendor/bin/pint --dirty
+          if [[ $(git diff --name-only) ]]; then
+            echo "changes_made=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes_made=false" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Commit changes
+        if: steps.pint.outputs.changes_made == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "Apply Laravel Pint formatting
+
+          Auto-formatted by GitHub Actions"
+          git push
