@@ -62,9 +62,7 @@
                         {{ $faq['question'] }}
                     </x-ui.typography>
                     <span class="ml-6 flex-shrink-0">
-                        <svg class="h-5 w-5 text-zinc-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
+                        <x-icon name="lucide-chevron-down" class="h-5 w-5 text-zinc-400 group-open:rotate-180 transition-transform" />
                     </span>
                 </summary>
                 <div class="px-6 pb-6">

@@ -1,7 +1,7 @@
 @php
 $services = [
     [
-        'icon' => 'lightning-bolt',
+        'icon' => 'lucide-zap',
         'name' => 'Automate Your Way to Profit',
         'description' => 'Turn repetitive tasks into revenue-generating systems. Most clients see ROI within 30 days.',
         'pricing' => 'Starting at $500',
@@ -10,9 +10,11 @@ $services = [
         'icon_color' => '#eab308',
         'text_color' => 'text-yellow-600 dark:text-yellow-400',
         'border_gradient' => 'from-yellow-400 to-amber-500',
+        'bg_color' => 'bg-yellow-50/30',
+        'icon_bg' => 'bg-yellow-100/50',
     ],
     [
-        'icon' => 'document-report',
+        'icon' => 'lucide-file-text',
         'name' => 'Code Audit & Strategy',
         'description' => 'Get an experienced perspective on your code and process. Get a clear roadmap with actionable insights.',
         'pricing' => 'Starting at $2,500',
@@ -21,9 +23,11 @@ $services = [
         'icon_color' => '#a855f7',
         'text_color' => 'text-purple-600 dark:text-purple-400',
         'border_gradient' => 'from-purple-400 to-pink-500',
+        'bg_color' => 'bg-purple-50/30',
+        'icon_bg' => 'bg-purple-100/50',
     ],
     [
-        'icon' => 'code',
+        'icon' => 'lucide-code-2',
         'name' => 'Build Your Product',
         'description' => 'Ship something real. From idea to revenue in weeks, not months. Clean, production-ready code.',
         'pricing' => 'Starting at $15,000',
@@ -32,9 +36,11 @@ $services = [
         'icon_color' => '#10b981',
         'text_color' => 'text-emerald-600 dark:text-emerald-400',
         'border_gradient' => 'from-emerald-400 to-teal-500',
+        'bg_color' => 'bg-emerald-50/30',
+        'icon_bg' => 'bg-emerald-100/50',
     ],
     [
-        'icon' => 'sparkles',
+        'icon' => 'lucide-sparkles',
         'name' => 'Ongoing Partnership',
         'description' => 'Get CTO-level guidance and on-demand engineering expertise to help your business grow sustainably.',
         'pricing' => '$3,000 - $10,000/month',
@@ -43,6 +49,8 @@ $services = [
         'icon_color' => '#06b6d4',
         'text_color' => 'text-cyan-600 dark:text-cyan-400',
         'border_gradient' => 'from-cyan-400 to-blue-500',
+        'bg_color' => 'bg-cyan-50/30',
+        'icon_bg' => 'bg-cyan-100/50',
     ],
 ];
 @endphp
@@ -52,45 +60,39 @@ $services = [
         <x-ui.typography variant="h2">
             How I Can Help Your Business
         </x-ui.typography>
-        <p class="mt-4 text-lg font-sans text-zinc-600 dark:text-zinc-400">
+        <p class="mt-4 text-lg font-sans text-gray-600 dark:text-zinc-400">
             Choose the service that best fits your needs
         </p>
     </div>
 
     <div class="mt-12 grid gap-8 md:grid-cols-2">
         @foreach($services as $index => $service)
-        <div class="p-[2px] rounded-xl bg-gradient-to-r {{ $service['border_gradient'] }} hover:shadow-xl hover:shadow-{{ $service['color'] }}-500/20 transition-all duration-300 group">
-            <div class="h-full w-full bg-white dark:bg-zinc-900 rounded-xl">
-            <div class="p-6 h-full flex flex-col">
-                <div class="flex items-center justify-between">
-                    <x-ui.animated-icon icon="{{ $service['icon'] }}" size="w-8 h-8" animation="none" color="{{ $service['icon_color'] }}" />
+        <div class="relative group transition-all duration-300 hover:-translate-y-1">
+            <div class="p-[2px] rounded-xl bg-gradient-to-r {{ $service['border_gradient'] }} shadow-sm group-hover:shadow-lg transition-shadow duration-300">
+                <div class="h-full w-full bg-white dark:bg-zinc-900 rounded-xl">
+                    <div class="p-6 h-full flex flex-col">
+                        <div class="flex items-start gap-4">
+                            <x-icon name="{{ $service['icon'] }}" class="w-6 h-6 mt-1 flex-shrink-0 transition-transform duration-300 group-hover:scale-110" style="color: {{ $service['icon_color'] }}" />
+                            <div class="flex-1">
+                                <x-ui.typography variant="h4" class="leading-tight">
+                                    {{ $service['name'] }}
+                                </x-ui.typography>
+                                <p class="mt-2 text-sm font-sans text-gray-600 dark:text-zinc-400">
+                                    {{ $service['description'] }}
+                                </p>
+                                <ul class="mt-4 space-y-2">
+                                    @foreach($service['features'] as $feature)
+                                        <li class="flex items-center text-sm font-sans text-gray-600 dark:text-zinc-400">
+                                            <x-icon name="lucide-check-circle" class="w-4 h-4 mr-2 {{ $service['text_color'] }}" />
+                                            {{ $feature }}
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-
-                <x-ui.typography variant="h4" class="mt-4">
-                    {{ $service['name'] }}
-                </x-ui.typography>
-
-                <p class="mt-2 text-sm font-sans text-zinc-600 dark:text-zinc-400 flex-grow">
-                    {{ $service['description'] }}
-                </p>
-
-                <ul class="mt-4 space-y-2">
-                    @foreach($service['features'] as $feature)
-                    <li class="flex items-center text-sm font-sans text-zinc-600 dark:text-zinc-400">
-                        <svg class="w-4 h-4 mr-2 {{ $service['text_color'] }}" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        {{ $feature }}
-                    </li>
-                    @endforeach
-                </ul>
-
-                <div class="mt-6 pt-6 border-t border-zinc-200 dark:border-zinc-700">
-                    <p class="text-sm font-sans font-semibold text-zinc-900 dark:text-zinc-100">
-                        {{ $service['pricing'] }}
-                    </p>
-                </div>
-            </div>
             </div>
         </div>
         @endforeach

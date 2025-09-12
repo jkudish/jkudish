@@ -1,7 +1,39 @@
-<x-layout title="Services - Joey Kudish">
+@php
+$structuredData = [
+    '@context' => 'https://schema.org',
+    '@type' => 'Service',
+    'name' => 'Software Development & AI Automation Services',
+    'provider' => [
+        '@type' => 'Person',
+        'name' => 'Joey Kudish'
+    ],
+    'serviceType' => [
+        'Software Development',
+        'AI Automation',
+        'Laravel Development',
+        'Code Audit',
+        'Technical Consulting'
+    ],
+    'description' => 'Professional software development and AI automation services. Specializing in Laravel applications, custom integrations, and workflow automation.',
+    'areaServed' => 'Worldwide',
+    'availableChannel' => [
+        '@type' => 'ServiceChannel',
+        'serviceUrl' => url('/services'),
+        'servicePhone' => '',
+        'serviceEmail' => 'joey@jkudish.com'
+    ]
+];
+@endphp
+
+<x-layout 
+    title="Software Development & AI Automation Services"
+    description="Professional software development and AI automation services. Specializing in Laravel applications, custom integrations, and workflow automation."
+    keywords="software development services, AI automation, Laravel development, custom web applications, consulting, workflow automation, code audit, MVP development"
+    :structuredData="$structuredData"
+>
     <div class="flex justify-center my-8 lg:my-12">
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-lg overflow-hidden">
+            <div class="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-lg overflow-hidden shadow-lg">
 
                 {{-- Hero Section --}}
                 <div class="px-6 sm:px-8 lg:px-10 py-16 lg:py-24 xl:py-32">
@@ -15,7 +47,7 @@
                         $services = [
                             [
                                 'id' => 'automation',
-                                'icon' => 'lightning-bolt',
+                                'icon' => 'lucide-zap',
                                 'name' => 'Automate Your Way to Profit',
                                 'tagline' => 'Turn repetitive tasks into revenue-generating systems',
                                 'color' => 'yellow',
@@ -27,14 +59,14 @@
                                 'ideal_for' => [
                                     'Businesses losing money to manual data entry',
                                     'Companies wanting AI-powered lead generation',
+                                    'Ecommerce stores drowning in order management',
                                     'Service businesses ready to scale without hiring',
-                                    'Teams drowning in repetitive admin work',
                                 ],
                                 'deliverables' => [
                                     'Custom workflows tailored to your business',
                                     'AI-powered customer service automation',
                                     'Automated lead capture and nurturing systems',
-                                    'Integration with your existing tools and systems',
+                                    'Integration with your existing tools (Shopify, WooCommerce, CRMs)',
                                     'Training and documentation for your team',
                                 ],
                                 'process' => [
@@ -50,7 +82,7 @@
                             ],
                             [
                                 'id' => 'code-audit-strategy',
-                                'icon' => 'document-report',
+                                'icon' => 'lucide-file-text',
                                 'name' => 'Code Audit & Strategy',
                                 'tagline' => 'Get an Experienced Engineer\'s Perspective',
                                 'color' => 'purple',
@@ -62,8 +94,8 @@
                                 'ideal_for' => [
                                     'Founders who built with ChatGPT, v0, Lovable, Replit, Bolt, etc.',
                                     'Teams with performance or security concerns',
+                                    'WooCommerce or Shopify stores with performance issues',
                                     'Businesses drowning in manual processes',
-                                    'Websites needing modernization',
                                     'Development teams wanting AI workflow optimization',
                                 ],
                                 'deliverables' => [
@@ -86,7 +118,7 @@
                             ],
                             [
                                 'id' => 'build-product',
-                                'icon' => 'code',
+                                'icon' => 'lucide-code-2',
                                 'name' => 'Build Your Product',
                                 'tagline' => 'Ship Something Real',
                                 'color' => 'emerald',
@@ -94,12 +126,12 @@
                                 'text_color' => 'text-emerald-600 dark:text-emerald-400',
                                 'border_gradient' => 'from-emerald-400 to-teal-500',
                                 'button_variant' => 'primary',
-                                'description' => 'From idea to revenue in weeks, not months. Stop overthinking, start shipping. I\'ll build your MVP, transform your AI prototype into production software, or create the technical foundation for your business. Using Laravel, JavaScript, and proven patterns, I build software that scales. No agencies, no junior devs, no excuses; just production ready code from an experienced engineer.',
+                                'description' => 'From idea to revenue in weeks, not months. Stop overthinking, start shipping. I\'ll build your MVP, transform your AI prototype into production software, or create the technical foundation for your business. Using Laravel, modern JavaScript, and ecommerce platforms like WooCommerce and Shopify, I build software that scales. No agencies, no junior devs, no excuses; just production ready code from an experienced engineer.',
                                 'ideal_for' => [
                                     'Businesses requiring custom software solutions',
+                                    'Ecommerce businesses needing custom integrations',
                                     'Founders ready to launch their first product',
                                     'Vibe coders needing help getting their code production-ready',
-                                    'Companies testing new product ideas',
                                 ],
                                 'deliverables' => [
                                     'Fully functional, production-ready application',
@@ -121,7 +153,7 @@
                             ],
                             [
                                 'id' => 'ongoing-partnership',
-                                'icon' => 'sparkles',
+                                'icon' => 'lucide-sparkles',
                                 'name' => 'Ongoing Partnership',
                                 'tagline' => 'Fractional CTO-Level Guidance',
                                 'color' => 'cyan',
@@ -129,7 +161,7 @@
                                 'text_color' => 'text-cyan-600 dark:text-cyan-400',
                                 'border_gradient' => 'from-cyan-400 to-blue-500',
                                 'button_variant' => 'primary',
-                                'description' => 'Technical leadership without the equity or salary. Get the CTO experience your business needs at a fraction of the cost. From weekly code reviews to strategic technical decisions, I\'ll be your on-demand engineer. Perfect for growing startups, businesses running on automation, or any company that needs consistent technical guidance. Scale up or down as your needs change.',
+                                'description' => 'Technical leadership without the equity or salary. Get the CTO experience your business needs at a fraction of the cost. From weekly code reviews to strategic technical decisions, I\'ll be your on-demand engineer. Perfect for growing startups, ecommerce stores, businesses running on automation, or any company that needs consistent technical guidance. Scale up or down as your needs change.',
                                 'ideal_for' => [
                                     'Startups needing technical guidance',
                                     'Businesses with AI/automation workflows',
@@ -162,12 +194,7 @@
                             <div class="grid gap-12 lg:grid-cols-5">
                                 <div class="lg:col-span-3">
                                     <div class="flex items-start gap-4">
-                                        <x-ui.animated-icon
-                                            icon="{{ $service['icon'] }}"
-                                            size="w-10 h-10"
-                                            animation="none"
-                                            color="{{ $service['icon_color'] }}"
-                                        />
+                                        <x-icon name="{{ $service['icon'] }}" class="w-10 h-10" style="color: {{ $service['icon_color'] }}" />
                                         <div>
                                             <x-ui.typography variant="h2">
                                                 {{ $service['name'] }}
@@ -189,9 +216,7 @@
                                         <ul class="mt-4 space-y-2">
                                             @foreach($service['ideal_for'] as $item)
                                             <li class="flex gap-3 text-zinc-600 dark:text-zinc-400">
-                                                <svg class="w-5 h-5 flex-shrink-0 {{ $service['text_color'] }} mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                                </svg>
+                                                <x-icon name="lucide-check-circle" class="w-5 h-5 flex-shrink-0 {{ $service['text_color'] }} mt-0.5" />
                                                 {{ $item }}
                                             </li>
                                             @endforeach
@@ -246,9 +271,7 @@
                                                 <a href="{{ route('contact') }}" class="group relative inline-flex items-center gap-2 justify-center rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-300 overflow-hidden w-full bg-gradient-to-r {{ $service['border_gradient'] }} text-white hover:shadow-xl hover:-translate-y-0.5">
                                                     <span class="relative z-10 flex items-center gap-2">
                                                         {{ $service['cta'] }}
-                                                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                                                        </svg>
+                                                        <x-icon name="lucide-chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                                     </span>
                                                 </a>
                                             </div>

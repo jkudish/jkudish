@@ -1,25 +1,25 @@
 @php
 $expertise = [
     [
-        'icon' => 'code',
+        'icon' => 'lucide-terminal',
         'name' => 'Full-Stack Development',
         'skills' => ['Laravel', 'Vue.js', 'React', 'Desktop and Mobile', 'Database Design'],
         'description' => 'Building scalable web applications from database to deployment'
     ],
     [
-        'icon' => 'sparkles',
+        'icon' => 'lucide-cpu',
         'name' => 'AI & Automation',
         'skills' => ['OpenAI', 'Anthropic', 'n8n', 'Zapier', 'OpenRouter'],
         'description' => 'Implementing intelligent automation that saves hours weekly'
     ],
     [
-        'icon' => 'rocket',
+        'icon' => 'lucide-beaker',
         'name' => 'Product Development',
-        'skills' => ['MVP Strategy', 'User Research', 'Analytics', 'Monetization & Growth'],
+        'skills' => ['MVP Strategy', 'Ecommerce', 'Analytics', 'Monetization & Growth'],
         'description' => 'Taking ideas from concept to profitable production'
     ],
     [
-        'icon' => 'star',
+        'icon' => 'lucide-users',
         'name' => 'Technical Leadership',
         'skills' => ['Team Management', 'Code Reviews', 'Architecture', 'Mentoring'],
         'description' => 'Leading teams to deliver quality software on time'
@@ -42,13 +42,7 @@ $expertise = [
             <x-ui.gradient-border variant="primary" hover="true" padding="p-[1px]">
                 <div class="p-6 h-full">
                     <div class="flex items-start gap-4">
-                        <x-ui.animated-icon
-                            icon="{{ $area['icon'] }}"
-                            size="w-8 h-8"
-                            animation="none"
-                            color="#047857"
-                            class="flex-shrink-0 mt-1"
-                        />
+                        <x-icon name="{{ $area['icon'] }}" class="w-8 h-8 flex-shrink-0 mt-1" style="color: #047857" />
                         <div class="space-y-3 flex-1">
                             <x-ui.typography variant="h4">
                                 {{ $area['name'] }}

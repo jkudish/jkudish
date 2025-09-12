@@ -24,7 +24,7 @@ it('can access the projects page', function () {
     get('/projects')
         ->assertOk()
         ->assertSee('Projects')
-        ->assertSee('Currently Building')
+        ->assertSee("What I'm Building Right Now", false)
         ->assertSee('Tether')
         ->assertSee('PHAiTO');
 });
@@ -33,8 +33,8 @@ it('can access the newsletter page', function () {
     get('/newsletter')
         ->assertOk()
         ->assertSee('The Maker Notes')
-        ->assertSee('Weekly insights from building indie projects')
-        ->assertSee('Subscribe Now');
+        ->assertSee('Insights on coding with AI')
+        ->assertSee('Join The Maker Notes');
 });
 
 it('can access the contact page', function () {
@@ -73,23 +73,46 @@ it('shows all home page sections', function () {
 it('has proper meta title on services page', function () {
     get('/services')
         ->assertOk()
-        ->assertSee('<title>Services - Joey Kudish</title>', false);
+        ->assertSee('<title>Software Development &amp; AI Automation Services - Joey Kudish</title>', false);
 });
 
 it('has proper meta title on projects page', function () {
     get('/projects')
         ->assertOk()
-        ->assertSee('<title>Projects - Joey Kudish</title>', false);
+        ->assertSee('<title>Portfolio &amp; Projects - Joey Kudish</title>', false);
 });
 
 it('has proper meta title on newsletter page', function () {
     get('/newsletter')
         ->assertOk()
-        ->assertSee('<title>The Maker Notes - Joey Kudish</title>', false);
+        ->assertSee('<title>The Maker Notes Newsletter - Joey Kudish</title>', false);
 });
 
 it('has proper meta title on contact page', function () {
     get('/contact')
         ->assertOk()
-        ->assertSee('<title>Contact - Joey Kudish</title>', false);
+        ->assertSee('<title>Contact Joey Kudish - Joey Kudish</title>', false);
+});
+
+it('shows newsletter in footer on most pages', function () {
+    get('/')
+        ->assertOk()
+        ->assertSee('The Maker Notes')
+        ->assertSee('My weekly brain dump');
+    
+    get('/services')
+        ->assertOk()
+        ->assertSee('The Maker Notes')
+        ->assertSee('My weekly brain dump');
+    
+    get('/speaking')
+        ->assertOk()
+        ->assertSee('The Maker Notes')
+        ->assertSee('My weekly brain dump');
+});
+
+it('hides newsletter in footer on newsletter page', function () {
+    get('/newsletter')
+        ->assertOk()
+        ->assertDontSee('My weekly brain dump');
 });

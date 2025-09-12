@@ -8,9 +8,9 @@ $benefits = [
 @endphp
 
 <div class="mx-auto max-w-2xl lg:max-w-5xl">
-    <div class="rounded-2xl bg-zinc-50 px-6 py-16 sm:px-16 dark:bg-zinc-800/50">
+    <div class="rounded-2xl bg-gradient-to-br from-teal-50/50 to-cyan-50/30 px-6 py-16 sm:px-16 dark:bg-zinc-800/50 border border-teal-100/50 dark:border-zinc-700/50 shadow-sm">
         <div class="mx-auto max-w-2xl text-center">
-            <h2 class="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-3xl">
+            <h2 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-zinc-100 sm:text-3xl">
                 📬 The Maker Notes
             </h2>
             
@@ -36,7 +36,7 @@ $benefits = [
                     type="email"
                     name="email"
                     placeholder="Enter your email"
-                    class="min-w-0 flex-auto rounded-md border border-zinc-900/10 px-3 py-2 shadow-sm placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
+                    class="min-w-0 flex-auto rounded-md border border-emerald-500/40 bg-white px-3 py-2 shadow-sm text-gray-900 placeholder:text-gray-500 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-emerald-600/40 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-emerald-400 dark:focus:ring-emerald-400/20 sm:text-sm transition-all duration-200"
                 />
                 <x-ui.gradient-button variant="primary" type="submit">
                     Subscribe Now → It's Free

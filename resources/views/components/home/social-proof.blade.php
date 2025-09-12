@@ -3,26 +3,32 @@ $metrics = [
     [
         'value' => '18+',
         'label' => 'Years Experience',
-        'description' => 'Building software since 2009'
+        'description' => 'Building software since 2006'
     ],
     [
         'value' => '100+',
-        'label' => 'Projects Delivered',
-        'description' => 'From startups to enterprise'
+        'label' => 'Projects Shipped',
+        'description' => 'From WordPress plugins to enterprise SaaS'
     ],
     [
-        'value' => 'Millions',
-        'label' => 'Users Served',
-        'description' => 'Through products at Automattic'
+        'value' => '2011',
+        'label' => 'First WordPress Core Commit',
+        'description' => 'Contributing to open source for 13+ years'
     ],
     [
-        'value' => '75%',
-        'label' => 'Time Saved',
-        'description' => 'Average client efficiency gain'
+        'value' => '4-to-1',
+        'label' => 'Efficiency Multiplier',
+        'description' => 'My automation track record'
     ],
 ];
 
 $testimonials = [
+    [
+        'quote' => "I've worked with Joey on several projects over the past decade, and he's always been a reliable and skilled developer that elevates any team he's on. His knowledge of Laravel and WordPress runs deep, and he consistently finds solutions to even the toughest problems that come up. Joey has a great mix of technical ability and persistence, and I've yet to see him shy away from a challenge.",
+        'author' => 'Bryce Adams',
+        'company' => 'Founder, Metorik',
+        'avatar' => asset('img/testimonials/bryce-adams.jpg')
+    ],
     [
         'quote' => "Joey's hard-work ethic and determination is what makes him an extremely successful individual. I'm constantly amazed at his ability to get things done. I will definitely work with Joey again.",
         'author' => 'Greg Isenberg',
@@ -36,6 +42,18 @@ $testimonials = [
         'company' => 'Partner, Sunroom.is',
         'avatar' => asset('img/testimonials/justin-evans.jpg')
     ],
+    [
+        'quote' => "I've had the pleasure of working with Joey on several coding contracts over the years. He's a great communicator, highly efficient, and brings an impressive skill set to the table. I definitely recommend Joey for your coding project.",
+        'author' => 'Jill Binder',
+        'company' => 'Leader of the Diversity in WordPress group',
+        'avatar' => asset('img/testimonials/jill-binder.jpg')
+    ],
+    [
+        'quote' => "Joey is a rockstar engineer. He took my description for a customized software licensing system, and quickly turned it into a fully functional web site and service. He is personable, responsive, very organized, and a great problem solver. I highly recommend him for any engineering projects.",
+        'author' => 'John Wu',
+        'company' => 'Founder at John Wu Presents',
+        'avatar' => asset('img/testimonials/john-wu.jpg')
+    ],
 ];
 @endphp
 
@@ -45,7 +63,7 @@ $testimonials = [
             Proven Track Record
         </x-ui.typography>
         <p class="mt-4 text-lg font-sans text-zinc-600 dark:text-zinc-400">
-            Building successful software for over a decade
+            Building successful software has been my focus for nearly two decades.
         </p>
     </div>
 
@@ -66,94 +84,95 @@ $testimonials = [
         @endforeach
     </div>
 
-    {{-- Client Testimonials --}}
-    <div class="mt-16 grid gap-8 lg:grid-cols-2">
-        @foreach($testimonials as $testimonial)
-        <x-ui.gradient-border variant="primary" hover="false" padding="p-[1px]">
-            <div class="p-6">
-                <svg class="w-8 h-8 text-emerald-600 dark:text-emerald-700 opacity-20" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-                <blockquote class="mt-4 font-sans text-zinc-600 dark:text-zinc-400">
-                    "{{ $testimonial['quote'] }}"
-                </blockquote>
-                <div class="mt-4 flex items-center gap-3">
-                    @if(isset($testimonial['avatar']))
-                    <img src="{{ $testimonial['avatar'] }}"
-                         alt="{{ $testimonial['author'] }}"
-                         class="w-12 h-12 rounded-full object-cover border-2 border-white dark:border-zinc-800 shadow-sm">
-                    @endif
-                    <div class="flex-1">
-                        <div class="text-sm font-sans font-semibold text-zinc-900 dark:text-zinc-100">
-                            {{ $testimonial['author'] }}
-                        </div>
-                        <div class="text-xs font-sans text-zinc-600 dark:text-zinc-400">
-                            {{ $testimonial['company'] }}
-                        </div>
+    {{-- Client Testimonials Carousel --}}
+    <div class="mt-16 relative"
+         x-data="{
+             currentIndex: 0,
+             testimonials: {{ json_encode($testimonials) }},
+             visibleTestimonials: [],
+             init() {
+                 this.updateVisibleTestimonials();
+                 document.addEventListener('keydown', (e) => {
+                     if (e.key === 'ArrowLeft') this.prev();
+                     if (e.key === 'ArrowRight') this.next();
+                 });
+             },
+             updateVisibleTestimonials() {
+                 const indices = [];
+                 for (let i = 0; i < 2; i++) {
+                     indices.push((this.currentIndex + i) % this.testimonials.length);
+                 }
+                 this.visibleTestimonials = indices.map(i => this.testimonials[i]);
+             },
+             next() {
+                 this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;
+                 this.updateVisibleTestimonials();
+             },
+             prev() {
+                 this.currentIndex = (this.currentIndex - 1 + this.testimonials.length) % this.testimonials.length;
+                 this.updateVisibleTestimonials();
+             }
+         }"
+         role="region"
+         aria-label="Customer testimonials"
+         aria-roledescription="carousel">
+
+        {{-- Carousel Container --}}
+        <div class="overflow-hidden mx-16">
+            <div class="flex gap-8 transition-all duration-300 ease-in-out">
+                <template x-for="testimonial in visibleTestimonials" :key="testimonial.author">
+                    <div class="flex-none w-full md:w-1/2" style="width: calc(50% - 1rem);">
+                        <x-ui.gradient-border variant="primary" hover="false" padding="p-[1px]" class="h-full">
+                            <div class="p-6 h-full flex flex-col">
+                                <svg class="w-8 h-8 text-emerald-600 dark:text-emerald-700 opacity-20 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                                </svg>
+                                <blockquote class="mt-4 font-sans text-zinc-600 dark:text-zinc-400 flex-grow min-h-[200px]" x-text="`&quot;${testimonial.quote}&quot;`">
+                                </blockquote>
+                                <div class="mt-4 flex items-center gap-3 flex-shrink-0">
+                                    <template x-if="testimonial.avatar">
+                                        <picture>
+                                            <source :srcset="testimonial.avatar.replace('.jpg', '.webp')" type="image/webp">
+                                            <img :src="testimonial.avatar"
+                                                 :alt="testimonial.author"
+                                                 class="w-12 h-12 rounded-full object-cover border-2 border-white dark:border-zinc-800 shadow-sm">
+                                        </picture>
+                                    </template>
+                                    <div class="flex-1">
+                                        <div class="text-sm font-sans font-semibold text-zinc-900 dark:text-zinc-100" x-text="testimonial.author">
+                                        </div>
+                                        <div class="text-xs font-sans text-zinc-600 dark:text-zinc-400" x-text="testimonial.company">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </x-ui.gradient-border>
                     </div>
-                </div>
+                </template>
             </div>
-        </x-ui.gradient-border>
-        @endforeach
+        </div>
+
+        {{-- Navigation Arrows --}}
+        <button @click="prev()"
+                class="absolute left-0 top-1/2 -translate-y-1/2 bg-white dark:bg-zinc-800 rounded-full p-2 shadow-lg transition hover:bg-zinc-50 dark:hover:bg-zinc-700 hover:scale-110 cursor-pointer"
+                aria-label="Previous testimonials">
+            <svg class="w-5 h-5 text-zinc-600 dark:text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+        </button>
+
+        <button @click="next()"
+                class="absolute right-0 top-1/2 -translate-y-1/2 bg-white dark:bg-zinc-800 rounded-full p-2 shadow-lg transition hover:bg-zinc-50 dark:hover:bg-zinc-700 hover:scale-110 cursor-pointer"
+                aria-label="Next testimonials">
+            <svg class="w-5 h-5 text-zinc-600 dark:text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </button>
+
     </div>
 
     {{-- Client Logos --}}
     <div class="mt-16">
-        <div class="text-center mb-8">
-            <x-ui.typography variant="small" color="muted" weight="semibold" class="uppercase tracking-wider">
-                Successful projects delivered for:
-            </x-ui.typography>
-        </div>
-
-        @php
-        $allCompanies = [
-            ['name' => 'WooCommerce', 'logo' => url('img/companies/woo.png'), 'class' => 'standard'],
-            ['name' => 'Automattic', 'logo' => url('img/companies/automattic.png'), 'class' => 'invert-light'],
-            ['name' => 'WordPress VIP', 'logo' => url('img/companies/wp-vip.png'), 'class' => 'standard'],
-            ['name' => 'Pantheon', 'logo' => url('img/companies/pantheon.png'), 'class' => 'standard'],
-            ['name' => "Sotheby's", 'logo' => url('img/companies/sothebys.png'), 'class' => 'always-invert'],
-            ['name' => 'Image Salon', 'logo' => url('img/companies/image-salon.png'), 'class' => 'image-salon'],
-            ['name' => 'Metorik', 'logo' => url('img/companies/metorik.png'), 'class' => 'metorik'],
-            ['name' => 'PHAiTO', 'logo' => url('img/companies/phaito.png'), 'class' => 'standard'],
-            ['name' => 'DVLOP', 'logo' => url('img/companies/dvlop.png'), 'class' => 'colorful'],
-            ['name' => 'SmarterQueue', 'logo' => url('img/companies/smarterqueue.png'), 'class' => 'standard'],
-            ['name' => 'TELUS Health', 'logo' => url('img/companies/telus-health.png'), 'class' => 'colorful'],
-            ['name' => 'Turquoise Goat', 'logo' => url('img/companies/turquoise-goat.png'), 'class' => 'turquoise-goat'],
-        ];
-
-        // Shuffle all companies and take 8
-        shuffle($allCompanies);
-        $companies = array_slice($allCompanies, 0, 8);
-        @endphp
-
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 border-l border-t border-zinc-200/50 dark:border-zinc-700/50 rounded-lg overflow-hidden">
-            @foreach($companies as $company)
-            <div class="relative bg-white/50 dark:bg-zinc-900/30 border-r border-b border-zinc-200/50 dark:border-zinc-700/50">
-                <div class="flex items-center justify-center p-6 h-[120px]">
-                    @if($company['class'] === 'standard')
-                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-10 w-auto object-contain grayscale opacity-60 dark:brightness-0 dark:invert dark:opacity-70" />
-                    @elseif($company['class'] === 'invert-light')
-                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-10 w-auto object-contain invert grayscale opacity-60 dark:invert-0 dark:brightness-200 dark:grayscale dark:opacity-70" />
-                    @elseif($company['class'] === 'always-invert')
-                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-10 w-auto object-contain invert grayscale opacity-60 dark:invert dark:grayscale dark:opacity-70" />
-                    @elseif($company['class'] === 'image-salon')
-                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-14 w-auto object-contain grayscale brightness-50 opacity-100 dark:brightness-0 dark:invert dark:opacity-70" />
-                    @elseif($company['class'] === 'metorik')
-                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-10 w-auto object-contain grayscale brightness-75 opacity-70 dark:invert dark:grayscale dark:opacity-70" />
-                    @elseif($company['class'] === 'colorful')
-                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-10 w-auto object-contain grayscale opacity-70 dark:grayscale dark:brightness-150 dark:opacity-90" />
-                    @elseif($company['class'] === 'turquoise-goat')
-                        <img src="{{ $company['logo'] }}" alt="{{ $company['name'] }}" loading="lazy" class="max-h-16 w-auto object-contain invert grayscale opacity-60 dark:invert-0 dark:brightness-200 dark:grayscale dark:opacity-70" />
-                    @endif
-                </div>
-            </div>
-            @endforeach
-        </div>
-
-        <div class="mt-8 text-center">
-            <x-ui.typography variant="small" color="muted">
-                Plus dozens of startups, agencies, and innovative companies across e-commerce and SaaS industries
-            </x-ui.typography>
-        </div>
+        <x-home.client-logos />
     </div>
 </div>
