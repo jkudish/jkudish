@@ -64,12 +64,12 @@ $bottomRowLogos = array_merge($bottomRowLogos, $bottomRowLogos, $bottomRowLogos)
     </div>
 
     {{-- Dual Row Carousel --}}
-    <div class="space-y-8">
+    <div class="space-y-4 sm:space-y-8">
         {{-- Top Row (scrolls right to left) --}}
         <div x-ref="topRow" 
-             class="flex gap-16 overflow-hidden logo-carousel-mask">
+             class="flex gap-8 sm:gap-16 overflow-hidden logo-carousel-mask">
             @foreach($topRowLogos as $index => $company)
-            <div class="flex-shrink-0 flex items-center justify-center min-w-[160px] h-20">
+            <div class="flex-shrink-0 flex items-center justify-center min-w-[120px] sm:min-w-[160px] h-20">
                 @if(isset($company['has_variants']) && $company['has_variants'])
                     {{-- Light mode image --}}
                     <picture class="block dark:hidden">
@@ -108,9 +108,9 @@ $bottomRowLogos = array_merge($bottomRowLogos, $bottomRowLogos, $bottomRowLogos)
 
         {{-- Bottom Row (scrolls left to right) --}}
         <div x-ref="bottomRow" 
-             class="flex gap-16 overflow-hidden logo-carousel-mask">
+             class="flex gap-8 sm:gap-16 overflow-hidden logo-carousel-mask">
             @foreach($bottomRowLogos as $index => $company)
-            <div class="flex-shrink-0 flex items-center justify-center min-w-[160px] h-20">
+            <div class="flex-shrink-0 flex items-center justify-center min-w-[120px] sm:min-w-[160px] h-20">
                 @if(isset($company['has_variants']) && $company['has_variants'])
                     {{-- Light mode image --}}
                     <picture class="block dark:hidden">
@@ -202,15 +202,19 @@ function dualRowCarousel() {
             const animate = () => {
                 if (!this.isVisible) return;
                 
-                // Scroll top row right to left (75% slower than original)
-                this.topScrollPosition += 0.25;
+                // Determine scroll speed based on screen size
+                const isMobile = window.innerWidth < 640; // sm breakpoint
+                const scrollSpeed = isMobile ? 0.5 : 0.25; // Faster on mobile
+                
+                // Scroll top row right to left
+                this.topScrollPosition += scrollSpeed;
                 if (this.topScrollPosition >= topScrollWidth / 3) {
                     this.topScrollPosition = 0;
                 }
                 topRow.scrollLeft = this.topScrollPosition;
                 
-                // Scroll bottom row left to right (75% slower than original)
-                this.bottomScrollPosition -= 0.25;
+                // Scroll bottom row left to right
+                this.bottomScrollPosition -= scrollSpeed;
                 if (this.bottomScrollPosition <= 0) {
                     this.bottomScrollPosition = bottomScrollWidth / 3;
                 }
