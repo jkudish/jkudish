@@ -41,12 +41,12 @@
     <!-- Browser theme color -->
     <meta name="theme-color" content="#000000">
 
-    <link rel="preload" href="{{ url('fonts/Telegraf UltraBold 800.woff') }}" as="font" crossorigin/>
-    <link rel="preload" href="{{ url('fonts/muli-regular-webfont.woff2') }}" as="font" crossorigin/>
-    <link rel="preload" href="{{ url('fonts/muli-regular-webfont.woff') }}" as="font" crossorigin/>
+    <link rel="preload" href="{{ asset('fonts/Telegraf UltraBold 800.woff') }}" as="font" type="font/woff" crossorigin="anonymous"/>
+    <link rel="preload" href="{{ asset('fonts/muli-regular-webfont.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous"/>
+    <link rel="preload" href="{{ asset('fonts/muli-regular-webfont.woff') }}" as="font" type="font/woff" crossorigin="anonymous"/>
 
-    <link rel="preload" href="{{ url('img/joey.webp') }}" as="image" crossorigin/>
-    <link rel="preload" href="{{ url('img/joey.png') }}" as="image" crossorigin/>
+    <link rel="preload" href="{{ asset('img/joey.webp') }}" as="image" type="image/webp"/>
+    <link rel="preload" href="{{ asset('img/joey.png') }}" as="image" type="image/png"/>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     

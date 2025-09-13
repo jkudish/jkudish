@@ -132,7 +132,7 @@
     ];
 @endphp
 
-<x-layout 
+<x-layout
     title="Speaking & Presentations"
     description="Conference talks, presentations, and workshops by Joey Kudish on software development, Laravel, WordPress, and AI automation."
     keywords="tech speaker, conference presentations, Laravel talks, WordPress presentations, software development talks, AI automation, WordCamp, PHP conferences"
@@ -141,7 +141,7 @@
     <div class="flex justify-center my-8 lg:my-12">
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white/90 dark:bg-zinc-900/80 backdrop-blur-xl rounded-lg overflow-hidden shadow-lg">
-                
+
                 {{-- Hero Section matching homepage --}}
                 <div class="relative px-6 sm:px-8 lg:px-10 py-16 lg:py-24 xl:py-32 bg-gradient-to-br from-white to-zinc-50/50 dark:from-zinc-900 dark:to-zinc-800">
                     <div class="absolute inset-0 bg-mesh-gradient opacity-30 dark:opacity-10"></div>
@@ -157,11 +157,11 @@
                             <div class="order-2 lg:order-1">
                                 <x-ui.typography variant="h1">
                                     Hey, I'm Joey 👋
-                                    <span class="block text-gradient-primary mt-2">Speaking & Presentations</span>
+                                    <span class="block text-gradient-primary mt-2">Sometimes, I give conference talks</span>
                                 </x-ui.typography>
 
                                 <p class="mt-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                                    Over the years I've given a handful of presentations at various conferences. 
+                                    Over the years I've given a handful of presentations at various conferences.
                                     Below you can find slides and videos from some of them.
                                 </p>
 
@@ -219,7 +219,7 @@
                                     <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-2">
                                         {{ data_get($conference, 'title') }}
                                     </h3>
-                                    
+
                                     {{-- Conference Info --}}
                                     <div class="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 mb-4">
                                         <x-icon name="lucide-map-pin" class="w-4 h-4 text-zinc-400 dark:text-zinc-500" />
@@ -230,8 +230,8 @@
 
                                     {{-- Download Link --}}
                                     @if(data_get($conference, 'slides'))
-                                        <a 
-                                            href="{{ data_get($conference, 'slides') }}" 
+                                        <a
+                                            href="{{ data_get($conference, 'slides') }}"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             class="inline-flex items-center gap-2 text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"

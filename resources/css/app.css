@@ -235,7 +235,7 @@
         font-family: 'Telegraf UltraBold';
         font-style: normal;
         font-weight: 800;
-        src: local('Telegraf UltraBold'), url('/fonts/Telegraf UltraBold 800.woff') format('woff');
+        src: local('Telegraf UltraBold'), url('/fonts/Telegraf%20UltraBold%20800.woff') format('woff');
     }
 
     @font-face {
