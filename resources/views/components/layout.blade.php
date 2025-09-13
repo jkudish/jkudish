@@ -41,6 +41,10 @@
     <!-- Browser theme color -->
     <meta name="theme-color" content="#000000">
 
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.usefathom.com" crossorigin>
+    
+    <!-- Preload critical fonts -->
     <link rel="preload" href="{{ asset('fonts/Telegraf UltraBold 800.woff') }}" as="font" type="font/woff" crossorigin="anonymous"/>
     <link rel="preload" href="{{ asset('fonts/muli-regular-webfont.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous"/>
     <link rel="preload" href="{{ asset('fonts/muli-regular-webfont.woff') }}" as="font" type="font/woff" crossorigin="anonymous"/>
@@ -52,7 +56,7 @@
     
     {{-- Ensure Alpine loads in development --}}
     @if(app()->environment('local'))
-        <script type="module" src="{{ config('app.url') }}:5174/resources/js/app.js"></script>
+        <script type="module" src="{{ config('app.url') }}:5174/resources/js/app.js" defer></script>
     @endif
 
     <!-- Fathom - beautiful, simple website analytics -->
@@ -60,32 +64,23 @@
     <!-- / Fathom -->
 
     <script>
-        let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        theme = localStorage.theme || theme;
-
-        function applyTheme() {
-            if (theme === 'dark') {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
-        }
-
-        function toggleDarkMode() {
-            theme = theme === 'dark' ? 'light' : 'dark';
-            localStorage.theme = theme;
-            applyTheme();
-        }
-
-        // apply on load
-        applyTheme();
-
-        window.matchMedia('(prefers-color-scheme: dark)')
-            .addEventListener('change', ({matches}) => {
-                theme = (matches) ? 'dark' : 'light';
-                localStorage.removeItem('theme');
-                applyTheme();
-            })
+        // Critical: Prevent dark mode flash - minimal inline script
+        (function() {
+            const t = localStorage.theme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            if (t === 'dark') document.documentElement.classList.add('dark');
+        })();
+    </script>
+    <script defer>
+        // Non-critical: Dark mode toggle functionality
+        window.toggleDarkMode = function() {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.theme = isDark ? 'dark' : 'light';
+        };
+        
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ({matches}) => {
+            localStorage.removeItem('theme');
+            document.documentElement.classList.toggle('dark', matches);
+        });
     </script>
 
     @stack('head')

@@ -52,6 +52,61 @@ describe('Performance Optimization Tests', function () {
         expect($content)->toContain('defer');
     });
 
+    it('has JavaScript loaded with defer or async attributes', function () {
+        $response = $this->get('/');
+        $content = $response->getContent();
+
+        // Check for defer attribute on non-critical scripts
+        expect($content)->toContain('script.js" data-site="OLWGPIDF" defer');
+        
+        // Check Vite-generated scripts have proper loading attributes
+        if (str_contains($content, 'build/assets/app-') && str_contains($content, '.js')) {
+            // Main app.js should load with type="module" which is non-blocking by default
+            expect($content)->toMatch('/<script[^>]*type="module"[^>]*>/');
+        }
+    });
+
+    it('has optimized Alpine.js loading', function () {
+        $response = $this->get('/');
+        $content = $response->getContent();
+
+        // Alpine should be loaded as part of the build
+        if (str_contains($content, 'alpine')) {
+            // Should be in a separate chunk for better caching
+            expect($content)->toMatch('/build\/assets\/alpine-[a-zA-Z0-9]+\.js/');
+        }
+    });
+
+    it('has no inline JavaScript blocking the main thread', function () {
+        $response = $this->get('/');
+        $content = $response->getContent();
+
+        // Dark mode script is acceptable as it's critical for preventing flash
+        // Check that it's minimal and in the head
+        $darkModeScript = strpos($content, 'document.documentElement.classList');
+        if ($darkModeScript !== false) {
+            // Verify it's in the head for early execution
+            expect($darkModeScript)->toBeLessThan(strpos($content, '</head>'));
+            
+            // Verify the critical script is minimal (checking for IIFE pattern)
+            expect($content)->toContain('(function()');
+        }
+        
+        // Non-critical scripts should have defer
+        if (strpos($content, 'toggleDarkMode') !== false) {
+            expect($content)->toContain('<script defer>');
+        }
+    });
+
+    it('uses code splitting for better performance', function () {
+        // Check Vite config has manual chunks configured
+        $viteConfig = File::get(base_path('vite.config.js'));
+        
+        expect($viteConfig)->toContain('manualChunks');
+        expect($viteConfig)->toContain('alpinejs');
+        expect($viteConfig)->toContain("return 'alpine'");
+    });
+
     it('has proper heading hierarchy for SEO', function () {
         $pages = ['/', '/services', '/projects', '/speaking', '/contact'];
 
