@@ -1,7 +1,7 @@
 import Alpine from 'alpinejs';
 
-// Make Alpine available globally
+// Only make Alpine available globally if needed for inline x-data
 window.Alpine = Alpine;
 
-// Start Alpine immediately
+// Configure Alpine for production
 Alpine.start();
