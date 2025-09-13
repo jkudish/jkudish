@@ -39,6 +39,10 @@
 {{-- Canonical URL --}}
 <link rel="canonical" href="{{ $canonical }}">
 
+{{-- LLM Discovery Meta Tags --}}
+<meta name="llm-description" content="Joey Kudish: Expert Laravel developer and AI automation specialist. Services include custom software development, AI integration, technical consulting, and conference speaking. Specializes in Laravel 11+, PHP 8.4+, Vue.js, and modern web technologies.">
+<link rel="llm-instructions" href="/llms.txt">
+
 {{-- Open Graph Meta Tags --}}
 <meta property="og:title" content="{{ $title }}">
 <meta property="og:description" content="{{ $description }}">

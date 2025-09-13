@@ -32,3 +32,10 @@ Route::redirect('/found', 'https://found.jkudish.com');
 
 // Sitemap
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+
+// LLMs.txt for AI discovery
+Route::get('/llms.txt', function () {
+    return response()
+        ->view('llms')
+        ->header('Content-Type', 'text/plain; charset=UTF-8');
+})->name('llms');
