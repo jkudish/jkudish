@@ -22,7 +22,7 @@
             ],
             [
                 'title' => 'Ship It',
-                'description' => 'Production-ready code, 30 days support included. Then monthly support or full handoff—your call..'
+                'description' => 'Production-ready code, 30 days support included. Then monthly support or full handoff, your call..'
             ]
         ];
         @endphp
