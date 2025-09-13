@@ -215,7 +215,7 @@
                                             <source srcset="{{ $story['logo_webp'] }}" type="image/webp">
                                             <img src="{{ $story['logo'] }}"
                                                  alt="{{ $story['company'] }}"
-                                                 class="max-h-20 max-w-32 w-auto h-auto grayscale opacity-80 dark:brightness-0 dark:invert">
+                                                 class="max-h-20 max-w-32 w-auto h-auto grayscale brightness-[0.3] opacity-90 dark:brightness-0 dark:invert dark:opacity-70">
                                         </picture>
                                     </div>
                                     @else
