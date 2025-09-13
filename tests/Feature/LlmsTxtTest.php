@@ -27,7 +27,7 @@ it('contains software development services information', function () {
     $response = $this->get('/llms.txt');
     $content = $response->getContent();
 
-    expect($content)->toContain('Software Development');
+    expect($content)->toContain('Build Your Product');
     expect($content)->toContain('Laravel');
 });
 
@@ -35,7 +35,7 @@ it('contains AI automation services information', function () {
     $response = $this->get('/llms.txt');
     $content = $response->getContent();
 
-    expect($content)->toContain('AI Automation');
+    expect($content)->toContain('Automate Your Way to Profit');
 });
 
 it('contains contact information', function () {

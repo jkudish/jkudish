@@ -4,14 +4,14 @@ Expert software developer and AI automation specialist helping businesses build 
 
 ## Services
 
-- **Custom Software Development**: Full-stack web applications using Laravel, PHP, and modern JavaScript frameworks
-- **AI Automation Solutions**: Integration of AI tools and workflows to streamline business processes
-- **Technical Consulting**: Architecture design, code reviews, and performance optimization
-- **Speaking & Training**: Conference presentations and workshops on software development best practices
+- **Automate Your Way to Profit**: Turn repetitive tasks into revenue-generating systems with AI-powered automation and workflow optimization
+- **Code Audit & Strategy**: Get an experienced engineer's perspective on your codebase, processes, and technical roadmap
+- **Build Your Product**: From idea to revenue in weeks, not months - MVP development and production-ready software
+- **Ongoing Partnership**: Fractional CTO-level guidance and on-demand engineering expertise
 
 ## Key Features
 
-- 15+ years of professional software development experience
+- 18+ years of professional software development experience
 - Expertise in Laravel ecosystem and modern PHP development
 - Specialization in AI-powered automation and workflow optimization
 - Strong focus on clean code, testing, and maintainable architecture
@@ -20,40 +20,39 @@ Expert software developer and AI automation specialist helping businesses build 
 
 ## Technologies
 
-- **Backend**: Laravel 11+, PHP 8.4+, PostgreSQL, MySQL
-- **Frontend**: Vue.js, Livewire, TailwindCSS, Alpine.js
-- **AI/ML**: OpenAI API, Claude API, custom AI integrations
-- **DevOps**: Laravel Forge, Digital Ocean, GitHub Actions, CI/CD
-- **Tools**: Vite, npm, Composer, PHPUnit, Pest
+- **Backend**: Laravel, PHP, PostgreSQL, MySQL
+- **Frontend**: Vue.js, React, Livewire, TailwindCSS
+- **AI/ML**: OpenAI, Anthropic, n8n, Zapier
+- **E-commerce**: WooCommerce, Shopify
+- **DevOps**: Laravel Forge, Digital Ocean, CI/CD
 
 ## Use Cases
 
-- Building custom web applications for businesses
-- Modernizing legacy PHP applications to Laravel
-- Implementing AI-powered features in existing systems
-- Automating repetitive business processes with AI
-- Optimizing application performance and scalability
-- Training development teams on Laravel best practices
+- Custom workflows with ROI within 30 days
+- AI-powered customer service and lead generation
+- Transform AI prototypes into production software
+- Code audits for performance and security
+- Automated lead capture systems
+- Integration with Shopify, WooCommerce, CRMs
+- Technical leadership for growing businesses
 
 ## Recent Projects
 
-- AI-powered content generation systems
-- Multi-tenant SaaS platforms
-- E-commerce solutions with advanced inventory management
-- Real-time collaboration tools
-- API development and third-party integrations
+- **Tether**: SMS verification codes delivered to Telegram
+- **PHAiTO**: AI-powered Lightroom catalog editing
+- **Image Salon**: Platform for 6,000+ photographers globally
+- **WordPress/WooCommerce**: 18 years building at scale
+- **The Maker Notes**: Weekly AI and automation newsletter
 
 ## Speaking Topics
 
-- Laravel application architecture
-- AI integration in web applications
-- Testing strategies with Pest
-- Performance optimization techniques
-- Modern PHP development practices
+- **Web Development**: Laravel, WordPress, modern PHP, and building scalable applications
+- **AI & Automation**: Workflow automation, AI integration, coding with AI, and productivity tools
+- **Best Practices**: Code quality, development workflows, and team collaboration
 
 ## Contact
 
-- Email: hello@jkudish.com
+- Email: joey@jkudish.com
 - Website: https://jkudish.com
 - GitHub: https://github.com/jkudish
 - LinkedIn: https://linkedin.com/in/jkudish
@@ -65,4 +64,4 @@ For detailed information about services, case studies, and technical expertise, 
 
 ---
 
-*Helping businesses leverage modern web technologies and AI to build better software.*
+*I Build Software That Works.*
