@@ -1,0 +1,61 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-label="Friendly 404 monster holding a sign">
+  <defs>
+    <linearGradient id="monsterGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="signGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#047857;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#065f46;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Monster Body -->
+  <ellipse cx="200" cy="250" rx="100" ry="120" fill="url(#monsterGradient)" opacity="0.9"/>
+  
+  <!-- Monster Spots -->
+  <circle cx="170" cy="240" r="15" fill="#8b5cf6" opacity="0.5"/>
+  <circle cx="230" cy="270" r="12" fill="#ec4899" opacity="0.5"/>
+  <circle cx="190" cy="290" r="10" fill="#8b5cf6" opacity="0.5"/>
+  
+  <!-- Monster Eyes -->
+  <circle cx="170" cy="220" r="25" fill="white"/>
+  <circle cx="230" cy="220" r="25" fill="white"/>
+  
+  <!-- Eye Pupils -->
+  <circle cx="175" cy="225" r="12" fill="#1a202c"/>
+  <circle cx="235" cy="225" r="12" fill="#1a202c"/>
+  
+  <!-- Eye Sparkles -->
+  <circle cx="178" cy="222" r="4" fill="white"/>
+  <circle cx="238" cy="222" r="4" fill="white"/>
+  
+  <!-- Monster Mouth -->
+  <path d="M 160 260 Q 200 280 240 260" stroke="#1a202c" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Monster Arms -->
+  <ellipse cx="120" cy="250" rx="20" ry="60" fill="url(#monsterGradient)" transform="rotate(-30 120 250)"/>
+  <ellipse cx="280" cy="250" rx="20" ry="60" fill="url(#monsterGradient)" transform="rotate(30 280 250)"/>
+  
+  <!-- Monster Feet -->
+  <ellipse cx="160" cy="350" rx="30" ry="20" fill="url(#monsterGradient)"/>
+  <ellipse cx="240" cy="350" rx="30" ry="20" fill="url(#monsterGradient)"/>
+  
+  <!-- Monster Horns -->
+  <path d="M 150 180 L 145 160 L 155 165 Z" fill="#8b5cf6"/>
+  <path d="M 250 180 L 245 160 L 255 165 Z" fill="#ec4899"/>
+  
+  <!-- Sign Post -->
+  <rect x="295" cy="180" width="8" height="150" fill="#6b7280"/>
+  
+  <!-- Sign Board -->
+  <rect x="270" cy="140" width="100" height="60" rx="5" fill="url(#signGradient)"/>
+  
+  <!-- 404 Text on Sign -->
+  <text x="320" y="180" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">404</text>
+  
+  <!-- Monster's confused expression marks -->
+  <text x="200" y="140" font-family="Arial, sans-serif" font-size="24" fill="#6b7280" text-anchor="middle">?</text>
+  <text x="180" y="130" font-family="Arial, sans-serif" font-size="18" fill="#9ca3af" text-anchor="middle">?</text>
+  <text x="220" y="135" font-family="Arial, sans-serif" font-size="20" fill="#9ca3af" text-anchor="middle">?</text>
+</svg>
