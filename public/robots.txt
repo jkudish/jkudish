@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://jkudish.com/sitemap.xml
+LLM-Instructions: /llms.txt
