@@ -35,10 +35,6 @@
         [
             'question' => 'What if I\'m not satisfied?',
             'answer' => 'I want you to be thrilled with the results. If you\'re unhappy with the work delivered, please communicate and I\'ll work with you to make it right.'
-        ],
-        [
-            'question' => 'Who shouldn\'t hire me?',
-            'answer' => 'Companies that need 40 hours of butts-in-seats time. Teams that love meetings. Projects with unclear goals. If you want someone to blindly follow specs without thinking, I\'m not your guy.'
         ]
     ];
 @endphp
