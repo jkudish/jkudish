@@ -196,7 +196,7 @@
                                     'tagline' => 'E-commerce at Scale',
                                     'logo' => asset('img/companies/wordpress.png'),
                                     'logo_webp' => asset('img/companies/wordpress.webp'),
-                                    'story' => 'WordPress contributor since 2011. Over 18 years, I\'ve built features and platforms used by millions across the ecosystem.',
+                                    'story' => 'Over 18 years building for the web. WordPress Core contributor since 2011, with features and platforms used by millions across the ecosystem.',
                                     'highlights' => [
                                         'At Automattic - Worked on WooCommerce, Jetpack and WordPress.com',
                                         'At Metorik - Helped scale an analytics platform processing millions in GMV for WooCommerce/Shopify stores',
