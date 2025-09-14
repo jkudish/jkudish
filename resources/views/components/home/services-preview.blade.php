@@ -12,6 +12,7 @@ $services = [
         'border_gradient' => 'from-yellow-400 to-amber-500',
         'bg_color' => 'bg-yellow-50/30',
         'icon_bg' => 'bg-yellow-100/50',
+        'anchor' => 'automation',
     ],
     [
         'icon' => 'lucide-file-text',
@@ -25,6 +26,7 @@ $services = [
         'border_gradient' => 'from-purple-400 to-pink-500',
         'bg_color' => 'bg-purple-50/30',
         'icon_bg' => 'bg-purple-100/50',
+        'anchor' => 'audit',
     ],
     [
         'icon' => 'lucide-code-2',
@@ -38,6 +40,7 @@ $services = [
         'border_gradient' => 'from-emerald-400 to-teal-500',
         'bg_color' => 'bg-emerald-50/30',
         'icon_bg' => 'bg-emerald-100/50',
+        'anchor' => 'product',
     ],
     [
         'icon' => 'lucide-sparkles',
@@ -51,6 +54,7 @@ $services = [
         'border_gradient' => 'from-cyan-400 to-blue-500',
         'bg_color' => 'bg-cyan-50/30',
         'icon_bg' => 'bg-cyan-100/50',
+        'anchor' => 'partnership',
     ],
 ];
 @endphp
@@ -67,7 +71,7 @@ $services = [
 
     <div class="mt-12 grid gap-8 md:grid-cols-2">
         @foreach($services as $index => $service)
-        <div class="relative group transition-all duration-300 hover:-translate-y-1">
+        <a href="{{ route('services') }}#{{ $service['anchor'] }}" class="block relative group transition-all duration-300 hover:-translate-y-1">
             <div class="p-[2px] rounded-xl bg-gradient-to-r {{ $service['border_gradient'] }} shadow-sm group-hover:shadow-lg transition-shadow duration-300">
                 <div class="h-full w-full bg-white dark:bg-zinc-900 rounded-xl">
                     <div class="p-6 h-full flex flex-col">
@@ -94,7 +98,7 @@ $services = [
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
         @endforeach
     </div>
 

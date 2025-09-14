@@ -81,7 +81,7 @@ $structuredData = [
                                 'cta' => 'Automate My Business',
                             ],
                             [
-                                'id' => 'code-audit-strategy',
+                                'id' => 'audit',
                                 'icon' => 'lucide-file-text',
                                 'name' => 'Code Audit & Strategy',
                                 'tagline' => 'Get an Experienced Engineer\'s Perspective',
@@ -117,7 +117,7 @@ $structuredData = [
                                 'cta' => 'Start Your Audit',
                             ],
                             [
-                                'id' => 'build-product',
+                                'id' => 'product',
                                 'icon' => 'lucide-code-2',
                                 'name' => 'Build Your Product',
                                 'tagline' => 'Ship Something Real',
@@ -152,7 +152,7 @@ $structuredData = [
                                 'cta' => 'Start Your Build',
                             ],
                             [
-                                'id' => 'ongoing-partnership',
+                                'id' => 'partnership',
                                 'icon' => 'lucide-sparkles',
                                 'name' => 'Ongoing Partnership',
                                 'tagline' => 'Fractional CTO-Level Guidance',
