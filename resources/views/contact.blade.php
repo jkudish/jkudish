@@ -25,14 +25,7 @@ $structuredData = [
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white/90 dark:bg-zinc-900/80 backdrop-blur-xl rounded-lg overflow-hidden shadow-lg">
                 <div class="px-6 sm:px-8 lg:px-10 py-16 lg:py-24">
-                    <header class="max-w-2xl mx-auto text-center">
-                        <x-ui.typography variant="h1">
-                            Get in Touch
-                        </x-ui.typography>
-                        <x-ui.typography variant="lead" color="muted" class="mt-6">
-                            Have a project in mind? Let's discuss how I can help.
-                        </x-ui.typography>
-                    </header>
+                    <x-service-hero :serviceConfig="$serviceConfig ?? null" />
         
                     <div class="mt-16 grid gap-8 lg:grid-cols-3 lg:gap-12">
             <div class="lg:col-span-2">
@@ -127,8 +120,13 @@ $structuredData = [
                                 rows="6"
                                 required
                                 class="mt-1 w-full rounded-md border border-zinc-900/10 px-3 py-2 shadow-sm placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-                                placeholder="Tell me about your project..."
+                                placeholder="{{ $serviceConfig['form_placeholder'] ?? 'Tell me about your project...' }}"
                             ></textarea>
+                            @if($serviceConfig && isset($serviceConfig['form_helper']))
+                                <p class="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
+                                    {{ $serviceConfig['form_helper'] }}
+                                </p>
+                            @endif
                         </div>
                         
                         <div>

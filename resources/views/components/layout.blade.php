@@ -81,6 +81,56 @@
             localStorage.removeItem('theme');
             document.documentElement.classList.toggle('dark', matches);
         });
+        
+        // Smooth scrolling polyfill for browsers that don't support scroll-behavior CSS
+        window.smoothScrollPolyfill = function() {
+            // Check if browser supports scroll-behavior CSS
+            if ('scrollBehavior' in document.documentElement.style) {
+                return; // Browser supports it natively
+            }
+            
+            // Polyfill for smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                        const startPosition = window.pageYOffset;
+                        const distance = targetPosition - startPosition;
+                        const duration = 800;
+                        let start = null;
+                        
+                        function animation(currentTime) {
+                            if (start === null) start = currentTime;
+                            const timeElapsed = currentTime - start;
+                            const run = ease(timeElapsed, startPosition, distance, duration);
+                            window.scrollTo(0, run);
+                            if (timeElapsed < duration) requestAnimationFrame(animation);
+                        }
+                        
+                        function ease(t, b, c, d) {
+                            t /= d / 2;
+                            if (t < 1) return c / 2 * t * t + b;
+                            t--;
+                            return -c / 2 * (t * (t - 2) - 1) + b;
+                        }
+                        
+                        requestAnimationFrame(animation);
+                    }
+                });
+            });
+        };
+        
+        // Initialize smooth scrolling polyfill when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', smoothScrollPolyfill);
+        } else {
+            smoothScrollPolyfill();
+        }
     </script>
 
     @stack('head')

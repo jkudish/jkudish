@@ -268,7 +268,7 @@ $structuredData = [
                                                     </div>
                                                 </div>
 
-                                                <a href="{{ route('contact') }}" class="group relative inline-flex items-center gap-2 justify-center rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-300 overflow-hidden w-full bg-gradient-to-r {{ $service['border_gradient'] }} text-white hover:shadow-xl hover:-translate-y-0.5">
+                                                <a href="{{ route('contact') }}?service={{ $service['id'] }}" class="group relative inline-flex items-center gap-2 justify-center rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-300 overflow-hidden w-full bg-gradient-to-r {{ $service['border_gradient'] }} text-white hover:shadow-xl hover:-translate-y-0.5">
                                                     <span class="relative z-10 flex items-center gap-2">
                                                         {{ $service['cta'] }}
                                                         <x-icon name="lucide-chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
