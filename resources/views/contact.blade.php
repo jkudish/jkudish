@@ -21,11 +21,59 @@ $structuredData = [
     keywords="contact Joey Kudish, hire developer, consulting inquiries, speaking requests, software development contact"
     :structuredData="$structuredData"
 >
-    <div class="flex justify-center my-8 lg:my-12">
+    @php
+    $alpineData = [
+        'subjectConfigs' => $subjectConfigs,
+        'currentSubject' => $serviceConfig['default_subject'] ?? 'General Question',
+        'serviceConfig' => $serviceConfig
+    ];
+    @endphp
+    
+    <div class="flex justify-center my-8 lg:my-12" 
+         x-data="contactForm(@js($alpineData))">
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white/90 dark:bg-zinc-900/80 backdrop-blur-xl rounded-lg overflow-hidden shadow-lg">
                 <div class="px-6 sm:px-8 lg:px-10 py-16 lg:py-24">
-                    <x-service-hero :serviceConfig="$serviceConfig ?? null" />
+                    <!-- Dynamic Hero Section -->
+                    <header class="max-w-2xl mx-auto text-center">
+                        <div class="flex justify-center mb-6">
+                            <div class="p-3 rounded-2xl bg-gradient-to-br shadow-lg"
+                                 x-bind:class="config.border_gradient">
+                                <div class="p-3 bg-white dark:bg-zinc-900 rounded-xl">
+                                    <template x-if="config.icon === 'lucide-code-2'">
+                                        <x-icon name="lucide-code-2" class="w-12 h-12" ::style="`color: ${config.icon_color}`" />
+                                    </template>
+                                    <template x-if="config.icon === 'lucide-zap'">
+                                        <x-icon name="lucide-zap" class="w-12 h-12" ::style="`color: ${config.icon_color}`" />
+                                    </template>
+                                    <template x-if="config.icon === 'lucide-file-text'">
+                                        <x-icon name="lucide-file-text" class="w-12 h-12" ::style="`color: ${config.icon_color}`" />
+                                    </template>
+                                    <template x-if="config.icon === 'lucide-sparkles'">
+                                        <x-icon name="lucide-sparkles" class="w-12 h-12" ::style="`color: ${config.icon_color}`" />
+                                    </template>
+                                    <template x-if="config.icon === 'lucide-message-circle'">
+                                        <x-icon name="lucide-message-circle" class="w-12 h-12" ::style="`color: ${config.icon_color}`" />
+                                    </template>
+                                    <template x-if="config.icon === 'lucide-mic'">
+                                        <x-icon name="lucide-mic" class="w-12 h-12" ::style="`color: ${config.icon_color}`" />
+                                    </template>
+                                    <template x-if="config.icon === 'lucide-help-circle'">
+                                        <x-icon name="lucide-help-circle" class="w-12 h-12" ::style="`color: ${config.icon_color}`" />
+                                    </template>
+                                    <template x-if="config.icon === 'lucide-smile'">
+                                        <x-icon name="lucide-smile" class="w-12 h-12" ::style="`color: ${config.icon_color}`" />
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <x-ui.typography variant="h1" x-text="config.hero_title">
+                        </x-ui.typography>
+                        
+                        <x-ui.typography variant="lead" class="mt-6" x-bind:class="config.text_color" x-text="config.hero_message">
+                        </x-ui.typography>
+                    </header>
         
                     <div class="mt-16 grid gap-8 lg:grid-cols-3 lg:gap-12">
             <div class="lg:col-span-2">
@@ -100,6 +148,7 @@ $structuredData = [
                                 name="subject"
                                 id="subject"
                                 required
+                                x-model="currentSubject"
                                 class="mt-1 w-full rounded-md border border-zinc-900/10 px-3 py-2 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
                             >
                                 <option {{ ($serviceConfig && isset($serviceConfig['default_subject']) && $serviceConfig['default_subject'] === 'Project Inquiry') ? 'selected' : '' }}>Project Inquiry</option>
@@ -123,13 +172,10 @@ $structuredData = [
                                 rows="6"
                                 required
                                 class="mt-1 w-full rounded-md border border-zinc-900/10 px-3 py-2 shadow-sm placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-                                placeholder="{{ $serviceConfig['form_placeholder'] ?? 'Tell me about your project...' }}"
+                                x-bind:placeholder="config.form_placeholder"
                             ></textarea>
-                            @if($serviceConfig && isset($serviceConfig['form_helper']))
-                                <p class="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
-                                    {{ $serviceConfig['form_helper'] }}
-                                </p>
-                            @endif
+                            <p class="mt-2 text-sm text-zinc-500 dark:text-zinc-400" x-text="config.form_helper" x-show="config.form_helper">
+                            </p>
                         </div>
                         
                         <div>
