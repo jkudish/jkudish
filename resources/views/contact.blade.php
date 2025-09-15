@@ -102,8 +102,11 @@ $structuredData = [
                                 required
                                 class="mt-1 w-full rounded-md border border-zinc-900/10 px-3 py-2 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
                             >
-                                <option>Project Inquiry</option>
-                                <option>Consultation Request</option>
+                                <option {{ ($serviceConfig && isset($serviceConfig['default_subject']) && $serviceConfig['default_subject'] === 'Project Inquiry') ? 'selected' : '' }}>Project Inquiry</option>
+                                <option {{ ($serviceConfig && isset($serviceConfig['default_subject']) && $serviceConfig['default_subject'] === 'Automation Inquiry') ? 'selected' : '' }}>Automation Inquiry</option>
+                                <option {{ ($serviceConfig && isset($serviceConfig['default_subject']) && $serviceConfig['default_subject'] === 'Code Audit Request') ? 'selected' : '' }}>Code Audit Request</option>
+                                <option {{ ($serviceConfig && isset($serviceConfig['default_subject']) && $serviceConfig['default_subject'] === 'Partnership Opportunity') ? 'selected' : '' }}>Partnership Opportunity</option>
+                                <option {{ ($serviceConfig && isset($serviceConfig['default_subject']) && $serviceConfig['default_subject'] === 'Consultation Request') ? 'selected' : '' }}>Consultation Request</option>
                                 <option>Speaking Opportunity</option>
                                 <option>General Question</option>
                                 <option>Just Saying Hi</option>

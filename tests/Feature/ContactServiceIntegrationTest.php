@@ -87,3 +87,25 @@ it('maintains form validation with service context', function () {
     $response->assertSee('name="message"', false);
     $response->assertSee('required', false);
 });
+
+it('pre-selects appropriate subject based on service', function () {
+    // Test automation service
+    $response = get('/contact?service=automation');
+    $response->assertSuccessful();
+    $response->assertSee('<option selected>Automation Inquiry</option>', false);
+    
+    // Test audit service
+    $response = get('/contact?service=audit');
+    $response->assertSuccessful();
+    $response->assertSee('<option selected>Code Audit Request</option>', false);
+    
+    // Test product service
+    $response = get('/contact?service=product');
+    $response->assertSuccessful();
+    $response->assertSee('<option selected>Project Inquiry</option>', false);
+    
+    // Test partnership service
+    $response = get('/contact?service=partnership');
+    $response->assertSuccessful();
+    $response->assertSee('<option selected>Partnership Opportunity</option>', false);
+});

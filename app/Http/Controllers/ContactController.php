@@ -43,6 +43,7 @@ class ContactController extends Controller
                 'hero_message' => 'Ready to turn repetitive tasks into revenue-generating systems? Tell me about your automation needs below.',
                 'form_placeholder' => 'Tell me about the processes you want to automate...',
                 'form_helper' => 'Share details about repetitive tasks, data processing needs, or workflow bottlenecks',
+                'default_subject' => 'Automation Inquiry',
             ],
             'audit' => [
                 'id' => 'audit',
@@ -56,6 +57,7 @@ class ContactController extends Controller
                 'hero_message' => 'Let\'s review your code and create a clear technical roadmap. Share your concerns below.',
                 'form_placeholder' => 'Tell me about your codebase and what concerns you have...',
                 'form_helper' => 'Describe your tech stack, performance issues, or code quality concerns',
+                'default_subject' => 'Code Audit Request',
             ],
             'product' => [
                 'id' => 'product',
@@ -69,6 +71,7 @@ class ContactController extends Controller
                 'hero_message' => 'Ready to ship something real? Let\'s discuss your vision and make it happen.',
                 'form_placeholder' => 'Describe your product vision and technical requirements...',
                 'form_helper' => 'Share your product idea, target users, and desired features',
+                'default_subject' => 'Project Inquiry',
             ],
             'partnership' => [
                 'id' => 'partnership',
@@ -82,6 +85,7 @@ class ContactController extends Controller
                 'hero_message' => 'Let\'s discuss how ongoing technical leadership can help your business grow.',
                 'form_placeholder' => 'Tell me about your business and technical challenges...',
                 'form_helper' => 'Describe your team, current technical setup, and growth goals',
+                'default_subject' => 'Partnership Opportunity',
             ],
         ];
 
