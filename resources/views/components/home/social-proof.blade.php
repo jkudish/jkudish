@@ -24,7 +24,7 @@ $metrics = [
 
 $testimonials = [
     [
-        'quote' => "I've worked with Joey on several projects over the past decade, and he's always been a reliable and skilled developer that elevates any team he's on. His knowledge of Laravel and WordPress runs deep, and he consistently finds solutions to even the toughest problems that come up. Joey has a great mix of technical ability and persistence, and I've yet to see him shy away from a challenge.",
+        'quote' => "I've worked with Joey for more then a decade, and he's a reliable and skilled developer that elevates any team he's on. His knowledge of Laravel and WordPress runs deep, and he consistently finds solutions to even the toughest problems that come up. I've yet to see him shy away from a challenge.",
         'author' => 'Bryce Adams',
         'company' => 'Founder, Metorik',
         'avatar' => asset('img/testimonials/bryce-adams.jpg')
@@ -134,7 +134,7 @@ $testimonials = [
                                 <svg class="w-8 h-8 text-emerald-600 dark:text-emerald-700 opacity-20 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                                 </svg>
-                                <blockquote class="mt-4 font-sans text-zinc-600 dark:text-zinc-400 flex-grow min-h-[200px]" x-text="`&quot;${testimonial.quote}&quot;`">
+                                <blockquote class="mt-4 font-sans text-zinc-600 dark:text-zinc-400 flex-grow min-h-[120px]" x-text="`&quot;${testimonial.quote}&quot;`">
                                 </blockquote>
                                 <div class="mt-4 flex items-center gap-3 flex-shrink-0">
                                     <template x-if="testimonial.avatar">
