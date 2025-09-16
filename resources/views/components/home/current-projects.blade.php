@@ -1,14 +1,27 @@
 @php
 $projects = [
     [
+        'name' => 'PHAiTO',
+        'logo' => url('img/companies/phaito.png'),
+        'logo_size' => 'medium',
+        'logo_filter' => 'grayscale',
+        'show_title' => false,
+        'description' => 'Lightroom AI that actually understands photography. Edit entire catalogs in minutes, not hours.',
+        'status' => 'launched',
+        'status_label' => 'Recently Launched',
+        'status_icon' => 'lucide-check-circle',
+        'url' => 'https://phaito.com',
+        'external' => true,
+    ],
+    [
         'name' => 'Tether',
         'logo' => url('img/tether.png'),
         'logo_size' => 'large',
         'show_title' => false,
-        'description' => 'Stay connected without roaming fees. SMS verification codes delivered straight to your Telegram.',
+        'description' => 'Get SMS verification codes anywhere. No SIM card required.',
         'status' => 'building',
         'status_label' => 'Building in public',
-        'status_icon' => 'lucide-hammer',
+        'status_icon' => 'lucide-smartphone',
         'url' => 'https://tethermobile.com',
         'external' => true,
     ],
@@ -23,19 +36,6 @@ $projects = [
         'status_icon' => 'lucide-rocket',
         'url' => route('newsletter'),
         'external' => false,
-    ],
-    [
-        'name' => 'PHAiTO',
-        'logo' => url('img/companies/phaito.png'),
-        'logo_size' => 'medium',
-        'logo_filter' => 'grayscale',
-        'show_title' => false,
-        'description' => 'Lightroom AI that actually understands photography. Edit entire catalogs in minutes, not hours.',
-        'status' => 'launched',
-        'status_label' => 'Recently Launched',
-        'status_icon' => 'lucide-check-circle',
-        'url' => 'https://phaito.com',
-        'external' => true,
     ],
 ];
 @endphp
@@ -116,7 +116,7 @@ $projects = [
             <div class="mt-4">
                 @php
                     $statusClasses = match($project['status']) {
-                        'building' => 'bg-yellow-100 text-yellow-800 dark:bg-amber-900/30 dark:text-amber-300 border border-yellow-200/50 dark:border-amber-700/30',
+                        'building' => 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 border border-purple-200/50 dark:border-purple-700/30',
                         'coming_soon' => 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200/50 dark:border-blue-700/30',
                         'launched' => 'bg-green-100 text-green-800 dark:bg-emerald-900/30 dark:text-emerald-300 border border-green-200/50 dark:border-emerald-700/30',
                         default => 'bg-zinc-100 text-zinc-800 dark:bg-zinc-800/30 dark:text-zinc-300 border border-zinc-200/50 dark:border-zinc-700/30'
@@ -130,7 +130,7 @@ $projects = [
             
             {{-- External Link Indicator --}}
             @if($project['external'])
-                <x-icon name="lucide-external-link" class="absolute top-4 right-4 w-4 h-4 text-zinc-400 dark:text-zinc-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <x-icon name="lucide-external-link" class="absolute top-4 right-4 w-4 h-4 text-zinc-400 dark:text-zinc-500" />
             @endif
         </a>
         @endforeach

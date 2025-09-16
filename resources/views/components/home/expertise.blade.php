@@ -4,25 +4,25 @@ $expertise = [
         'icon' => 'lucide-terminal',
         'name' => 'Full-Stack Development',
         'skills' => ['Laravel', 'Vue.js', 'React', 'Desktop and Mobile', 'Database Design'],
-        'description' => 'Building scalable web applications from database to deployment'
+        'description' => 'I build scalable web applications from database to deployment'
     ],
     [
         'icon' => 'lucide-cpu',
         'name' => 'AI & Automation',
         'skills' => ['OpenAI', 'Anthropic', 'n8n', 'Zapier', 'OpenRouter'],
-        'description' => 'Implementing intelligent automation that saves hours weekly'
+        'description' => 'I implement intelligent automation that saves hours weekly'
     ],
     [
         'icon' => 'lucide-beaker',
         'name' => 'Product Development',
         'skills' => ['MVP Strategy', 'Ecommerce', 'Analytics', 'Monetization & Growth'],
-        'description' => 'Taking ideas from concept to profitable production'
+        'description' => 'I take ideas from concept to profitable production'
     ],
     [
         'icon' => 'lucide-users',
         'name' => 'Technical Leadership',
         'skills' => ['Team Management', 'Code Reviews', 'Architecture', 'Mentoring'],
-        'description' => 'Leading teams to deliver quality software on time'
+        'description' => 'I lead teams to deliver quality software on time'
     ],
 ];
 @endphp

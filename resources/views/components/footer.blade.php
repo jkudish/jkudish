@@ -19,7 +19,7 @@
                         </h2>
                     </div>
                     <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
-                        My weekly brain dump: indie projects, AI automation, business experiments, and whatever rabbit holes I went down. For builders who ship.
+                        How I ship faster: AI coding workflows, Obsidian for devs, Laravel automation, and indie hacking lessons.
                     </p>
 
                     <div x-data="{
@@ -97,7 +97,7 @@
                     </div>
 
                     <p class="mt-4 text-xs text-zinc-600 dark:text-zinc-500">
-                        No spam. Unsubscribe whenever.
+                        I'll never spam you, promise.
                     </p>
                 </div>
             </div>

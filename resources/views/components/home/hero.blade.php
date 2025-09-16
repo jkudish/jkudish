@@ -10,7 +10,7 @@
         <div class="order-2 lg:order-1">
             <x-ui.typography variant="h1">
                 Hey, I'm Joey 👋
-                <span class="block text-gradient-primary mt-2">I Build Software That Works</span>
+                <span class="block text-gradient-primary mt-2">I build software that works.</span>
             </x-ui.typography>
 
             <p class="mt-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
@@ -35,7 +35,7 @@
 
             <div class="mt-10 flex flex-col sm:flex-row gap-4">
                 <x-ui.gradient-button variant="primary" href="{{ route('contact') }}" icon="true">
-                    Let's Talk About Your Project
+                    Tell Me About Your Project
                 </x-ui.gradient-button>
                 <x-ui.gradient-button variant="outline" href="{{ route('services') }}">
                     View Services

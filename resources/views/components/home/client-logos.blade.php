@@ -15,25 +15,27 @@ $logoStyles = [
     'colorful' => 'grayscale opacity-70 dark:grayscale dark:brightness-150 dark:opacity-90',
 ];
 
-// Reorganized to distribute WordPress family companies across both rows
+// Reorganized to show featured logos first as requested
 $allCompanies = [
-    // Top row (first half) - all use 'standard' style now
-    ['name' => 'WooCommerce', 'webp' => url('img/companies/woo.webp'), 'png' => url('img/companies/woo.png'), 'size' => 'max-h-14', 'classes' => $logoStyles['standard']],
+    // Top row - Featured logos first
+    ['name' => 'Pantheon', 'webp' => url('img/companies/pantheon.webp'), 'png' => url('img/companies/pantheon.png'), 'size' => 'max-h-10', 'classes' => $logoStyles['standard']],
+    ['name' => 'WordPress VIP', 'webp' => url('img/companies/wp-vip.webp'), 'png' => url('img/companies/wp-vip.png'), 'size' => 'max-h-10', 'classes' => $logoStyles['standard']],
+    ['name' => 'FedEx', 'webp' => url('img/companies/fedex.webp'), 'png' => url('img/companies/fedex.png'), 'size' => 'max-h-10', 'classes' => $logoStyles['no-darken']],
+    ['name' => 'BC SPCA', 'webp' => url('img/companies/bcspca.webp'), 'png' => url('img/companies/bcspca.png'), 'size' => 'max-h-14', 'classes' => $logoStyles['standard']],
     ['name' => 'TechCrunch', 'webp' => url('img/companies/techcrunch.webp'), 'png' => url('img/companies/techcrunch.png'), 'size' => 'max-h-20', 'classes' => $logoStyles['standard']],
-    ['name' => '10up', 'webp' => url('img/companies/10up.webp'), 'png' => url('img/companies/10up.png'), 'size' => 'max-h-10', 'classes' => $logoStyles['standard']],
-    ['name' => 'Metorik', 'webp_light' => url('img/companies/metorik-light.webp'), 'png_light' => url('img/companies/metorik-light.png'), 'webp_dark' => url('img/companies/metorik-dark.webp'), 'png_dark' => url('img/companies/metorik-dark.png'), 'size' => 'max-h-10', 'has_variants' => true],
+    
+    // Bottom row - More featured logos
     ['name' => "Sotheby's", 'webp' => url('img/companies/sothebys.webp'), 'png' => url('img/companies/sothebys.png'), 'size' => 'max-h-16', 'classes' => $logoStyles['standard']],
     ['name' => 'TELUS Health', 'webp' => url('img/companies/telus-health.webp'), 'png' => url('img/companies/telus-health.png'), 'size' => 'max-h-16', 'classes' => $logoStyles['standard']],
-    ['name' => 'Pantheon', 'webp' => url('img/companies/pantheon.webp'), 'png' => url('img/companies/pantheon.png'), 'size' => 'max-h-10', 'classes' => $logoStyles['standard']],
-    ['name' => 'Modern Tribe', 'webp' => url('img/companies/modern-tribe.webp'), 'png' => url('img/companies/modern-tribe.png'), 'size' => 'max-h-20', 'classes' => $logoStyles['invert']],
-    ['name' => 'FedEx', 'webp' => url('img/companies/fedex.webp'), 'png' => url('img/companies/fedex.png'), 'size' => 'max-h-10', 'classes' => $logoStyles['no-darken']],
-    ['name' => 'Automattic', 'webp' => url('img/companies/automattic.webp'), 'png' => url('img/companies/automattic.png'), 'size' => 'max-h-10', 'classes' => $logoStyles['invert']],
-    ['name' => 'BC SPCA', 'webp' => url('img/companies/bcspca.webp'), 'png' => url('img/companies/bcspca.png'), 'size' => 'max-h-14', 'classes' => $logoStyles['standard']],
-    ['name' => 'The Events Calendar', 'webp' => url('img/companies/the-events-calendar.webp'), 'png' => url('img/companies/the-events-calendar.png'), 'size' => 'max-h-20', 'classes' => $logoStyles['standard']],
     
-    // Bottom row (second half) - all use 'standard' style now
+    // Continue with remaining logos
+    ['name' => 'WooCommerce', 'webp' => url('img/companies/woo.webp'), 'png' => url('img/companies/woo.png'), 'size' => 'max-h-14', 'classes' => $logoStyles['standard']],
+    ['name' => '10up', 'webp' => url('img/companies/10up.webp'), 'png' => url('img/companies/10up.png'), 'size' => 'max-h-10', 'classes' => $logoStyles['standard']],
+    ['name' => 'Metorik', 'webp_light' => url('img/companies/metorik-light.webp'), 'png_light' => url('img/companies/metorik-light.png'), 'webp_dark' => url('img/companies/metorik-dark.webp'), 'png_dark' => url('img/companies/metorik-dark.png'), 'size' => 'max-h-10', 'has_variants' => true],
+    ['name' => 'Modern Tribe', 'webp' => url('img/companies/modern-tribe.webp'), 'png' => url('img/companies/modern-tribe.png'), 'size' => 'max-h-20', 'classes' => $logoStyles['invert']],
+    ['name' => 'Automattic', 'webp' => url('img/companies/automattic.webp'), 'png' => url('img/companies/automattic.png'), 'size' => 'max-h-10', 'classes' => $logoStyles['invert']],
+    ['name' => 'The Events Calendar', 'webp' => url('img/companies/the-events-calendar.webp'), 'png' => url('img/companies/the-events-calendar.png'), 'size' => 'max-h-20', 'classes' => $logoStyles['standard']],
     ['name' => 'Image Salon', 'webp' => url('img/companies/image-salon.webp'), 'png' => url('img/companies/image-salon.png'), 'size' => 'max-h-16', 'classes' => $logoStyles['standard']],
-    ['name' => 'WordPress VIP', 'webp' => url('img/companies/wp-vip.webp'), 'png' => url('img/companies/wp-vip.png'), 'size' => 'max-h-10', 'classes' => $logoStyles['standard']],
     ['name' => 'DVLOP', 'webp' => url('img/companies/dvlop.webp'), 'png' => url('img/companies/dvlop.png'), 'size' => 'max-h-10', 'classes' => $logoStyles['standard']],
     ['name' => 'Teelaunch', 'webp' => url('img/companies/teelaunch.webp'), 'png' => url('img/companies/teelaunch.png'), 'size' => 'max-h-20', 'classes' => $logoStyles['standard']],
     ['name' => 'PHAiTO', 'webp' => url('img/companies/phaito.webp'), 'png' => url('img/companies/phaito.png'), 'size' => 'max-h-8', 'classes' => $logoStyles['standard']],

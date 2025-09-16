@@ -12,13 +12,8 @@ $metrics = [
     ],
     [
         'value' => '2011',
-        'label' => 'First WordPress Core Commit',
+        'label' => 'First WordPress Contribution',
         'description' => 'Contributing to open source for 13+ years'
-    ],
-    [
-        'value' => '4-to-1',
-        'label' => 'Efficiency Multiplier',
-        'description' => 'My automation track record'
     ],
 ];
 
@@ -63,12 +58,12 @@ $testimonials = [
             Proven Track Record
         </x-ui.typography>
         <p class="mt-4 text-lg font-sans text-zinc-600 dark:text-zinc-400">
-            Building successful software has been my focus for nearly two decades.
+            For nearly two decades, building successful software has been my focus.
         </p>
     </div>
 
     {{-- Metrics Grid --}}
-    <div class="mt-12 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="mt-12 grid gap-8 grid-cols-1 sm:grid-cols-3">
         @foreach($metrics as $metric)
         <div class="text-center">
             <div class="text-3xl font-bold text-emerald-600 dark:text-emerald-700">
