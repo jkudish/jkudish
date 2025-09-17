@@ -55,12 +55,12 @@ $structuredData = [
                                 'text_color' => 'text-yellow-600 dark:text-yellow-400',
                                 'border_gradient' => 'from-yellow-400 to-amber-500',
                                 'button_variant' => 'primary',
-                                'description' => 'Every hour you spend on manual tasks costs you money. I\'ll build automated workflows that cut costs, generate leads, and create new revenue streams. From customer service to lead nurturing to data processing, I\'ll automate the work that\'s eating your profits. Most clients see ROI within 30 days.',
+                                'description' => 'Every hour you spend on manual tasks impacts your bottom line. I create automated workflows that cut costs, generate leads, and create new revenue streams. From customer service to lead retention to data processing, I\'ll automate the work that\'s consuming your resources. Most clients see ROI within 30 days.',
                                 'ideal_for' => [
-                                    'Businesses losing money to manual data entry',
-                                    'Companies wanting AI-powered lead generation',
+                                    'Businesses impacted by manual data entry overhead',
+                                    'Companies seeking AI-powered lead generation',
                                     'Ecommerce stores drowning in order management',
-                                    'Service businesses ready to scale without hiring',
+                                    'Service businesses ready to scale efficiently',
                                 ],
                                 'deliverables' => [
                                     'Custom workflows tailored to your business',
@@ -93,10 +93,10 @@ $structuredData = [
                                 'description' => 'Transform uncertainty into a clear technical roadmap. Your code needs a second opinion. Whether you built with AI tools, have a legacy Laravel app, or need to automate manual processes, I\'ll review everything and deliver actionable insights. Get confidence to move forward with a prioritized plan from someone who\'s shipped code to millions of users and built software that\'s been running in production for over a decade.',
                                 'ideal_for' => [
                                     'Founders who built with ChatGPT, v0, Lovable, Replit, Bolt, etc.',
-                                    'Teams with performance or security concerns',
+                                    'Teams seeking performance or security improvements',
                                     'WooCommerce or Shopify stores with performance issues',
                                     'Businesses drowning in manual processes',
-                                    'Development teams wanting AI workflow optimization',
+                                    'Development teams ready to improve their AI workflows',
                                 ],
                                 'deliverables' => [
                                     'Comprehensive code/process audit report',
@@ -126,12 +126,12 @@ $structuredData = [
                                 'text_color' => 'text-emerald-600 dark:text-emerald-400',
                                 'border_gradient' => 'from-emerald-400 to-teal-500',
                                 'button_variant' => 'primary',
-                                'description' => 'From idea to revenue in weeks, not months. Stop overthinking, start shipping. I\'ll build your MVP, transform your AI prototype into production software, or create the technical foundation for your business. Using Laravel, modern JavaScript, and ecommerce platforms like WooCommerce and Shopify, I build software that scales. No agencies, no junior devs, no excuses; just production ready code from an experienced engineer.',
+                                'description' => 'From idea to revenue in weeks, not months. Stop overthinking, start shipping. I create your MVP, transform your AI prototype into production software, or build the technical foundation for your business. Using Laravel, modern JavaScript, and ecommerce platforms like WooCommerce and Shopify, I deliver software that scales. No agencies, no junior devs, no excuses; just production ready code from an experienced engineer.',
                                 'ideal_for' => [
-                                    'Businesses requiring custom software solutions',
+                                    'Businesses seeking custom software solutions',
                                     'Ecommerce businesses needing custom integrations',
                                     'Founders ready to launch their first product',
-                                    'Vibe coders needing help getting their code production-ready',
+                                    'Vibe coders seeking assistance getting their code production-ready',
                                 ],
                                 'deliverables' => [
                                     'Fully functional, production-ready application',
@@ -161,12 +161,12 @@ $structuredData = [
                                 'text_color' => 'text-cyan-600 dark:text-cyan-400',
                                 'border_gradient' => 'from-cyan-400 to-blue-500',
                                 'button_variant' => 'primary',
-                                'description' => 'Technical leadership without the equity or salary. Get the CTO experience your business needs at a fraction of the cost. From weekly code reviews to strategic technical decisions, I\'ll be your on-demand engineer. Perfect for growing startups, ecommerce stores, businesses running on automation, or any company that needs consistent technical guidance. Scale up or down as your needs change.',
+                                'description' => 'Get experienced technical leadership on your terms. Access CTO-level expertise tailored to your budget and needs. From weekly code reviews to strategic technical decisions, I\'ll be your on-demand engineer. Perfect for growing startups, ecommerce stores, businesses running on automation, or any company that needs consistent technical guidance. Scale up or down as your needs change.',
                                 'ideal_for' => [
-                                    'Startups needing technical guidance',
+                                    'Startups seeking technical guidance',
                                     'Businesses with AI/automation workflows',
                                     'Companies without full-time technical leadership',
-                                    'Teams wanting to level up their development',
+                                    'Teams seeking to level up their development',
                                 ],
                                 'deliverables' => [
                                     'Weekly strategy calls and code reviews',
@@ -244,7 +244,7 @@ $structuredData = [
 
                                             <div>
                                                 <x-ui.typography variant="small" weight="semibold" class="uppercase tracking-wider" color="muted">
-                                                    Process
+                                                    How We Do It
                                                 </x-ui.typography>
                                                 <ol class="mt-3 space-y-2">
                                                     @foreach($service['process'] as $step => $process)
@@ -293,7 +293,7 @@ $structuredData = [
                 <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 border-t border-zinc-200/50 dark:border-zinc-700/50">
                     <div class="max-w-3xl mx-auto text-center">
                         <x-ui.typography variant="h2">
-                            Not Sure Which Service You Need?
+                            Let Me Help You Figure It Out
                         </x-ui.typography>
                         <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
                             Every business is unique, and sometimes you need something that doesn't fit neatly into a package.
@@ -314,11 +314,6 @@ $structuredData = [
                             Response within 24-48 hours • No obligation • NDA available
                         </p>
                     </div>
-                </div>
-
-                {{-- Process Section --}}
-                <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 border-t border-zinc-200/50 dark:border-zinc-700/50">
-                    <x-services.process />
                 </div>
 
                 {{-- FAQ Section --}}

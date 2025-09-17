@@ -2,11 +2,11 @@
     $faqs = [
         [
             'question' => 'How do I know which service is right for me?',
-            'answer' => 'Book a free 15-minute call. We\'ll figure out what you need and whether we\'re a good fit. If not, I\'ll point you in the right direction.'
+            'answer' => 'Great question! The best way to find out is to book a free 15-minute call. We\'ll discuss what you need and whether we\'re a good fit. If I\'m not the right person for your project, I\'ll happily point you in the right direction.'
         ],
         [
             'question' => 'What\'s your typical timeline?',
-            'answer' => 'Audits: 7-14 days. MVP builds: 4-12 weeks. Automation setups: 1-4 weeks. Monthly partnerships start immediately if you\'re ready. I\'ll give you a realistic timeline upfront; no surprises.'
+            'answer' => 'Every project is unique, but here are typical timelines: Audits take 7-14 days. MVP builds run 4-12 weeks. Automation setups need 1-4 weeks. Monthly partnerships can start immediately. I\'ll work with your timeline needs and always give you a realistic estimate upfront - no surprises, just clear expectations.'
         ],
         [
             'question' => 'I built my app with ChatGPT/Cursor/v0/Bolt/Rocket/Lovable/Replit, etc. Can you make it production-ready?',
@@ -14,7 +14,7 @@
         ],
         [
             'question' => 'Do you offer ongoing support?',
-            'answer' => 'All projects include 30 days of support. After that, you can convert to a monthly partnership or pay as needed. Most clients stay on retainer as it\'s cheaper than hiring internally.'
+            'answer' => 'Absolutely! All projects come with 30 days of complimentary support to ensure everything runs smoothly. After that, you have options: convert to a monthly partnership for ongoing support, or reach out as needed. Many clients find the monthly partnership more cost-effective than hiring in-house, plus you get continuity with someone who already knows your codebase.'
         ],
         [
             'question' => 'What tech stack do you use?',
@@ -34,7 +34,7 @@
         ],
         [
             'question' => 'What if I\'m not satisfied?',
-            'answer' => 'I want you to be thrilled with the results. If you\'re unhappy with the work delivered, please communicate and I\'ll work with you to make it right.'
+            'answer' => 'Your satisfaction is my priority. I\'m committed to delivering work that exceeds your expectations. If something isn\'t quite right, let\'s talk about it - I\'ll work with you to make sure you\'re completely happy with the results. Open communication is key, and I\'m always here to address any concerns.'
         ]
     ];
 @endphp
@@ -44,9 +44,6 @@
         <div class="text-center mb-12">
             <x-ui.typography variant="h2">
                 Frequently Asked Questions
-            </x-ui.typography>
-            <x-ui.typography variant="lead" color="muted" class="mt-4">
-                Get answers to common questions about working together
             </x-ui.typography>
         </div>
 
@@ -81,7 +78,7 @@
                 </x-ui.typography>
                 <div class="mt-6">
                     <x-ui.gradient-button variant="primary" href="{{ route('contact') }}" icon="true">
-                        Schedule a Free Consultation
+                        Let's Chat
                     </x-ui.gradient-button>
                 </div>
             </div>
