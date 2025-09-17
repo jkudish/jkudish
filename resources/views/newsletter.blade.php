@@ -75,10 +75,10 @@
                             </div>
                         </div>
 
-                        {{-- Topics I'll Cover --}}
+                        {{-- Topics I Cover --}}
                         <div class="mt-16">
                             <h2 class="text-center text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-8">
-                                Topics I'll Cover
+                                Topics I Cover
                             </h2>
                             
                             <div class="grid gap-6 grid-cols-1 sm:grid-cols-2">
@@ -119,20 +119,6 @@
                                             <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Laravel, WordPress & Shopify</h3>
                                             <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
                                                 Deep technical insights from 18+ years shipping code. Architecture decisions, performance optimization, and battle-tested patterns.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="p-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/50 dark:border-zinc-700/50">
-                                    <div class="flex items-start gap-4">
-                                        <div class="flex-shrink-0 p-2 rounded-lg bg-yellow-100 dark:bg-yellow-900/30">
-                                            <x-icon name="lucide-zap" class="w-5 h-5 text-yellow-600 dark:text-yellow-400" />
-                                        </div>
-                                        <div>
-                                            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Smart Automation</h3>
-                                            <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                                                n8n workflows that save hours every week. From content generation to development workflows, I'll share automations that multiply your productivity.
                                             </p>
                                         </div>
                                     </div>
