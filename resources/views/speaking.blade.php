@@ -302,54 +302,56 @@
 
                 {{-- About Me Section --}}
                 <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 bg-zinc-50/50 dark:bg-zinc-800/50 border-t border-zinc-200/30 dark:border-zinc-700/50">
-                    <div class="max-w-4xl mx-auto">
-                        <div class="text-center mb-10">
+                    <div class="max-w-5xl mx-auto">
+                        <div class="text-center mb-12">
                             <x-ui.typography variant="h2">
                                 Beyond the Stage
                             </x-ui.typography>
+                            <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-500">
+                                When I'm not speaking at conferences, I help businesses build and scale
+                            </p>
                         </div>
                         
-                        <div class="grid gap-8 lg:grid-cols-2 items-center">
-                            <div>
-                                <p class="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-                                    When I'm not speaking at conferences, I'm a software developer and AI automation consultant 
-                                    with 18+ years of experience building scalable web applications.
-                                </p>
-                                <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
-                                    I specialize in Laravel, WordPress, and modern PHP development. I help businesses 
-                                    automate their workflows, integrate AI into their products, and build software that scales.
-                                </p>
-                                <div class="flex flex-col sm:flex-row gap-4">
-                                    <x-ui.gradient-button variant="primary" href="{{ route('services') }}" icon="true">
-                                        Explore My Services
-                                    </x-ui.gradient-button>
-                                    <a href="{{ route('projects') }}"
-                                       class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-emerald-600 px-4 py-2 text-sm font-semibold text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all dark:border-emerald-700 dark:text-emerald-700 dark:hover:bg-emerald-700 dark:hover:text-white">
-                                        View My Work
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="mb-12">
+                            <p class="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed text-center max-w-3xl mx-auto">
+                                I'm a software developer and AI automation consultant with 18+ years of experience. 
+                                I specialize in Laravel, WordPress, and modern PHP development, helping businesses 
+                                automate workflows, integrate AI, and build software that scales.
+                            </p>
+                        </div>
+                        
+                        {{-- Services Grid --}}
+                        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+                            <a href="{{ route('services') }}#automation" class="group text-center p-6 rounded-xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/50 hover:border-yellow-500/30 dark:hover:border-yellow-600/30 transition-all duration-200 hover:shadow-lg">
+                                <x-icon name="lucide-zap" class="w-8 h-8 mx-auto mb-3 text-yellow-600 dark:text-yellow-400 group-hover:scale-110 transition-transform" />
+                                <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Automation</h3>
+                            </a>
                             
-                            <div class="lg:pl-12">
-                                <div class="grid grid-cols-2 gap-6">
-                                    <div class="text-center p-6 rounded-xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/50">
-                                        <div class="text-3xl font-bold text-zinc-900 dark:text-white mb-1">18+</div>
-                                        <div class="text-sm text-zinc-600 dark:text-zinc-400">Years Experience</div>
-                                    </div>
-                                    <div class="text-center p-6 rounded-xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/50">
-                                        <div class="text-3xl font-bold text-zinc-900 dark:text-white mb-1">6k+</div>
-                                        <div class="text-sm text-zinc-600 dark:text-zinc-400">Users Served</div>
-                                    </div>
-                                    <div class="text-center p-6 rounded-xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/50">
-                                        <div class="text-3xl font-bold text-zinc-900 dark:text-white mb-1">3</div>
-                                        <div class="text-sm text-zinc-600 dark:text-zinc-400">Active Products</div>
-                                    </div>
-                                    <div class="text-center p-6 rounded-xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/50">
-                                        <div class="text-3xl font-bold text-zinc-900 dark:text-white mb-1">∞</div>
-                                        <div class="text-sm text-zinc-600 dark:text-zinc-400">Coffee Consumed</div>
-                                    </div>
-                                </div>
-                            </div>
+                            <a href="{{ route('services') }}#audit" class="group text-center p-6 rounded-xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/50 hover:border-purple-500/30 dark:hover:border-purple-600/30 transition-all duration-200 hover:shadow-lg">
+                                <x-icon name="lucide-file-text" class="w-8 h-8 mx-auto mb-3 text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform" />
+                                <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Code Audit</h3>
+                            </a>
+                            
+                            <a href="{{ route('services') }}#product" class="group text-center p-6 rounded-xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/50 hover:border-emerald-500/30 dark:hover:border-emerald-600/30 transition-all duration-200 hover:shadow-lg">
+                                <x-icon name="lucide-code-2" class="w-8 h-8 mx-auto mb-3 text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform" />
+                                <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Product Build</h3>
+                            </a>
+                            
+                            <a href="{{ route('services') }}#partnership" class="group text-center p-6 rounded-xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/50 hover:border-cyan-500/30 dark:hover:border-cyan-600/30 transition-all duration-200 hover:shadow-lg">
+                                <x-icon name="lucide-sparkles" class="w-8 h-8 mx-auto mb-3 text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform" />
+                                <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Partnership</h3>
+                            </a>
+                        </div>
+                        
+                        {{-- CTAs --}}
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <x-ui.gradient-button variant="primary" href="{{ route('services') }}" icon="true">
+                                Explore All Services
+                            </x-ui.gradient-button>
+                            <a href="{{ route('projects') }}"
+                               class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-emerald-600 px-4 py-2 text-sm font-semibold text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all dark:border-emerald-700 dark:text-emerald-700 dark:hover:bg-emerald-700 dark:hover:text-white">
+                                View My Work
+                            </a>
                         </div>
                     </div>
                 </div>
