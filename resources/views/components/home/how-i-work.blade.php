@@ -1,5 +1,15 @@
-<div class="relative p-10 rounded-2xl bg-gradient-to-br from-zinc-50 to-white dark:from-zinc-800/50 dark:to-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/40">
-    <div class="grid gap-8 grid-cols-1 lg:grid-cols-3">
+<div>
+    <div class="text-center mb-12">
+        <x-ui.typography variant="h2">
+            How I Work
+        </x-ui.typography>
+        <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-500">
+            My approach to building successful products
+        </p>
+    </div>
+    
+    <div class="relative p-10 rounded-2xl bg-gradient-to-br from-zinc-50 to-white dark:from-zinc-800/50 dark:to-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/40">
+        <div class="grid gap-8 grid-cols-1 lg:grid-cols-3">
         <div>
             <div class="flex items-center gap-3 mb-4">
                 <div class="p-2 rounded-lg bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
@@ -41,5 +51,6 @@
                 Founded multiple businesses. I think like an owner because I've been one. Your success is my success.
             </p>
         </div>
+    </div>
     </div>
 </div>
