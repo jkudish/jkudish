@@ -27,8 +27,7 @@
                             </x-ui.typography>
                             
                             <p class="mt-6 text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-                                Insights on coding with AI, building products in public, and running indie software businesses. 
-                                Real lessons from shipping Laravel, WordPress, and Shopify projects.
+                                How I ship faster: AI coding workflows, Obsidian for devs, Laravel automation, and indie hacking lessons.
                             </p>
                         </div>
 
@@ -70,7 +69,7 @@
                                     </div>
                                     
                                     <p class="text-center text-sm text-zinc-500 dark:text-zinc-400 mt-4">
-                                        Zero spam. Unsubscribe anytime.
+                                        I'll never spam you, promise.
                                     </p>
                                 </form>
                             </div>
@@ -138,6 +137,20 @@
                                         </div>
                                     </div>
                                 </div>
+                                
+                                <div class="p-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/50 dark:border-zinc-700/50">
+                                    <div class="flex items-start gap-4">
+                                        <div class="flex-shrink-0 p-2 rounded-lg bg-indigo-100 dark:bg-indigo-900/30">
+                                            <x-icon name="lucide-brain" class="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Obsidian Tips & Tricks</h3>
+                                            <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+                                                How I use Obsidian as my second brain for coding, project management, and knowledge capture. Templates, plugins, and workflows that actually work.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -146,12 +159,9 @@
                             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/50">
                                 <x-icon name="lucide-sparkles" class="w-4 h-4 text-amber-600 dark:text-amber-400" />
                                 <span class="text-sm font-medium text-amber-800 dark:text-amber-200">
-                                    Launching September 2025
+                                    First Issue Coming In a Few Days
                                 </span>
                             </div>
-                            <p class="mt-3 text-sm text-zinc-600 dark:text-zinc-400">
-                                Be among the first to get exclusive early content
-                            </p>
                         </div>
                     </div>
                 </div>
