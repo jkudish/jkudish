@@ -52,6 +52,13 @@ $structuredData = [
                 {{-- Current Projects - Light gray background --}}
                 <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 bg-zinc-50/50 dark:bg-zinc-800/50 border-t border-zinc-200/30 dark:border-zinc-700/50">
                     <x-home.current-projects />
+                    
+                    {{-- CTA to View Projects --}}
+                    <div class="mt-12 text-center">
+                        <x-ui.gradient-button variant="primary" href="{{ route('projects') }}" icon="true">
+                            View All Projects & Work
+                        </x-ui.gradient-button>
+                    </div>
                 </div>
 
                 {{-- How I Work - White background --}}
