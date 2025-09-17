@@ -49,14 +49,14 @@ $structuredData = [
                     <x-home.expertise />
                 </div>
 
-                {{-- How I Work - Light gray background --}}
+                {{-- Current Projects - Light gray background --}}
                 <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 bg-zinc-50/50 dark:bg-zinc-800/50 border-t border-zinc-200/30 dark:border-zinc-700/50">
-                    <x-home.how-i-work />
+                    <x-home.current-projects />
                 </div>
 
-                {{-- Current Projects - White background --}}
+                {{-- How I Work - White background --}}
                 <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 bg-white dark:bg-zinc-900 border-t border-zinc-200/30 dark:border-zinc-700/50">
-                    <x-home.current-projects />
+                    <x-home.how-i-work />
                 </div>
 
                 {{-- Social Proof - Light gray background --}}
