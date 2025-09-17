@@ -21,6 +21,133 @@
                     </div>
                 </div>
 
+                {{-- Success Stories Section (was line 167) --}}
+                <div class="px-6 sm:px-8 lg:px-10 pt-16 lg:pt-20 xl:pt-24 pb-16 lg:pb-20 xl:pb-24 bg-white dark:bg-zinc-900 border-t border-zinc-200/30 dark:border-zinc-700/50">
+                    <div>
+                        {{-- Featured Success Stories --}}
+                        <div class="grid gap-10 grid-cols-1 lg:grid-cols-2 mb-16">
+                            @php
+                            $featuredStories = [
+                                [
+                                    'company' => 'Image Salon',
+                                    'tagline' => 'Post-Production Photography Studio',
+                                    'logo' => asset('img/companies/image-salon.png'),
+                                    'logo_webp' => asset('img/companies/image-salon.webp'),
+                                    'story' => 'Scaling the platform to 6,000+ photographers since 2016. Development of bespoke software and AI automation.',
+                                    'highlights' => [
+                                        'PHAiTO - AI-powered app that edits entire Lightroom catalogs (2,000+ photos) in under 10 minutes',
+                                        'Global scale - Platform handles thousands of orders monthly across 6,000 photographers in 60+ countries',
+                                        'Complete tech stack - Laravel backend, Vue.js dashboards, custom CRM, automated billing, and workflow systems from scratch',
+                                    ],
+                                ],
+                                [
+                                    'company' => 'WordPress & WooCommerce',
+                                    'tagline' => 'E-commerce at Scale',
+                                    'logo' => asset('img/companies/wordpress.png'),
+                                    'logo_webp' => asset('img/companies/wordpress.webp'),
+                                    'story' => 'Over 18 years building for the web. WordPress Core contributor since 2011, with features and platforms used by millions across the ecosystem.',
+                                    'highlights' => [
+                                        'At Automattic - Worked on WooCommerce, Jetpack and WordPress.com',
+                                        'At Metorik - Helped scale an analytics platform processing millions in GMV for WooCommerce/Shopify stores',
+                                        'For clients - Delivered 30+ custom WordPress sites and WooCommerce stores',
+                                    ],
+                                ],
+                            ];
+                            @endphp
+
+                            @foreach($featuredStories as $story)
+                            <div class="group rounded-2xl border border-zinc-200/50 dark:border-zinc-700/40 p-8 bg-white dark:bg-zinc-900/50 shadow-sm hover:shadow-xl hover:border-zinc-300 dark:hover:border-zinc-600 transition-all duration-300">
+                                <div class="flex items-start gap-6 mb-8">
+                                    @if(isset($story['logo']))
+                                    <div class="w-32 h-20 flex items-center justify-start flex-shrink-0">
+                                        <picture>
+                                            <source srcset="{{ $story['logo_webp'] }}" type="image/webp">
+                                            <img src="{{ $story['logo'] }}"
+                                                 alt="{{ $story['company'] }}"
+                                                 class="max-h-20 max-w-32 w-auto h-auto grayscale brightness-[0.3] opacity-90 dark:brightness-0 dark:invert dark:opacity-70">
+                                        </picture>
+                                    </div>
+                                    @else
+                                    <div class="p-3 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 dark:from-emerald-500/20 dark:to-teal-500/20 border border-emerald-500/20">
+                                        <x-icon name="{{ $story['icon'] }}" class="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+                                    </div>
+                                    @endif
+                                    <div class="pt-2">
+                                        <h3 class="text-xl font-bold text-zinc-900 dark:text-white">
+                                            {{ $story['company'] }}
+                                        </h3>
+                                        <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                                            {{ $story['tagline'] }}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <p class="text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed">
+                                    {{ $story['story'] }}
+                                </p>
+
+                                <div class="space-y-3">
+                                    @foreach($story['highlights'] as $highlight)
+                                    <div class="flex gap-3">
+                                        <x-icon name="lucide-check-circle" class="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
+                                        <span class="text-sm text-zinc-600 dark:text-zinc-400">{{ $highlight }}</span>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+
+                        {{-- How I Work Section --}}
+                        <div class="relative mt-16 p-10 rounded-2xl bg-gradient-to-br from-zinc-50 to-white dark:from-zinc-800/50 dark:to-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/40">
+                            <div class="grid gap-8 grid-cols-1 lg:grid-cols-3">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="p-2 rounded-lg bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
+                                            <x-icon name="lucide-lightbulb" class="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
+                                        </div>
+                                        <h3 class="font-semibold text-zinc-900 dark:text-white">
+                                            Product Vision
+                                        </h3>
+                                    </div>
+                                    <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                                        I don't just code features. I understand business goals, user needs, and market dynamics. Every line of code serves the product strategy.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="p-2 rounded-lg bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
+                                            <x-icon name="lucide-users" class="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
+                                        </div>
+                                        <h3 class="font-semibold text-zinc-900 dark:text-white">
+                                            Tech Leadership
+                                        </h3>
+                                    </div>
+                                    <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                                        CTO at multiple companies. Built and led engineering teams. I know how to ship products, not just features.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="p-2 rounded-lg bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
+                                            <x-icon name="lucide-rocket" class="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
+                                        </div>
+                                        <h3 class="font-semibold text-zinc-900 dark:text-white">
+                                            Founder Mindset
+                                        </h3>
+                                    </div>
+                                    <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                                        Founded multiple businesses. I think like an owner because I've been one. Your success is my success.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
                 {{-- Current Projects Section --}}
                 <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 bg-zinc-50/50 dark:bg-zinc-800/50 border-t border-zinc-200/30 dark:border-zinc-700/50">
                     @php
@@ -160,142 +287,6 @@
                             </a>
                             @endforeach
                         </div>
-                    </div>
-                </div>
-
-                {{-- Success Stories Section --}}
-                <div class="px-6 sm:px-8 lg:px-10 pt-16 lg:pt-20 xl:pt-24 pb-16 lg:pb-20 xl:pb-24 bg-white dark:bg-zinc-900 border-t border-zinc-200/30 dark:border-zinc-700/50">
-                    <div>
-                        <div class="text-center mb-16">
-                            <x-ui.typography variant="h2">
-                                Selected Work
-                            </x-ui.typography>
-                            <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-500">
-                                Real products, real impact, still running in production.
-                            </p>
-                        </div>
-
-                        {{-- Featured Success Stories --}}
-                        <div class="grid gap-10 grid-cols-1 lg:grid-cols-2 mb-16">
-                            @php
-                            $featuredStories = [
-                                [
-                                    'company' => 'Image Salon',
-                                    'tagline' => 'Post-Production Photography Studio',
-                                    'logo' => asset('img/companies/image-salon.png'),
-                                    'logo_webp' => asset('img/companies/image-salon.webp'),
-                                    'story' => 'Scaling the platform to 6,000+ photographers since 2016. Development of bespoke software and AI automation.',
-                                    'highlights' => [
-                                        'PHAiTO - AI-powered app that edits entire Lightroom catalogs (2,000+ photos) in under 10 minutes',
-                                        'Global scale - Platform handles thousands of orders monthly across 6,000 photographers in 60+ countries',
-                                        'Complete tech stack - Laravel backend, Vue.js dashboards, custom CRM, automated billing, and workflow systems from scratch',
-                                    ],
-                                ],
-                                [
-                                    'company' => 'WordPress & WooCommerce',
-                                    'tagline' => 'E-commerce at Scale',
-                                    'logo' => asset('img/companies/wordpress.png'),
-                                    'logo_webp' => asset('img/companies/wordpress.webp'),
-                                    'story' => 'Over 18 years building for the web. WordPress Core contributor since 2011, with features and platforms used by millions across the ecosystem.',
-                                    'highlights' => [
-                                        'At Automattic - Worked on WooCommerce, Jetpack and WordPress.com',
-                                        'At Metorik - Helped scale an analytics platform processing millions in GMV for WooCommerce/Shopify stores',
-                                        'For clients - Delivered 30+ custom WordPress sites and WooCommerce stores',
-                                    ],
-                                ],
-                            ];
-                            @endphp
-
-                            @foreach($featuredStories as $story)
-                            <div class="group rounded-2xl border border-zinc-200/50 dark:border-zinc-700/40 p-8 bg-white dark:bg-zinc-900/50 shadow-sm hover:shadow-xl hover:border-zinc-300 dark:hover:border-zinc-600 transition-all duration-300">
-                                <div class="flex items-start gap-6 mb-8">
-                                    @if(isset($story['logo']))
-                                    <div class="w-32 h-20 flex items-center justify-start flex-shrink-0">
-                                        <picture>
-                                            <source srcset="{{ $story['logo_webp'] }}" type="image/webp">
-                                            <img src="{{ $story['logo'] }}"
-                                                 alt="{{ $story['company'] }}"
-                                                 class="max-h-20 max-w-32 w-auto h-auto grayscale brightness-[0.3] opacity-90 dark:brightness-0 dark:invert dark:opacity-70">
-                                        </picture>
-                                    </div>
-                                    @else
-                                    <div class="p-3 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 dark:from-emerald-500/20 dark:to-teal-500/20 border border-emerald-500/20">
-                                        <x-icon name="{{ $story['icon'] }}" class="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
-                                    </div>
-                                    @endif
-                                    <div class="pt-2">
-                                        <h3 class="text-xl font-bold text-zinc-900 dark:text-white">
-                                            {{ $story['company'] }}
-                                        </h3>
-                                        <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                                            {{ $story['tagline'] }}
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <p class="text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed">
-                                    {{ $story['story'] }}
-                                </p>
-
-                                <div class="space-y-3">
-                                    @foreach($story['highlights'] as $highlight)
-                                    <div class="flex gap-3">
-                                        <x-icon name="lucide-check-circle" class="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
-                                        <span class="text-sm text-zinc-600 dark:text-zinc-400">{{ $highlight }}</span>
-                                    </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-
-                        {{-- How I Work Section --}}
-                        <div class="relative mt-16 p-10 rounded-2xl bg-gradient-to-br from-zinc-50 to-white dark:from-zinc-800/50 dark:to-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/40">
-                            <div class="grid gap-8 grid-cols-1 lg:grid-cols-3">
-                                <div>
-                                    <div class="flex items-center gap-3 mb-4">
-                                        <div class="p-2 rounded-lg bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
-                                            <x-icon name="lucide-lightbulb" class="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
-                                        </div>
-                                        <h3 class="font-semibold text-zinc-900 dark:text-white">
-                                            Product Vision
-                                        </h3>
-                                    </div>
-                                    <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                                        I don't just code features. I understand business goals, user needs, and market dynamics. Every line of code serves the product strategy.
-                                    </p>
-                                </div>
-
-                                <div>
-                                    <div class="flex items-center gap-3 mb-4">
-                                        <div class="p-2 rounded-lg bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
-                                            <x-icon name="lucide-users" class="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
-                                        </div>
-                                        <h3 class="font-semibold text-zinc-900 dark:text-white">
-                                            Tech Leadership
-                                        </h3>
-                                    </div>
-                                    <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                                        CTO at multiple companies. Built and led engineering teams. I know how to ship products, not just features.
-                                    </p>
-                                </div>
-
-                                <div>
-                                    <div class="flex items-center gap-3 mb-4">
-                                        <div class="p-2 rounded-lg bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
-                                            <x-icon name="lucide-rocket" class="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
-                                        </div>
-                                        <h3 class="font-semibold text-zinc-900 dark:text-white">
-                                            Founder Mindset
-                                        </h3>
-                                    </div>
-                                    <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                                        Founded multiple businesses. I think like an owner because I've been one. Your success is my success.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
 
