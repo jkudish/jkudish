@@ -157,7 +157,7 @@
                             <div class="order-2 lg:order-1">
                                 <x-ui.typography variant="h1">
                                     Hey, I'm Joey 👋
-                                    <span class="block text-gradient-primary mt-2">Sometimes, I give conference talks</span>
+                                    <span class="block text-gradient-primary mt-2">Sometimes, I give conference talks.</span>
                                 </x-ui.typography>
 
                                 <p class="mt-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
@@ -202,8 +202,54 @@
                     </div>
                 </div>
 
-                {{-- Conference Presentations Section --}}
+                {{-- Speaking Topics Section --}}
                 <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 bg-zinc-50/50 dark:bg-zinc-800/50 border-t border-zinc-200/30 dark:border-zinc-700/50">
+                    <div class="max-w-3xl mx-auto text-center">
+                        <x-ui.typography variant="h2">
+                            Topics I Speak About
+                        </x-ui.typography>
+                        <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+                            I enjoy sharing knowledge about software development, automation,<br class="hidden sm:inline">
+                            and building products that scale.
+                        </p>
+
+                        <div class="mt-10 grid gap-6 grid-cols-1 sm:grid-cols-3">
+                            <div class="p-6 rounded-xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/50">
+                                <x-icon name="lucide-code-2" class="w-8 h-8 text-emerald-600 dark:text-emerald-400 mx-auto mb-3" />
+                                <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 mb-2">Web Development</h3>
+                                <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                                    Laravel, WordPress, modern PHP, and building scalable applications
+                                </p>
+                            </div>
+                            <div class="p-6 rounded-xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/50">
+                                <x-icon name="lucide-zap" class="w-8 h-8 text-yellow-600 dark:text-yellow-400 mx-auto mb-3" />
+                                <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 mb-2">AI & Automation</h3>
+                                <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                                    Workflow automation, AI integration, coding with AI, and productivity tools
+                                </p>
+                            </div>
+                            <div class="p-6 rounded-xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/50">
+                                <x-icon name="lucide-git-branch" class="w-8 h-8 text-purple-600 dark:text-purple-400 mx-auto mb-3" />
+                                <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 mb-2">Best Practices</h3>
+                                <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                                    Code quality, development workflows, and team collaboration
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-12">
+                            <p class="text-zinc-600 dark:text-zinc-400 mb-6">
+                                Interested in having me speak at your event?
+                            </p>
+                            <x-ui.gradient-button variant="primary" href="{{ route('contact', ['subject' => 'speaking']) }}" icon="true">
+                                Get in Touch
+                            </x-ui.gradient-button>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Conference Presentations Section --}}
+                <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 bg-white dark:bg-zinc-900 border-t border-zinc-200/30 dark:border-zinc-700/50">
                     <div>
                         <div class="flex items-center gap-4 mb-12">
                             <x-ui.typography variant="h2">
@@ -254,48 +300,56 @@
                     </div>
                 </div>
 
-                {{-- Speaking Topics Section --}}
-                <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 bg-white dark:bg-zinc-900 border-t border-zinc-200/30 dark:border-zinc-700/50">
-                    <div class="max-w-3xl mx-auto text-center">
-                        <x-ui.typography variant="h2">
-                            Topics I Speak About
-                        </x-ui.typography>
-                        <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-                            I enjoy sharing knowledge about software development, automation,<br class="hidden sm:inline">
-                            and building products that scale.
-                        </p>
-
-                        <div class="mt-10 grid gap-6 grid-cols-1 sm:grid-cols-3">
-                            <div class="p-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/50 dark:border-zinc-700/50">
-                                <x-icon name="lucide-code-2" class="w-8 h-8 text-emerald-600 dark:text-emerald-400 mx-auto mb-3" />
-                                <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 mb-2">Web Development</h3>
-                                <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                                    Laravel, WordPress, modern PHP, and building scalable applications
-                                </p>
-                            </div>
-                            <div class="p-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/50 dark:border-zinc-700/50">
-                                <x-icon name="lucide-zap" class="w-8 h-8 text-yellow-600 dark:text-yellow-400 mx-auto mb-3" />
-                                <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 mb-2">AI & Automation</h3>
-                                <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                                    Workflow automation, AI integration, coding with AI, and productivity tools
-                                </p>
-                            </div>
-                            <div class="p-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/50 dark:border-zinc-700/50">
-                                <x-icon name="lucide-git-branch" class="w-8 h-8 text-purple-600 dark:text-purple-400 mx-auto mb-3" />
-                                <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 mb-2">Best Practices</h3>
-                                <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                                    Code quality, development workflows, and team collaboration
-                                </p>
-                            </div>
+                {{-- About Me Section --}}
+                <div class="px-6 sm:px-8 lg:px-10 py-12 lg:py-16 xl:py-20 bg-zinc-50/50 dark:bg-zinc-800/50 border-t border-zinc-200/30 dark:border-zinc-700/50">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="text-center mb-10">
+                            <x-ui.typography variant="h2">
+                                Beyond the Stage
+                            </x-ui.typography>
                         </div>
-
-                        <div class="mt-12">
-                            <p class="text-zinc-600 dark:text-zinc-400 mb-6">
-                                Interested in having me speak at your event?
-                            </p>
-                            <x-ui.gradient-button variant="primary" href="{{ route('contact') }}" icon="true">
-                                Get in Touch
-                            </x-ui.gradient-button>
+                        
+                        <div class="grid gap-8 lg:grid-cols-2 items-center">
+                            <div>
+                                <p class="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
+                                    When I'm not speaking at conferences, I'm a software developer and AI automation consultant 
+                                    with 18+ years of experience building scalable web applications.
+                                </p>
+                                <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
+                                    I specialize in Laravel, WordPress, and modern PHP development. I help businesses 
+                                    automate their workflows, integrate AI into their products, and build software that scales.
+                                </p>
+                                <div class="flex flex-col sm:flex-row gap-4">
+                                    <x-ui.gradient-button variant="primary" href="{{ route('services') }}" icon="true">
+                                        Explore My Services
+                                    </x-ui.gradient-button>
+                                    <a href="{{ route('projects') }}"
+                                       class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-emerald-600 px-4 py-2 text-sm font-semibold text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all dark:border-emerald-700 dark:text-emerald-700 dark:hover:bg-emerald-700 dark:hover:text-white">
+                                        View My Work
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="lg:pl-12">
+                                <div class="grid grid-cols-2 gap-6">
+                                    <div class="text-center p-6 rounded-xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/50">
+                                        <div class="text-3xl font-bold text-zinc-900 dark:text-white mb-1">18+</div>
+                                        <div class="text-sm text-zinc-600 dark:text-zinc-400">Years Experience</div>
+                                    </div>
+                                    <div class="text-center p-6 rounded-xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/50">
+                                        <div class="text-3xl font-bold text-zinc-900 dark:text-white mb-1">6k+</div>
+                                        <div class="text-sm text-zinc-600 dark:text-zinc-400">Users Served</div>
+                                    </div>
+                                    <div class="text-center p-6 rounded-xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/50">
+                                        <div class="text-3xl font-bold text-zinc-900 dark:text-white mb-1">3</div>
+                                        <div class="text-sm text-zinc-600 dark:text-zinc-400">Active Products</div>
+                                    </div>
+                                    <div class="text-center p-6 rounded-xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-700/50">
+                                        <div class="text-3xl font-bold text-zinc-900 dark:text-white mb-1">∞</div>
+                                        <div class="text-sm text-zinc-600 dark:text-zinc-400">Coffee Consumed</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
