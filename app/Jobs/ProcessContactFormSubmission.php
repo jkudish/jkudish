@@ -64,7 +64,7 @@ class ProcessContactFormSubmission implements ShouldQueue
         );
 
         // Send email notification to joey@jkudish.com
-        Mail::to('joey@jkudish.com')->send(
+        Mail::to('joey+contactform@jkudish.com')->send(
             new ContactFormNotification($this->formData)
         );
     }
