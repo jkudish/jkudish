@@ -11,15 +11,36 @@ class ContactController extends Controller
     public function show()
     {
         $service = request()->query('service');
+        $subject = request()->query('subject');
 
-        // Validate service parameter
-        $validServices = ['automation', 'audit', 'product', 'partnership'];
-        if (! in_array($service, $validServices)) {
-            $service = null;
+        // Handle subject parameter (e.g., from speaking page)
+        if ($subject === 'speaking') {
+            // Create a speaking service config
+            $serviceConfig = [
+                'id' => 'speaking',
+                'icon' => 'lucide-mic',
+                'name' => 'Speaking Engagement',
+                'tagline' => 'Book me for your event',
+                'color' => 'orange',
+                'icon_color' => '#f97316',
+                'text_color' => 'text-orange-600 dark:text-orange-400',
+                'border_gradient' => 'from-orange-400 to-red-500',
+                'hero_title' => 'Speaking Engagement',
+                'hero_message' => 'I\'d love to share insights at your event or conference.',
+                'form_placeholder' => 'Tell me about your event, audience, and what topics you\'d like covered...',
+                'form_helper' => 'Include event details, dates, location, and audience demographics',
+                'default_subject' => 'Speaking Opportunity',
+            ];
+        } else {
+            // Validate service parameter
+            $validServices = ['automation', 'audit', 'product', 'partnership'];
+            if (! in_array($service, $validServices)) {
+                $service = null;
+            }
+
+            // Get service configuration
+            $serviceConfig = $this->getServiceConfig($service);
         }
-
-        // Get service configuration
-        $serviceConfig = $this->getServiceConfig($service);
         
         // Get all subject configurations for dynamic updates
         $subjectConfigs = $this->getAllSubjectConfigs();

@@ -25,7 +25,8 @@ $structuredData = [
     $alpineData = [
         'subjectConfigs' => $subjectConfigs,
         'currentSubject' => $serviceConfig['default_subject'] ?? 'General Question',
-        'serviceConfig' => $serviceConfig
+        'serviceConfig' => $serviceConfig,
+        'initialConfig' => $serviceConfig ?: ($subjectConfigs['General Question'] ?? [])
     ];
     @endphp
     
@@ -156,7 +157,7 @@ $structuredData = [
                                 <option {{ ($serviceConfig && isset($serviceConfig['default_subject']) && $serviceConfig['default_subject'] === 'Code Audit Request') ? 'selected' : '' }}>Code Audit Request</option>
                                 <option {{ ($serviceConfig && isset($serviceConfig['default_subject']) && $serviceConfig['default_subject'] === 'Partnership Opportunity') ? 'selected' : '' }}>Partnership Opportunity</option>
                                 <option {{ ($serviceConfig && isset($serviceConfig['default_subject']) && $serviceConfig['default_subject'] === 'Consultation Request') ? 'selected' : '' }}>Consultation Request</option>
-                                <option>Speaking Opportunity</option>
+                                <option {{ ($serviceConfig && isset($serviceConfig['default_subject']) && $serviceConfig['default_subject'] === 'Speaking Opportunity') ? 'selected' : '' }}>Speaking Opportunity</option>
                                 <option>General Question</option>
                                 <option>Just Saying Hi</option>
                             </select>
