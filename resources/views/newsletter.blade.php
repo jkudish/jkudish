@@ -1,4 +1,4 @@
-<x-layout 
+<x-layout
     title="Human in the Loop Newsletter"
     description="Subscribe to Human in the Loop for practical insights on AI-augmented coding, productivity hacks, and how to use AI as your development partner, not replacement."
     keywords="AI coding newsletter, AI development workflow, human in the loop, AI productivity, AI-assisted programming, Claude Code, Cursor, AI automation"
@@ -7,7 +7,7 @@
     <div class="flex justify-center my-8 lg:my-12">
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-lg overflow-hidden shadow-lg">
-                
+
                 {{-- Main Content --}}
                 <div class="px-6 sm:px-8 lg:px-10 py-16 lg:py-24 xl:py-32">
                     <div class="mx-auto max-w-3xl">
@@ -21,15 +21,15 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <x-ui.typography variant="h1" class="text-center">
                                 Human in the Loop
                             </x-ui.typography>
-                            
+
                             <p class="mt-6 text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
                                 AI won't replace you. But you + AI will replace you without it.
                             </p>
-                            
+
                             <p class="mt-3 text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
                                 Every two weeks, I share what actually worked building my apps with AI. Real workflows for solopreneurs & indie hackers.
                             </p>
@@ -42,13 +42,13 @@
                                     {{ session('success') }}
                                 </div>
                             @endif
-                            
+
                             @if(session('error'))
                                 <div class="mb-6 rounded-lg bg-red-50 p-4 text-red-800 dark:bg-red-900/20 dark:text-red-200">
                                     {{ session('error') }}
                                 </div>
                             @endif
-                            
+
                             <div class="bg-gradient-to-br from-teal-50/50 to-emerald-50/50 dark:from-zinc-800/50 dark:to-zinc-800/30 rounded-2xl p-8 border border-teal-100/50 dark:border-zinc-700/50">
                                 <form class="space-y-4" action="{{ route('newsletter.store') }}" method="POST">
                                     @csrf
@@ -65,13 +65,13 @@
                                             class="w-full rounded-lg border border-teal-200/50 dark:border-emerald-700/50 bg-white dark:bg-zinc-900/50 px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-500 dark:placeholder:text-zinc-500 focus:border-emerald-500 dark:focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:focus:ring-emerald-400/20 transition-all duration-200"
                                         />
                                     </div>
-                                    
+
                                     <div class="pt-2">
                                         <x-ui.gradient-button variant="primary" type="submit" icon="true" class="w-full">
-                                            Join Human in the Loop
+                                            Count me in
                                         </x-ui.gradient-button>
                                     </div>
-                                    
+
                                     <p class="text-center text-sm text-zinc-500 dark:text-zinc-400 mt-4">
                                         I'll never spam you, promise.
                                     </p>
@@ -84,7 +84,7 @@
                             <h2 class="text-center text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-8">
                                 Topics I Cover
                             </h2>
-                            
+
                             <div class="grid gap-6 grid-cols-1 sm:grid-cols-2">
                                 <div class="p-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/50 dark:border-zinc-700/50">
                                     <div class="flex items-start gap-4">
@@ -99,7 +99,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="p-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/50 dark:border-zinc-700/50">
                                     <div class="flex items-start gap-4">
                                         <div class="flex-shrink-0 p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30">
@@ -113,7 +113,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="p-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/50 dark:border-zinc-700/50">
                                     <div class="flex items-start gap-4">
                                         <div class="flex-shrink-0 p-2 rounded-lg bg-red-100 dark:bg-red-900/30">
@@ -127,7 +127,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="p-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/50 dark:border-zinc-700/50">
                                     <div class="flex items-start gap-4">
                                         <div class="flex-shrink-0 p-2 rounded-lg bg-indigo-100 dark:bg-indigo-900/30">
@@ -155,11 +155,11 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
     {{-- Track newsletter signup event --}}
     @if(session('track_event') === 'newsletter_signup')
     <script>
