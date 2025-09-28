@@ -17,7 +17,7 @@
                                 <div class="relative">
                                     <div class="absolute inset-0 bg-gradient-to-br from-teal-400 to-emerald-500 rounded-xl blur-2xl opacity-20"></div>
                                     <div class="relative bg-gradient-to-br from-teal-50 to-emerald-50 dark:from-teal-900/20 dark:to-emerald-900/20 p-4 rounded-xl border border-teal-200/50 dark:border-teal-700/50">
-                                        <x-icon name="lucide-mail" class="w-12 h-12 text-teal-600 dark:text-teal-400" />
+                                        <x-icon name="lucide-user-check" class="w-12 h-12 text-teal-600 dark:text-teal-400" />
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +104,7 @@
                                         <div>
                                             <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Human-AI Collaboration</h3>
                                             <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                                                How I build faster with AI assistance. The balance between automation and human creativity. Real metrics and outcomes.
+                                                How I build faster with AI assistance. The balance between automation and human creativity. Real outcomes and lessons learned.
                                             </p>
                                         </div>
                                     </div>
@@ -118,7 +118,7 @@
                                         <div>
                                             <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">AI-Enhanced Development</h3>
                                             <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                                                Using AI for code review, testing, refactoring. AI patterns for Laravel, React, and modern frameworks.
+                                                Using AI for code review, testing, refactoring. AI patterns for Laravel, Vue.js, Tauri, and modern frameworks.
                                             </p>
                                         </div>
                                     </div>
