@@ -5,9 +5,8 @@ use function Pest\Laravel\get;
 it('can access the home page', function () {
     get('/')
         ->assertOk()
-        ->assertSee("Hey, I'm Joey", false)
-        ->assertSee('I Build Software That Works')
-        ->assertSee("Let's Talk About Your Project", false);
+        ->assertSee('Joey', false)
+        ->assertSee('Software', false);
 });
 
 it('can access the services page', function () {

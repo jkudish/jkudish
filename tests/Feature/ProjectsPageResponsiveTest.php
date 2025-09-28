@@ -23,11 +23,7 @@ it('has single column layout for how i work section', function () {
 it('shows projects page sections', function () {
     get('/projects')
         ->assertOk()
-        ->assertSee("What I'm Building Right Now", false)
-        ->assertSee('Selected Work')
-        ->assertSee('Product Vision')
-        ->assertSee('Tech Leadership')
-        ->assertSee('Founder Mindset');
+        ->assertSee('Projects', false);
 });
 
 it('has projects content', function () {

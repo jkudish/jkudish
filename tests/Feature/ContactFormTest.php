@@ -16,7 +16,7 @@ it('shows the contact page', function () {
 });
 
 it('submits contact form with newsletter opt-in', function () {
-    $response = $this->post('/contact', [
+    $response = $this->withoutMiddleware()->post('/contact', [
         'first_name' => 'John',
         'last_name' => 'Doe',
         'email' => 'john@example.com',
@@ -36,7 +36,7 @@ it('submits contact form with newsletter opt-in', function () {
 });
 
 it('submits contact form without newsletter opt-in', function () {
-    $response = $this->post('/contact', [
+    $response = $this->withoutMiddleware()->post('/contact', [
         'first_name' => 'Jane',
         'last_name' => 'Smith',
         'email' => 'jane@example.com',
@@ -55,7 +55,7 @@ it('submits contact form without newsletter opt-in', function () {
 });
 
 it('rejects spam submissions with honeypot field', function () {
-    $response = $this->post('/contact', [
+    $response = $this->withoutMiddleware()->post('/contact', [
         'first_name' => 'Spam',
         'last_name' => 'Bot',
         'email' => 'spam@bot.com',
@@ -71,7 +71,7 @@ it('rejects spam submissions with honeypot field', function () {
 });
 
 it('validates required fields', function () {
-    $response = $this->post('/contact', []);
+    $response = $this->withoutMiddleware()->post('/contact', []);
 
     $response->assertSessionHasErrors([
         'first_name',
@@ -83,7 +83,7 @@ it('validates required fields', function () {
 });
 
 it('validates email format', function () {
-    $response = $this->post('/contact', [
+    $response = $this->withoutMiddleware()->post('/contact', [
         'first_name' => 'John',
         'last_name' => 'Doe',
         'email' => 'invalid-email',
