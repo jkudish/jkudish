@@ -11,15 +11,15 @@
                         <div class="relative">
                             <div class="absolute inset-0 bg-gradient-to-br from-teal-400 to-emerald-500 rounded-lg blur-lg opacity-[0.015]"></div>
                             <div class="relative bg-white/10 dark:bg-zinc-800/50 backdrop-blur-sm p-2.5 rounded-lg border border-white/20 dark:border-zinc-700/50">
-                                <x-icon name="lucide-mail" class="w-6 h-6 text-teal-400" />
+                                <x-icon name="lucide-user-check" class="w-6 h-6 text-teal-400" />
                             </div>
                         </div>
                         <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-3xl">
-                            The Maker Notes
+                            AI won't replace you. But you + AI will replace you without it.
                         </h2>
                     </div>
                     <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
-                        How I ship faster: AI coding workflows, Obsidian for devs, Laravel automation, and indie hacking lessons.
+                        Every two weeks, I share what actually worked building my apps with AI. Real workflows for solopreneurs & indie hackers.
                     </p>
 
                     <div x-data="{
@@ -49,7 +49,7 @@
                                 const data = await response.json();
                                 
                                 if (response.ok) {
-                                    this.message = data.message || 'Welcome to The Maker Notes! You\'ll receive my next newsletter soon.';
+                                    this.message = data.message || 'Welcome to Human in the Loop! You\'ll receive my next AI development insights soon.';
                                     this.messageType = 'success';
                                     this.email = '';
                                     
@@ -83,7 +83,7 @@
                                 required
                             />
                             <x-ui.gradient-button variant="primary" type="submit" icon="true" x-bind:disabled="loading">
-                                <span x-show="!loading">Get It Free</span>
+                                <span x-show="!loading">Count me in →</span>
                                 <span x-show="loading">Subscribing...</span>
                             </x-ui.gradient-button>
                         </form>

@@ -38,9 +38,9 @@ it('has proper SEO tags on projects page', function () {
 it('has proper SEO tags on newsletter page', function () {
     get('/newsletter')
         ->assertOk()
-        ->assertSee('<title>The Maker Notes Newsletter - Joey Kudish</title>', false)
-        ->assertSee('<meta name="description" content="Subscribe to The Maker Notes for insights on software development, AI automation, and building digital products."', false)
-        ->assertSee('<meta property="og:title" content="The Maker Notes Newsletter"', false);
+        ->assertSee('<title>Human in the Loop Newsletter - Joey Kudish</title>', false)
+        ->assertSee('<meta name="description" content="Subscribe to Human in the Loop for practical insights on AI-augmented coding, productivity hacks, and how to use AI as your development partner, not replacement."', false)
+        ->assertSee('<meta property="og:title" content="Human in the Loop Newsletter"', false);
 });
 
 it('has proper SEO tags on contact page', function () {

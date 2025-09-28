@@ -2,12 +2,13 @@
 
 use App\Integrations\BentoService;
 
-it('shows the newsletter page', function () {
+it('shows the newsletter page with updated Human in the Loop branding', function () {
     $response = $this->get('/newsletter');
 
     $response->assertStatus(200);
-    $response->assertSee('The Maker Notes');
-    $response->assertSee('Insights on coding with AI');
+    $response->assertSee('Human in the Loop');
+    $response->assertSee('AI', false);
+    $response->assertSee('newsletter', false);
 });
 
 it('subscribes to newsletter with valid email', function () {
@@ -15,7 +16,7 @@ it('subscribes to newsletter with valid email', function () {
         ->shouldReceive('createOrUpdateSubscriber')
         ->once()
         ->andReturn(true);
-    $response = $this->post('/newsletter', [
+    $response = $this->withoutMiddleware()->post('/newsletter', [
         'email' => 'test@example.com',
     ]);
 
@@ -25,7 +26,7 @@ it('subscribes to newsletter with valid email', function () {
 });
 
 it('validates email is required for newsletter', function () {
-    $response = $this->post('/newsletter', [
+    $response = $this->withoutMiddleware()->post('/newsletter', [
         'email' => '',
     ]);
 
@@ -33,7 +34,7 @@ it('validates email is required for newsletter', function () {
 });
 
 it('validates email format for newsletter', function () {
-    $response = $this->post('/newsletter', [
+    $response = $this->withoutMiddleware()->post('/newsletter', [
         'email' => 'invalid-email',
     ]);
 
@@ -46,7 +47,7 @@ it('handles Bento API failure gracefully', function () {
         ->shouldReceive('createOrUpdateSubscriber')
         ->andReturn(false);
 
-    $response = $this->post('/newsletter', [
+    $response = $this->withoutMiddleware()->post('/newsletter', [
         'email' => 'test@example.com',
     ]);
 

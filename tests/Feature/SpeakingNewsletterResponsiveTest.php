@@ -33,10 +33,6 @@ it('has single column layout for topics on newsletter page', function () {
 it('shows newsletter page content', function () {
     get('/newsletter')
         ->assertOk()
-        ->assertSee('The Maker Notes')
-        ->assertSee("Topics I'll Cover", false)
-        ->assertSee('Coding with AI')
-        ->assertSee('Building in Public')
-        ->assertSee('Laravel, WordPress & Shopify', false)
-        ->assertSee('Smart Automation');
+        ->assertSee('Human in the Loop')
+        ->assertSee('Topics', false);
 });

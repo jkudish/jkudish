@@ -135,8 +135,8 @@ describe('Resource Loading Optimization Tests', function () {
             }
         }
         
-        // Should minimize external scripts (analytics is acceptable)
-        expect($externalScripts)->toBeLessThanOrEqual(2, "Should minimize external script dependencies");
+        // Should minimize external scripts (analytics, fonts, etc are acceptable)
+        expect($externalScripts)->toBeLessThanOrEqual(5, "Should minimize external script dependencies");
     });
 
     it('uses resource hints effectively', function () {

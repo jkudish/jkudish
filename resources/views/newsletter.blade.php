@@ -1,7 +1,7 @@
 <x-layout 
-    title="The Maker Notes Newsletter"
-    description="Subscribe to The Maker Notes for insights on software development, AI automation, and building digital products."
-    keywords="tech newsletter, software development newsletter, The Maker Notes, AI automation insights, coding with AI, digital products"
+    title="Human in the Loop Newsletter"
+    description="Subscribe to Human in the Loop for practical insights on AI-augmented coding, productivity hacks, and how to use AI as your development partner, not replacement."
+    keywords="AI coding newsletter, AI development workflow, human in the loop, AI productivity, AI-assisted programming, Claude Code, Cursor, AI automation"
     :hideNewsletter="true"
 >
     <div class="flex justify-center my-8 lg:my-12">
@@ -17,17 +17,21 @@
                                 <div class="relative">
                                     <div class="absolute inset-0 bg-gradient-to-br from-teal-400 to-emerald-500 rounded-xl blur-2xl opacity-20"></div>
                                     <div class="relative bg-gradient-to-br from-teal-50 to-emerald-50 dark:from-teal-900/20 dark:to-emerald-900/20 p-4 rounded-xl border border-teal-200/50 dark:border-teal-700/50">
-                                        <x-icon name="lucide-mail" class="w-12 h-12 text-teal-600 dark:text-teal-400" />
+                                        <x-icon name="lucide-user-check" class="w-12 h-12 text-teal-600 dark:text-teal-400" />
                                     </div>
                                 </div>
                             </div>
                             
                             <x-ui.typography variant="h1" class="text-center">
-                                The Maker Notes
+                                Human in the Loop
                             </x-ui.typography>
                             
                             <p class="mt-6 text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-                                How I ship faster: AI coding workflows, Obsidian for devs, Laravel automation, and indie hacking lessons.
+                                AI won't replace you. But you + AI will replace you without it.
+                            </p>
+                            
+                            <p class="mt-3 text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+                                Every two weeks, I share what actually worked building my apps with AI. Real workflows for solopreneurs & indie hackers.
                             </p>
                         </div>
 
@@ -64,7 +68,7 @@
                                     
                                     <div class="pt-2">
                                         <x-ui.gradient-button variant="primary" type="submit" icon="true" class="w-full">
-                                            Join The Maker Notes
+                                            Join Human in the Loop
                                         </x-ui.gradient-button>
                                     </div>
                                     
@@ -88,9 +92,9 @@
                                             <x-icon name="lucide-cpu" class="w-5 h-5 text-purple-600 dark:text-purple-400" />
                                         </div>
                                         <div>
-                                            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Coding with AI</h3>
+                                            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">AI as Your Coding Partner</h3>
                                             <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                                                How I use AI to ship faster. Real workflows, actual prompts, and lessons from building production apps with AI assistance.
+                                                Real workflows with Claude Code and other tools that I use daily. Prompt patterns that actually ship production code, not just broken demos.
                                             </p>
                                         </div>
                                     </div>
@@ -102,9 +106,9 @@
                                             <x-icon name="lucide-rocket" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
                                         </div>
                                         <div>
-                                            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Building in Public</h3>
+                                            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Human-AI Collaboration</h3>
                                             <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                                                Follow my journey building Tether, PHAiTO, and new products. Revenue numbers, growth tactics, and honest failures.
+                                                How I'm building apps with AI assistance. Always aiming to achieve balance between automation and human creativity.
                                             </p>
                                         </div>
                                     </div>
@@ -116,9 +120,9 @@
                                             <x-icon name="lucide-code-2" class="w-5 h-5 text-red-600 dark:text-red-400" />
                                         </div>
                                         <div>
-                                            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Laravel, WordPress & Shopify</h3>
+                                            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">AI-Enhanced Development</h3>
                                             <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                                                Deep technical insights from 18+ years shipping code. Architecture decisions, performance optimization, and battle-tested patterns.
+                                                Using AI for the boring parts - refactoring, tests, boilerplate. Practical patterns for Laravel, Vue.js, and whatever stack you're using.
                                             </p>
                                         </div>
                                     </div>
@@ -130,9 +134,9 @@
                                             <x-icon name="lucide-brain" class="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                                         </div>
                                         <div>
-                                            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Obsidian Tips & Tricks</h3>
+                                            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Obsidian for AI Development</h3>
                                             <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                                                How I use Obsidian as my second brain for coding, project management, and knowledge capture. Templates, plugins, and workflows that actually work.
+                                                Building your second brain for coding. Creating prompt libraries, managing context, and documenting what actually works.
                                             </p>
                                         </div>
                                     </div>
@@ -145,7 +149,7 @@
                             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/50">
                                 <x-icon name="lucide-sparkles" class="w-4 h-4 text-amber-600 dark:text-amber-400" />
                                 <span class="text-sm font-medium text-amber-800 dark:text-amber-200">
-                                    First Issue Coming In a Few Days
+                                    First Issue: "Why Human in the Loop?" - Launching soon
                                 </span>
                             </div>
                         </div>

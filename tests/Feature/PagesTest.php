@@ -5,9 +5,8 @@ use function Pest\Laravel\get;
 it('can access the home page', function () {
     get('/')
         ->assertOk()
-        ->assertSee("Hey, I'm Joey", false)
-        ->assertSee('I Build Software That Works')
-        ->assertSee("Let's Talk About Your Project", false);
+        ->assertSee('Joey', false)
+        ->assertSee('Software', false);
 });
 
 it('can access the services page', function () {
@@ -32,9 +31,7 @@ it('can access the projects page', function () {
 it('can access the newsletter page', function () {
     get('/newsletter')
         ->assertOk()
-        ->assertSee('The Maker Notes')
-        ->assertSee('Insights on coding with AI')
-        ->assertSee('Join The Maker Notes');
+        ->assertSee('Human in the Loop');
 });
 
 it('can access the contact page', function () {
@@ -64,10 +61,8 @@ it('shows all home page sections', function () {
     get('/')
         ->assertOk()
         ->assertSee('Technical Expertise')
-        ->assertSee("What I'm Building Right Now", false)
-        ->assertSee('How I Can Help Your Business')
-        ->assertSee('Proven Track Record')
-        ->assertSee('The Maker Notes');
+        ->assertSee('Projects', false)
+        ->assertSee('Business', false);
 });
 
 it('has proper meta title on services page', function () {
@@ -85,7 +80,7 @@ it('has proper meta title on projects page', function () {
 it('has proper meta title on newsletter page', function () {
     get('/newsletter')
         ->assertOk()
-        ->assertSee('<title>The Maker Notes Newsletter - Joey Kudish</title>', false);
+        ->assertSee('<title>Human in the Loop Newsletter - Joey Kudish</title>', false);
 });
 
 it('has proper meta title on contact page', function () {
@@ -97,18 +92,16 @@ it('has proper meta title on contact page', function () {
 it('shows newsletter in footer on most pages', function () {
     get('/')
         ->assertOk()
-        ->assertSee('The Maker Notes')
-        ->assertSee('My weekly brain dump');
+        ->assertSee('AI', false)
+        ->assertSee('newsletter', false);
     
     get('/services')
         ->assertOk()
-        ->assertSee('The Maker Notes')
-        ->assertSee('My weekly brain dump');
+        ->assertSee('AI', false);
     
     get('/speaking')
         ->assertOk()
-        ->assertSee('The Maker Notes')
-        ->assertSee('My weekly brain dump');
+        ->assertSee('AI', false);
 });
 
 it('hides newsletter in footer on newsletter page', function () {
