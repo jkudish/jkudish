@@ -35,7 +35,7 @@ it('has projects content', function () {
         ->assertOk()
         ->assertSee('Tether')
         ->assertSee('PHAiTO')
-        ->assertSee('The Maker Notes')
+        ->assertSee('Human in the Loop')
         ->assertSee('Image Salon')
         ->assertSee('WordPress & WooCommerce');
 });

@@ -12,7 +12,7 @@ it('shows the contact page', function () {
 
     $response->assertStatus(200);
     $response->assertSee('Get in Touch');
-    $response->assertSee('Receive the Maker Notes newsletter');
+    $response->assertSee('Receive Human in the Loop newsletter');
 });
 
 it('submits contact form with newsletter opt-in', function () {

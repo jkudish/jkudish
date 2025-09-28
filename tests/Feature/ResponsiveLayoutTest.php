@@ -38,5 +38,5 @@ it('has current projects with proper structure', function () {
         ->assertOk()
         ->assertSee('Tether')
         ->assertSee('PHAiTO')
-        ->assertSee('The Maker Notes');
+        ->assertSee('Human in the Loop');
 });
