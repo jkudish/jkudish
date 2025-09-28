@@ -97,18 +97,18 @@ it('has proper meta title on contact page', function () {
 it('shows newsletter in footer on most pages', function () {
     get('/')
         ->assertOk()
-        ->assertSee('Human in the Loop')
-        ->assertSee('Receive tips in your inbox');
+        ->assertSee("AI won't replace you", false)
+        ->assertSee('Every two weeks, I share what actually worked');
     
     get('/services')
         ->assertOk()
-        ->assertSee('Human in the Loop')
-        ->assertSee('Receive tips in your inbox');
+        ->assertSee("AI won't replace you", false)
+        ->assertSee('Every two weeks, I share what actually worked');
     
     get('/speaking')
         ->assertOk()
-        ->assertSee('Human in the Loop')
-        ->assertSee('Receive tips in your inbox');
+        ->assertSee("AI won't replace you", false)
+        ->assertSee('Every two weeks, I share what actually worked');
 });
 
 it('hides newsletter in footer on newsletter page', function () {

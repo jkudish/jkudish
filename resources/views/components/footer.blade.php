@@ -15,11 +15,11 @@
                             </div>
                         </div>
                         <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-3xl">
-                            Human in the Loop
+                            AI won't replace you. But you + AI will replace you without it.
                         </h2>
                     </div>
                     <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
-                        Receive tips in your inbox on using AI to write better code, ship faster, and stay sane while doing it.
+                        Every two weeks, I share what actually worked building my apps with AI. Real workflows for solopreneurs & indie hackers.
                     </p>
 
                     <div x-data="{
@@ -83,7 +83,7 @@
                                 required
                             />
                             <x-ui.gradient-button variant="primary" type="submit" icon="true" x-bind:disabled="loading">
-                                <span x-show="!loading">Join Human in the Loop</span>
+                                <span x-show="!loading">Count me in →</span>
                                 <span x-show="loading">Subscribing...</span>
                             </x-ui.gradient-button>
                         </form>
