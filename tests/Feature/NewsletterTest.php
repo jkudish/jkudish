@@ -8,7 +8,7 @@ it('shows the newsletter page with updated Human in the Loop branding', function
     $response->assertStatus(200);
     $response->assertSee('Human in the Loop');
     $response->assertSee('Master AI-augmented development');
-    $response->assertSee('Real workflows for coding with Claude');
+    $response->assertSee('Real workflows and AI tools');
     $response->assertSee('AI as Your Coding Partner');
     $response->assertSee('Human-AI Collaboration');
     $response->assertSee('AI-Enhanced Development');

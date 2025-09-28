@@ -16,7 +16,7 @@ it('home newsletter signup component has updated benefits', function () {
     $view = view('components.home.newsletter-signup');
     $html = $view->render();
     
-    expect($html)->toContain('Practical AI coding workflows with Claude &amp; Cursor');
+    expect($html)->toContain('Practical AI coding workflows that work');
     expect($html)->toContain('Prompt engineering patterns that ship production code');
     expect($html)->toContain('Human-AI collaboration strategies that 10x productivity');
     expect($html)->toContain('Real examples from my daily AI-augmented development');

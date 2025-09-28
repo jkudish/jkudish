@@ -1,6 +1,6 @@
 @php
 $benefits = [
-    'Practical AI coding workflows with Claude & Cursor',
+    'Practical AI coding workflows that work',
     'Prompt engineering patterns that ship production code',
     'Human-AI collaboration strategies that 10x productivity',
     'Real examples from my daily AI-augmented development',

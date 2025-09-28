@@ -27,7 +27,7 @@
                             </x-ui.typography>
                             
                             <p class="mt-6 text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-                                Master AI-augmented development: Real workflows for coding with Claude, Cursor, and AI tools that amplify your skills, not replace them.
+                                Master AI-augmented development: Real workflows and AI tools that amplify your skills, not replace them.
                             </p>
                         </div>
 
@@ -90,7 +90,7 @@
                                         <div>
                                             <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">AI as Your Coding Partner</h3>
                                             <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                                                Real-world workflows using Claude Code and Cursor. Prompt engineering techniques that actually work in production.
+                                                Real-world AI coding workflows and prompt engineering techniques that actually work in production.
                                             </p>
                                         </div>
                                     </div>

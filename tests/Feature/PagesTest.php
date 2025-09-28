@@ -32,9 +32,9 @@ it('can access the projects page', function () {
 it('can access the newsletter page', function () {
     get('/newsletter')
         ->assertOk()
-        ->assertSee('The Maker Notes')
-        ->assertSee('Insights on coding with AI')
-        ->assertSee('Join The Maker Notes');
+        ->assertSee('Human in the Loop')
+        ->assertSee('Master AI-augmented development')
+        ->assertSee('Join Human in the Loop');
 });
 
 it('can access the contact page', function () {
@@ -67,7 +67,7 @@ it('shows all home page sections', function () {
         ->assertSee("What I'm Building Right Now", false)
         ->assertSee('How I Can Help Your Business')
         ->assertSee('Proven Track Record')
-        ->assertSee('The Maker Notes');
+        ->assertSee('Human in the Loop');
 });
 
 it('has proper meta title on services page', function () {
@@ -85,7 +85,7 @@ it('has proper meta title on projects page', function () {
 it('has proper meta title on newsletter page', function () {
     get('/newsletter')
         ->assertOk()
-        ->assertSee('<title>The Maker Notes Newsletter - Joey Kudish</title>', false);
+        ->assertSee('<title>Human in the Loop Newsletter - Joey Kudish</title>', false);
 });
 
 it('has proper meta title on contact page', function () {
@@ -97,18 +97,18 @@ it('has proper meta title on contact page', function () {
 it('shows newsletter in footer on most pages', function () {
     get('/')
         ->assertOk()
-        ->assertSee('The Maker Notes')
-        ->assertSee('My weekly brain dump');
+        ->assertSee('Human in the Loop')
+        ->assertSee('Master AI-augmented development');
     
     get('/services')
         ->assertOk()
-        ->assertSee('The Maker Notes')
-        ->assertSee('My weekly brain dump');
+        ->assertSee('Human in the Loop')
+        ->assertSee('Master AI-augmented development');
     
     get('/speaking')
         ->assertOk()
-        ->assertSee('The Maker Notes')
-        ->assertSee('My weekly brain dump');
+        ->assertSee('Human in the Loop')
+        ->assertSee('Master AI-augmented development');
 });
 
 it('hides newsletter in footer on newsletter page', function () {

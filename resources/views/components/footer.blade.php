@@ -19,7 +19,7 @@
                         </h2>
                     </div>
                     <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
-                        Master AI-augmented development: Real workflows for coding with Claude, Cursor, and AI tools that amplify your skills.
+                        Master AI-augmented development: Real workflows and AI tools that amplify your skills.
                     </p>
 
                     <div x-data="{
