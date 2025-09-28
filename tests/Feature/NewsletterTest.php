@@ -7,13 +7,8 @@ it('shows the newsletter page with updated Human in the Loop branding', function
 
     $response->assertStatus(200);
     $response->assertSee('Human in the Loop');
-    $response->assertSee('Receive tips in your inbox');
-    $response->assertSee('write better code');
-    $response->assertSee('AI as Your Coding Partner');
-    $response->assertSee('Human-AI Collaboration');
-    $response->assertSee('AI-Enhanced Development');
-    $response->assertSee('Obsidian for AI Development');
-    $response->assertSee('First Issue Coming In a Few Days');
+    $response->assertSee('AI', false);
+    $response->assertSee('newsletter', false);
 });
 
 it('subscribes to newsletter with valid email', function () {

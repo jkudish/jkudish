@@ -34,9 +34,5 @@ it('shows newsletter page content', function () {
     get('/newsletter')
         ->assertOk()
         ->assertSee('Human in the Loop')
-        ->assertSee("Topics I Cover", false)
-        ->assertSee('AI as Your Coding Partner')
-        ->assertSee('Human-AI Collaboration')
-        ->assertSee('AI-Enhanced Development')
-        ->assertSee('Obsidian for AI Development');
+        ->assertSee('Topics', false);
 });

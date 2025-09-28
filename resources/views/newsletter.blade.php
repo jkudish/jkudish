@@ -27,7 +27,11 @@
                             </x-ui.typography>
                             
                             <p class="mt-6 text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-                                Receive tips in your inbox on using AI to write better code, ship faster, and stay sane while doing it.
+                                AI won't replace you. But you + AI will replace you without it.
+                            </p>
+                            
+                            <p class="mt-3 text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+                                Every two weeks, I share what actually worked building my apps with AI. Real workflows for solopreneurs & indie hackers.
                             </p>
                         </div>
 
@@ -90,7 +94,7 @@
                                         <div>
                                             <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">AI as Your Coding Partner</h3>
                                             <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                                                Real-world AI coding workflows and prompt engineering techniques that actually work in production.
+                                                Real workflows with Claude Code and other tools that I use daily. Prompt patterns that actually ship production code, not just broken demos.
                                             </p>
                                         </div>
                                     </div>
@@ -104,7 +108,7 @@
                                         <div>
                                             <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Human-AI Collaboration</h3>
                                             <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                                                How I build faster with AI assistance. The balance between automation and human creativity. Real outcomes and lessons learned.
+                                                How I'm building apps with AI assistance. Always aiming to achieve balance between automation and human creativity.
                                             </p>
                                         </div>
                                     </div>
@@ -118,7 +122,7 @@
                                         <div>
                                             <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">AI-Enhanced Development</h3>
                                             <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                                                Using AI for code review, testing, refactoring. AI patterns for Laravel, Vue.js, Tauri, and modern frameworks.
+                                                Using AI for the boring parts - refactoring, tests, boilerplate. Practical patterns for Laravel, Vue.js, and whatever stack you're using.
                                             </p>
                                         </div>
                                     </div>
@@ -132,7 +136,7 @@
                                         <div>
                                             <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Obsidian for AI Development</h3>
                                             <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                                                Using Obsidian as your second brain for coding. Building prompt libraries, managing context, and documenting AI workflows.
+                                                Building your second brain for coding. Creating prompt libraries, managing context, and documenting what actually works.
                                             </p>
                                         </div>
                                     </div>
@@ -145,7 +149,7 @@
                             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/50">
                                 <x-icon name="lucide-sparkles" class="w-4 h-4 text-amber-600 dark:text-amber-400" />
                                 <span class="text-sm font-medium text-amber-800 dark:text-amber-200">
-                                    First Issue Coming In a Few Days
+                                    First Issue: "Why Human in the Loop?" - Launching soon
                                 </span>
                             </div>
                         </div>
