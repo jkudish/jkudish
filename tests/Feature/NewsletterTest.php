@@ -2,12 +2,18 @@
 
 use App\Integrations\BentoService;
 
-it('shows the newsletter page', function () {
+it('shows the newsletter page with updated Human in the Loop branding', function () {
     $response = $this->get('/newsletter');
 
     $response->assertStatus(200);
-    $response->assertSee('The Maker Notes');
-    $response->assertSee('Insights on coding with AI');
+    $response->assertSee('Human in the Loop');
+    $response->assertSee('Master AI-augmented development');
+    $response->assertSee('Real workflows for coding with Claude');
+    $response->assertSee('AI as Your Coding Partner');
+    $response->assertSee('Human-AI Collaboration');
+    $response->assertSee('AI-Enhanced Development');
+    $response->assertSee('Obsidian for AI Development');
+    $response->assertSee('First Issue Coming In a Few Days');
 });
 
 it('subscribes to newsletter with valid email', function () {
