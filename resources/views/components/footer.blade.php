@@ -15,11 +15,11 @@
                             </div>
                         </div>
                         <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-3xl">
-                            The Maker Notes
+                            Human in the Loop
                         </h2>
                     </div>
                     <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
-                        How I ship faster: AI coding workflows, Obsidian for devs, Laravel automation, and indie hacking lessons.
+                        Master AI-augmented development: Real workflows for coding with Claude, Cursor, and AI tools that amplify your skills.
                     </p>
 
                     <div x-data="{
@@ -49,7 +49,7 @@
                                 const data = await response.json();
                                 
                                 if (response.ok) {
-                                    this.message = data.message || 'Welcome to The Maker Notes! You\'ll receive my next newsletter soon.';
+                                    this.message = data.message || 'Welcome to Human in the Loop! You\'ll receive my next AI development insights soon.';
                                     this.messageType = 'success';
                                     this.email = '';
                                     
@@ -83,7 +83,7 @@
                                 required
                             />
                             <x-ui.gradient-button variant="primary" type="submit" icon="true" x-bind:disabled="loading">
-                                <span x-show="!loading">Get It Free</span>
+                                <span x-show="!loading">Join Human in the Loop</span>
                                 <span x-show="loading">Subscribing...</span>
                             </x-ui.gradient-button>
                         </form>
