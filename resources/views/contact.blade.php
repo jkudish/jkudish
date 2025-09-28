@@ -193,10 +193,10 @@ $structuredData = [
                                 </div>
                                 <div class="ml-3 text-sm">
                                     <label for="newsletter_opt_in" class="font-medium text-zinc-700 dark:text-zinc-300">
-                                        Receive the Maker Notes newsletter
+                                        Receive Human in the Loop newsletter
                                     </label>
                                     <p class="text-zinc-500 dark:text-zinc-400">
-                                        Get insights on coding with AI and building digital products.
+                                        Get practical insights on AI-augmented development and productivity.
                                     </p>
                                 </div>
                             </div>
