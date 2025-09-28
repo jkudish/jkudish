@@ -2,8 +2,8 @@
     title="Human in the Loop - A Newsletter by Joey Kudish"
     description="AI won't replace you. But you + AI will replace you without it. Every two weeks, get practical insights on AI-augmented coding, real workflows for solopreneurs & indie hackers, and how to use AI as your development partner."
     keywords="AI coding newsletter, human in the loop newsletter, AI development workflow, AI productivity tips, AI-assisted programming, Claude Code workflows, Cursor IDE, AI automation, solopreneur tools, indie hacker resources, Joey Kudish newsletter"
-    :image="asset('img/social/human-in-the-loop.png')"
-    :imageAlt="Human in the Loop Newsletter - AI won't replace you. But you + AI will replace you without it."
+    image="{{ asset('img/social/human-in-the-loop.png') }}"
+    imageAlt="Human in the Loop Newsletter - AI won't replace you. But you + AI will replace you without it."
     :appendSiteName="false"
     :hideNewsletter="true"
 >
