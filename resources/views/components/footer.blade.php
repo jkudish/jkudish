@@ -15,10 +15,11 @@
                             </div>
                         </div>
                         <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-3xl">
-                            AI won't replace you. But you + AI will replace you without it.
+                            Human in the loop
                         </h2>
                     </div>
                     <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
+                        AI won't replace you. But you + AI will replace you without it. <br />
                         Every two weeks, I share what actually worked building my apps with AI. Real workflows for solopreneurs & indie hackers.
                     </p>
 
@@ -29,10 +30,10 @@
                         messageType: '',
                         async submitNewsletter() {
                             if (!this.email) return;
-                            
+
                             this.loading = true;
                             this.message = '';
-                            
+
                             try {
                                 const response = await fetch('{{ route('newsletter.store') }}', {
                                     method: 'POST',
@@ -45,14 +46,14 @@
                                         email: this.email
                                     })
                                 });
-                                
+
                                 const data = await response.json();
-                                
+
                                 if (response.ok) {
                                     this.message = data.message || 'Welcome to Human in the Loop! You\'ll receive my next AI development insights soon.';
                                     this.messageType = 'success';
                                     this.email = '';
-                                    
+
                                     // Track Fathom event
                                     if (window.fathom && data.track_event) {
                                         window.fathom.trackEvent('newsletter_signup');
@@ -87,7 +88,7 @@
                                 <span x-show="loading">Subscribing...</span>
                             </x-ui.gradient-button>
                         </form>
-                        
+
                         <div x-show="message" x-transition class="mt-4">
                             <p :class="{
                                 'text-emerald-600 dark:text-emerald-400': messageType === 'success',
