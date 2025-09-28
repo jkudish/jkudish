@@ -1,7 +1,10 @@
 <x-layout
-    title="Human in the Loop Newsletter"
-    description="Subscribe to Human in the Loop for practical insights on AI-augmented coding, productivity hacks, and how to use AI as your development partner, not replacement."
-    keywords="AI coding newsletter, AI development workflow, human in the loop, AI productivity, AI-assisted programming, Claude Code, Cursor, AI automation"
+    title="Human in the Loop - A Newsletter by Joey Kudish"
+    description="AI won't replace you. But you + AI will replace you without it. Every two weeks, get practical insights on AI-augmented coding, real workflows for solopreneurs & indie hackers, and how to use AI as your development partner."
+    keywords="AI coding newsletter, human in the loop newsletter, AI development workflow, AI productivity tips, AI-assisted programming, Claude Code workflows, Cursor IDE, AI automation, solopreneur tools, indie hacker resources, Joey Kudish newsletter"
+    :image="asset('img/social/human-in-the-loop.png')"
+    :imageAlt="Human in the Loop Newsletter - AI won't replace you. But you + AI will replace you without it."
+    :appendSiteName="false"
     :hideNewsletter="true"
 >
     <div class="flex justify-center my-8 lg:my-12">
