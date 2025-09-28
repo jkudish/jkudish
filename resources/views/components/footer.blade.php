@@ -84,7 +84,7 @@
                                 required
                             />
                             <x-ui.gradient-button variant="primary" type="submit" icon="true" x-bind:disabled="loading">
-                                <span x-show="!loading">Count me in →</span>
+                                <span x-show="!loading">Count me in</span>
                                 <span x-show="loading">Subscribing...</span>
                             </x-ui.gradient-button>
                         </form>
