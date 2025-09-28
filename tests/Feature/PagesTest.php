@@ -98,17 +98,17 @@ it('shows newsletter in footer on most pages', function () {
     get('/')
         ->assertOk()
         ->assertSee('Human in the Loop')
-        ->assertSee('Master AI-augmented development');
+        ->assertSee('Receive tips in your inbox');
     
     get('/services')
         ->assertOk()
         ->assertSee('Human in the Loop')
-        ->assertSee('Master AI-augmented development');
+        ->assertSee('Receive tips in your inbox');
     
     get('/speaking')
         ->assertOk()
         ->assertSee('Human in the Loop')
-        ->assertSee('Master AI-augmented development');
+        ->assertSee('Receive tips in your inbox');
 });
 
 it('hides newsletter in footer on newsletter page', function () {

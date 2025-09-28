@@ -11,7 +11,7 @@
                         <div class="relative">
                             <div class="absolute inset-0 bg-gradient-to-br from-teal-400 to-emerald-500 rounded-lg blur-lg opacity-[0.015]"></div>
                             <div class="relative bg-white/10 dark:bg-zinc-800/50 backdrop-blur-sm p-2.5 rounded-lg border border-white/20 dark:border-zinc-700/50">
-                                <x-icon name="lucide-mail" class="w-6 h-6 text-teal-400" />
+                                <x-icon name="lucide-user-check" class="w-6 h-6 text-teal-400" />
                             </div>
                         </div>
                         <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-3xl">
@@ -19,7 +19,7 @@
                         </h2>
                     </div>
                     <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
-                        Master AI-augmented development: Real workflows and AI tools that amplify your skills.
+                        Receive tips in your inbox on using AI to write better code, ship faster, and stay sane while doing it.
                     </p>
 
                     <div x-data="{

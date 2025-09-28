@@ -27,7 +27,7 @@
                             </x-ui.typography>
                             
                             <p class="mt-6 text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-                                Master AI-augmented development: Real workflows and AI tools that amplify your skills, not replace them.
+                                Receive tips in your inbox on using AI to write better code, ship faster, and stay sane while doing it.
                             </p>
                         </div>
 
