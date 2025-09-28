@@ -1,9 +1,9 @@
 @php
 $benefits = [
-    'Real insights from building indie projects',
-    'AI automation workflows that actually work',
-    'Laravel/WordPress tips from 15 years of experience',
-    'Business lessons from the trenches',
+    'Practical AI coding workflows with Claude & Cursor',
+    'Prompt engineering patterns that ship production code',
+    'Human-AI collaboration strategies that 10x productivity',
+    'Real examples from my daily AI-augmented development',
 ];
 @endphp
 
@@ -11,7 +11,7 @@ $benefits = [
     <div class="rounded-2xl bg-gradient-to-br from-teal-50/50 to-cyan-50/30 px-6 py-16 sm:px-16 dark:bg-zinc-800/50 border border-teal-100/50 dark:border-zinc-700/50 shadow-sm">
         <div class="mx-auto max-w-2xl text-center">
             <h2 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-zinc-100 sm:text-3xl">
-                📬 The Maker Notes
+                🤖 Human in the Loop
             </h2>
             
             <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
@@ -28,7 +28,7 @@ $benefits = [
             </ul>
             
             <p class="mt-6 font-semibold text-zinc-800 dark:text-zinc-100">
-                No fluff. Just practical insights from someone doing the work.
+                Stay human while coding at AI speed. Real workflows that work.
             </p>
             
             <form class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center" action="{{ route('newsletter') }}" method="GET">
@@ -44,7 +44,7 @@ $benefits = [
             </form>
             
             <p class="mt-4 text-xs text-zinc-500 dark:text-zinc-400">
-                Join hundreds of makers and developers.
+                Join hundreds of developers mastering AI augmentation.
             </p>
         </div>
     </div>
