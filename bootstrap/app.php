@@ -14,6 +14,10 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             \App\Http\Middleware\TrackPageViewMiddleware::class,
         ]);
+
+        $middleware->validateCsrfTokens(except: [
+            'newsletter',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
