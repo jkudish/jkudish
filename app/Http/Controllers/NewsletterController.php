@@ -37,13 +37,13 @@ class NewsletterController extends Controller
             if ($request->expectsJson()) {
                 return response()->json([
                     'success' => true,
-                    'message' => 'Welcome to The Maker Notes! You\'ll receive my next newsletter soon.',
+                    'message' => 'Welcome to Human in the Loop! You\'ll receive my next newsletter soon.',
                     'track_event' => true, // Signal frontend to track event
                 ]);
             }
 
             return redirect()->route('newsletter')
-                ->with('success', 'Welcome to The Maker Notes! You\'ll receive my next newsletter soon.')
+                ->with('success', 'Welcome to Human in the Loop! You\'ll receive my next newsletter soon.')
                 ->with('track_event', 'newsletter_signup');
         }
 
