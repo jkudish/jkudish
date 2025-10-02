@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Broadcast;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 
@@ -81,13 +82,27 @@ class SitemapController extends Controller
         $newsletterModified = file_exists($viewsPath . 'newsletter.blade.php')
             ? \Carbon\Carbon::createFromTimestamp(filemtime($viewsPath . 'newsletter.blade.php'))
             : now()->subMonths(2);
-            
+
         $sitemap->add(
             Url::create($baseUrl . '/newsletter')
                 ->setLastModificationDate($newsletterModified)
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.6)
         );
+
+        // Individual newsletter issues
+        $broadcasts = Broadcast::whereNotNull('sent_at')
+            ->orderBy('sent_at', 'desc')
+            ->get();
+
+        foreach ($broadcasts as $broadcast) {
+            $sitemap->add(
+                Url::create($baseUrl . '/newsletter/' . $broadcast->issue_number)
+                    ->setLastModificationDate($broadcast->updated_at)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY)
+                    ->setPriority(0.5)
+            );
+        }
 
         return $sitemap->toResponse(request());
     }
