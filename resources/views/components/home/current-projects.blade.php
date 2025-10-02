@@ -31,8 +31,8 @@ $projects = [
         'icon_size' => 'large',
         'show_title' => true,
         'description' => 'Weekly dispatch: AI experiments, automation workflows, indie hacking lessons, and the best links I find online.',
-        'status' => 'coming_soon',
-        'status_label' => 'First issue coming this month',
+        'status' => 'live',
+        'status_label' => 'New issues every 2 weeks',
         'status_icon' => 'lucide-rocket',
         'url' => route('newsletter'),
         'external' => false,
@@ -119,6 +119,7 @@ $projects = [
                         'building' => 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 border border-purple-200/50 dark:border-purple-700/30',
                         'coming_soon' => 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200/50 dark:border-blue-700/30',
                         'launched' => 'bg-green-100 text-green-800 dark:bg-emerald-900/30 dark:text-emerald-300 border border-green-200/50 dark:border-emerald-700/30',
+                        'live' => 'bg-green-100 text-green-800 dark:bg-emerald-900/30 dark:text-emerald-300 border border-green-200/50 dark:border-emerald-700/30',
                         default => 'bg-zinc-100 text-zinc-800 dark:bg-zinc-800/30 dark:text-zinc-300 border border-zinc-200/50 dark:border-zinc-700/30'
                     };
                 @endphp

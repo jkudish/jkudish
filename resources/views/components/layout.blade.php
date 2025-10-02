@@ -1,5 +1,6 @@
 @props([
     'title' => 'Joey Kudish',
+    'ogTitle' => null,
     'hideNewsletter' => false,
     'description' => null,
     'keywords' => null,
@@ -16,6 +17,7 @@
 
     <x-seo
         :title="$title"
+        :ogTitle="$ogTitle"
         :description="$description"
         :keywords="$keywords"
         :image="$image"

@@ -105,4 +105,49 @@ class BentoService
             ]);
         }
     }
+
+    /**
+     * Get all broadcasts from Bento API
+     * Returns array of broadcast data filtered for sent broadcasts only
+     */
+    public function getBroadcasts(): array
+    {
+        try {
+            $response = Bento::getBroadcasts();
+
+            if (! $response->successful()) {
+                Log::error('Bento getBroadcasts API call failed', [
+                    'status' => $response->status(),
+                ]);
+                return [];
+            }
+
+            $data = $response->json('data') ?? [];
+
+            // Filter for sent broadcasts and transform to our format
+            return collect($data)
+                ->filter(function ($broadcast) {
+                    return isset($broadcast['attributes']['sent_final_batch_at'])
+                        && $broadcast['attributes']['sent_final_batch_at'] !== null;
+                })
+                ->map(function ($broadcast) {
+                    return [
+                        'bento_id' => $broadcast['id'],
+                        'name' => $broadcast['attributes']['name'],
+                        'subject' => $broadcast['attributes']['template']['subject'] ?? '',
+                        'html_content' => $broadcast['attributes']['template']['html'] ?? '',
+                        'share_url' => $broadcast['attributes']['share_url'] ?? null,
+                        'sent_at' => $broadcast['attributes']['sent_final_batch_at'],
+                        'stats' => $broadcast['attributes']['stats'] ?? null,
+                    ];
+                })
+                ->values()
+                ->toArray();
+        } catch (\Exception $e) {
+            Log::error('Bento getBroadcasts failed', [
+                'error' => $e->getMessage(),
+            ]);
+            return [];
+        }
+    }
 }

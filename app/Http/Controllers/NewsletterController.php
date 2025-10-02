@@ -4,13 +4,40 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\NewsletterRequest;
 use App\Integrations\BentoService;
+use App\Models\Broadcast;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class NewsletterController extends Controller
 {
     public function __construct(
         private BentoService $bentoService
     ) {}
+
+    /**
+     * Display the newsletter archive page
+     */
+    public function index(): View
+    {
+        $broadcasts = Broadcast::sent()
+            ->latest('sent_at')
+            ->get();
+
+        return view('newsletter', compact('broadcasts'));
+    }
+
+    /**
+     * Display an individual newsletter
+     */
+    public function show(Broadcast $broadcast)
+    {
+        // Redirect to archive if newsletter hasn't been sent yet
+        if (! $broadcast->sent_at) {
+            return redirect()->route('newsletter');
+        }
+
+        return view('newsletter.show', compact('broadcast'));
+    }
 
     /**
      * Store a new newsletter subscription
@@ -37,13 +64,13 @@ class NewsletterController extends Controller
             if ($request->expectsJson()) {
                 return response()->json([
                     'success' => true,
-                    'message' => 'Welcome to Human in the Loop! You\'ll receive my next newsletter soon.',
+                    'message' => 'Welcome to Human in the Loop! You\'ll receive the first issue right away.',
                     'track_event' => true, // Signal frontend to track event
                 ]);
             }
 
             return redirect()->route('newsletter')
-                ->with('success', 'Welcome to Human in the Loop! You\'ll receive my next newsletter soon.')
+                ->with('success', 'Welcome to Human in the Loop! You\'ll receive the first issue right away.')
                 ->with('track_event', 'newsletter_signup');
         }
 

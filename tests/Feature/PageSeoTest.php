@@ -74,7 +74,7 @@ it('includes Twitter Card tags on all pages', function () {
 });
 
 it('includes Open Graph image on all pages', function () {
-    $pages = ['/', '/speaking', '/services', '/projects', '/newsletter', '/contact'];
+    $pages = ['/', '/speaking', '/services', '/projects', '/contact'];
 
     foreach ($pages as $page) {
         get($page)
@@ -82,4 +82,11 @@ it('includes Open Graph image on all pages', function () {
             ->assertSee('<meta property="og:image"', false)
             ->assertSee('/img/social/og-default.jpg', false);
     }
+});
+
+it('includes custom Open Graph image on newsletter page', function () {
+    get('/newsletter')
+        ->assertOk()
+        ->assertSee('<meta property="og:image"', false)
+        ->assertSee('/img/social/human-in-the-loop.png', false);
 });

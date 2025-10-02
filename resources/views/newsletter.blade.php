@@ -1,6 +1,7 @@
 <x-layout
-    title="Human in the Loop - A Newsletter by Joey Kudish"
-    description="AI won't replace you. But you + AI will replace you without it. Every two weeks, get practical insights on AI-augmented coding, real workflows for solopreneurs & indie hackers, and how to use AI as your development partner."
+    title="Human in the Loop Newsletter - Joey Kudish"
+    ogTitle="Human in the Loop Newsletter"
+    description="Subscribe to Human in the Loop for practical insights on AI-augmented coding, productivity hacks, and how to use AI as your development partner, not replacement."
     keywords="AI coding newsletter, human in the loop newsletter, AI development workflow, AI productivity tips, AI-assisted programming, Claude Code workflows, Cursor IDE, AI automation, solopreneur tools, indie hacker resources, Joey Kudish newsletter"
     image="{{ asset('img/social/human-in-the-loop.png') }}"
     imageAlt="Human in the Loop Newsletter - AI won't replace you. But you + AI will replace you without it."
@@ -147,15 +148,37 @@
                             </div>
                         </div>
 
-                        {{-- Launch Notice --}}
-                        <div class="mt-16 text-center">
-                            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/50">
-                                <x-icon name="lucide-sparkles" class="w-4 h-4 text-amber-600 dark:text-amber-400" />
-                                <span class="text-sm font-medium text-amber-800 dark:text-amber-200">
-                                    First Issue: "Why Human in the Loop?" - Launching soon
-                                </span>
+                        {{-- Newsletter Archive --}}
+                        @if($broadcasts->count() > 0)
+                        <div class="mt-16">
+                            <h2 class="text-center text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-8">
+                                Past Issues
+                            </h2>
+
+                            <div class="space-y-4">
+                                @foreach($broadcasts as $broadcast)
+                                <a
+                                    href="{{ route('newsletter.show', $broadcast) }}"
+                                    class="group block p-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/50 dark:border-zinc-700/50 hover:border-teal-300 dark:hover:border-teal-600 hover:shadow-md transition-all duration-200"
+                                >
+                                    <div class="flex items-start justify-between gap-4">
+                                        <div class="flex-1">
+                                            <h3 class="font-semibold text-lg text-zinc-900 dark:text-zinc-100 mb-1">
+                                                {{ $broadcast->name }}
+                                            </h3>
+                                            <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                                                {{ $broadcast->sent_at->format('F j, Y') }}
+                                            </p>
+                                        </div>
+                                        <div class="flex-shrink-0">
+                                            <x-icon name="lucide-chevron-right" class="w-5 h-5 text-teal-600 dark:text-teal-400 group-hover:translate-x-1 transition-transform duration-200" />
+                                        </div>
+                                    </div>
+                                </a>
+                                @endforeach
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
 

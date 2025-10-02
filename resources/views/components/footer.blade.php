@@ -50,7 +50,7 @@
                                 const data = await response.json();
 
                                 if (response.ok) {
-                                    this.message = data.message || 'Welcome to Human in the Loop! You\'ll receive my next AI development insights soon.';
+                                    this.message = data.message || 'Welcome to Human in the Loop! You\'ll receive the first issue right away.';
                                     this.messageType = 'success';
                                     this.email = '';
 

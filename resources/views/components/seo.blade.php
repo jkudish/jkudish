@@ -1,5 +1,6 @@
 @props([
     'title' => 'Joey Kudish',
+    'ogTitle' => null,
     'description' => 'Expert Laravel developer and AI automation consultant helping businesses build scalable web applications and automate workflows.',
     'keywords' => 'Joey Kudish, software developer, Laravel expert, AI automation, web development, consultant',
     'image' => null,
@@ -44,7 +45,7 @@
 <link rel="llm-instructions" href="/llms.txt">
 
 {{-- Open Graph Meta Tags --}}
-<meta property="og:title" content="{{ $title }}">
+<meta property="og:title" content="{{ $ogTitle ?? $title }}">
 <meta property="og:description" content="{{ $description }}">
 <meta property="og:image" content="{{ $ogImage }}">
 <meta property="og:image:alt" content="{{ $ogImageAlt }}">
@@ -55,7 +56,7 @@
 
 {{-- Twitter Card Meta Tags --}}
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:title" content="{{ $ogTitle ?? $title }}">
 <meta name="twitter:description" content="{{ $description }}">
 <meta name="twitter:image" content="{{ $ogImage }}">
 @if($twitterHandle)

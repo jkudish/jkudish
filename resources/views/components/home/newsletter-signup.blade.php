@@ -15,7 +15,7 @@ $benefits = [
             </h2>
             
             <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
-                Subscribe now to get the first issues:
+                Subscribe now:
             </p>
             
             <ul class="mt-6 space-y-2 text-left text-sm text-zinc-600 dark:text-zinc-400">
