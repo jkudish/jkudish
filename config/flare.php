@@ -120,9 +120,12 @@ return [
         | Tracing allows you to see the flow of your application. It shows you
         | which parts of your application are slow and which parts are fast.
         |
+        | TEMPORARILY DISABLED: PHP 8.4.12 has compatibility issues with
+        | closure serialization. Re-enable when packages are updated.
+        |
         */
 
-        'trace' => true,
+        'trace' => false,
 
         /*
         |--------------------------------------------------------------------------
