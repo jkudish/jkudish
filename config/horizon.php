@@ -89,6 +89,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Horizon Authorization
+    |--------------------------------------------------------------------------
+    |
+    | Email addresses authorized to access Horizon dashboard in production.
+    |
+    */
+
+    'authorized_emails' => explode(',', env('HORIZON_AUTHORIZED_EMAILS', 'joey@jkudish.com')),
+
+    'notification_email' => env('HORIZON_NOTIFICATION_EMAIL', 'joey@jkudish.com'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Job Trimming Times
     |--------------------------------------------------------------------------
     |
@@ -186,6 +199,7 @@ return [
             'balance' => 'auto',
             'autoScalingStrategy' => 'time',
             'maxProcesses' => 1,
+            'minProcesses' => 1,
             'maxTime' => 0,
             'maxJobs' => 0,
             'memory' => 128,
@@ -199,17 +213,23 @@ return [
         'production' => [
             'supervisor-1' => [
                 'maxProcesses' => 10,
+                'minProcesses' => 1,
                 'balanceMaxShift' => 1,
                 'balanceCooldown' => 3,
                 'memory' => 256,
                 'tries' => 3,
                 'timeout' => 90,
+                'nice' => 0,
             ],
         ],
 
         'local' => [
             'supervisor-1' => [
                 'maxProcesses' => 3,
+                'minProcesses' => 1,
+                'memory' => 128,
+                'tries' => 3,
+                'timeout' => 90,
             ],
         ],
     ],
