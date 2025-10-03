@@ -16,7 +16,11 @@ class HorizonServiceProvider extends HorizonApplicationServiceProvider
         parent::boot();
 
         // Configure mail notifications for failed jobs
-        Horizon::routeMailNotificationsTo('joey@jkudish.com');
+        $notificationEmail = config('horizon.notification_email', 'joey@jkudish.com');
+        Horizon::routeMailNotificationsTo($notificationEmail);
+
+        // Configure Horizon to use the application's timezone
+        Horizon::use(config('horizon.use', 'default'));
     }
 
     /**
@@ -33,9 +37,13 @@ class HorizonServiceProvider extends HorizonApplicationServiceProvider
             }
 
             // In production, require authentication with authorized email
-            return in_array(optional($user)->email, [
-                'joey@jkudish.com',
-            ]);
+            $authorizedEmails = config('horizon.authorized_emails', ['joey@jkudish.com']);
+
+            if (! $user) {
+                return false;
+            }
+
+            return in_array($user->email, $authorizedEmails);
         });
     }
 }

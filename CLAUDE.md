@@ -461,3 +461,4 @@ it('has emails', function (string $email) {
 - Run the minimum number of tests needed to ensure code quality and speed. Use `php artisan test` with a specific filename or filter.
 </laravel-boost-guidelines>
 - i've enabled laravel boost and playwright mcp servers for you - also site is available at jkudish.test
+- When a user asks to show or investigate an error or to look at the errors from flare, use the Flare MCP tool to get data. The project name in Flare is 'jkudish.com'.
