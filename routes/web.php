@@ -20,8 +20,12 @@ Route::middleware('cache.headers:public;max_age=2628000;etag')->group(function (
     Route::get('/contact', [ContactController::class, 'show'])->name('contact');
 });
 
-Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
-Route::post('/newsletter', [NewsletterController::class, 'store'])->name('newsletter.store');
+Route::post('/contact', [ContactController::class, 'store'])
+    ->middleware('throttle:5,1') // 5 attempts per minute
+    ->name('contact.store');
+Route::post('/newsletter', [NewsletterController::class, 'store'])
+    ->middleware('throttle:10,1') // 10 attempts per minute (higher for newsletter)
+    ->name('newsletter.store');
 Route::get('/newsletter/{broadcast}', [NewsletterController::class, 'show'])
     ->name('newsletter.show')
     ->missing(fn () => redirect()->route('newsletter'));
