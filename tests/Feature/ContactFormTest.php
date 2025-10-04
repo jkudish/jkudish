@@ -27,6 +27,11 @@ it('shows the contact page', function () {
 });
 
 it('submits contact form with newsletter opt-in', function () {
+    // Mock Bento validation
+    $this->mock(\App\Integrations\BentoService::class)
+        ->shouldReceive('validateEmail')
+        ->andReturn(true);
+        
     $response = $this->post('/contact', [
         'first_name' => 'John',
         'last_name' => 'Doe',
@@ -48,6 +53,11 @@ it('submits contact form with newsletter opt-in', function () {
 });
 
 it('submits contact form without newsletter opt-in', function () {
+    // Mock Bento validation
+    $this->mock(\App\Integrations\BentoService::class)
+        ->shouldReceive('validateEmail')
+        ->andReturn(true);
+        
     $response = $this->post('/contact', [
         'first_name' => 'Jane',
         'last_name' => 'Smith',
@@ -68,6 +78,11 @@ it('submits contact form without newsletter opt-in', function () {
 });
 
 it('rejects spam submissions with honeypot field', function () {
+    // Mock Bento validation (even though honeypot will prevent it from being called)
+    $this->mock(\App\Integrations\BentoService::class)
+        ->shouldReceive('validateEmail')
+        ->andReturn(true);
+        
     $response = $this->post('/contact', [
         'first_name' => 'Spam',
         'last_name' => 'Bot',
@@ -98,6 +113,7 @@ it('validates required fields', function () {
 });
 
 it('validates email format', function () {
+    // No need to mock Bento validation since Laravel validation will fail first
     $response = $this->post('/contact', [
         'first_name' => 'John',
         'last_name' => 'Doe',
