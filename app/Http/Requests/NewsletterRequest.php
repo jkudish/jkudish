@@ -23,6 +23,7 @@ class NewsletterRequest extends FormRequest
     {
         return [
             'email' => 'required|email:rfc|max:255',
+            'cf-turnstile-response' => 'required|turnstile',
         ];
     }
 
@@ -35,6 +36,8 @@ class NewsletterRequest extends FormRequest
             'email.required' => 'Please enter your email address.',
             'email.email' => 'Please enter a valid email address.',
             'email.max' => 'Email address is too long.',
+            'cf-turnstile-response.required' => 'Please complete the security check.',
+            'cf-turnstile-response.turnstile' => 'The security check failed. Please try again.',
         ];
     }
 }

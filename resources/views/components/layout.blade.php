@@ -56,6 +56,12 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     
+    {{-- Cloudflare Turnstile scripts for spam protection - only load on pages with forms --}}
+    {{-- Load on contact page, newsletter pages, or any page that shows the footer newsletter form --}}
+    @if(request()->routeIs(['contact', 'newsletter', 'newsletter.show']) || !$hideNewsletter)
+        @turnstileScripts()
+    @endif
+    
     {{-- Ensure Alpine loads in development --}}
     @if(app()->environment('local'))
         <script type="module" src="{{ config('app.url') }}:5174/resources/js/app.js" defer></script>

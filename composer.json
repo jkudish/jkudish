@@ -13,6 +13,7 @@
         "laravel/tinker": "^2.9",
         "mallardduck/blade-lucide-icons": "^1.23",
         "predis/predis": "^3.2",
+        "ryangjchandler/laravel-cloudflare-turnstile": "^2.0",
         "spatie/laravel-flare": "^2.2",
         "spatie/laravel-sitemap": "^7.3"
     },

@@ -84,8 +84,33 @@ app/
 ### Security Notes
 - Never commit `.env` file or sensitive credentials
 - Use Laravel's built-in CSRF protection for all forms
-- Implement rate limiting on contact and newsletter forms
-- Add honeypot fields for spam prevention
+- Cloudflare Turnstile implemented for spam protection on all forms
+- Honeypot fields retained as additional spam prevention layer
+- Implement rate limiting on contact and newsletter forms as needed
+
+## Cloudflare Turnstile Configuration
+
+### Overview
+Cloudflare Turnstile is implemented on both the contact form and newsletter signup forms to prevent spam submissions. It uses the "interaction-only" appearance mode, which only shows a challenge to suspicious traffic.
+
+### Environment Variables
+```
+CLOUDFLARE_TURNSTILE_SITEKEY=your_site_key_here
+CLOUDFLARE_TURNSTILE_SECRETKEY=your_secret_key_here
+```
+
+### Implementation Details
+- Package: `ryangjchandler/laravel-cloudflare-turnstile`
+- Widget appears only for suspicious traffic (managed mode)
+- Automatically adapts to dark/light theme
+- Validation integrated into Laravel form requests
+- Works with both traditional form submissions and AJAX
+
+### Testing
+- Use Cloudflare's test keys for local development
+- Always pass: `1x00000000000000000000AA` (site key)
+- Always fail: `2x00000000000000000000AB` (site key)
+- Both use secret: `1x0000000000000000000000000000000AA`
 
 ## Local Development
 

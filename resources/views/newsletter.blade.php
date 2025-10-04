@@ -70,6 +70,18 @@
                                         />
                                     </div>
 
+                                    {{-- Turnstile widget for spam protection --}}
+                                    <div class="py-2">
+                                        <x-turnstile 
+                                            data-theme="auto"
+                                            data-appearance="interaction-only"
+                                            data-size="normal"
+                                        />
+                                        @error('cf-turnstile-response')
+                                            <p class="mt-2 text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
+                                        @enderror
+                                    </div>
+
                                     <div class="pt-2">
                                         <x-ui.gradient-button variant="primary" type="submit" icon="true" class="w-full">
                                             Count me in

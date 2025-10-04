@@ -28,8 +28,25 @@
                         loading: false,
                         message: '',
                         messageType: '',
+                        turnstileToken: '',
                         async submitNewsletter() {
                             if (!this.email) return;
+
+                            // Get fresh Turnstile token
+                            const widget = document.querySelector('.cf-turnstile');
+                            if (widget && window.turnstile) {
+                                window.turnstile.reset(widget);
+                                // Wait a moment for reset to complete
+                                await new Promise(resolve => setTimeout(resolve, 100));
+                                this.turnstileToken = widget.querySelector('input[name="cf-turnstile-response"]')?.value || '';
+                            }
+
+                            if (!this.turnstileToken) {
+                                this.message = 'Please complete the security check.';
+                                this.messageType = 'error';
+                                setTimeout(() => { this.message = ''; }, 5000);
+                                return;
+                            }
 
                             this.loading = true;
                             this.message = '';
@@ -43,7 +60,8 @@
                                         'Accept': 'application/json',
                                     },
                                     body: JSON.stringify({
-                                        email: this.email
+                                        email: this.email,
+                                        'cf-turnstile-response': this.turnstileToken
                                     })
                                 });
 
@@ -59,8 +77,24 @@
                                         window.fathom.trackEvent('newsletter_signup');
                                     }
                                 } else {
-                                    this.message = data.message || 'Something went wrong. Please try again.';
+                                    // Handle validation errors
+                                    if (response.status === 422 && data.errors) {
+                                        if (data.errors['cf-turnstile-response']) {
+                                            this.message = data.errors['cf-turnstile-response'][0];
+                                        } else if (data.errors.email) {
+                                            this.message = data.errors.email[0];
+                                        } else {
+                                            this.message = data.message || 'Something went wrong. Please try again.';
+                                        }
+                                    } else {
+                                        this.message = data.message || 'Something went wrong. Please try again.';
+                                    }
                                     this.messageType = 'error';
+                                    // Reset Turnstile on error
+                                    if (window.turnstile) {
+                                        const widget = document.querySelector('.cf-turnstile');
+                                        if (widget) window.turnstile.reset(widget);
+                                    }
                                 }
                             } catch (error) {
                                 this.message = 'Something went wrong. Please try again.';
@@ -73,7 +107,8 @@
                             }
                         }
                     }">
-                        <form @submit.prevent="submitNewsletter" class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+                        <form @submit.prevent="submitNewsletter" class="mt-8 space-y-4">
+                            <div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
                             <input
                                 type="email"
                                 x-model="email"
@@ -87,6 +122,16 @@
                                 <span x-show="!loading">Count me in</span>
                                 <span x-show="loading">Subscribing...</span>
                             </x-ui.gradient-button>
+                            </div>
+                            
+                            {{-- Turnstile widget for spam protection --}}
+                            <div class="flex justify-center">
+                                <x-turnstile 
+                                    data-theme="auto"
+                                    data-appearance="interaction-only"
+                                    data-size="normal"
+                                />
+                            </div>
                         </form>
 
                         <div x-show="message" x-transition class="mt-4">
