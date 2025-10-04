@@ -56,6 +56,9 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     
+    {{-- Cloudflare Turnstile scripts for spam protection --}}
+    @turnstileScripts()
+    
     {{-- Ensure Alpine loads in development --}}
     @if(app()->environment('local'))
         <script type="module" src="{{ config('app.url') }}:5174/resources/js/app.js" defer></script>

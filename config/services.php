@@ -39,4 +39,9 @@ return [
         'key' => env('INDEXNOW_KEY'),
     ],
 
+    'turnstile' => [
+        'key' => env('CLOUDFLARE_TURNSTILE_SITEKEY'),
+        'secret' => env('CLOUDFLARE_TURNSTILE_SECRETKEY'),
+    ],
+
 ];

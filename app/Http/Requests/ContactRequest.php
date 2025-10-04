@@ -29,6 +29,7 @@ class ContactRequest extends FormRequest
             'message' => 'required|string',
             'newsletter_opt_in' => 'boolean',
             'website' => 'nullable|string', // honeypot field
+            'cf-turnstile-response' => 'required|turnstile',
         ];
     }
 
@@ -44,6 +45,8 @@ class ContactRequest extends FormRequest
             'email.email' => 'Please enter a valid email address.',
             'subject.required' => 'Please select a subject.',
             'message.required' => 'Please enter a message.',
+            'cf-turnstile-response.required' => 'Please complete the security check.',
+            'cf-turnstile-response.turnstile' => 'The security check failed. Please try again.',
         ];
     }
 
