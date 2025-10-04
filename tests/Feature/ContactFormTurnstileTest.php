@@ -1,8 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Queue;
 use RyanChandler\LaravelCloudflareTurnstile\Responses\SiteverifyResponse;
 
 use function Pest\Laravel\mock;
+
+beforeEach(function () {
+    Queue::fake();
+});
 
 it('requires turnstile validation on contact form submission', function () {
     $response = $this->post(route('contact.store'), [
