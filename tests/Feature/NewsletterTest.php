@@ -26,6 +26,8 @@ it('shows the newsletter page with updated Human in the Loop branding', function
 
 it('subscribes to newsletter with valid email', function () {
     $this->mock(BentoService::class)
+        ->shouldReceive('validateEmail')
+        ->andReturn(true)
         ->shouldReceive('createOrUpdateSubscriber')
         ->once()
         ->andReturn(true);
@@ -60,6 +62,8 @@ it('validates email format for newsletter', function () {
 it('handles Bento API failure gracefully', function () {
     // Override the mock for this test
     $this->mock(BentoService::class)
+        ->shouldReceive('validateEmail')
+        ->andReturn(true)
         ->shouldReceive('createOrUpdateSubscriber')
         ->andReturn(false);
 

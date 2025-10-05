@@ -2,7 +2,10 @@
 
 namespace App\Http\Requests;
 
+use App\Integrations\BentoService;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Validation\ValidationException;
 
 class ContactRequest extends FormRequest
 {
@@ -11,6 +14,18 @@ class ContactRequest extends FormRequest
      */
     public function authorize(): bool
     {
+        // Optional: Check IP blacklist (low priority, disabled by default)
+        if (config('bentonow.check_blacklist', false)) {
+            $blacklistCheck = app(BentoService::class)->checkBlacklistStatus();
+            if (! $blacklistCheck['clean']) {
+                Log::warning('Contact form blocked - IP blacklisted', [
+                    'ip' => request()->ip(),
+                    'details' => $blacklistCheck['details'],
+                ]);
+                abort(403, 'Your request cannot be processed at this time.');
+            }
+        }
+        
         return true;
     }
 
@@ -58,5 +73,22 @@ class ContactRequest extends FormRequest
         $this->merge([
             'newsletter_opt_in' => $this->boolean('newsletter_opt_in'),
         ]);
+    }
+
+    /**
+     * Handle a passed validation attempt.
+     * Perform additional Bento email validation after Laravel validation passes.
+     */
+    protected function passedValidation(): void
+    {
+        // Validate email with Bento API for quality checks
+        $bentoService = app(BentoService::class);
+        $fullName = trim($this->first_name . ' ' . $this->last_name);
+        
+        if (! $bentoService->validateEmail($this->email, $fullName)) {
+            throw ValidationException::withMessages([
+                'email' => ['This email address appears to be invalid. Please check for typos and try again.'],
+            ]);
+        }
     }
 }

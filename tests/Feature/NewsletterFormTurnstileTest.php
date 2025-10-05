@@ -43,6 +43,8 @@ it('accepts newsletter signup with valid turnstile token', function () {
 
     // Mock BentoService to avoid actual API calls
     mock(\App\Integrations\BentoService::class)
+        ->shouldReceive('validateEmail')
+        ->andReturn(true)
         ->shouldReceive('createOrUpdateSubscriber')
         ->once()
         ->andReturn(true);
@@ -87,6 +89,8 @@ it('accepts AJAX newsletter signup with valid turnstile', function () {
 
     // Mock BentoService to avoid actual API calls
     mock(\App\Integrations\BentoService::class)
+        ->shouldReceive('validateEmail')
+        ->andReturn(true)
         ->shouldReceive('createOrUpdateSubscriber')
         ->once()
         ->andReturn(true);
