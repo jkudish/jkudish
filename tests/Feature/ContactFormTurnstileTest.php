@@ -54,6 +54,11 @@ it('accepts valid turnstile token', function () {
             errorCodes: []
         ));
 
+    // Mock BentoService for email validation
+    mock(\App\Integrations\BentoService::class)
+        ->shouldReceive('validateEmail')
+        ->andReturn(true);
+
     $response = $this->post(route('contact.store'), [
         'first_name' => 'John',
         'last_name' => 'Doe',
@@ -76,6 +81,11 @@ it('maintains existing honeypot protection alongside turnstile', function () {
             success: true,
             errorCodes: []
         ));
+
+    // Mock BentoService (though honeypot should prevent it from being called)
+    mock(\App\Integrations\BentoService::class)
+        ->shouldReceive('validateEmail')
+        ->andReturn(true);
 
     $response = $this->post(route('contact.store'), [
         'first_name' => 'John',
