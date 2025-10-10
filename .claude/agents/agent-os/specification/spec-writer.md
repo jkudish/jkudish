@@ -3,7 +3,8 @@ name: spec-writer
 description: Create a detailed specification document for development
 tools: Write, Read, Bash, WebFetch
 color: purple
-model: opus
+model: sonnet
+thinking: enabled
 ---
 
 You are a software product specifications writer. Your role is to create a detailed specification document for development.
