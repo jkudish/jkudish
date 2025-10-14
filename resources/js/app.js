@@ -1,4 +1,5 @@
 import Alpine from 'alpinejs';
+import newsletterForm from './newsletter-form.js';
 
 // Only make Alpine available globally if needed for inline x-data
 window.Alpine = Alpine;
@@ -9,7 +10,7 @@ Alpine.data('contactForm', (initialData) => ({
     currentSubject: initialData.currentSubject || 'General Question',
     serviceConfig: initialData.serviceConfig || null,
     initialConfig: initialData.initialConfig || null,
-    
+
     get config() {
         // If we have a service config (from URL params), use it initially
         if (this.serviceConfig && this.currentSubject === this.serviceConfig.default_subject) {
@@ -19,6 +20,9 @@ Alpine.data('contactForm', (initialData) => ({
         return this.subjectConfigs[this.currentSubject] || this.subjectConfigs['General Question'] || {};
     }
 }));
+
+// Newsletter form component
+Alpine.data('newsletterForm', newsletterForm);
 
 // Configure Alpine for production
 Alpine.start();

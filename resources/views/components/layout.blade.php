@@ -40,8 +40,19 @@
     <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('img/favicon/android-chrome-192x192.png') }}">
     <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('img/favicon/android-chrome-512x512.png') }}">
 
-    <!-- Browser theme color -->
-    <meta name="theme-color" content="#000000">
+     <!-- Browser theme color -->
+     <meta name="theme-color" content="#000000">
+
+     <!-- CSRF Token for JavaScript -->
+     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+     <!-- Newsletter routes for JavaScript -->
+     <script>
+         window.newsletterRoutes = {
+             store: '{{ route('newsletter.store') }}'
+         };
+         window.csrfToken = '{{ csrf_token() }}';
+     </script>
 
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://cdn.usefathom.com" crossorigin>
@@ -62,10 +73,9 @@
         @turnstileScripts()
     @endif
     
-    {{-- Ensure Alpine loads in development --}}
-    @if(app()->environment('local'))
-        <script type="module" src="{{ config('app.url') }}:5174/resources/js/app.js" defer></script>
-    @endif
+     {{-- Load Alpine.js for interactive components --}}
+     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+     @vite(['resources/js/app.js'])
 
     <!-- Fathom - beautiful, simple website analytics -->
     <script src="https://cdn.usefathom.com/script.js" data-site="OLWGPIDF" defer></script>
