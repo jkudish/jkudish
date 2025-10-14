@@ -68,7 +68,7 @@
                                 const data = await response.json();
 
                                 if (response.ok) {
-                                    this.message = data.message || 'Welcome to Human in the Loop! You\'ll receive the first issue right away.';
+                                    this.message = data.message || 'Welcome to Human in the Loop! You will receive the first issue right away.';
                                     this.messageType = 'success';
                                     this.email = '';
 
