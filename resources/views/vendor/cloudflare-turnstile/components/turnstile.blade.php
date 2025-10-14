@@ -19,9 +19,13 @@ $model = $attributes->has('wire:model') ? $attributes->get('wire:model') : null;
         data-expired-callback="{{ $id }}ExpiredCallback"
         data-timeout-callback="{{ $id }}ExpiredCallback"
         {{ $attributes->filter(fn($value, $key) => ! in_array($key, ['data-callback', 'data-expired-callback', 'data-timeout-callback', 'wire:model', 'id'])) }}
-    @else
-        {{ $attributes->whereStartsWith('data-') }}
-    @endif
+@else
+    @foreach($attributes as $key => $value)
+        @if(str_starts_with($key, 'data-'))
+            {{ $key }}="{{ $value }}"
+        @endif
+    @endforeach
+@endif
 ></div>
 
 @if ($model)
