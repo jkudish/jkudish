@@ -116,3 +116,29 @@ it('only displays sent newsletters', function () {
     $response->assertSee('Sent Newsletter');
     $response->assertDontSee('Unsent Newsletter');
 });
+
+it('only displays broadcasts with issue numbers', function () {
+    Broadcast::create([
+        'bento_id' => 'with-issue-1',
+        'issue_number' => '007',
+        'name' => 'Newsletter With Issue Number',
+        'subject' => 'Test Subject',
+        'html_content' => '<p>Test content</p>',
+        'sent_at' => now()->subDays(1),
+    ]);
+
+    Broadcast::create([
+        'bento_id' => 'without-issue-1',
+        'issue_number' => null,
+        'name' => 'Newsletter Without Issue Number',
+        'subject' => 'Test Subject',
+        'html_content' => '<p>Test content</p>',
+        'sent_at' => now()->subDays(1),
+    ]);
+
+    $response = $this->get('/newsletter');
+
+    $response->assertStatus(200);
+    $response->assertSee('Newsletter With Issue Number');
+    $response->assertDontSee('Newsletter Without Issue Number');
+});

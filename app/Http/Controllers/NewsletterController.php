@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\NewsletterRequest;
 use App\Integrations\BentoService;
 use App\Models\Broadcast;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class NewsletterController extends Controller
@@ -20,6 +19,7 @@ class NewsletterController extends Controller
     public function index(): View
     {
         $broadcasts = Broadcast::sent()
+            ->whereNotNull('issue_number')
             ->latest('sent_at')
             ->get();
 
