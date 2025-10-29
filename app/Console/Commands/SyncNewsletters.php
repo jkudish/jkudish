@@ -97,8 +97,8 @@ class SyncNewsletters extends Command
      */
     private function extractIssueNumber(string $name): ?string
     {
-        // Match patterns like "Issue #001:" or "Issue #1:" etc.
-        if (preg_match('/Issue\s*#(\d+)/i', $name, $matches)) {
+        // Match patterns like "Issue #001:", "#001 -", or "Issue #1:" etc.
+        if (preg_match('/(?:Issue\s*)?#(\d+)/i', $name, $matches)) {
             // Pad to 3 digits for consistency (001, 002, etc.)
             return str_pad($matches[1], 3, '0', STR_PAD_LEFT);
         }
