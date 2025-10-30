@@ -62,6 +62,11 @@
                                 [&_blockquote]:rounded-r-xl [&_blockquote]:px-6 [&_blockquote]:py-4 [&_blockquote]:my-6
                                 [&_blockquote]:not-italic
                                 [&_blockquote_p]:text-zinc-700 dark:[&_blockquote_p]:text-zinc-200 [&_blockquote_p]:mb-0 [&_blockquote_p]:last:mb-0
+                                [&_.bento-blockquote]:border-l-4 [&_.bento-blockquote]:border-teal-500 dark:[&_.bento-blockquote]:border-teal-400
+                                [&_.bento-blockquote]:bg-teal-50 dark:[&_.bento-blockquote]:bg-teal-950/50
+                                [&_.bento-blockquote]:rounded-r-xl [&_.bento-blockquote]:px-6 [&_.bento-blockquote]:py-4 [&_.bento-blockquote]:my-6
+                                [&_.bento-blockquote]:not-italic
+                                [&_.bento-blockquote_p]:text-zinc-700 dark:[&_.bento-blockquote_p]:text-zinc-200 [&_.bento-blockquote_p]:mb-0 [&_.bento-blockquote_p]:last:mb-0
                                 [&_[data-type='bento-callout']]:!border-l-teal-500 dark:[&_[data-type='bento-callout']]:!border-l-teal-400
                                 [&_[data-type='bento-callout']]:!bg-teal-50 dark:[&_[data-type='bento-callout']]:!bg-teal-950/50
                                 [&_[data-type='bento-callout']]:!text-zinc-700 dark:[&_[data-type='bento-callout']]:!text-zinc-200">
