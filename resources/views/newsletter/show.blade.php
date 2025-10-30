@@ -69,7 +69,11 @@
                                 [&_.bento-blockquote_p]:text-zinc-700 dark:[&_.bento-blockquote_p]:text-zinc-200 [&_.bento-blockquote_p]:mb-0 [&_.bento-blockquote_p]:last:mb-0 [&_.bento-blockquote_p]:block
                                 [&_[data-type='bento-callout']]:!border-l-teal-500 dark:[&_[data-type='bento-callout']]:!border-l-teal-400
                                 [&_[data-type='bento-callout']]:!bg-teal-50 dark:[&_[data-type='bento-callout']]:!bg-teal-950/50
-                                [&_[data-type='bento-callout']]:!text-zinc-700 dark:[&_[data-type='bento-callout']]:!text-zinc-200">
+                                [&_[data-type='bento-callout']]:!text-zinc-700 dark:[&_[data-type='bento-callout']]:!text-zinc-200
+                                [&_pre]:bg-zinc-100 dark:[&_pre]:bg-zinc-800 [&_pre]:rounded-lg [&_pre]:p-4 [&_pre]:my-6 [&_pre]:overflow-x-auto
+                                [&_pre_code]:text-sm [&_pre_code]:text-zinc-800 dark:[&_pre_code]:text-zinc-200 [&_pre_code]:font-mono
+                                [&_.bento-code-block]:bg-zinc-100 dark:[&_.bento-code-block]:bg-zinc-800 [&_.bento-code-block]:rounded-lg [&_.bento-code-block]:p-4 [&_.bento-code-block]:my-6 [&_.bento-code-block]:overflow-x-auto
+                                [&_.bento-code-block_code]:text-sm [&_.bento-code-block_code]:text-zinc-800 dark:[&_.bento-code-block_code]:text-zinc-200 [&_.bento-code-block_code]:font-mono [&_.bento-code-block_code]:whitespace-pre-wrap">
                         {!! $broadcast->html_content !!}
                     </div>
                 </div>
