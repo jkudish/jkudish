@@ -48,7 +48,7 @@
                     <div class="prose prose-lg max-w-none
                                 [&_p]:text-zinc-700 dark:[&_p]:text-zinc-300 [&_p]:mb-6 [&_p]:leading-relaxed
                                 [&_h1]:hidden
-                                [&_p:first-of-type]:hidden
+                                [&>p:first-of-type]:hidden
                                 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-zinc-900 dark:[&_h2]:text-zinc-100 [&_h2]:mb-5 [&_h2]:mt-8
                                 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-zinc-900 dark:[&_h3]:text-zinc-100 [&_h3]:mb-4 [&_h3]:mt-6
                                 [&_h4]:text-lg [&_h4]:font-semibold [&_h4]:text-zinc-900 dark:[&_h4]:text-zinc-100 [&_h4]:mb-3 [&_h4]:mt-4
