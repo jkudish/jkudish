@@ -47,6 +47,9 @@ class SyncNewsletters extends Command
                 // Extract issue number from name (e.g., "Issue #001: Title" -> "001")
                 $issueNumber = $this->extractIssueNumber($broadcastData['name']);
 
+                // Normalize name to consistent format: "#001 - Title"
+                $normalizedName = $this->normalizeName($broadcastData['name'], $issueNumber);
+
                 // Clean up content - remove accidental double chat emoji
                 $cleanedContent = str_replace('💬💬', '', $broadcastData['html_content']);
 
@@ -54,7 +57,7 @@ class SyncNewsletters extends Command
                     ['bento_id' => $broadcastData['bento_id']],
                     [
                         'issue_number' => $issueNumber,
-                        'name' => $broadcastData['name'],
+                        'name' => $normalizedName,
                         'subject' => $broadcastData['subject'],
                         'html_content' => $cleanedContent,
                         'share_url' => $broadcastData['share_url'],
@@ -110,5 +113,21 @@ class SyncNewsletters extends Command
         }
 
         return null;
+    }
+
+    /**
+     * Normalize broadcast name to consistent format: "#001 - Title"
+     */
+    private function normalizeName(string $name, ?string $issueNumber): string
+    {
+        if ($issueNumber === null) {
+            return $name;
+        }
+
+        // Extract the title portion by removing issue number prefixes
+        // Handles: "Issue #001: Title", "Issue #001 - Title", "#001 - Title", "001 - Title"
+        $title = preg_replace('/^(?:Issue\s*)?#?\d+\s*[-:]\s*/i', '', $name);
+
+        return "#{$issueNumber} - {$title}";
     }
 }
