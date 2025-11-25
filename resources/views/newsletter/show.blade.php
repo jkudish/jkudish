@@ -1,6 +1,8 @@
 <x-layout
     :title="$broadcast->name . ' - Human in the Loop Newsletter'"
     :description="$broadcast->subject"
+    image="{{ asset('img/social/human-in-the-loop.png') }}"
+    imageAlt="Human in the Loop Newsletter - AI won't replace you. But you + AI will replace you without it."
     :appendSiteName="false"
 >
     <div class="flex justify-center my-8 lg:my-12">
