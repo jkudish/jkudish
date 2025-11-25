@@ -36,6 +36,7 @@ class SyncNewsletters extends Command
             if (empty($broadcasts)) {
                 $this->warn('No broadcasts found in Bento API');
                 Log::info('Newsletter sync completed: No broadcasts found');
+
                 return self::SUCCESS;
             }
 
@@ -69,10 +70,10 @@ class SyncNewsletters extends Command
                 }
             }
 
-            $this->info("Newsletter sync completed successfully!");
+            $this->info('Newsletter sync completed successfully!');
             $this->info("New broadcasts: {$newCount}");
             $this->info("Updated broadcasts: {$updatedCount}");
-            $this->info("Total broadcasts: ".count($broadcasts));
+            $this->info('Total broadcasts: '.count($broadcasts));
 
             Log::info('Newsletter sync completed', [
                 'new_count' => $newCount,
@@ -97,9 +98,14 @@ class SyncNewsletters extends Command
      */
     private function extractIssueNumber(string $name): ?string
     {
-        // Match patterns like "Issue #001:", "#001 -", or "Issue #1:" etc.
+        // Match patterns like "Issue #001:", "#001 -", "Issue #1:", or "004 -" (leading digits)
         if (preg_match('/(?:Issue\s*)?#(\d+)/i', $name, $matches)) {
             // Pad to 3 digits for consistency (001, 002, etc.)
+            return str_pad($matches[1], 3, '0', STR_PAD_LEFT);
+        }
+
+        // Match leading digits at start of name (e.g., "004 - Title")
+        if (preg_match('/^(\d+)\s*-/', $name, $matches)) {
             return str_pad($matches[1], 3, '0', STR_PAD_LEFT);
         }
 
