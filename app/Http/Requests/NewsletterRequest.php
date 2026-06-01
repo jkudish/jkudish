@@ -3,11 +3,11 @@
 namespace App\Http\Requests;
 
 use App\Integrations\BentoService;
+use App\Rules\Turnstile;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
-use RyanChandler\LaravelCloudflareTurnstile\Rules\Turnstile;
 
 class NewsletterRequest extends FormRequest
 {
@@ -54,7 +54,6 @@ class NewsletterRequest extends FormRequest
             'email.email' => 'Please enter a valid email address.',
             'email.max' => 'Email address is too long.',
             'cf-turnstile-response.required' => 'Please complete the security check.',
-            'cf-turnstile-response.turnstile' => 'The security check failed. Please try again.',
         ];
     }
 

@@ -3,11 +3,11 @@
 namespace App\Http\Requests;
 
 use App\Integrations\BentoService;
+use App\Rules\Turnstile;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
-use RyanChandler\LaravelCloudflareTurnstile\Rules\Turnstile;
 
 class ContactRequest extends FormRequest
 {
@@ -63,7 +63,6 @@ class ContactRequest extends FormRequest
             'subject.required' => 'Please select a subject.',
             'message.required' => 'Please enter a message.',
             'cf-turnstile-response.required' => 'Please complete the security check.',
-            'cf-turnstile-response.turnstile' => 'The security check failed. Please try again.',
         ];
     }
 

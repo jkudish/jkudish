@@ -1,7 +1,7 @@
 <?php
 
+use App\Rules\Turnstile;
 use Illuminate\Support\Facades\Config;
-use RyanChandler\LaravelCloudflareTurnstile\Rules\Turnstile;
 
 it('has turnstile configuration available', function () {
     // After package installation, config should be available

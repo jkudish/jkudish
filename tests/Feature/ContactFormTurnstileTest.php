@@ -35,7 +35,9 @@ it('fails with invalid turnstile token', function () {
         'cf-turnstile-response' => 'invalid-token',
     ]);
 
-    $response->assertSessionHasErrors('cf-turnstile-response');
+    $response->assertSessionHasErrors([
+        'cf-turnstile-response' => 'The security check failed. Please try again.',
+    ]);
 });
 
 it('accepts valid turnstile token', function () {
