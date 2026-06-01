@@ -1,6 +1,7 @@
 <?php
 
-use RyanChandler\LaravelCloudflareTurnstile\Responses\SiteverifyResponse;
+use App\Integrations\BentoService;
+use RyanChandler\LaravelCloudflareTurnstile\Facades\Turnstile;
 
 use function Pest\Laravel\mock;
 
@@ -14,14 +15,7 @@ it('requires turnstile validation on newsletter form submission', function () {
 });
 
 it('fails newsletter signup with invalid turnstile token', function () {
-    // Mock the TurnstileClient to simulate failure
-    mock(\RyanChandler\LaravelCloudflareTurnstile\TurnstileClient::class)
-        ->shouldReceive('siteverify')
-        ->once()
-        ->andReturn(new SiteverifyResponse(
-            success: false,
-            errorCodes: ['invalid-input-response']
-        ));
+    Turnstile::fake()->fail();
 
     $response = $this->post(route('newsletter.store'), [
         'email' => 'john@example.com',
@@ -32,17 +26,10 @@ it('fails newsletter signup with invalid turnstile token', function () {
 });
 
 it('accepts newsletter signup with valid turnstile token', function () {
-    // Mock the TurnstileClient to simulate success
-    mock(\RyanChandler\LaravelCloudflareTurnstile\TurnstileClient::class)
-        ->shouldReceive('siteverify')
-        ->once()
-        ->andReturn(new SiteverifyResponse(
-            success: true,
-            errorCodes: []
-        ));
+    Turnstile::fake();
 
     // Mock BentoService to avoid actual API calls
-    mock(\App\Integrations\BentoService::class)
+    mock(BentoService::class)
         ->shouldReceive('validateEmail')
         ->andReturn(true)
         ->shouldReceive('createOrUpdateSubscriber')
@@ -59,14 +46,7 @@ it('accepts newsletter signup with valid turnstile token', function () {
 });
 
 it('handles turnstile validation on AJAX newsletter submissions', function () {
-    // Mock the TurnstileClient to simulate failure
-    mock(\RyanChandler\LaravelCloudflareTurnstile\TurnstileClient::class)
-        ->shouldReceive('siteverify')
-        ->once()
-        ->andReturn(new SiteverifyResponse(
-            success: false,
-            errorCodes: ['invalid-input-response']
-        ));
+    Turnstile::fake()->fail();
 
     $response = $this->postJson(route('newsletter.store'), [
         'email' => 'john@example.com',
@@ -78,17 +58,10 @@ it('handles turnstile validation on AJAX newsletter submissions', function () {
 });
 
 it('accepts AJAX newsletter signup with valid turnstile', function () {
-    // Mock the TurnstileClient to simulate success
-    mock(\RyanChandler\LaravelCloudflareTurnstile\TurnstileClient::class)
-        ->shouldReceive('siteverify')
-        ->once()
-        ->andReturn(new SiteverifyResponse(
-            success: true,
-            errorCodes: []
-        ));
+    Turnstile::fake();
 
     // Mock BentoService to avoid actual API calls
-    mock(\App\Integrations\BentoService::class)
+    mock(BentoService::class)
         ->shouldReceive('validateEmail')
         ->andReturn(true)
         ->shouldReceive('createOrUpdateSubscriber')

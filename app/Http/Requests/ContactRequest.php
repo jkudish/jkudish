@@ -3,9 +3,11 @@
 namespace App\Http\Requests;
 
 use App\Integrations\BentoService;
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
+use RyanChandler\LaravelCloudflareTurnstile\Rules\Turnstile;
 
 class ContactRequest extends FormRequest
 {
@@ -25,14 +27,14 @@ class ContactRequest extends FormRequest
                 abort(403, 'Your request cannot be processed at this time.');
             }
         }
-        
+
         return true;
     }
 
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array<string, ValidationRule|array<mixed>|string>
      */
     public function rules(): array
     {
@@ -44,7 +46,7 @@ class ContactRequest extends FormRequest
             'message' => 'required|string',
             'newsletter_opt_in' => 'boolean',
             'website' => 'nullable|string', // honeypot field
-            'cf-turnstile-response' => 'required|turnstile',
+            'cf-turnstile-response' => ['required', new Turnstile],
         ];
     }
 
@@ -83,8 +85,8 @@ class ContactRequest extends FormRequest
     {
         // Validate email with Bento API for quality checks
         $bentoService = app(BentoService::class);
-        $fullName = trim($this->first_name . ' ' . $this->last_name);
-        
+        $fullName = trim($this->first_name.' '.$this->last_name);
+
         if (! $bentoService->validateEmail($this->email, $fullName)) {
             throw ValidationException::withMessages([
                 'email' => ['This email address appears to be invalid. Please check for typos and try again.'],

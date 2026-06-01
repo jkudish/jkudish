@@ -1,21 +1,14 @@
 <?php
 
+use App\Integrations\BentoService;
 use App\Jobs\ProcessContactFormSubmission;
 use Illuminate\Support\Facades\Queue;
-use RyanChandler\LaravelCloudflareTurnstile\Responses\SiteverifyResponse;
-
-use function Pest\Laravel\mock;
+use RyanChandler\LaravelCloudflareTurnstile\Facades\Turnstile;
 
 beforeEach(function () {
     Queue::fake();
 
-    // Mock Turnstile to always pass for existing tests
-    mock(\RyanChandler\LaravelCloudflareTurnstile\TurnstileClient::class)
-        ->shouldReceive('siteverify')
-        ->andReturn(new SiteverifyResponse(
-            success: true,
-            errorCodes: []
-        ));
+    Turnstile::fake();
 });
 
 it('shows the contact page', function () {
@@ -28,10 +21,10 @@ it('shows the contact page', function () {
 
 it('submits contact form with newsletter opt-in', function () {
     // Mock Bento validation
-    $this->mock(\App\Integrations\BentoService::class)
+    $this->mock(BentoService::class)
         ->shouldReceive('validateEmail')
         ->andReturn(true);
-        
+
     $response = $this->post('/contact', [
         'first_name' => 'John',
         'last_name' => 'Doe',
@@ -54,10 +47,10 @@ it('submits contact form with newsletter opt-in', function () {
 
 it('submits contact form without newsletter opt-in', function () {
     // Mock Bento validation
-    $this->mock(\App\Integrations\BentoService::class)
+    $this->mock(BentoService::class)
         ->shouldReceive('validateEmail')
         ->andReturn(true);
-        
+
     $response = $this->post('/contact', [
         'first_name' => 'Jane',
         'last_name' => 'Smith',
@@ -79,10 +72,10 @@ it('submits contact form without newsletter opt-in', function () {
 
 it('rejects spam submissions with honeypot field', function () {
     // Mock Bento validation (even though honeypot will prevent it from being called)
-    $this->mock(\App\Integrations\BentoService::class)
+    $this->mock(BentoService::class)
         ->shouldReceive('validateEmail')
         ->andReturn(true);
-        
+
     $response = $this->post('/contact', [
         'first_name' => 'Spam',
         'last_name' => 'Bot',

@@ -2,22 +2,16 @@
 
 use App\Integrations\BentoService;
 use Illuminate\Support\Facades\Cache;
-use RyanChandler\LaravelCloudflareTurnstile\Responses\SiteverifyResponse;
+use Illuminate\Support\Facades\Queue;
+use RyanChandler\LaravelCloudflareTurnstile\Facades\Turnstile;
 
-use function Pest\Laravel\mock;
 use function Pest\Laravel\post;
 
 beforeEach(function () {
     // Clear cache before each test
     Cache::flush();
-    
-    // Mock Turnstile to always pass for validation tests
-    mock(\RyanChandler\LaravelCloudflareTurnstile\TurnstileClient::class)
-        ->shouldReceive('siteverify')
-        ->andReturn(new SiteverifyResponse(
-            success: true,
-            errorCodes: []
-        ));
+
+    Turnstile::fake();
 });
 
 describe('Newsletter Form Bento Validation', function () {
@@ -77,7 +71,7 @@ describe('Newsletter Form Bento Validation', function () {
 describe('Contact Form Bento Validation', function () {
     beforeEach(function () {
         // Mock the job dispatch for contact form
-        \Illuminate\Support\Facades\Queue::fake();
+        Queue::fake();
     });
 
     it('accepts contact form when Bento validates email', function () {

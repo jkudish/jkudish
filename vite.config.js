@@ -25,6 +25,7 @@ export default defineConfig({
                 chunkFileNames: 'assets/[name]-[hash].js',
                 entryFileNames: 'assets/[name]-[hash].js',
                 assetFileNames: 'assets/[name]-[hash][extname]',
+                hashCharacters: 'hex',
             }
         },
         minify: 'terser',

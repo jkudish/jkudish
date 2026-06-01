@@ -1,18 +1,10 @@
 <?php
 
 use App\Integrations\BentoService;
-use RyanChandler\LaravelCloudflareTurnstile\Responses\SiteverifyResponse;
-
-use function Pest\Laravel\mock;
+use RyanChandler\LaravelCloudflareTurnstile\Facades\Turnstile;
 
 beforeEach(function () {
-    // Mock Turnstile to always pass for existing tests
-    mock(\RyanChandler\LaravelCloudflareTurnstile\TurnstileClient::class)
-        ->shouldReceive('siteverify')
-        ->andReturn(new SiteverifyResponse(
-            success: true,
-            errorCodes: []
-        ));
+    Turnstile::fake();
 });
 
 it('shows the newsletter page with updated Human in the Loop branding', function () {

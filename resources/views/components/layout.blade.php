@@ -70,7 +70,7 @@
     {{-- Cloudflare Turnstile scripts for spam protection - only load on pages with forms --}}
     {{-- Load on contact page, newsletter pages, or any page that shows the footer newsletter form --}}
     @if(request()->routeIs(['contact', 'newsletter', 'newsletter.show']) || !$hideNewsletter)
-        @turnstileScripts()
+        <x-turnstile.scripts />
     @endif
     
      {{-- Load Alpine.js for interactive components --}}

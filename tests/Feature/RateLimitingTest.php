@@ -1,22 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Cache;
-use RyanChandler\LaravelCloudflareTurnstile\Responses\SiteverifyResponse;
+use RyanChandler\LaravelCloudflareTurnstile\Facades\Turnstile;
 
-use function Pest\Laravel\mock;
 use function Pest\Laravel\post;
 
 beforeEach(function () {
     // Clear any existing rate limit data
     Cache::flush();
 
-    // Mock Turnstile to always pass for these tests
-    mock(\RyanChandler\LaravelCloudflareTurnstile\TurnstileClient::class)
-        ->shouldReceive('siteverify')
-        ->andReturn(new SiteverifyResponse(
-            success: true,
-            errorCodes: []
-        ));
+    Turnstile::fake();
 });
 
 it('rate limits contact form submissions to 5 per minute', function () {
