@@ -11,7 +11,7 @@ Expert software developer and AI automation specialist helping businesses build 
 
 ## Key Features
 
-- 18+ years of professional software development experience
+- 20+ years of professional software development experience
 - Expertise in Laravel ecosystem and modern PHP development
 - Specialization in AI-powered automation and workflow optimization
 - Strong focus on clean code, testing, and maintainable architecture
@@ -41,7 +41,7 @@ Expert software developer and AI automation specialist helping businesses build 
 - **Tether**: SMS verification codes delivered to Telegram
 - **PHAiTO**: AI-powered Lightroom catalog editing
 - **Image Salon**: Platform for 6,000+ photographers globally
-- **WordPress/WooCommerce**: 18 years building at scale
+- **WordPress/WooCommerce**: 20 years building at scale
 - **The Maker Notes**: Weekly AI and automation newsletter
 
 ## Speaking Topics

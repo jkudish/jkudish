@@ -313,7 +313,7 @@
                             <div>
                                 <p class="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
                                     When I'm not speaking at conferences, I'm a software developer and AI automation consultant 
-                                    with 18+ years of experience building scalable web applications.
+                                    with 20+ years of experience building scalable web applications.
                                 </p>
                                 <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
                                     I specialize in Laravel, WordPress, and modern PHP development. I help businesses 

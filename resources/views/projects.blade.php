@@ -15,7 +15,7 @@
                                 Projects & Work
                             </x-ui.typography>
                             <p class="mt-6 text-lg text-zinc-600 dark:text-zinc-400">
-                                What I've built, broken, and shipped over 18 years.
+                                What I've built, broken, and shipped over 20 years.
                             </p>
                         </header>
                     </div>
@@ -45,7 +45,7 @@
                                     'tagline' => 'E-commerce at Scale',
                                     'logo' => asset('img/companies/wordpress.png'),
                                     'logo_webp' => asset('img/companies/wordpress.webp'),
-                                    'story' => 'Over 18 years building for the web. WordPress Core contributor since 2011, with features and platforms used by millions across the ecosystem.',
+                                    'story' => 'Over 20 years building for the web. WordPress Core contributor since 2011, with features and platforms used by millions across the ecosystem.',
                                     'highlights' => [
                                         'At Automattic - Worked on WooCommerce, Jetpack and WordPress.com',
                                         'At Metorik - Helped scale an analytics platform processing millions in GMV for WooCommerce/Shopify stores',

@@ -25,7 +25,7 @@
                 </div>
                 <div class="flex items-center gap-2">
                     <x-icon name="lucide-check-circle" class="w-4 h-4 text-teal-600" />
-                    <span>18+ Years Experience</span>
+                    <span>20+ Years Experience</span>
                 </div>
                 <div class="flex items-center gap-2">
                     <x-icon name="lucide-check-circle" class="w-4 h-4 text-teal-600" />

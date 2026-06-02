@@ -1,7 +1,7 @@
 @php
 $metrics = [
     [
-        'value' => '18+',
+        'value' => '20+',
         'label' => 'Years Experience',
         'description' => 'Building software since 2006'
     ],
@@ -58,7 +58,7 @@ $testimonials = [
             Proven Track Record
         </x-ui.typography>
         <p class="mt-4 text-lg font-sans text-zinc-600 dark:text-zinc-400">
-            For nearly two decades, building successful software has been my focus.
+            For over two decades, building successful software has been my focus.
         </p>
     </div>
 
