@@ -13,7 +13,7 @@ $metrics = [
     [
         'value' => '2011',
         'label' => 'First WordPress Contribution',
-        'description' => 'Contributing to open source for 13+ years'
+        'description' => 'Contributing to open source for 15+ years'
     ],
 ];
 
