@@ -27,7 +27,7 @@ it('shows proper mobile layout on all key sections', function () {
         ->assertSee('Tether') // Projects showing
         ->assertSee('PHAiTO')
         ->assertSee('Human in the Loop')
-        ->assertSee('18+') // Metrics showing
+        ->assertSee('20+') // Metrics showing
         ->assertSee('100+')
         ->assertSee("I've worked with Joey"); // Testimonials showing
 });
