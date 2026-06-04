@@ -1,7 +1,8 @@
 <?php
 
+use App\Integrations\BentoService;
 use Illuminate\Support\Facades\Queue;
-use RyanChandler\LaravelCloudflareTurnstile\Responses\SiteverifyResponse;
+use RyanChandler\LaravelCloudflareTurnstile\Facades\Turnstile;
 
 use function Pest\Laravel\mock;
 
@@ -23,14 +24,7 @@ it('requires turnstile validation on contact form submission', function () {
 });
 
 it('fails with invalid turnstile token', function () {
-    // Mock the TurnstileClient to simulate failure
-    mock(\RyanChandler\LaravelCloudflareTurnstile\TurnstileClient::class)
-        ->shouldReceive('siteverify')
-        ->once()
-        ->andReturn(new SiteverifyResponse(
-            success: false,
-            errorCodes: ['invalid-input-response']
-        ));
+    Turnstile::fake()->fail();
 
     $response = $this->post(route('contact.store'), [
         'first_name' => 'John',
@@ -41,21 +35,16 @@ it('fails with invalid turnstile token', function () {
         'cf-turnstile-response' => 'invalid-token',
     ]);
 
-    $response->assertSessionHasErrors('cf-turnstile-response');
+    $response->assertSessionHasErrors([
+        'cf-turnstile-response' => 'The security check failed. Please try again.',
+    ]);
 });
 
 it('accepts valid turnstile token', function () {
-    // Mock the TurnstileClient to simulate success
-    mock(\RyanChandler\LaravelCloudflareTurnstile\TurnstileClient::class)
-        ->shouldReceive('siteverify')
-        ->once()
-        ->andReturn(new SiteverifyResponse(
-            success: true,
-            errorCodes: []
-        ));
+    Turnstile::fake();
 
     // Mock BentoService for email validation
-    mock(\App\Integrations\BentoService::class)
+    mock(BentoService::class)
         ->shouldReceive('validateEmail')
         ->andReturn(true);
 
@@ -74,16 +63,10 @@ it('accepts valid turnstile token', function () {
 
 it('maintains existing honeypot protection alongside turnstile', function () {
     // Even with valid Turnstile, honeypot should still work
-    mock(\RyanChandler\LaravelCloudflareTurnstile\TurnstileClient::class)
-        ->shouldReceive('siteverify')
-        ->once()
-        ->andReturn(new SiteverifyResponse(
-            success: true,
-            errorCodes: []
-        ));
+    Turnstile::fake();
 
     // Mock BentoService (though honeypot should prevent it from being called)
-    mock(\App\Integrations\BentoService::class)
+    mock(BentoService::class)
         ->shouldReceive('validateEmail')
         ->andReturn(true);
 

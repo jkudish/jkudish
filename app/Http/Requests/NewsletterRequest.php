@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use App\Integrations\BentoService;
+use App\Rules\Turnstile;
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
@@ -25,20 +27,20 @@ class NewsletterRequest extends FormRequest
                 abort(403, 'Your request cannot be processed at this time.');
             }
         }
-        
+
         return true;
     }
 
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array<string, ValidationRule|array<mixed>|string>
      */
     public function rules(): array
     {
         return [
             'email' => 'required|email:rfc|max:255',
-            'cf-turnstile-response' => 'required|turnstile',
+            'cf-turnstile-response' => ['required', new Turnstile],
         ];
     }
 
@@ -52,7 +54,6 @@ class NewsletterRequest extends FormRequest
             'email.email' => 'Please enter a valid email address.',
             'email.max' => 'Email address is too long.',
             'cf-turnstile-response.required' => 'Please complete the security check.',
-            'cf-turnstile-response.turnstile' => 'The security check failed. Please try again.',
         ];
     }
 
@@ -64,7 +65,7 @@ class NewsletterRequest extends FormRequest
     {
         // Validate email with Bento API for quality checks
         $bentoService = app(BentoService::class);
-        
+
         if (! $bentoService->validateEmail($this->email)) {
             throw ValidationException::withMessages([
                 'email' => ['This email address appears to be invalid or temporary. Please use a valid email address.'],

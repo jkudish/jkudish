@@ -1,5 +1,6 @@
 <?php
 
+use App\Rules\Turnstile;
 use Illuminate\Support\Facades\Config;
 
 it('has turnstile configuration available', function () {
@@ -19,8 +20,8 @@ it('uses test keys in local environment', function () {
 
 it('has turnstile validation rule available', function () {
     // After package installation, the rule should be available
-    $rules = ['cf-turnstile-response' => 'required|turnstile'];
+    $rules = ['cf-turnstile-response' => ['required', new Turnstile]];
 
     // This will work after package is installed
-    expect($rules['cf-turnstile-response'])->toContain('turnstile');
+    expect($rules['cf-turnstile-response'][1])->toBeInstanceOf(Turnstile::class);
 });
