@@ -1,4 +1,11 @@
-## Hi there 👋
+##  Hey, I'm Joey 👋
+
+20 years of shipping code to production. AI Engineer
+I offer consulting services at [Agentsy](https://agentsy.build)
+I build [PHAiTO](https://phaito.com), [Tether Mobile](https://tethermobile.com)
+I write the [Human in The Loop](https://jkudish.com/newsletter) newsletter
+
+AI has unlocked next level productivity and I can help you leverage it in your business.
 
 <div align="center">
   <a href="https://commit-history.com/jkudish">
