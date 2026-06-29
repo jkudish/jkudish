@@ -1,9 +1,9 @@
 ##  Hey, I'm Joey 👋
 
-20 years of shipping code to production. AI Engineer
-I offer consulting services at [Agentsy](https://agentsy.build)
-I build [PHAiTO](https://phaito.com), [Tether Mobile](https://tethermobile.com)
-I write the [Human in The Loop](https://jkudish.com/newsletter) newsletter
+20 years of shipping code to production. AI Engineer<br />
+I offer consulting services at [Agentsy](https://agentsy.build)<br />
+I build [PHAiTO](https://phaito.com), [Tether Mobile](https://tethermobile.com)<br />
+I write the [Human in The Loop](https://jkudish.com/newsletter) newsletter<br />
 
 AI has unlocked next level productivity and I can help you leverage it in your business.
 
