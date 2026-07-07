@@ -121,6 +121,7 @@ class BentoService
         try {
             $broadcasts = collect();
             $page = 1;
+            $maxPages = max(1, (int) config('bentonow.broadcasts_max_pages', 50));
 
             do {
                 $response = Http::withBasicAuth(
@@ -149,6 +150,15 @@ class BentoService
 
                 $data = $response->json('data') ?? [];
                 $broadcasts = $broadcasts->merge($data);
+
+                if (! empty($data) && $page >= $maxPages) {
+                    Log::warning('Bento getBroadcasts stopped at configured page limit', [
+                        'max_pages' => $maxPages,
+                    ]);
+
+                    break;
+                }
+
                 $page++;
             } while (! empty($data));
 
