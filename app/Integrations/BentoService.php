@@ -8,10 +8,13 @@ use Bentonow\BentoLaravel\DataTransferObjects\ImportSubscribersData;
 use Bentonow\BentoLaravel\DataTransferObjects\ValidateEmailData;
 use Bentonow\BentoLaravel\Facades\Bento;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
 class BentoService
 {
+    private const BROADCASTS_ENDPOINT = 'https://app.bentonow.com/api/v1/fetch/broadcasts';
+
     /**
      * Track a pageview event
      */
@@ -116,19 +119,41 @@ class BentoService
     public function getBroadcasts(): array
     {
         try {
-            $response = Bento::getBroadcasts();
+            $broadcasts = collect();
+            $page = 1;
 
-            if (! $response->successful()) {
-                Log::error('Bento getBroadcasts API call failed', [
-                    'status' => $response->status(),
-                ]);
-                return [];
-            }
+            do {
+                $response = Http::withBasicAuth(
+                    config('bentonow.publishable_key'),
+                    config('bentonow.secret_key')
+                )
+                    ->acceptJson()
+                    ->get(self::BROADCASTS_ENDPOINT, [
+                        'site_uuid' => config('bentonow.site_uuid'),
+                        'page' => $page,
+                        'status' => 'sent',
+                    ]);
 
-            $data = $response->json('data') ?? [];
+                if (! $response->successful()) {
+                    Log::error('Bento getBroadcasts API call failed', [
+                        'page' => $page,
+                        'status' => $response->status(),
+                    ]);
+
+                    if ($broadcasts->isEmpty()) {
+                        return [];
+                    }
+
+                    break;
+                }
+
+                $data = $response->json('data') ?? [];
+                $broadcasts = $broadcasts->merge($data);
+                $page++;
+            } while (! empty($data));
 
             // Filter for sent broadcasts and transform to our format
-            return collect($data)
+            return $broadcasts
                 ->filter(function ($broadcast) {
                     return isset($broadcast['attributes']['sent_final_batch_at'])
                         && $broadcast['attributes']['sent_final_batch_at'] !== null;
@@ -150,6 +175,7 @@ class BentoService
             Log::error('Bento getBroadcasts failed', [
                 'error' => $e->getMessage(),
             ]);
+
             return [];
         }
     }
@@ -166,7 +192,7 @@ class BentoService
         }
 
         // Check cache first
-        $cacheKey = 'bento_email_validation:' . md5($email);
+        $cacheKey = 'bento_email_validation:'.md5($email);
         if (Cache::has($cacheKey)) {
             return Cache::get($cacheKey);
         }
@@ -187,16 +213,17 @@ class BentoService
                     'email' => $email,
                     'status' => $response->status(),
                 ]);
+
                 return true;
             }
 
             $isValid = $response->json('data.valid', true);
 
             // Cache result - longer for valid emails, shorter for invalid
-            $cacheTtl = $isValid 
+            $cacheTtl = $isValid
                 ? config('bentonow.validation_cache_ttl', 3600)
                 : 300; // 5 minutes for invalid emails to allow retry
-            
+
             Cache::put($cacheKey, $isValid, $cacheTtl);
 
             if (! $isValid) {
@@ -230,7 +257,7 @@ class BentoService
 
             // Determine if target is IP or domain
             $isIp = filter_var($target, FILTER_VALIDATE_IP);
-            
+
             $data = new BlacklistStatusData(
                 domain: $isIp ? null : $target,
                 ipAddress: $isIp ? $target : null
@@ -243,13 +270,14 @@ class BentoService
                     'target' => $target,
                     'status' => $response->status(),
                 ]);
+
                 return ['clean' => true]; // Fail open
             }
 
             $status = $response->json('data', []);
 
             // Check if flagged by any service
-            $isBlacklisted = 
+            $isBlacklisted =
                 ($status['spamhaus'] ?? false) ||
                 ($status['nordspam'] ?? false) ||
                 ($status['spfbl'] ?? false) ||

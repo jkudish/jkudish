@@ -45,10 +45,10 @@ class SyncNewsletters extends Command
 
             foreach ($broadcasts as $broadcastData) {
                 // Extract issue number from name (e.g., "Issue #001: Title" -> "001")
-                $issueNumber = $this->extractIssueNumber($broadcastData['name']);
+                $issueNumber = $this->extractIssueNumber($broadcastData['name'], $broadcastData['subject']);
 
                 // Normalize name to consistent format: "#001 - Title"
-                $normalizedName = $this->normalizeName($broadcastData['name'], $issueNumber);
+                $normalizedName = $this->normalizeName($broadcastData['name'], $issueNumber, $broadcastData['subject']);
 
                 // Clean up content - remove accidental double chat emoji
                 $cleanedContent = str_replace('💬💬', '', $broadcastData['html_content']);
@@ -99,17 +99,24 @@ class SyncNewsletters extends Command
     /**
      * Extract issue number from broadcast name
      */
-    private function extractIssueNumber(string $name): ?string
+    private function extractIssueNumber(string $name, ?string $subject = null): ?string
     {
-        // Match patterns like "Issue #001:", "#001 -", "Issue #1:", or "004 -" (leading digits)
-        if (preg_match('/(?:Issue\s*)?#(\d+)/i', $name, $matches)) {
-            // Pad to 3 digits for consistency (001, 002, etc.)
-            return str_pad($matches[1], 3, '0', STR_PAD_LEFT);
-        }
+        foreach (array_filter([$name, $subject]) as $value) {
+            // Match patterns like "Issue #001:", "#001 -", "Issue #1:", or "004 -" (leading digits)
+            if (preg_match('/(?:Issue\s*)?#(\d+)/i', $value, $matches)) {
+                // Pad to 3 digits for consistency (001, 002, etc.)
+                return str_pad($matches[1], 3, '0', STR_PAD_LEFT);
+            }
 
-        // Match leading digits at start of name (e.g., "004 - Title")
-        if (preg_match('/^(\d+)\s*-/', $name, $matches)) {
-            return str_pad($matches[1], 3, '0', STR_PAD_LEFT);
+            // Match patterns like "Issue 001:" or "Issue 1 - Title"
+            if (preg_match('/Issue\s+(\d+)/i', $value, $matches)) {
+                return str_pad($matches[1], 3, '0', STR_PAD_LEFT);
+            }
+
+            // Match leading digits at start of value (e.g., "004 - Title")
+            if (preg_match('/^(\d+)\s*-/', $value, $matches)) {
+                return str_pad($matches[1], 3, '0', STR_PAD_LEFT);
+            }
         }
 
         return null;
@@ -118,15 +125,23 @@ class SyncNewsletters extends Command
     /**
      * Normalize broadcast name to consistent format: "#001 - Title"
      */
-    private function normalizeName(string $name, ?string $issueNumber): string
+    private function normalizeName(string $name, ?string $issueNumber, ?string $subject = null): string
     {
         if ($issueNumber === null) {
             return $name;
         }
 
         // Extract the title portion by removing issue number prefixes
-        // Handles: "Issue #001: Title", "Issue #001 - Title", "#001 - Title", "001 - Title"
-        $title = preg_replace('/^(?:Issue\s*)?#?\d+\s*[-:]\s*/i', '', $name);
+        // Handles: "Issue #001: Title", "Issue #001 - Title", "#001 - Title", "001 - Title", "Issue 001"
+        $title = trim(preg_replace('/^(?:Issue\s*)?#?\d+\s*(?:[-:]\s*)?/i', '', $name));
+
+        if ($title === '') {
+            $title = trim((string) preg_replace('/^(?:Issue\s*)?#?\d+\s*(?:[-:]\s*)?/i', '', (string) $subject));
+        }
+
+        if ($title === '') {
+            $title = $name;
+        }
 
         return "#{$issueNumber} - {$title}";
     }
