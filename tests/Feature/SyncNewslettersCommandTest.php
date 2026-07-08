@@ -91,7 +91,7 @@ it('extracts issue numbers from newsletter subjects when names omit them', funct
         ->andReturn([
             [
                 'bento_id' => '1238',
-                'name' => 'The Missing Issue',
+                'name' => 'New Broadcast - 2026-07-07',
                 'subject' => 'Issue #008: The Missing Issue',
                 'html_content' => '<h1>Content 8</h1>',
                 'share_url' => 'https://example.com/1238',
