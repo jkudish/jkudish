@@ -50,7 +50,7 @@ class NewsletterController extends Controller
             email: $email,
             firstName: null,
             lastName: null,
-            tags: ['Maker Notes'],
+            tags: ['Human in the Loop'],
             fields: [
                 'source' => 'newsletter_form',
                 'subscribed_at' => now()->toDateTimeString(),

@@ -30,7 +30,7 @@ class ProcessContactFormSubmission implements ShouldQueue
         // Build tags array - always include "Lead" tag
         $tags = ['Lead'];
         if ($this->formData['newsletter_opt_in']) {
-            $tags[] = 'Maker Notes';
+            $tags[] = 'Human in the Loop';
         }
 
         // Create/update subscriber with all form data as custom fields
@@ -45,7 +45,7 @@ class ProcessContactFormSubmission implements ShouldQueue
                 'message' => $this->formData['message'],
                 'newsletter_opt_in' => $this->formData['newsletter_opt_in'] ? 'yes' : 'no',
                 'subscribed' => $this->formData['newsletter_opt_in'] ? true : false,
-                'unsubscribed_at' => !$this->formData['newsletter_opt_in'] ? now()->toDateTimeString() : null,
+                'unsubscribed_at' => ! $this->formData['newsletter_opt_in'] ? now()->toDateTimeString() : null,
                 'submitted_at' => now()->toDateTimeString(),
             ]
         );

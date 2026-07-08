@@ -35,7 +35,7 @@
                             </p>
 
                             <p class="mt-3 text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-                                Every two weeks, I share what actually worked building my apps with AI. Real workflows for solopreneurs & indie hackers.
+                                Monthly-ish, I share what actually worked building my apps with AI. Real workflows for solopreneurs & indie hackers.
                             </p>
                         </div>
 

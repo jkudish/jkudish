@@ -20,7 +20,7 @@
                     </div>
                     <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
                         AI won't replace you. But you + AI will replace you without it. <br />
-                        Every two weeks, I share what actually worked building my apps with AI. Real workflows for solopreneurs & indie hackers.
+                        Monthly-ish, I share what actually worked building my apps with AI. Real workflows for solopreneurs & indie hackers.
                     </p>
 
                      <div x-data="newsletterForm">

@@ -2,6 +2,7 @@
 
 use App\Integrations\BentoService;
 use App\Jobs\ProcessContactFormSubmission;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Queue;
 use RyanChandler\LaravelCloudflareTurnstile\Facades\Turnstile;
 
@@ -68,6 +69,31 @@ it('submits contact form without newsletter opt-in', function () {
         return $job->formData['email'] === 'jane@example.com' &&
                $job->formData['newsletter_opt_in'] === false;
     });
+});
+
+it('tags contact newsletter opt-ins as Human in the Loop', function () {
+    Mail::fake();
+
+    $bentoService = Mockery::mock(BentoService::class);
+    $bentoService->shouldReceive('createOrUpdateSubscriber')
+        ->once()
+        ->withArgs(fn (string $email, string $firstName, string $lastName, array $tags, array $fields): bool => $email === 'john@example.com'
+            && $firstName === 'John'
+            && $lastName === 'Doe'
+            && $tags === ['Lead', 'Human in the Loop']
+            && $fields['newsletter_opt_in'] === 'yes')
+        ->andReturn(true);
+    $bentoService->shouldReceive('trackEvent')
+        ->once();
+
+    (new ProcessContactFormSubmission([
+        'first_name' => 'John',
+        'last_name' => 'Doe',
+        'email' => 'john@example.com',
+        'subject' => 'Project Inquiry',
+        'message' => 'I have a project for you.',
+        'newsletter_opt_in' => true,
+    ]))->handle($bentoService);
 });
 
 it('rejects spam submissions with honeypot field', function () {
