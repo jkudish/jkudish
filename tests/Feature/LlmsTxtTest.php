@@ -46,6 +46,17 @@ it('contains contact information', function () {
     expect($content)->toContain('Website:');
 });
 
+it('describes the newsletter with current branding and cadence', function () {
+    $response = $this->get('/llms.txt');
+    $content = $response->getContent();
+
+    expect($content)
+        ->toContain('Human in the Loop')
+        ->toContain('Monthly-ish AI and automation newsletter')
+        ->not->toContain('The Maker Notes')
+        ->not->toContain('Weekly AI and automation newsletter');
+});
+
 it('keeps content size under 3KB', function () {
     $response = $this->get('/llms.txt');
     $content = $response->getContent();

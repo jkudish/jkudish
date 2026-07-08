@@ -12,6 +12,9 @@ it('shows the newsletter page with updated Human in the Loop branding', function
 
     $response->assertStatus(200);
     $response->assertSee('Human in the Loop');
+    $response->assertSee('Monthly-ish');
+    $response->assertDontSee('Maker Notes');
+    $response->assertDontSee('Every two weeks');
     $response->assertSee('AI', false);
     $response->assertSee('newsletter', false);
 });
@@ -22,7 +25,13 @@ it('subscribes to newsletter with valid email', function () {
         ->andReturn(true)
         ->shouldReceive('createOrUpdateSubscriber')
         ->once()
+        ->withArgs(fn (string $email, ?string $firstName, ?string $lastName, array $tags, array $fields): bool => $email === 'test@example.com'
+            && $firstName === null
+            && $lastName === null
+            && $tags === ['Human in the Loop']
+            && $fields['source'] === 'newsletter_form')
         ->andReturn(true);
+
     $response = $this->post('/newsletter', [
         'email' => 'test@example.com',
         'cf-turnstile-response' => 'test-token',

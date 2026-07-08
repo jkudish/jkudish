@@ -42,7 +42,7 @@ Expert software developer and AI automation specialist helping businesses build 
 - **PHAiTO**: AI-powered Lightroom catalog editing
 - **Image Salon**: Platform for 6,000+ photographers globally
 - **WordPress/WooCommerce**: 20 years building at scale
-- **The Maker Notes**: Weekly AI and automation newsletter
+- **Human in the Loop**: Monthly-ish AI and automation newsletter
 
 ## Speaking Topics
 

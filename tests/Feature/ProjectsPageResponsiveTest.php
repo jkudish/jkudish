@@ -32,6 +32,9 @@ it('has projects content', function () {
         ->assertSee('Tether')
         ->assertSee('PHAiTO')
         ->assertSee('Human in the Loop')
+        ->assertSee('Monthly-ish issues')
+        ->assertDontSee('The Maker Notes')
+        ->assertDontSee('New issues every 2 weeks')
         ->assertSee('Image Salon')
         ->assertSee('WordPress & WooCommerce');
 });
