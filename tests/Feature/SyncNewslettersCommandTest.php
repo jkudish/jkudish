@@ -113,6 +113,100 @@ it('extracts issue numbers from newsletter subjects when names omit them', funct
     expect($broadcast->name)->toBe('#008 - The Missing Issue');
 });
 
+it('extracts issue numbers from bare numeric Bento names', function () {
+    $bentoService = Mockery::mock(BentoService::class);
+    $bentoService->shouldReceive('getBroadcasts')
+        ->once()
+        ->andReturn([
+            [
+                'bento_id' => '1239',
+                'name' => '08',
+                'subject' => 'From Doing to Directing',
+                'html_content' => '<h1>Content 8</h1>',
+                'share_url' => 'https://example.com/1239',
+                'sent_at' => '2024-09-18T08:15:22.102Z',
+                'stats' => ['open_rate' => 38.2],
+            ],
+        ]);
+
+    $this->app->instance(BentoService::class, $bentoService);
+
+    $this->artisan('app:sync-newsletters')
+        ->expectsOutput('New broadcasts: 1')
+        ->expectsOutput('Updated broadcasts: 0')
+        ->assertExitCode(0);
+
+    $broadcast = Broadcast::where('bento_id', '1239')->first();
+
+    expect($broadcast->issue_number)->toBe('008');
+    expect($broadcast->name)->toBe('#008 - From Doing to Directing');
+});
+
+it('infers missing issue numbers from chronological broadcast order', function () {
+    $bentoService = Mockery::mock(BentoService::class);
+    $bentoService->shouldReceive('getBroadcasts')
+        ->once()
+        ->andReturn([
+            [
+                'bento_id' => '14',
+                'name' => 'Issue #014: Your Failed Experiments Have Expired',
+                'subject' => 'Issue #014: Your Failed Experiments Have Expired',
+                'html_content' => '<h1>Issue 14</h1>',
+                'share_url' => 'https://example.com/14',
+                'sent_at' => '2024-10-04T08:15:22.102Z',
+                'stats' => ['open_rate' => 42.5],
+            ],
+            [
+                'bento_id' => '10',
+                'name' => 'Issue #010: Thirty-Five Hours',
+                'subject' => 'Thirty-Five Hours',
+                'html_content' => '<h1>Issue 10</h1>',
+                'share_url' => 'https://example.com/10',
+                'sent_at' => '2024-09-06T08:15:22.102Z',
+                'stats' => ['open_rate' => 42.5],
+            ],
+            [
+                'bento_id' => '11',
+                'name' => 'New Broadcast - 2024-09-13',
+                'subject' => 'Context as Infrastructure',
+                'html_content' => '<h1>Issue 11</h1>',
+                'share_url' => 'https://example.com/11',
+                'sent_at' => '2024-09-13T08:15:22.102Z',
+                'stats' => ['open_rate' => 38.2],
+            ],
+            [
+                'bento_id' => '12',
+                'name' => 'New Broadcast - 2024-09-20',
+                'subject' => 'Introducing Agentsy',
+                'html_content' => '<h1>Issue 12</h1>',
+                'share_url' => 'https://example.com/12',
+                'sent_at' => '2024-09-20T08:15:22.102Z',
+                'stats' => ['open_rate' => 41.5],
+            ],
+            [
+                'bento_id' => '13',
+                'name' => 'Plan Once, Then Get Out of the Way',
+                'subject' => 'Plan Once, Then Get Out of the Way',
+                'html_content' => '<h1>Issue 13</h1>',
+                'share_url' => 'https://example.com/13',
+                'sent_at' => '2024-09-27T08:15:22.102Z',
+                'stats' => ['open_rate' => 40.1],
+            ],
+        ]);
+
+    $this->app->instance(BentoService::class, $bentoService);
+
+    $this->artisan('app:sync-newsletters')
+        ->expectsOutput('New broadcasts: 5')
+        ->expectsOutput('Updated broadcasts: 0')
+        ->assertExitCode(0);
+
+    expect(Broadcast::where('bento_id', '11')->first()->issue_number)->toBe('011');
+    expect(Broadcast::where('bento_id', '12')->first()->issue_number)->toBe('012');
+    expect(Broadcast::where('bento_id', '13')->first()->issue_number)->toBe('013');
+    expect(Broadcast::where('bento_id', '13')->first()->name)->toBe('#013 - Plan Once, Then Get Out of the Way');
+});
+
 it('fetches all sent newsletter broadcasts from paginated Bento API', function () {
     config([
         'bentonow.publishable_key' => 'publishable-test-key',
