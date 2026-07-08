@@ -131,9 +131,11 @@ class SyncNewsletters extends Command
             return $name;
         }
 
+        $source = $this->extractIssueNumber($name) !== null ? $name : ($subject ?: $name);
+
         // Extract the title portion by removing issue number prefixes
         // Handles: "Issue #001: Title", "Issue #001 - Title", "#001 - Title", "001 - Title", "Issue 001"
-        $title = trim(preg_replace('/^(?:Issue\s*)?#?\d+\s*(?:[-:]\s*)?/i', '', $name));
+        $title = trim(preg_replace('/^(?:Issue\s*)?#?\d+\s*(?:[-:]\s*)?/i', '', $source));
 
         if ($title === '') {
             $title = trim((string) preg_replace('/^(?:Issue\s*)?#?\d+\s*(?:[-:]\s*)?/i', '', (string) $subject));
