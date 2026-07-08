@@ -40,12 +40,15 @@ class SyncNewsletters extends Command
                 return self::SUCCESS;
             }
 
+            $broadcasts = $this->assignIssueNumbers($broadcasts);
+
             $newCount = 0;
             $updatedCount = 0;
 
             foreach ($broadcasts as $broadcastData) {
                 // Extract issue number from name (e.g., "Issue #001: Title" -> "001")
-                $issueNumber = $this->extractIssueNumber($broadcastData['name'], $broadcastData['subject']);
+                $issueNumber = $broadcastData['issue_number']
+                    ?? $this->extractIssueNumber($broadcastData['name'], $broadcastData['subject']);
 
                 // Normalize name to consistent format: "#001 - Title"
                 $normalizedName = $this->normalizeName($broadcastData['name'], $issueNumber, $broadcastData['subject']);
@@ -117,9 +120,45 @@ class SyncNewsletters extends Command
             if (preg_match('/^(\d+)\s*-/', $value, $matches)) {
                 return str_pad($matches[1], 3, '0', STR_PAD_LEFT);
             }
+
+            // Match bare numeric names from Bento, e.g. "08"
+            if (preg_match('/^(\d+)$/', trim($value), $matches)) {
+                return str_pad($matches[1], 3, '0', STR_PAD_LEFT);
+            }
         }
 
         return null;
+    }
+
+    /**
+     * Infer issue numbers for older Bento broadcasts whose names/subjects omitted them.
+     *
+     * @param  array<int, array<string, mixed>>  $broadcasts
+     * @return array<int, array<string, mixed>>
+     */
+    private function assignIssueNumbers(array $broadcasts): array
+    {
+        usort($broadcasts, fn (array $first, array $second): int => strcmp($first['sent_at'], $second['sent_at']));
+
+        $lastIssueNumber = null;
+
+        return array_map(function (array $broadcast) use (&$lastIssueNumber): array {
+            $issueNumber = $this->extractIssueNumber($broadcast['name'], $broadcast['subject']);
+
+            if ($issueNumber !== null) {
+                $lastIssueNumber = (int) $issueNumber;
+                $broadcast['issue_number'] = $issueNumber;
+
+                return $broadcast;
+            }
+
+            if ($lastIssueNumber !== null) {
+                $lastIssueNumber++;
+                $broadcast['issue_number'] = str_pad((string) $lastIssueNumber, 3, '0', STR_PAD_LEFT);
+            }
+
+            return $broadcast;
+        }, $broadcasts);
     }
 
     /**
