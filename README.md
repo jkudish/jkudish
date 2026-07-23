@@ -25,4 +25,4 @@ Co-Founder of **[Agentsy](https://agentsy.build)**, an embedded studio for AI en
 
 🌐 [jkudish.com](https://jkudish.com) · 🐦 [@jkudish](https://x.com/jkudish) · 💼 [LinkedIn](https://linkedin.com/in/jkudish) · 🎤 [speaking](https://jkudish.com/speaking)
 
-📍 Vancouver Island, BC · ✉️ joey@jkudish.com
+📍 Vancouver Island, BC · ✉️ joey@agentsy.build
