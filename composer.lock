@@ -800,6 +800,7 @@
         },
         {
             "name": "guzzlehttp/guzzle",
+<<<<<<< HEAD
             "version": "7.15.3",
             "source": {
                 "type": "git",
@@ -810,6 +811,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ae311b8f045ea93ce7b1c9cdb7cec06c53f944bc",
                 "reference": "ae311b8f045ea93ce7b1c9cdb7cec06c53f944bc",
+=======
+            "version": "7.15.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "744101956d78b7c1384d0cbf379db13e859167bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/744101956d78b7c1384d0cbf379db13e859167bf",
+                "reference": "744101956d78b7c1384d0cbf379db13e859167bf",
+>>>>>>> origin/main
                 "shasum": ""
             },
             "require": {
@@ -908,7 +921,11 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/guzzle/guzzle/tree/7.15.3"
+=======
+                "source": "https://github.com/guzzle/guzzle/tree/7.15.2"
+>>>>>>> origin/main
             },
             "funding": [
                 {
@@ -924,7 +941,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2026-08-05T19:48:21+00:00"
+=======
+            "time": "2026-07-26T23:23:20+00:00"
+>>>>>>> origin/main
         },
         {
             "name": "guzzlehttp/promises",
@@ -1217,6 +1238,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
             "version": "v13.24.0",
             "source": {
                 "type": "git",
@@ -1227,6 +1249,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/6d481710375d2aa67656922ef760cdd2b18bcfe0",
                 "reference": "6d481710375d2aa67656922ef760cdd2b18bcfe0",
+=======
+            "version": "v13.23.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "92a707229148e57f08a249211c8a5a194159c619"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/92a707229148e57f08a249211c8a5a194159c619",
+                "reference": "92a707229148e57f08a249211c8a5a194159c619",
+>>>>>>> origin/main
                 "shasum": ""
             },
             "require": {
@@ -1440,7 +1474,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
+<<<<<<< HEAD
             "time": "2026-08-04T15:54:59+00:00"
+=======
+            "time": "2026-07-27T14:48:58+00:00"
+>>>>>>> origin/main
         },
         {
             "name": "laravel/horizon",
@@ -2328,6 +2366,7 @@
         },
         {
             "name": "mallardduck/blade-lucide-icons",
+<<<<<<< HEAD
             "version": "1.26.32",
             "source": {
                 "type": "git",
@@ -2338,6 +2377,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/mallardduck/blade-lucide-icons/zipball/73f340c115fc1de71474d1413505ac931ed7af0a",
                 "reference": "73f340c115fc1de71474d1413505ac931ed7af0a",
+=======
+            "version": "1.26.31",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mallardduck/blade-lucide-icons.git",
+                "reference": "b7bd575d13f9c9630d7cc3ce5698506dba2fd76d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mallardduck/blade-lucide-icons/zipball/b7bd575d13f9c9630d7cc3ce5698506dba2fd76d",
+                "reference": "b7bd575d13f9c9630d7cc3ce5698506dba2fd76d",
+>>>>>>> origin/main
                 "shasum": ""
             },
             "require": {
@@ -2382,9 +2433,15 @@
             ],
             "support": {
                 "issues": "https://github.com/mallardduck/blade-lucide-icons/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/mallardduck/blade-lucide-icons/tree/1.26.32"
             },
             "time": "2026-07-31T02:26:33+00:00"
+=======
+                "source": "https://github.com/mallardduck/blade-lucide-icons/tree/1.26.31"
+            },
+            "time": "2026-07-26T02:25:48+00:00"
+>>>>>>> origin/main
         },
         {
             "name": "monolog/monolog",
