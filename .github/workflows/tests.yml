@@ -41,6 +41,9 @@ jobs:
       - name: Generate Application Key
         run: php artisan key:generate
 
+      - name: Create SQLite Database
+        run: touch database/database.sqlite
+
       - name: Run Database Migrations
         run: php artisan migrate --force
 
@@ -55,3 +58,5 @@ jobs:
 
       - name: Run Browser Smoke
         run: ./vendor/bin/pest --group=browser
+        env:
+          DB_DATABASE: ${{ github.workspace }}/database/database.sqlite
