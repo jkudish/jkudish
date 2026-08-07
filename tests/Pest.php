@@ -1,5 +1,10 @@
 <?php
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
+
+pest()->tia()->always()->locally();
+
 /*
 |--------------------------------------------------------------------------
 | Test Case
@@ -12,9 +17,13 @@
 */
 
 uses(
-    Tests\TestCase::class,
-    Illuminate\Foundation\Testing\RefreshDatabase::class,
+    TestCase::class,
+    RefreshDatabase::class,
 )->in('Feature');
+
+pest()->extend(TestCase::class)
+    ->group('browser')
+    ->in('Browser');
 
 /*
 |--------------------------------------------------------------------------

@@ -236,7 +236,7 @@
         font-style: normal;
         font-weight: 800;
         font-display: swap;
-        src: local('Telegraf UltraBold'), url('/fonts/Telegraf%20UltraBold%20800.woff') format('woff');
+        src: local('Telegraf UltraBold'), url('/fonts/telegraf-ultrabold-800.woff') format('woff');
     }
 
     @font-face {

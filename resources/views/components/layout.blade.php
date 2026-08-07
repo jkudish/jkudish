@@ -58,7 +58,7 @@
     <link rel="preconnect" href="https://cdn.usefathom.com" crossorigin>
     
     <!-- Preload critical fonts -->
-    <link rel="preload" href="{{ asset('fonts/Telegraf UltraBold 800.woff') }}" as="font" type="font/woff" crossorigin="anonymous"/>
+    <link rel="preload" href="{{ asset('fonts/telegraf-ultrabold-800.woff') }}" as="font" type="font/woff" crossorigin="anonymous"/>
     <link rel="preload" href="{{ asset('fonts/muli-regular-webfont.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous"/>
     <link rel="preload" href="{{ asset('fonts/muli-regular-webfont.woff') }}" as="font" type="font/woff" crossorigin="anonymous"/>
 
@@ -67,19 +67,17 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     
-    {{-- Cloudflare Turnstile scripts for spam protection - only load on pages with forms --}}
-    {{-- Load on contact page, newsletter pages, or any page that shows the footer newsletter form --}}
-    @if(request()->routeIs(['contact', 'newsletter', 'newsletter.show']) || !$hideNewsletter)
-        <x-turnstile.scripts />
-    @endif
-    
-     {{-- Load Alpine.js for interactive components --}}
-     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-     @vite(['resources/js/app.js'])
+    @unless(app()->environment('testing') && request()->boolean('without-third-party'))
+        {{-- Cloudflare Turnstile scripts for spam protection - only load on pages with forms --}}
+        {{-- Load on contact page, newsletter pages, or any page that shows the footer newsletter form --}}
+        @if(request()->routeIs(['contact', 'newsletter', 'newsletter.show']) || !$hideNewsletter)
+            <x-turnstile.scripts />
+        @endif
 
-    <!-- Fathom - beautiful, simple website analytics -->
-    <script src="https://cdn.usefathom.com/script.js" data-site="OLWGPIDF" defer></script>
-    <!-- / Fathom -->
+        <!-- Fathom - beautiful, simple website analytics -->
+        <script src="https://cdn.usefathom.com/script.js" data-site="OLWGPIDF" defer></script>
+        <!-- / Fathom -->
+    @endunless
 
     <script>
         // Critical: Prevent dark mode flash - minimal inline script
