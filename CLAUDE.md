@@ -181,14 +181,6 @@ When working on this project:
 7. Follow Laravel conventions and best practices
 8. Optimize for performance (minimal JavaScript, optimized images)
 
-## Next Steps Reference
-
-See `agent-os/project/overview.md` for detailed feature planning and priorities.
-
----
-
-*This project uses Agent OS 2.0 for structured development. See `agent-os/` directory for detailed documentation.*
-
 ===
 
 <laravel-boost-guidelines>
