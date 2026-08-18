@@ -1,0 +1,4 @@
+interface:
+  display_name: "Laravel Forge"
+  short_description: "Use Forge API v2 safely"
+  default_prompt: "Use $laravel-forge to plan or perform a Laravel Forge API v2 task safely."
